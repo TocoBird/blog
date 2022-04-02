@@ -1,4 +1,6 @@
 /**
  *
  */
-export interface A {}
+export interface A {
+  readonly name: string;
+}
