@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "toco_blogs",
+  "info": {
+    "singularName": "toco-blog",
+    "pluralName": "toco-blogs",
+    "displayName": "tocoBlog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mainTitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "mainText": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
