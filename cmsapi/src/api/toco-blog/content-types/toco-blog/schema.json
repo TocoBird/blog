@@ -4,7 +4,8 @@
   "info": {
     "singularName": "toco-blog",
     "pluralName": "toco-blogs",
-    "displayName": "tocoBlog"
+    "displayName": "tocoBlog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,14 @@
     },
     "mainText": {
       "type": "richtext",
+      "required": true
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
       "required": true
     }
   }
