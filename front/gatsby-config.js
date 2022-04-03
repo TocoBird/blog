@@ -1,13 +1,19 @@
+require('dotenv').config({
+  path: `./.env`,
+});
+
+console.log(process.env.STRAPI_URL);
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteurl: 'https://localhost:8000',
+    title: 'tocoblog',
+    description: 'blog',
+    author: 'toco',
+    lang: 'ja',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`, // メタタグ
+    `gatsby-plugin-image`, // 画像
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,21 +24,35 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-graphql',
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        typeName: 'strapi',
+        fieldName: 'strapi',
+        url: process.env.STRAPI_URL,
+        headers: {
+          Authorization: `Bearer ${process.env.STRAPI_ACCESS_TOKEN}`,
+          'Accept-Encoding': 'gzip, deflate, br',
+          'Content-Type': 'application/json',
+        },
       },
     },
+    // {
+    //   // PWA アイコン
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `gatsby-starter-default`,
+    //     short_name: `starter`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     // This will impact how browsers show your PWA/website
+    //     // https://css-tricks.com/meta-theme-color-and-trickery/
+    //     // theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     icon: `src/images/icon.png`,
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

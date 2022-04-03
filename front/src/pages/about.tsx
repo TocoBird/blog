@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 const About: React.FC = (): JSX.Element => {
   return (
-    <Fragment>
+    <>
       <div>about</div>
-    </Fragment>
+    </>
   );
 };
 
