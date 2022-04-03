@@ -1,18 +1,17 @@
 import React from 'react';
-import { DomainBlog } from '../../modules/domain/blog';
+import { DomainBlog } from '../../../modules/domain/blog';
 
 interface Props {
   /** ブログ一覧 */
   readonly blogs: DomainBlog[];
 }
-
 /**
- *
+ * テンプレート：トップページ
  */
-const TemplateIndex: React.FC<Props> = (p: Props): JSX.Element => {
+const TemplateSPIndex: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <>
-      <div>ok1</div>
+      <div>ok1vvvv</div>
       <div>
         {p.blogs.map((d: DomainBlog) => (
           <div key={d.id}>
@@ -24,4 +23,4 @@ const TemplateIndex: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default TemplateIndex;
+export default TemplateSPIndex;
