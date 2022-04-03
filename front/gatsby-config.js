@@ -2,7 +2,9 @@ require('dotenv').config({
   path: `./.env`,
 });
 
-console.log(process.env.STRAPI_URL);
+/**
+ * graphql
+ */
 module.exports = {
   siteMetadata: {
     siteurl: 'https://localhost:8000',

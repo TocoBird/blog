@@ -1,21 +1,18 @@
 import React from 'react';
-import { useIndex } from '../modules/graphql/index';
-import { DomainBlog } from '../modules/domain/blog';
+import { useFetchIndex } from '../modules/graphql/index';
+import TemplateIndex from '../components/templates/index';
+import Layout from '../components/layouts/base';
 
+/**
+ * ページ: トップ
+ */
 const Index: React.FC = (): JSX.Element => {
-  const { blogs } = useIndex();
+  const { blogs } = useFetchIndex();
 
   return (
-    <>
-      <div>ok</div>
-      <div>
-        {blogs.map((d: DomainBlog) => (
-          <div key={d.id}>
-            {d.id}:{d.title}
-          </div>
-        ))}
-      </div>
-    </>
+    <Layout>
+      <TemplateIndex blogs={blogs} />
+    </Layout>
   );
 };
 

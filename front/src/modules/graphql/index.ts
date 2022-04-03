@@ -2,11 +2,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Res, ResTocoBlog } from '../response/index';
 import { DomainBlog } from '../domain/blog';
 
-interface FetchReturn {
+interface useReturn {
   readonly blogs: DomainBlog[];
 }
-export const useIndex = (): FetchReturn => {
-  const data: Res = useStaticQuery(
+export const useFetchIndex = (): useReturn => {
+  const res: Res = useStaticQuery(
     graphql`
       {
         strapi {
@@ -24,11 +24,15 @@ export const useIndex = (): FetchReturn => {
     `
   );
 
-  const resblogs: ResTocoBlog[] = data.strapi.tocoBlogs.data;
+  const resblogs: ResTocoBlog[] = res.strapi.tocoBlogs.data;
+
+  /**
+   * ドメインに変換
+   */
   const blogs: DomainBlog[] = resblogs.map(r => ({
-    id: r.id,
-    title: r.attributes.mainTitle,
-    text: r.attributes.mainText,
+    id: r?.id || 0,
+    title: r?.attributes?.mainTitle || '',
+    text: r?.attributes?.mainText || '',
   }));
 
   return { blogs };
