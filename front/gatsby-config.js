@@ -38,6 +38,8 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-linaria`,
     // {
     //   // PWA アイコン
     //   resolve: `gatsby-plugin-manifest`,

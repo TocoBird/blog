@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { DomainBlog } from '../../../modules/domain/blog';
 
 interface Props {
@@ -12,11 +13,12 @@ interface Props {
 const TemplatePCIndex: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <>
-      <div>ok12ss</div>
       <div>
         {p.blogs.map((d: DomainBlog) => (
           <div key={d.id}>
-            {d.id}:{d.title}
+            <Link to={`/article/${d.id}`}>
+              {d.id}:{d.title}
+            </Link>
           </div>
         ))}
       </div>
