@@ -20,3 +20,9 @@ export interface DomainCategory {
   readonly id: number;
   readonly name: string;
 }
+
+export interface DomainCategoryBlog {
+  readonly id: number;
+  readonly title: string;
+  readonly thumbnail: string;
+}
