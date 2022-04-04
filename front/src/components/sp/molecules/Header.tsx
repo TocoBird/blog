@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,7 +38,10 @@ const Right = styled.div`
  * ヘッダー
  */
 const Header: React.FC = (): JSX.Element => {
-  const onClickDarkMode = () => {};
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const onClickDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <>
