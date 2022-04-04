@@ -1,9 +1,11 @@
 import React from 'react';
-import { DomainBlog } from '../../../modules/domain/blog';
+import { DomainBlogDetail, DomainCategory } from '../../../modules/domain/blog';
 
 interface Props {
   /** ブログ一覧 */
-  readonly blog: DomainBlog;
+  readonly blog: DomainBlogDetail;
+  /** カテゴリ一覧 */
+  readonly categories: DomainCategory[];
 }
 /**
  * テンプレート：記事詳細

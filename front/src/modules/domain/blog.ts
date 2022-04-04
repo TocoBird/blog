@@ -16,3 +16,7 @@ export interface DomainBlogDetail {
   readonly categoryId: number;
   readonly categoryName: string;
 }
+export interface DomainCategory {
+  readonly id: number;
+  readonly name: string;
+}

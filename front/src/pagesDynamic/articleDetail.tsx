@@ -12,6 +12,14 @@ import { adapterDomainArticleDetail } from '../modules/adapter/articleDetail';
 export const query = graphql`
   query ($id: ID) {
     strapi {
+      categories {
+        data {
+          id
+          attributes {
+            name
+          }
+        }
+      }
       tocoBlog(id: $id) {
         data {
           id
@@ -46,14 +54,14 @@ export const query = graphql`
  */
 const ArticleDetail: React.FC<PageProps> = (page): JSX.Element => {
   const { isPC } = useResponsive();
-  const { blog } = adapterDomainArticleDetail(page);
+  const { blog, categories } = adapterDomainArticleDetail(page);
 
   return (
     <Flame isPC={isPC}>
       {isPC ? (
-        <TemplatePCArticleDetail blog={blog} />
+        <TemplatePCArticleDetail blog={blog} categories={categories} />
       ) : (
-        <TemplateSPArticleDetail blog={blog} />
+        <TemplateSPArticleDetail blog={blog} categories={categories} />
       )}
     </Flame>
   );

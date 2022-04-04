@@ -1,15 +1,18 @@
 import { PageProps } from 'gatsby';
 import dayjs from 'dayjs';
-import { Res, ResTocoBlog } from '../response/articleDetail';
-import { DomainBlogDetail } from '../domain/blog';
+import { Res, ResTocoBlog, ResCategory } from '../response/articleDetail';
+import { DomainBlogDetail, DomainCategory } from '../domain/blog';
 
 interface useReturn {
   readonly blog: DomainBlogDetail;
+  readonly categories: DomainCategory[];
 }
 export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
   const res = page?.data as Res;
   const resblog: ResTocoBlog =
     res?.strapi?.tocoBlog?.data || ({} as ResTocoBlog);
+  const resCategory: ResCategory[] =
+    res?.strapi?.categories?.data || ([] as ResCategory[]);
 
   /**
    * ドメインに変換
@@ -24,5 +27,10 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
     categoryName: resblog?.attributes?.category?.data?.attributes.name || '',
   };
 
-  return { blog };
+  const categories: DomainCategory[] = resCategory.map(r => ({
+    id: r?.id || 0,
+    name: r?.attributes?.name || '',
+  }));
+
+  return { blog, categories };
 };

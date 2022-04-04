@@ -1,3 +1,4 @@
+// 記事詳細
 interface ResTocoBlogThumbnail {
   readonly data: {
     readonly attributes: { readonly url: string };
@@ -23,9 +24,23 @@ export interface ResTocoBlog {
 interface ResTocoBlogData {
   readonly data: ResTocoBlog;
 }
+
+// カテゴリー
+interface ResCategoryAttribute {
+  readonly name: string;
+}
+export interface ResCategory {
+  readonly id: number;
+  readonly attributes: ResCategoryAttribute;
+}
+interface ResCategoryData {
+  readonly data: ResCategory[];
+}
 interface ResStrapi {
   readonly tocoBlog: ResTocoBlogData;
+  readonly categories: ResCategoryData;
 }
+
 /**
  * GraphQLのレスポンス: Blog
  */
