@@ -14,9 +14,11 @@ const TemplateSPIndex: React.FC<Props> = (p: Props): JSX.Element => {
     <>
       <div>
         {p.blogs.map((d: DomainBlog) => (
-          <Link to={`./detail/${d.id}`} key={d.id}>
-            {d.id}:{d.title}
-          </Link>
+          <div key={d.id}>
+            <Link to={`/article/${d.id}`}>
+              {d.id}:{d.title}
+            </Link>
+          </div>
         ))}
       </div>
     </>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../molecules/Header';
+import Footer from '../molecules/Footer';
 
 interface Props {
   readonly children: JSX.Element | JSX.Element[];
@@ -14,6 +15,8 @@ const LayoutSP: React.FC<Props> = (p: Props): JSX.Element => {
       <Header />
 
       {p.children}
+
+      <Footer />
     </>
   );
 };
