@@ -19,6 +19,14 @@ export const query = graphql`
             mainTitle
             mainText
             updatedAt
+            category {
+              data {
+                attributes {
+                  name
+                }
+                id
+              }
+            }
             thumbnail {
               data {
                 attributes {

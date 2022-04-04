@@ -1,10 +1,10 @@
 import { PageProps } from 'gatsby';
 import dayjs from 'dayjs';
 import { Res, ResTocoBlog } from '../response/articleDetail';
-import { DomainBlog } from '../domain/blog';
+import { DomainBlogDetail } from '../domain/blog';
 
 interface useReturn {
-  readonly blog: DomainBlog;
+  readonly blog: DomainBlogDetail;
 }
 export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
   const res = page?.data as Res;
@@ -14,12 +14,14 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
   /**
    * ドメインに変換
    */
-  const blog: DomainBlog = {
+  const blog: DomainBlogDetail = {
     id: resblog?.id || 0,
     title: resblog?.attributes?.mainTitle || '',
     text: resblog?.attributes?.mainText || '',
     updatedAt: dayjs(resblog?.attributes?.updatedAt).format('YYYY/M/D') || '',
     thumbnail: resblog?.attributes?.thumbnail?.data?.attributes?.url || '',
+    categoryId: resblog?.attributes?.category?.data?.id || 0,
+    categoryName: resblog?.attributes?.category?.data?.attributes.name || '',
   };
 
   return { blog };

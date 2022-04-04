@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import { DomainBlog } from '../../../modules/domain/blog';
+import ReactMarkdown from 'react-markdown';
+import { DomainBlogDetail } from '../../../modules/domain/blog';
 import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 
@@ -37,7 +38,7 @@ const Category = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly blog: DomainBlog;
+  readonly blog: DomainBlogDetail;
 }
 /**
  * テンプレート：記事詳細
@@ -57,17 +58,28 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
           <SpacerS />
 
           <TopContentItems>
-            <Date>{p.blog.updatedAt}</Date>
-            <Category>#{p.blog.updatedAt}</Category>
+            <Date>@{p.blog.updatedAt}</Date>
+            <Category>#{p.blog.categoryName}</Category>
           </TopContentItems>
         </TopContent>
 
         <SpacerS />
 
         <Content style={{ padding: size.ui.l3 }}>
-          <div>{p.blog.text}</div>
+          <div className="blogMarkdown">
+            <ReactMarkdown children={p.blog.text} />
+          </div>
+          <SpacerS />
+          <div>作者 </div>
         </Content>
       </div>
+
+      <div>
+        <div>{p.blog.categoryName}</div>
+        <div>{p.blog.categoryId}</div>
+      </div>
+
+      <SpacerS />
     </Wrapper>
   );
 };

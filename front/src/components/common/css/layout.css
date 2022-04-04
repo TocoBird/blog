@@ -14,7 +14,8 @@ input,
 textarea:focus {
   outline: 0;
 }
-/**  */
+
+/* */
 input:focus,
 select:focus,
 textarea:focus,
@@ -23,4 +24,25 @@ button:focus {
 }
 a {
   text-decoration: none;
+}
+
+/* */
+h1,h2,h3,h4,h5,h6,p,a {
+  margin: 0;
+  padding: 0;
+}
+.blogMarkdown h1 {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 16px;
+  color: #263658;
+}
+.blogMarkdown p {
+  white-space: pre-line;
+  font-size: 15px;
+  padding-bottom: 16px;
+  color: #3C475F;
+}
+.blogMarkdown img {
+  width: 100%;
 }

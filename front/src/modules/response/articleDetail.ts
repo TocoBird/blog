@@ -3,11 +3,18 @@ interface ResTocoBlogThumbnail {
     readonly attributes: { readonly url: string };
   };
 }
+interface ResTocoBlogCategory {
+  readonly data: {
+    readonly id: number;
+    readonly attributes: { readonly name: string };
+  };
+}
 interface ResTocoBlogAttribute {
   readonly mainTitle: string;
   readonly mainText: string;
   readonly updatedAt: Date;
   readonly thumbnail: ResTocoBlogThumbnail;
+  readonly category: ResTocoBlogCategory;
 }
 export interface ResTocoBlog {
   readonly id: number;
