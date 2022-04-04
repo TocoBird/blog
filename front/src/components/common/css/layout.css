@@ -31,7 +31,6 @@ h1,h2,h3,h4,h5,h6,p,a {
   padding: 0;
 }
 
-
 .blogMarkdown h1 {
   font-size: 18px;
   font-weight: bold;
@@ -40,6 +39,7 @@ h1,h2,h3,h4,h5,h6,p,a {
 }
 .blogMarkdown p {
   white-space: pre-line;
+  line-height: 24px;
   font-size: 15px;
   padding-bottom: 16px;
   color: #3C475F;

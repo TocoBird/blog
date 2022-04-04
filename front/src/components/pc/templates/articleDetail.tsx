@@ -48,6 +48,10 @@ const Author = styled.div`
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;
 `;
+const Detail = styled.div`
+  color: ${colors.text.main};
+  font-size: 15px;
+`;
 
 interface Props {
   /** ブログ一覧 */
@@ -113,6 +117,18 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             </Fragment>
           ))}
         </div>
+      </Content>
+
+      <SpacerS />
+
+      <Content style={{ padding: size.ui.l3 }}>
+        <Title>ブログのコンセプト</Title>
+
+        <SpacerS />
+
+        <Detail>
+          プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。
+        </Detail>
       </Content>
 
       <SpacerS />
