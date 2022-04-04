@@ -8,14 +8,29 @@ import {
   DomainBlogDetail,
   DomainCategory,
 } from '../../../modules/interfaces/domain/blog';
-import { SpacerS } from '../atoms/Spacer';
+import { SpacerS, SpacerM } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 
 const Wrapper = styled.div``;
+
+const ContentWrapper = styled.div`
+  margin: auto;
+  width: 800px;
+`;
+const Content = styled.div`
+  display: flex;
+`;
+const ContentLeft = styled.div`
+  flex: 1;
+`;
+const ContentRight = styled.div`
+  width: 200px;
+  margin-left: 20px;
+`;
 const Thumbnail = styled.div`
   background: whitesmoke;
-  height: 120px;
+  height: 200px;
   background-size: cover;
   background-position: 50% 50%;
 `;
@@ -27,8 +42,10 @@ const Title = styled.div`
 const TopContent = styled.div`
   background: ${colors.card.main};
 `;
-const Content = styled.div`
+const Item = styled.div`
+  border-radius: 4px;
   background: ${colors.card.main};
+  box-shadow: 0 2px 12px #0f1c2c17;
 `;
 const TopContentItems = styled.div`
   display: flex;
@@ -68,71 +85,80 @@ interface Props {
 const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Thumbnail
-        style={{
-          backgroundImage: `url('${p.blog.thumbnail}')`,
-        }}
-      />
+      <TopContent style={{ padding: size.ui.l5 }}>
+        <ContentWrapper>
+          <Title>{p.blog.title}</Title>
 
-      <TopContent style={{ padding: size.ui.l3 }}>
-        <Title>{p.blog.title}</Title>
+          <SpacerS />
 
-        <SpacerS />
-
-        <TopContentItems>
-          <Date>
-            <Icon icon={faCalendarDays} />
-            {p.blog.updatedAt}更新
-          </Date>
-          <Category>
-            <Link to={`/category/${p.blog.categoryId}`}>
-              #{p.blog.categoryName}
-            </Link>
-          </Category>
-        </TopContentItems>
+          <TopContentItems>
+            <Date>
+              <Icon icon={faCalendarDays} />
+              {p.blog.updatedAt}更新
+            </Date>
+            <Category>
+              <Link to={`/category/${p.blog.categoryId}`}>
+                #{p.blog.categoryName}
+              </Link>
+            </Category>
+          </TopContentItems>
+        </ContentWrapper>
       </TopContent>
 
-      <SpacerS />
+      <SpacerM />
 
-      <Content style={{ padding: size.ui.l3 }}>
-        <div className="blogMarkdown">
-          <ReactMarkdown>{p.blog.text}</ReactMarkdown>
-        </div>
+      <ContentWrapper>
+        <Content>
+          <ContentLeft>
+            <Thumbnail
+              style={{
+                backgroundImage: `url('${p.blog.thumbnail}')`,
+              }}
+            />
 
-        <SpacerS />
+            <SpacerM />
 
-        <Author>作者 tocotoco</Author>
-      </Content>
-
-      <SpacerS />
-
-      <Content style={{ padding: size.ui.l3 }}>
-        <Title>カテゴリーから記事を探す</Title>
-        <SpacerS />
-        <div>
-          {p.categories.map(c => (
-            <Fragment key={c.id}>
-              <Link to={`/category/${c.id}`}>
-                <div>#{c.name}</div>
-              </Link>
+            <Item style={{ padding: size.ui.l5 }}>
+              <div className="blogMarkdown">
+                <ReactMarkdown>{p.blog.text}</ReactMarkdown>
+              </div>
 
               <SpacerS />
-            </Fragment>
-          ))}
-        </div>
-      </Content>
 
-      <SpacerS />
+              <Author>作者 tocotoco</Author>
+            </Item>
 
-      <Content style={{ padding: size.ui.l3 }}>
-        <Title>ブログのコンセプト</Title>
+            <SpacerM />
 
-        <SpacerS />
+            <Item style={{ padding: size.ui.l5 }}>
+              <Title>ブログのコンセプト</Title>
 
-        <Detail>
-          プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。
-        </Detail>
-      </Content>
+              <SpacerS />
+
+              <Detail>
+                プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。
+              </Detail>
+            </Item>
+          </ContentLeft>
+          <ContentRight>
+            <Item style={{ padding: size.ui.l5 }}>
+              <Title>カテゴリーから記事を探す</Title>
+              <SpacerS />
+              <div>
+                {p.categories.map(c => (
+                  <Fragment key={c.id}>
+                    <Link to={`/category/${c.id}`}>
+                      <div>#{c.name}</div>
+                    </Link>
+
+                    <SpacerS />
+                  </Fragment>
+                ))}
+              </div>
+            </Item>
+          </ContentRight>
+        </Content>
+      </ContentWrapper>
 
       <SpacerS />
     </Wrapper>
