@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 import { DomainBlogDetail, DomainCategory } from '../../../modules/domain/blog';
 import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
+import colors from '../../../modules/common/colors';
 
 const Wrapper = styled.div``;
 const Thumbnail = styled.div`
@@ -16,13 +17,13 @@ const Thumbnail = styled.div`
 const Title = styled.div`
   font-weight: 500;
   font-size: 18px;
-  color: #243352;
+  color: ${colors.text.mainBold};
 `;
 const TopContent = styled.div`
-  background: white;
+  background: ${colors.card.main};
 `;
 const Content = styled.div`
-  background: white;
+  background: ${colors.card.main};
 `;
 const TopContentItems = styled.div`
   display: flex;
@@ -31,10 +32,16 @@ const TopContentItems = styled.div`
   font-size: 15px;
 `;
 const Date = styled.div`
-  color: #b5bfd5;
+  color: ${colors.text.mainThin};
+  font-weight: 500;
 `;
 const Category = styled.div`
-  color: #3460c1;
+  color: ${colors.text.link};
+  font-weight: 500;
+`;
+const Author = styled.div`
+  color: ${colors.text.mainThin};
+  font-weight: 500;
 `;
 
 interface Props {
@@ -74,10 +81,10 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <Content style={{ padding: size.ui.l3 }}>
         <div className="blogMarkdown">
-          <ReactMarkdown children={p.blog.text} />
+          <ReactMarkdown>{p.blog.text}</ReactMarkdown>
         </div>
         <SpacerS />
-        <div>作者 </div>
+        <Author>作者 tocotoco</Author>
       </Content>
 
       <SpacerS />

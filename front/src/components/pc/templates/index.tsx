@@ -12,17 +12,15 @@ interface Props {
  */
 const TemplatePCIndex: React.FC<Props> = (p: Props): JSX.Element => {
   return (
-    <>
-      <div>
-        {p.blogs.map((d: DomainBlog) => (
-          <div key={d.id}>
-            <Link to={`/article/${d.id}`}>
-              {d.id}:{d.title}
-            </Link>
-          </div>
-        ))}
-      </div>
-    </>
+    <div>
+      {p.blogs.map((d: DomainBlog) => (
+        <div key={d.id}>
+          <Link to={`/article/${d.id}`}>
+            {d.id}:{d.title}
+          </Link>
+        </div>
+      ))}
+    </div>
   );
 };
 
