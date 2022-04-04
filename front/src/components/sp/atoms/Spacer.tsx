@@ -11,11 +11,11 @@ export const SpacerS = styled.div`
 `;
 /** height 中間 */
 export const SpacerM = styled.div`
-  height: ${size.ui.l3}px;
+  height: ${size.ui.l4}px;
 `;
 /** height 大きい */
 export const SpacerXM = styled.div`
-  height: ${size.ui.l4}px;
+  height: ${size.ui.l5}px;
 `;
 /** height より大きい */
 export const SpacerL = styled.div`

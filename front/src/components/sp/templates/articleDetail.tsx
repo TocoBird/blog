@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import { styled } from 'linaria/react';
 import ReactMarkdown from 'react-markdown';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { DomainBlogDetail, DomainCategory } from '../../../modules/domain/blog';
 import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
@@ -15,7 +17,7 @@ const Thumbnail = styled.div`
   background-position: 50% 50%;
 `;
 const Title = styled.div`
-  font-weight: 500;
+  font-weight: bold;
   font-size: 18px;
   color: ${colors.text.mainBold};
 `;
@@ -43,6 +45,9 @@ const Author = styled.div`
   color: ${colors.text.mainThin};
   font-weight: 500;
 `;
+const Icon = styled(FontAwesomeIcon)`
+  margin-right: 6px;
+`;
 
 interface Props {
   /** ブログ一覧 */
@@ -68,7 +73,10 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <SpacerS />
 
         <TopContentItems>
-          <Date>@{p.blog.updatedAt}</Date>
+          <Date>
+            <Icon icon={faCalendarDays} />
+            {p.blog.updatedAt}更新
+          </Date>
           <Category>
             <Link to={`/category/${p.blog.categoryId}`}>
               #{p.blog.categoryName}
@@ -83,7 +91,9 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <div className="blogMarkdown">
           <ReactMarkdown>{p.blog.text}</ReactMarkdown>
         </div>
+
         <SpacerS />
+
         <Author>作者 tocotoco</Author>
       </Content>
 
@@ -98,6 +108,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <Link to={`/category/${c.id}`}>
                 <div>#{c.name}</div>
               </Link>
+
               <SpacerS />
             </Fragment>
           ))}

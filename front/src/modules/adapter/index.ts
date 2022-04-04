@@ -16,6 +16,7 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
     id: r?.id || 0,
     title: r?.attributes?.mainTitle || '',
     text: r?.attributes?.mainText || '',
+    thumbnail: r?.attributes?.thumbnail?.data?.attributes?.url || '',
   }));
 
   return { blogs };

@@ -44,14 +44,22 @@ export const query = graphql`
  */
 const CategoryDetail: React.FC<PageProps> = (page): JSX.Element => {
   const { isPC } = useResponsive();
-  const { blogs, categories } = adapterDomainCategoryDetail(page);
+  const { blogs, categories, categolyId } = adapterDomainCategoryDetail(page);
 
   return (
     <Flame isPC={isPC}>
       {isPC ? (
-        <TemplatePCCategoryDetail blogs={blogs} categories={categories} />
+        <TemplatePCCategoryDetail
+          blogs={blogs}
+          categories={categories}
+          selectedCategolyId={categolyId}
+        />
       ) : (
-        <TemplateSPCategoryDetail blogs={blogs} categories={categories} />
+        <TemplateSPCategoryDetail
+          blogs={blogs}
+          categories={categories}
+          selectedCategolyId={categolyId}
+        />
       )}
     </Flame>
   );

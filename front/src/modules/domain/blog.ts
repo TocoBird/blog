@@ -5,6 +5,7 @@ export interface DomainBlog {
   readonly id: number;
   readonly title: string;
   readonly text: string;
+  readonly thumbnail: string;
 }
 
 export interface DomainBlogDetail {

@@ -2,9 +2,13 @@ import { PageProps } from 'gatsby';
 import { Res, ResTocoBlog, ResCategory } from '../response/categoryDetail';
 import { DomainCategoryBlog, DomainCategory } from '../domain/blog';
 
+interface PageContext {
+  readonly id: number;
+}
 interface useReturn {
   readonly blogs: DomainCategoryBlog[];
   readonly categories: DomainCategory[];
+  readonly categolyId: number;
 }
 export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
   const res = page?.data as Res;
@@ -12,6 +16,8 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
     res?.strapi?.tocoBlogs?.data || ([] as ResTocoBlog[]);
   const resCategory: ResCategory[] =
     res?.strapi?.categories?.data || ([] as ResCategory[]);
+  const context = page?.pageContext as PageContext;
+  const categolyId: number = context?.id || 0;
 
   /***
    * ドメインに変換
@@ -27,5 +33,5 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
     name: r?.attributes?.name || '',
   }));
 
-  return { blogs, categories };
+  return { blogs, categories, categolyId };
 };

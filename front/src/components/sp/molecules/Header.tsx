@@ -1,6 +1,8 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   background: #1d2f4df2;
@@ -45,7 +47,9 @@ const Header: React.FC = (): JSX.Element => {
           <Link to="/">TocoBlog</Link>
         </Left>
         <Right>
-          <div onClick={onClickDarkMode}>#</div>
+          <div onClick={onClickDarkMode}>
+            <FontAwesomeIcon icon={faMoon} />
+          </div>
         </Right>
       </Wrapper>
 

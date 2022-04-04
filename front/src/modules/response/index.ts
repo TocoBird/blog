@@ -1,6 +1,13 @@
+// 記事詳細
+interface ResTocoBlogThumbnail {
+  readonly data: {
+    readonly attributes: { readonly url: string };
+  };
+}
 interface ResTocoBlogAttribute {
   readonly mainTitle: string;
   readonly mainText: string;
+  readonly thumbnail: ResTocoBlogThumbnail;
 }
 export interface ResTocoBlog {
   readonly id: number;
