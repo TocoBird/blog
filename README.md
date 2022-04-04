@@ -4,6 +4,9 @@
 
 edit blog => strapi + s3 + sqlite => front ssg => s3 + cloudfront + acm + route53 => viewer
 
+## site
+https://blog.tocobird.com/
+
 ## コンセプト
 
 プロダクト開発、チーム開発、デザイン、ゲーム開発、アイデアの質の高い情報を発信する。
