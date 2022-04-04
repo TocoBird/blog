@@ -18,6 +18,14 @@ export const query = graphql`
           attributes {
             mainTitle
             mainText
+            updatedAt
+            thumbnail {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
           }
         }
       }
