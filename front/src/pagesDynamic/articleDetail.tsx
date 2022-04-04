@@ -5,6 +5,7 @@ import TemplatePCArticleDetail from '../components/pc/templates/articleDetail';
 import TemplateSPArticleDetail from '../components/sp/templates/articleDetail';
 import { useResponsive } from '../modules/common/responsive';
 import { adapterDomainArticleDetail } from '../modules/adapter/articleDetail';
+import { MetaOption } from '../modules/interfaces/compornent/layout';
 
 /**
  * 記事詳細の取得
@@ -55,9 +56,13 @@ export const query = graphql`
 const ArticleDetail: React.FC<PageProps> = (page): JSX.Element => {
   const { isPC } = useResponsive();
   const { blog, categories } = adapterDomainArticleDetail(page);
+  const option: MetaOption = {
+    title: `${blog.title} | TocoBlog`,
+    description: 'TocoBlogはプロダクト開発の情報を発信します。',
+  };
 
   return (
-    <Flame isPC={isPC}>
+    <Flame isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCArticleDetail blog={blog} categories={categories} />
       ) : (

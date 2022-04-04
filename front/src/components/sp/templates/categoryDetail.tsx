@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import {
   DomainCategoryBlog,
   DomainCategory,
-} from '../../../modules/domain/blog';
+} from '../../../modules/interfaces/domain/blog';
 import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';

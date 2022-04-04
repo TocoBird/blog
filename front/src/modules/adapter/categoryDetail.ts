@@ -1,6 +1,10 @@
 import { PageProps } from 'gatsby';
-import { Res, ResTocoBlog, ResCategory } from '../response/categoryDetail';
-import { DomainCategoryBlog, DomainCategory } from '../domain/blog';
+import {
+  Res,
+  ResTocoBlog,
+  ResCategory,
+} from '../interfaces/response/categoryDetail';
+import { DomainCategoryBlog, DomainCategory } from '../interfaces/domain/blog';
 
 interface PageContext {
   readonly id: number;

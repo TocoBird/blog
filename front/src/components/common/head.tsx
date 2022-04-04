@@ -1,14 +1,19 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import './css/layout.css';
+import { MetaOption } from '../../modules/interfaces/compornent/layout';
+
+interface Props {
+  readonly option: MetaOption;
+}
 
 /**
  * HTMLのHead
  */
-const HTMLHead: React.FC = (): JSX.Element => {
-  const title = 'TocoBlog';
+const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
+  const title = `${p.option.title}`;
   const lang = 'ja';
-  const description = 'tocoblog';
+  const description = p.option.description;
   const keywords = 'tocoblog,blog';
 
   return (

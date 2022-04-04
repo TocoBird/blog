@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import { DomainBlog } from '../../../modules/domain/blog';
+import { DomainBlog } from '../../../modules/interfaces/domain/blog';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 import { SpacerS } from '../atoms/Spacer';

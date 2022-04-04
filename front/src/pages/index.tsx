@@ -5,6 +5,7 @@ import TemplateSPIndex from '../components/sp/templates/index';
 import Flame from '../components/common/flame';
 import { useResponsive } from '../modules/common/responsive';
 import { adapterDomainIndex } from '../modules/adapter/index';
+import { MetaOption } from '../modules/interfaces/compornent/layout';
 
 /**
  * 記事一覧の取得
@@ -38,9 +39,13 @@ export const query = graphql`
 const Index: React.FC<PageProps> = (page): JSX.Element => {
   const { isPC } = useResponsive();
   const { blogs } = adapterDomainIndex(page);
+  const option: MetaOption = {
+    title: 'TocoBlog',
+    description: 'TocoBlogはプロダクト開発の情報を発信します。',
+  };
 
   return (
-    <Flame isPC={isPC}>
+    <Flame isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCIndex blogs={blogs} />
       ) : (

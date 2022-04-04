@@ -1,7 +1,11 @@
 import { PageProps } from 'gatsby';
 import dayjs from 'dayjs';
-import { Res, ResTocoBlog, ResCategory } from '../response/articleDetail';
-import { DomainBlogDetail, DomainCategory } from '../domain/blog';
+import {
+  Res,
+  ResTocoBlog,
+  ResCategory,
+} from '../interfaces/response/articleDetail';
+import { DomainBlogDetail, DomainCategory } from '../interfaces/domain/blog';
 
 interface useReturn {
   readonly blog: DomainBlogDetail;

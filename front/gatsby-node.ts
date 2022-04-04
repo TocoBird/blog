@@ -1,6 +1,6 @@
 import path from 'path';
 import type { GatsbyNode } from 'gatsby';
-import { Res } from './src/modules/response/gatsbyNode';
+import { Res } from './src/modules/interfaces/response/gatsbyNode';
 
 export const createPages: GatsbyNode['createPages'] = async ({
   graphql,

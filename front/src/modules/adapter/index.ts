@@ -1,6 +1,6 @@
 import { PageProps } from 'gatsby';
-import { Res, ResTocoBlog } from '../response/index';
-import { DomainBlog } from '../domain/blog';
+import { Res, ResTocoBlog } from '../interfaces/response/index';
+import { DomainBlog } from '../interfaces/domain/blog';
 
 interface useReturn {
   readonly blogs: DomainBlog[];

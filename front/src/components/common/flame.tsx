@@ -2,10 +2,12 @@ import React from 'react';
 import HTMLHead from './head';
 import LayoutPC from '../pc/layouts/base';
 import LayoutSP from '../sp/layouts/base';
+import { MetaOption } from '../../modules/interfaces/compornent/layout';
 
 interface Props {
   readonly children: JSX.Element | JSX.Element[];
   readonly isPC: boolean;
+  readonly option: MetaOption;
 }
 
 /***
@@ -14,7 +16,7 @@ interface Props {
 const Frame: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <>
-      <HTMLHead />
+      <HTMLHead option={p.option} />
 
       {p.isPC ? (
         <LayoutPC>{p.children}</LayoutPC>

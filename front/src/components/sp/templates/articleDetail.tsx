@@ -4,7 +4,10 @@ import ReactMarkdown from 'react-markdown';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { DomainBlogDetail, DomainCategory } from '../../../modules/domain/blog';
+import {
+  DomainBlogDetail,
+  DomainCategory,
+} from '../../../modules/interfaces/domain/blog';
 import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
