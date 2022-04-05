@@ -3,6 +3,7 @@ import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import size from '../../../modules/common/size';
 
 const Wrapper = styled.div`
   background: #1d2f4df2;
@@ -20,7 +21,10 @@ const WrapperInner = styled.div`
   display: flex;
   justify-content: space-between;
   margin: auto;
-  width: 800px;
+  min-width: ${size.responsive.pcMin}px;
+  max-width: ${size.responsive.pcMax}px;
+  padding: 0 ${size.ui.l10}px;
+  box-sizing: border-box;
 `;
 const Left = styled.div`
   a {

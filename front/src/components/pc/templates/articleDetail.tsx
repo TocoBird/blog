@@ -8,7 +8,7 @@ import {
   DomainBlogDetail,
   DomainCategory,
 } from '../../../modules/interfaces/domain/blog';
-import { SpacerS, SpacerM } from '../atoms/Spacer';
+import { SpacerS, SpacerL } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 
@@ -16,7 +16,13 @@ const Wrapper = styled.div``;
 
 const ContentWrapper = styled.div`
   margin: auto;
-  width: 800px;
+  min-width: ${size.responsive.pcMin}px;
+  max-width: ${size.responsive.pcMax}px;
+  padding: 0 ${size.ui.l8}px;
+  box-sizing: border-box;
+`;
+const ContentWrapperInner = styled.div`
+  padding: ${size.ui.l8}px 0;
 `;
 const Content = styled.div`
   display: flex;
@@ -25,18 +31,23 @@ const ContentLeft = styled.div`
   flex: 1;
 `;
 const ContentRight = styled.div`
-  width: 200px;
-  margin-left: 20px;
+  width: 280px;
+  margin-left: ${size.ui.l8}px;
 `;
 const Thumbnail = styled.div`
   background: whitesmoke;
-  height: 200px;
+  height: 280px;
   background-size: cover;
   background-position: 50% 50%;
 `;
+const TitleTop = styled.div`
+  font-weight: bold;
+  font-size: 28px;
+  color: ${colors.text.mainBold};
+`;
 const Title = styled.div`
   font-weight: bold;
-  font-size: 18px;
+  font-size: ${size.font.l4}px;
   color: ${colors.text.mainBold};
 `;
 const TopContent = styled.div`
@@ -46,6 +57,7 @@ const Item = styled.div`
   border-radius: 4px;
   background: ${colors.card.main};
   box-shadow: 0 2px 12px #0f1c2c17;
+  padding: ${size.ui.l6}px;
 `;
 const TopContentItems = styled.div`
   display: flex;
@@ -85,27 +97,29 @@ interface Props {
 const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <TopContent style={{ padding: size.ui.l5 }}>
+      <TopContent>
         <ContentWrapper>
-          <Title>{p.blog.title}</Title>
+          <ContentWrapperInner>
+            <TitleTop>{p.blog.title}</TitleTop>
 
-          <SpacerS />
+            <SpacerS />
 
-          <TopContentItems>
-            <Date>
-              <Icon icon={faCalendarDays} />
-              {p.blog.updatedAt}更新
-            </Date>
-            <Category>
-              <Link to={`/category/${p.blog.categoryId}`}>
-                #{p.blog.categoryName}
-              </Link>
-            </Category>
-          </TopContentItems>
+            <TopContentItems>
+              <Date>
+                <Icon icon={faCalendarDays} />
+                {p.blog.updatedAt}更新
+              </Date>
+              <Category>
+                <Link to={`/category/${p.blog.categoryId}`}>
+                  #{p.blog.categoryName}
+                </Link>
+              </Category>
+            </TopContentItems>
+          </ContentWrapperInner>
         </ContentWrapper>
       </TopContent>
 
-      <SpacerM />
+      <SpacerL />
 
       <ContentWrapper>
         <Content>
@@ -116,9 +130,9 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
               }}
             />
 
-            <SpacerM />
+            <SpacerL />
 
-            <Item style={{ padding: size.ui.l5 }}>
+            <Item>
               <div className="blogMarkdown">
                 <ReactMarkdown>{p.blog.text}</ReactMarkdown>
               </div>
@@ -128,9 +142,9 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <Author>作者 tocotoco</Author>
             </Item>
 
-            <SpacerM />
+            <SpacerL />
 
-            <Item style={{ padding: size.ui.l5 }}>
+            <Item>
               <Title>ブログのコンセプト</Title>
 
               <SpacerS />
@@ -141,8 +155,8 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             </Item>
           </ContentLeft>
           <ContentRight>
-            <Item style={{ padding: size.ui.l5 }}>
-              <Title>カテゴリーから記事を探す</Title>
+            <Item>
+              <Title>カテゴリーで記事を探す</Title>
               <SpacerS />
               <div>
                 {p.categories.map(c => (

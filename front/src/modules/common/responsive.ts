@@ -1,4 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
+import size from './size';
 
 interface UseReturn {
   /** PCのレイアウトかどうか */
@@ -9,8 +10,9 @@ interface UseReturn {
  * レスポンシブの設定
  */
 export const useResponsive = (): UseReturn => {
-  const size = 800;
-  const isPC = useMediaQuery({ query: `(min-width: ${size}px)` });
+  const isPC = useMediaQuery({
+    query: `(min-width: ${size.responsive.pcMin}px)`,
+  });
 
   return { isPC };
 };

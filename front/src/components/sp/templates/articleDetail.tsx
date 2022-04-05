@@ -107,7 +107,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <SpacerS />
 
       <Content style={{ padding: size.ui.l3 }}>
-        <Title>カテゴリーから記事を探す</Title>
+        <Title>カテゴリーで記事を探す</Title>
 
         <SpacerS />
 
