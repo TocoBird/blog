@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
-  background: #1d2f4df2;
+  position: fixed;
+  z-index: 99;
+  background: #232a39f5;
   height: 50px;
   line-height: 50px;
   box-shadow: 0 2px 12px #0f1c2c24;
   display: flex;
   justify-content: space-between;
   padding: 0 16px;
-  position: fixed;
   width: 100%;
   box-sizing: border-box;
 `;
@@ -23,7 +24,7 @@ const Left = styled.div`
   a {
     color: white;
   }
-}`;
+`;
 const Right = styled.div`
   color: #fff28b;
   font-size: 20px;

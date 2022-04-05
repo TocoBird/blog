@@ -63,7 +63,7 @@ const TopContentItems = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
 `;
 const Date = styled.div`
   color: ${colors.text.mainThin};
@@ -82,7 +82,7 @@ const Icon = styled(FontAwesomeIcon)`
 `;
 const Detail = styled.div`
   color: ${colors.text.main};
-  font-size: 15px;
+  font-size: 16px;
 `;
 
 interface Props {
@@ -133,7 +133,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <SpacerL />
 
             <Item>
-              <div className="blogMarkdown">
+              <div className="blogMarkdownPC">
                 <ReactMarkdown>{p.blog.text}</ReactMarkdown>
               </div>
 
@@ -174,7 +174,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         </Content>
       </ContentWrapper>
 
-      <SpacerS />
+      <SpacerL />
     </Wrapper>
   );
 };
