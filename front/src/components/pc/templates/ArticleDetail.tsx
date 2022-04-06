@@ -34,6 +34,8 @@ const Thumbnail = styled.div`
   height: 280px;
   background-size: cover;
   background-position: 50% 50%;
+  box-shadow: 0 2px 12px #0f1c2c17;
+  border-radius: 2px;
 `;
 const Title = styled.div`
   font-weight: bold;

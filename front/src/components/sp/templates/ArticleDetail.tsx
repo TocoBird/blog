@@ -19,6 +19,7 @@ const Thumbnail = styled.div`
   height: 120px;
   background-size: cover;
   background-position: 50% 50%;
+  border-radius: 2px;
 `;
 const Title = styled.div`
   font-weight: bold;
