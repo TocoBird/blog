@@ -1,32 +1,47 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
+import { StaticImage } from 'gatsby-plugin-image';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
 } from '../../../modules/interfaces/domain/category';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
-import { SpacerS } from '../atoms/Spacer';
+import { SpacerS, SpacerL } from '../atoms/Spacer';
 
 const Wrapper = styled.div``;
 
 const Top = styled.div`
-  background: ${colors.card.main};
-  padding: 16px;
+  background: whitesmoke;
+  background-image: url('../../../images/TocoBridBlogTopHeader.jpg');
+  height: 400px;
+  background-size: cover;
+  background-position: 50% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const Title = styled.div``;
+const TopItem = styled.div`
   text-align: center;
 `;
-const Title = styled.div`
-  font-size: 18px;
-  font-weight: bold;
-  color: ${colors.text.mainBold};
-`;
 const TitleSub = styled.div`
-  font-size: 15px;
-  font-weight: 500;
-  color: ${colors.text.mainBold};
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 `;
-
+const BlogsTitle = styled.div`
+  color: ${colors.text.mainBold};
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+`;
+const ContentTitle = styled.div`
+  color: ${colors.text.mainBold};
+  font-weight: bold;
+  font-size: 22px;
+`;
 const Card = styled.div`
   background: ${colors.card.main};
   display: flex;
@@ -34,17 +49,25 @@ const Card = styled.div`
 const Thumbnail = styled.div`
   background: whitesmoke;
   width: 100px;
-  height: 100px;
+  height: 80px;
   background-size: cover;
   background-position: 50% 50%;
 `;
 const CardTitle = styled.div`
   flex: 1;
-  padding: ${size.ui.l4}px;
-  font-weight: 500;
+  padding-left: ${size.ui.l4}px;
+  font-weight: bold;
   font-size: 15px;
   flex: 1;
   color: ${colors.text.mainBold};
+`;
+const Contents = styled.div``;
+const Content = styled.div`
+  border-radius: 4px;
+  background: ${colors.card.main};
+  box-shadow: 0 2px 12px #0f1c2c17;
+  padding: ${size.ui.l4}px;
+  box-sizing: border-box;
 `;
 
 interface Props {
@@ -58,36 +81,55 @@ const TemplateSPIndex: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <Top>
-        <Title>TocoBirdBlog</Title>
-        <TitleSub>プロダクト開発のための情報をまとめたブログ</TitleSub>
+        <TopItem>
+          <Title>
+            <StaticImage
+              src="../../../images/TocoBlogLogo.png"
+              alt="TocoBlog"
+              height={50}
+            />
+          </Title>
+          <SpacerS />
+          <TitleSub>プロダクト開発の情報を発信</TitleSub>
+        </TopItem>
       </Top>
 
-      <SpacerS />
+      <SpacerL />
 
-      {p.categories.map((c: DomainTopPageCategory) => (
-        <div key={c.id}>
-          <div>{c.name}</div>
+      <BlogsTitle>最新の記事</BlogsTitle>
 
-          <SpacerS />
+      <SpacerL />
 
-          {c.blogs.map((b: DomainTopPageBlog) => (
-            <Fragment key={b.id}>
-              <Link to={`/article/${b.id}`}>
-                <Card>
-                  <Thumbnail
-                    style={{
-                      backgroundImage: `url('${b.thumbnail}')`,
-                    }}
-                  />
-                  <CardTitle>{b.title}</CardTitle>
-                </Card>
-              </Link>
+      <Contents>
+        {p.categories.map((c: DomainTopPageCategory) => (
+          <Fragment key={c.id}>
+            <Content>
+              <ContentTitle>{c.name}</ContentTitle>
 
               <SpacerS />
-            </Fragment>
-          ))}
-        </div>
-      ))}
+
+              {c.blogs.map((b: DomainTopPageBlog) => (
+                <Fragment key={b.id}>
+                  <Link to={`/article/${b.id}`}>
+                    <Card>
+                      <Thumbnail
+                        style={{
+                          backgroundImage: `url('${b.thumbnail}')`,
+                        }}
+                      />
+                      <CardTitle>{b.title}</CardTitle>
+                    </Card>
+                  </Link>
+
+                  <SpacerS />
+                </Fragment>
+              ))}
+            </Content>
+
+            <SpacerL />
+          </Fragment>
+        ))}
+      </Contents>
     </Wrapper>
   );
 };

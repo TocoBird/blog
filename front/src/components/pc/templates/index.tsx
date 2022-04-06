@@ -8,7 +8,7 @@ import {
 } from '../../../modules/interfaces/domain/category';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
-import { SpacerS, SpacerL } from '../atoms/Spacer';
+import { SpacerS, SpacerM, SpacerL } from '../atoms/Spacer';
 
 const Wrapper = styled.div``;
 
@@ -30,13 +30,6 @@ const TitleSub = styled.div`
   font-size: 32px;
   font-weight: bold;
   color: white;
-`;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  width: 100px;
-  height: 100px;
-  background-size: cover;
-  background-position: 50% 50%;
 `;
 const BlogsTitle = styled.div`
   color: ${colors.text.mainBold};
@@ -67,6 +60,27 @@ const ContentTitle = styled.div`
   color: ${colors.text.mainBold};
   font-weight: bold;
   font-size: 24px;
+`;
+const BlogItem = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+const Thumbnail = styled.div`
+  background: whitesmoke;
+  width: 120px;
+  height: 80px;
+  background-size: cover;
+  background-position: 50% 50%;
+`;
+const BlogTitle = styled.div`
+  flex: 1;
+  color: ${colors.text.mainBold};
+  font-weight: bold;
+  font-size: 16px;
+  padding-left: ${size.ui.l3}px;
 `;
 
 interface Props {
@@ -105,19 +119,19 @@ const TemplatePCIndex: React.FC<Props> = (p: Props): JSX.Element => {
           <Content key={c.id}>
             <ContentTitle>{c.name}</ContentTitle>
 
-            <SpacerS />
+            <SpacerM />
 
             {c.blogs.map((b: DomainTopPageBlog) => (
               <Fragment key={b.id}>
                 <Link to={`/article/${b.id}`}>
-                  <div>
+                  <BlogItem>
                     <Thumbnail
                       style={{
                         backgroundImage: `url('${b.thumbnail}')`,
                       }}
                     />
-                    <div>{b.title}</div>
-                  </div>
+                    <BlogTitle>{b.title}</BlogTitle>
+                  </BlogItem>
                 </Link>
 
                 <SpacerS />
