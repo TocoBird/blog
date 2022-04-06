@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import React, { useState } from 'react';
 import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -25,6 +27,11 @@ const Left = styled.div`
     color: white;
   }
 `;
+const LeftItem = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+`;
 const Right = styled.div`
   color: #fff28b;
   font-size: 20px;
@@ -34,26 +41,35 @@ const Right = styled.div`
     opacity: 0.8;
   }
 `;
+// const Icon = styled(FontAwesomeIcon)``;
 
 /**
  * ヘッダー
  */
 const Header: React.FC = (): JSX.Element => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const onClickDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  // const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  // const onClickDarkMode = () => {
+  //   setIsDarkMode(!isDarkMode);
+  // };
 
   return (
     <>
       <Wrapper>
         <Left>
-          <Link to="/">TocoBlog</Link>
+          <Link to="/">
+            <LeftItem>
+              <StaticImage
+                src="../../../images/TocoBlogLogo.png"
+                alt="TocoBlog"
+                height={30}
+              />
+            </LeftItem>
+          </Link>
         </Left>
         <Right>
-          <div onClick={onClickDarkMode}>
-            <FontAwesomeIcon icon={faMoon} />
-          </div>
+          {/* <div onClick={onClickDarkMode}>
+            <Icon icon={faMoon} />
+          </div> */}
         </Right>
       </Wrapper>
 

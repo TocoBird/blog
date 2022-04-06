@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import React, { useState } from 'react';
 import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import size from '../../../modules/common/size';
 import { StaticImage } from 'gatsby-plugin-image';
 
@@ -23,6 +24,7 @@ const WrapperInner = styled.div`
   display: flex;
   justify-content: space-between;
   margin: auto;
+  height: 100%;
   min-width: ${size.responsive.pcMin}px;
   max-width: ${size.responsive.pcMax}px;
   padding: 0 ${size.ui.l8}px;
@@ -47,15 +49,16 @@ const Right = styled.div`
     opacity: 0.8;
   }
 `;
+// const Icon = styled(FontAwesomeIcon)``;
 
 /**
  * ヘッダー
  */
 const Header: React.FC = (): JSX.Element => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const onClickDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  // const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  // const onClickDarkMode = () => {
+  //   setIsDarkMode(!isDarkMode);
+  // };
 
   return (
     <>
@@ -68,14 +71,14 @@ const Header: React.FC = (): JSX.Element => {
                   src="../../../images/TocoBlogLogo.png"
                   alt="TocoBlog"
                   height={30}
-                />{' '}
+                />
               </LeftItem>
             </Link>
           </Left>
           <Right>
-            <div onClick={onClickDarkMode}>
-              <FontAwesomeIcon icon={faMoon} />
-            </div>
+            {/* <div onClick={onClickDarkMode}>
+              <Icon icon={faMoon} />
+            </div> */}
           </Right>
         </WrapperInner>
       </Wrapper>
