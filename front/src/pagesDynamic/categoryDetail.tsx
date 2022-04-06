@@ -21,7 +21,10 @@ export const query = graphql`
           }
         }
       }
-      tocoBlogs(filters: { category: { id: { eq: $id } } }) {
+      tocoBlogs(
+        pagination: { limit: 20 }
+        filters: { category: { id: { eq: $id } } }
+      ) {
         data {
           id
           attributes {

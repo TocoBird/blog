@@ -2,7 +2,10 @@ import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { DomainBlog } from '../../../modules/interfaces/domain/blog';
+import {
+  DomainTopPageCategory,
+  DomainTopPageBlog,
+} from '../../../modules/interfaces/domain/category';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 import { SpacerS, SpacerL } from '../atoms/Spacer';
@@ -28,10 +31,6 @@ const TitleSub = styled.div`
   font-weight: bold;
   color: white;
 `;
-const Card = styled.div`
-  background: ${colors.card.main};
-  display: flex;
-`;
 const Thumbnail = styled.div`
   background: whitesmoke;
   width: 100px;
@@ -39,15 +38,6 @@ const Thumbnail = styled.div`
   background-size: cover;
   background-position: 50% 50%;
 `;
-const CardTitle = styled.div`
-  flex: 1;
-  padding: ${size.ui.l4}px;
-  font-weight: 500;
-  font-size: 15px;
-  flex: 1;
-  color: ${colors.text.mainBold};
-`;
-
 const BlogsTitle = styled.div`
   color: ${colors.text.mainBold};
   font-weight: bold;
@@ -81,7 +71,7 @@ const ContentTitle = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly blogs: DomainBlog[];
+  readonly categories: DomainTopPageCategory[];
 }
 
 /**
@@ -111,39 +101,31 @@ const TemplatePCIndex: React.FC<Props> = (p: Props): JSX.Element => {
       <SpacerL />
 
       <Contents>
-        <Content>
-          <ContentTitle>プロダクト開発</ContentTitle>
-          <SpacerS />
-          <div>a</div>
-        </Content>
-        <Content>
-          <ContentTitle>チーム開発</ContentTitle>
-          <SpacerS />
-          <div>a</div>
-        </Content>
-        <Content>
-          <ContentTitle>チーム開発</ContentTitle>
-          <SpacerS />
-          <div>a</div>
-        </Content>
+        {p.categories.map((c: DomainTopPageCategory) => (
+          <Content key={c.id}>
+            <ContentTitle>{c.name}</ContentTitle>
+
+            <SpacerS />
+
+            {c.blogs.map((b: DomainTopPageBlog) => (
+              <Fragment key={b.id}>
+                <Link to={`/article/${b.id}`}>
+                  <div>
+                    <Thumbnail
+                      style={{
+                        backgroundImage: `url('${b.thumbnail}')`,
+                      }}
+                    />
+                    <div>{b.title}</div>
+                  </div>
+                </Link>
+
+                <SpacerS />
+              </Fragment>
+            ))}
+          </Content>
+        ))}
       </Contents>
-
-      {p.blogs.map((d: DomainBlog) => (
-        <Fragment key={d.id}>
-          <Link to={`/article/${d.id}`}>
-            <Card>
-              <Thumbnail
-                style={{
-                  backgroundImage: `url('${d.thumbnail}')`,
-                }}
-              />
-              <CardTitle>{d.title}</CardTitle>
-            </Card>
-          </Link>
-
-          <SpacerS />
-        </Fragment>
-      ))}
     </Wrapper>
   );
 };

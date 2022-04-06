@@ -13,20 +13,27 @@ import { MetaOption } from '../modules/interfaces/compornent/layout';
 export const query = graphql`
   {
     strapi {
-      tocoBlogs {
+      categories {
         data {
-          id
           attributes {
-            mainTitle
-            mainText
-            thumbnail {
+            name
+            toco_blogs(pagination: { limit: 2 }) {
               data {
                 attributes {
-                  url
+                  mainTitle
+                  thumbnail {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
                 }
+                id
               }
             }
           }
+          id
         }
       }
     }
@@ -38,7 +45,7 @@ export const query = graphql`
  */
 const Index: React.FC<PageProps> = (page): JSX.Element => {
   const { isPC } = useResponsive();
-  const { blogs } = adapterDomainIndex(page);
+  const { categories } = adapterDomainIndex(page);
   const option: MetaOption = {
     title: 'TocoBlog',
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
@@ -47,9 +54,9 @@ const Index: React.FC<PageProps> = (page): JSX.Element => {
   return (
     <Flame isPC={isPC} option={option}>
       {isPC ? (
-        <TemplatePCIndex blogs={blogs} />
+        <TemplatePCIndex categories={categories} />
       ) : (
-        <TemplateSPIndex blogs={blogs} />
+        <TemplateSPIndex categories={categories} />
       )}
     </Flame>
   );

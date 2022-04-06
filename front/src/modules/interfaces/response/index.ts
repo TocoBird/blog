@@ -6,7 +6,6 @@ interface ResTocoBlogThumbnail {
 }
 interface ResTocoBlogAttribute {
   readonly mainTitle: string;
-  readonly mainText: string;
   readonly thumbnail: ResTocoBlogThumbnail;
 }
 export interface ResTocoBlog {
@@ -16,8 +15,19 @@ export interface ResTocoBlog {
 interface ResTocoBlogData {
   readonly data: ResTocoBlog[];
 }
+interface ResCategoryAttribute {
+  readonly name: string;
+  readonly toco_blogs: ResTocoBlogData;
+}
+export interface ResCategory {
+  readonly id: number;
+  readonly attributes: ResCategoryAttribute;
+}
+interface ResCategoryData {
+  readonly data: ResCategory[];
+}
 interface ResStrapi {
-  readonly tocoBlogs: ResTocoBlogData;
+  readonly categories: ResCategoryData;
 }
 /**
  * GraphQLのレスポンス: Blog

@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import { DomainBlog } from '../../../modules/interfaces/domain/blog';
+import {
+  DomainTopPageCategory,
+  DomainTopPageBlog,
+} from '../../../modules/interfaces/domain/category';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 import { SpacerS } from '../atoms/Spacer';
@@ -46,7 +49,7 @@ const CardTitle = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly blogs: DomainBlog[];
+  readonly categories: DomainTopPageCategory[];
 }
 /**
  * テンプレート：トップページ
@@ -61,21 +64,29 @@ const TemplateSPIndex: React.FC<Props> = (p: Props): JSX.Element => {
 
       <SpacerS />
 
-      {p.blogs.map((d: DomainBlog) => (
-        <Fragment key={d.id}>
-          <Link to={`/article/${d.id}`}>
-            <Card>
-              <Thumbnail
-                style={{
-                  backgroundImage: `url('${d.thumbnail}')`,
-                }}
-              />
-              <CardTitle>{d.title}</CardTitle>
-            </Card>
-          </Link>
+      {p.categories.map((c: DomainTopPageCategory) => (
+        <div key={c.id}>
+          <div>{c.name}</div>
 
           <SpacerS />
-        </Fragment>
+
+          {c.blogs.map((b: DomainTopPageBlog) => (
+            <Fragment key={b.id}>
+              <Link to={`/article/${b.id}`}>
+                <Card>
+                  <Thumbnail
+                    style={{
+                      backgroundImage: `url('${b.thumbnail}')`,
+                    }}
+                  />
+                  <CardTitle>{b.title}</CardTitle>
+                </Card>
+              </Link>
+
+              <SpacerS />
+            </Fragment>
+          ))}
+        </div>
       ))}
     </Wrapper>
   );
