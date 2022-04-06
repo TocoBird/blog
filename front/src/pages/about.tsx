@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/pc/layouts/base';
+import Layout from '../components/pc/layouts/Base';
 
 const About: React.FC = (): JSX.Element => {
   return (
