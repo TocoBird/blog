@@ -7,6 +7,7 @@ import { DomainBlogDetail } from '../../../../modules/interfaces/domain/blog';
 import size from '../../../../modules/common/size';
 import colors from '../../../../modules/common/colors';
 import { SpacerS } from '../../atoms/Spacer';
+import { ButtonCategory } from '../../atoms/ButtonCategory';
 
 const Wrapper = styled.div`
   background: ${colors.card.main};
@@ -68,7 +69,7 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
             </Date>
             <Category>
               <Link to={`/category/${p.blog.categoryId}`}>
-                #{p.blog.categoryName}
+                <ButtonCategory>#{p.blog.categoryName}</ButtonCategory>
               </Link>
             </Category>
           </Items>

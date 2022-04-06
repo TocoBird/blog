@@ -4,7 +4,8 @@ import { styled } from 'linaria/react';
 import { DomainCategory } from '../../../../modules/interfaces/domain/blog';
 import size from '../../../../modules/common/size';
 import colors from '../../../../modules/common/colors';
-import { SpacerS } from '../../atoms/Spacer';
+import { SpacerS, SpacerM } from '../../atoms/Spacer';
+import { ButtonCategory } from '../../atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
@@ -29,13 +30,15 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
       <SpacerS />
 
       <div>
-        {p.categories.map(c => (
+        {p.categories.map((c, index: number) => (
           <Fragment key={c.id}>
-            <Link to={`/category/${c.id}`}>
-              <div>#{c.name}</div>
-            </Link>
+            {index !== 0 && <SpacerM />}
 
-            <SpacerS />
+            <div>
+              <Link to={`/category/${c.id}`}>
+                <ButtonCategory>#{c.name}</ButtonCategory>
+              </Link>
+            </div>
           </Fragment>
         ))}
       </div>
