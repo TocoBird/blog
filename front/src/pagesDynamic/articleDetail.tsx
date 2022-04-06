@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import Flame from '../components/common/flame';
-import TemplatePCArticleDetail from '../components/pc/templates/articleDetail';
-import TemplateSPArticleDetail from '../components/sp/templates/articleDetail';
+import TemplatePCArticleDetail from '../components/pc/templates/ArticleDetail';
+import TemplateSPArticleDetail from '../components/sp/templates/ArticleDetail';
 import { useResponsive } from '../modules/common/responsive';
 import { adapterDomainArticleDetail } from '../modules/adapter/articleDetail';
 import { MetaOption } from '../modules/interfaces/compornent/layout';

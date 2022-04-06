@@ -20,7 +20,7 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
 
     // ブログ一覧
     const blogs: DomainTopPageBlog[] = resblogs.map(b => ({
-      id: r?.id || 0,
+      id: b?.id || 0,
       title: b?.attributes?.mainTitle || '',
       thumbnail: b?.attributes?.thumbnail?.data?.attributes?.url || '',
     }));

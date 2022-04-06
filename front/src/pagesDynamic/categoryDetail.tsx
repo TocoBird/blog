@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import Flame from '../components/common/flame';
-import TemplatePCCategoryDetail from '../components/pc/templates/categoryDetail';
-import TemplateSPCategoryDetail from '../components/sp/templates/categoryDetail';
+import TemplatePCCategoryDetail from '../components/pc/templates/CategoryDetail';
+import TemplateSPCategoryDetail from '../components/sp/templates/CategoryDetail';
 import { useResponsive } from '../modules/common/responsive';
 import { adapterDomainCategoryDetail } from '../modules/adapter/categoryDetail';
 import { MetaOption } from '../modules/interfaces/compornent/layout';
