@@ -67,7 +67,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       {p.categories.map((c: DomainTopPageCategory, index: number) => (
         <Content key={`${index}_${c.id}`}>
-          <Title>{c.name}</Title>
+          <Title>#{c.name}</Title>
 
           <SpacerM />
 

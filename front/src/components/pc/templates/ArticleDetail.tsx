@@ -100,6 +100,14 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Item>
               <ArticleCategory categories={p.categories} />
             </Item>
+            <SpacerL />
+            <Item>
+              <Title>おすすめの記事</Title>
+
+              <SpacerS />
+
+              <Detail>記事一覧を載せる予定</Detail>
+            </Item>
           </Right>
         </Content>
       </ContentWrapper>

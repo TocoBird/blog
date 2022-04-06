@@ -33,10 +33,13 @@ const Categories = styled.div`
 const Card = styled.div`
   background: ${colors.card.main};
   display: flex;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 const Thumbnail = styled.div`
   background: whitesmoke;
-  width: 120px;
+  width: 140px;
   height: 100px;
   background-size: cover;
   background-position: 50% 50%;
@@ -44,7 +47,7 @@ const Thumbnail = styled.div`
 const CardTitle = styled.div`
   flex: 1;
   padding: ${size.ui.l4}px;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
   flex: 1;
   color: ${colors.text.mainBold};
