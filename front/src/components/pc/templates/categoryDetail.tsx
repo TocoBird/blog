@@ -5,18 +5,30 @@ import {
   DomainCategoryBlog,
   DomainCategory,
 } from '../../../modules/interfaces/domain/blog';
-import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
+import { SpacerS } from '../atoms/Spacer';
+import { ButtonCategory } from '../atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
+
+const Inner = styled.div`
+  margin: auto;
+  min-width: ${size.responsive.pcMin}px;
+  max-width: ${size.responsive.pcMax}px;
+  padding: 0 ${size.ui.l8}px;
+  box-sizing: border-box;
+`;
 const Title = styled.div`
-  font-weight: 500;
-  font-size: 18px;
   color: ${colors.text.mainBold};
+  font-weight: bold;
+  font-size: 20px;
 `;
 const Content = styled.div`
   background: ${colors.card.main};
+`;
+const Categories = styled.div`
+  display: flex;
 `;
 const Card = styled.div`
   background: ${colors.card.main};
@@ -24,7 +36,7 @@ const Card = styled.div`
 `;
 const Thumbnail = styled.div`
   background: whitesmoke;
-  width: 100px;
+  width: 120px;
   height: 100px;
   background-size: cover;
   background-position: 50% 50%;
@@ -53,49 +65,54 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <Content style={{ padding: size.ui.l3 }}>
-        <Title>カテゴリーから記事を探す</Title>
+        <Inner>
+          <Title>カテゴリーから記事を探す</Title>
 
-        <SpacerS />
+          <SpacerS />
 
-        <div>
-          {p.categories.map(c => (
-            <Fragment key={c.id}>
-              <Link to={`/category/${c.id}`}>
-                <div
-                  style={{
-                    color:
-                      c.id === p.selectedCategolyId ? 'red' : colors.text.link,
-                  }}
-                >
-                  #{c.name}
-                </div>
-              </Link>
+          <Categories>
+            {p.categories.map(c => (
+              <Fragment key={c.id}>
+                <Link to={`/category/${c.id}`}>
+                  <ButtonCategory
+                    style={{
+                      color:
+                        c.id === p.selectedCategolyId ? '#ffc770' : 'white',
+                      marginRight: 20,
+                    }}
+                  >
+                    #{c.name}
+                  </ButtonCategory>
+                </Link>
 
-              <SpacerS />
-            </Fragment>
-          ))}
-        </div>
+                <SpacerS />
+              </Fragment>
+            ))}
+          </Categories>
+        </Inner>
       </Content>
 
       <SpacerS />
 
       <div>
-        {p.blogs.map(b => (
-          <Fragment key={b.id}>
-            <Link to={`/article/${b.id}`}>
-              <Card>
-                <Thumbnail
-                  style={{
-                    backgroundImage: `url('${b.thumbnail}')`,
-                  }}
-                />
-                <CardTitle>{b.title}</CardTitle>
-              </Card>
-            </Link>
+        <Inner>
+          {p.blogs.map(b => (
+            <Fragment key={b.id}>
+              <Link to={`/article/${b.id}`}>
+                <Card>
+                  <Thumbnail
+                    style={{
+                      backgroundImage: `url('${b.thumbnail}')`,
+                    }}
+                  />
+                  <CardTitle>{b.title}</CardTitle>
+                </Card>
+              </Link>
 
-            <SpacerS />
-          </Fragment>
-        ))}
+              <SpacerS />
+            </Fragment>
+          ))}
+        </Inner>
       </div>
 
       <SpacerS />

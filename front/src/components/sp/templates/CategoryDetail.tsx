@@ -5,15 +5,17 @@ import {
   DomainCategoryBlog,
   DomainCategory,
 } from '../../../modules/interfaces/domain/blog';
-import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
+import { SpacerS, SpacerM } from '../atoms/Spacer';
+import { ButtonCategory } from '../atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
-  font-weight: 500;
-  font-size: 18px;
   color: ${colors.text.mainBold};
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
 `;
 const Content = styled.div`
   background: ${colors.card.main};
@@ -21,11 +23,12 @@ const Content = styled.div`
 const Card = styled.div`
   background: ${colors.card.main};
   display: flex;
+  flex-wrap: wrap;
 `;
 const Thumbnail = styled.div`
   background: whitesmoke;
   width: 100px;
-  height: 100px;
+  height: 80px;
   background-size: cover;
   background-position: 50% 50%;
 `;
@@ -34,7 +37,6 @@ const CardTitle = styled.div`
   padding: ${size.ui.l4}px;
   font-weight: 500;
   font-size: 15px;
-  flex: 1;
   color: ${colors.text.mainBold};
 `;
 
@@ -55,20 +57,19 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Content style={{ padding: size.ui.l3 }}>
         <Title>カテゴリーから記事を探す</Title>
 
-        <SpacerS />
+        <SpacerM />
 
         <div>
           {p.categories.map(c => (
             <Fragment key={c.id}>
               <Link to={`/category/${c.id}`}>
-                <div
+                <ButtonCategory
                   style={{
-                    color:
-                      c.id === p.selectedCategolyId ? 'red' : colors.text.link,
+                    color: c.id === p.selectedCategolyId ? '#ffc770' : 'white',
                   }}
                 >
                   #{c.name}
-                </div>
+                </ButtonCategory>
               </Link>
 
               <SpacerS />

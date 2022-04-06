@@ -17,7 +17,7 @@ export const query = graphql`
         data {
           attributes {
             name
-            toco_blogs(pagination: { limit: 2 }) {
+            toco_blogs(pagination: { limit: 5 }) {
               data {
                 attributes {
                   mainTitle

@@ -8,9 +8,10 @@ import {
   DomainBlogDetail,
   DomainCategory,
 } from '../../../modules/interfaces/domain/blog';
-import { SpacerS } from '../atoms/Spacer';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
+import { SpacerS, SpacerM } from '../atoms/Spacer';
+import { ButtonCategory } from '../atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
 const Thumbnail = styled.div`
@@ -86,7 +87,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
           </Date>
           <Category>
             <Link to={`/category/${p.blog.categoryId}`}>
-              #{p.blog.categoryName}
+              <ButtonCategory>#{p.blog.categoryName}</ButtonCategory>
             </Link>
           </Category>
         </TopContentItems>
@@ -109,13 +110,13 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Content style={{ padding: size.ui.l3 }}>
         <Title>カテゴリーで記事を探す</Title>
 
-        <SpacerS />
+        <SpacerM />
 
         <div>
           {p.categories.map(c => (
             <Fragment key={c.id}>
               <Link to={`/category/${c.id}`}>
-                <div>#{c.name}</div>
+                <ButtonCategory>#{c.name}</ButtonCategory>
               </Link>
 
               <SpacerS />
