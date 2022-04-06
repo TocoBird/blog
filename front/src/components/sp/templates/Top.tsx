@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import { StaticImage } from 'gatsby-plugin-image';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
@@ -9,27 +8,9 @@ import {
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 import { SpacerS, SpacerL } from '../atoms/Spacer';
+import TopHeader from '../organisms/top/TopHeader';
 
 const Wrapper = styled.div``;
-const Top = styled.div`
-  background: whitesmoke;
-  background-image: url('../../../images/TocoBridBlogTopHeader.jpg');
-  height: 400px;
-  background-size: cover;
-  background-position: 50% 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const Title = styled.div``;
-const TopItem = styled.div`
-  text-align: center;
-`;
-const TitleSub = styled.div`
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-`;
 const BlogsTitle = styled.div`
   color: ${colors.text.mainBold};
   font-weight: bold;
@@ -47,8 +28,8 @@ const Card = styled.div`
 `;
 const Thumbnail = styled.div`
   background: whitesmoke;
-  width: 100px;
-  height: 80px;
+  width: 110px;
+  height: 70px;
   background-size: cover;
   background-position: 50% 50%;
 `;
@@ -79,19 +60,7 @@ interface Props {
 const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Top>
-        <TopItem>
-          <Title>
-            <StaticImage
-              src="../../../images/TocoBlogLogo.png"
-              alt="TocoBlog"
-              height={50}
-            />
-          </Title>
-          <SpacerS />
-          <TitleSub>プロダクト開発の情報を発信</TitleSub>
-        </TopItem>
-      </Top>
+      <TopHeader />
 
       <SpacerL />
 

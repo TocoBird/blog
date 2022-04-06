@@ -28,9 +28,11 @@ const Title = styled.div`
 `;
 const TopContent = styled.div`
   background: ${colors.card.main};
+  padding: ${size.ui.l3}px;
 `;
 const Content = styled.div`
   background: ${colors.card.main};
+  padding: ${size.ui.l3}px;
 `;
 const TopContentItems = styled.div`
   display: flex;
@@ -76,7 +78,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         }}
       />
 
-      <TopContent style={{ padding: size.ui.l3 }}>
+      <TopContent>
         <Title>{p.blog.title}</Title>
 
         <SpacerS />
@@ -96,7 +98,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <SpacerS />
 
-      <Content style={{ padding: size.ui.l3 }}>
+      <Content>
         <div className="blogMarkdown">
           <ReactMarkdown>{p.blog.text}</ReactMarkdown>
         </div>
@@ -128,7 +130,17 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <SpacerS />
 
-      <Content style={{ padding: size.ui.l3 }}>
+      <Content>
+        <Title>おすすめの記事</Title>
+
+        <SpacerS />
+
+        <Detail>記事一覧を載せる予定</Detail>
+      </Content>
+
+      <SpacerS />
+
+      <Content>
         <Title>ブログのコンセプト</Title>
 
         <SpacerS />
