@@ -31,6 +31,7 @@ const WrapperInner = styled.div`
   box-sizing: border-box;
 `;
 const Left = styled.div`
+  height: 100%;
   a {
     color: white;
   }

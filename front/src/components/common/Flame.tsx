@@ -18,11 +18,8 @@ const Flame: React.FC<Props> = (p: Props): JSX.Element => {
     <>
       <HTMLHead option={p.option} />
 
-      {p.isPC ? (
-        <LayoutPC>{p.children}</LayoutPC>
-      ) : (
-        <LayoutSP>{p.children}</LayoutSP>
-      )}
+      <div>{p.isPC && <LayoutPC>{p.children}</LayoutPC>}</div>
+      <div>{!p.isPC && <LayoutSP>{p.children}</LayoutSP>}</div>
     </>
   );
 };

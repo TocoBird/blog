@@ -53,11 +53,8 @@ const Index: React.FC<PageProps> = (page): JSX.Element => {
 
   return (
     <Flame isPC={isPC} option={option}>
-      {isPC ? (
-        <TemplatePCTop categories={categories} />
-      ) : (
-        <TemplateSPTop categories={categories} />
-      )}
+      <div>{isPC && <TemplatePCTop categories={categories} />}</div>
+      <div>{!isPC && <TemplateSPTop categories={categories} />}</div>
     </Flame>
   );
 };

@@ -38,8 +38,20 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-typescript`,
-    `gatsby-plugin-linaria`,
+    {
+      resolve: 'gatsby-plugin-typescript',
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-linaria',
+      loaderOptions: {
+        cacheDirectory: './.cache/caches/gatsby-plugin-linaria',
+      },
+    },
     // {
     //   // PWA アイコン
     //   resolve: `gatsby-plugin-manifest`,
