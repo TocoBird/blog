@@ -36,14 +36,44 @@ export interface ResCategory {
 interface ResCategoryData {
   readonly data: ResCategory[];
 }
-interface ResStrapi {
+
+// お気に入りの記事
+interface ResFavoriteBlogAttributeBlogAttributeThumbnail {
+  readonly data: {
+    readonly attributes: { readonly url: string };
+  };
+}
+interface ResFavoriteBlogAttributeBlogAttribute {
+  readonly mainTitle: string;
+  readonly thumbnail: ResFavoriteBlogAttributeBlogAttributeThumbnail;
+}
+export interface ResFavoriteBlogAttributeBlog {
+  readonly id: number;
+  readonly attributes: ResFavoriteBlogAttributeBlogAttribute;
+}
+interface ResFavoriteBlogAttributeBlogData {
+  readonly data: ResFavoriteBlogAttributeBlog[];
+}
+interface ResFavoriteBlogAttribute {
+  readonly toco_blogs: ResFavoriteBlogAttributeBlogData;
+}
+interface ResFavoriteBlog {
+  readonly attributes: ResFavoriteBlogAttribute;
+}
+interface ResFavoriteBlogData {
+  readonly data: ResFavoriteBlog;
+}
+
+// 取得データ一覧
+interface ResStrAPI {
   readonly tocoBlog: ResTocoBlogData;
   readonly categories: ResCategoryData;
+  readonly favoriteBlog: ResFavoriteBlogData;
 }
 
 /**
  * GraphQLのレスポンス: Blog
  */
 export interface Res {
-  readonly strapi: ResStrapi;
+  readonly strapi: ResStrAPI;
 }

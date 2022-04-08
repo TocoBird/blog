@@ -72,7 +72,7 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
         {p.categories.map((c: DomainTopPageCategory) => (
           <Fragment key={c.id}>
             <Content>
-              <ContentTitle>{c.name}</ContentTitle>
+              <ContentTitle>#{c.name}</ContentTitle>
 
               <SpacerS />
 

@@ -4,12 +4,18 @@ import {
   Res,
   ResTocoBlog,
   ResCategory,
+  ResFavoriteBlogAttributeBlog,
 } from '../interfaces/response/articleDetail';
-import { DomainBlogDetail, DomainCategory } from '../interfaces/domain/blog';
+import {
+  DomainBlogDetail,
+  DomainCategory,
+  DomainFavoriteBlog,
+} from '../interfaces/domain/articleDetail';
 
 interface useReturn {
   readonly blog: DomainBlogDetail;
   readonly categories: DomainCategory[];
+  readonly favoriteBlogs: DomainFavoriteBlog[];
 }
 export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
   const res = page?.data as Res;
@@ -17,6 +23,9 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
     res?.strapi?.tocoBlog?.data || ({} as ResTocoBlog);
   const resCategory: ResCategory[] =
     res?.strapi?.categories?.data || ([] as ResCategory[]);
+  const resFavoriteBlogs: ResFavoriteBlogAttributeBlog[] =
+    res?.strapi?.favoriteBlog?.data?.attributes?.toco_blogs?.data ||
+    ([] as ResFavoriteBlogAttributeBlog[]);
 
   /**
    * ドメインに変換
@@ -36,5 +45,11 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
     name: r?.attributes?.name || '',
   }));
 
-  return { blog, categories };
+  const favoriteBlogs: DomainFavoriteBlog[] = resFavoriteBlogs.map(r => ({
+    id: r?.id || 0,
+    title: r?.attributes?.mainTitle || '',
+    thumbnail: r?.attributes?.thumbnail?.data?.attributes?.url || '',
+  }));
+
+  return { blog, categories, favoriteBlogs };
 };

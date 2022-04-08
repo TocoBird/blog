@@ -7,11 +7,13 @@ import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import {
   DomainBlogDetail,
   DomainCategory,
-} from '../../../modules/interfaces/domain/blog';
+  DomainFavoriteBlog,
+} from '../../../modules/interfaces/domain/articleDetail';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 import { SpacerS, SpacerM } from '../atoms/Spacer';
 import { ButtonCategory } from '../atoms/ButtonCategory';
+import ArticleFavoriteBlog from '../organisms/articleDetail/ArticleFavoriteBlog';
 
 const Wrapper = styled.div``;
 const Thumbnail = styled.div`
@@ -65,6 +67,8 @@ interface Props {
   readonly blog: DomainBlogDetail;
   /** カテゴリ一覧 */
   readonly categories: DomainCategory[];
+  /** お気に入り記事一覧 */
+  readonly favoriteBlogs: DomainFavoriteBlog[];
 }
 /**
  * テンプレート：記事詳細
@@ -131,11 +135,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <SpacerS />
 
       <Content>
-        <Title>おすすめの記事</Title>
-
-        <SpacerS />
-
-        <Detail>記事一覧を載せる予定</Detail>
+        <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
       </Content>
 
       <SpacerS />

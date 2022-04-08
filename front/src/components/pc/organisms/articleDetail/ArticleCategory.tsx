@@ -27,12 +27,12 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title>カテゴリーで記事を探す</Title>
 
-      <SpacerS />
+      <SpacerM />
 
       <div>
         {p.categories.map((c, index: number) => (
           <Fragment key={c.id}>
-            {index !== 0 && <SpacerM />}
+            {index !== 0 && <SpacerS />}
 
             <div>
               <Link to={`/category/${c.id}`}>

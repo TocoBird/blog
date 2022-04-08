@@ -3,11 +3,13 @@ import { styled } from 'linaria/react';
 import {
   DomainBlogDetail,
   DomainCategory,
-} from '../../../modules/interfaces/domain/blog';
-import { SpacerS, SpacerL } from '../atoms/Spacer';
+  DomainFavoriteBlog,
+} from '../../../modules/interfaces/domain/articleDetail';
+import { SpacerM, SpacerL } from '../atoms/Spacer';
 import ArticleTop from '../organisms/articleDetail/ArticleTop';
 import ArticleContent from '../organisms/articleDetail/ArticleContent';
 import ArticleCategory from '../organisms/articleDetail/ArticleCategory';
+import ArticleFavoriteBlog from '../organisms/articleDetail/ArticleFavoriteBlog';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 
@@ -58,6 +60,8 @@ interface Props {
   readonly blog: DomainBlogDetail;
   /** カテゴリ一覧 */
   readonly categories: DomainCategory[];
+  /** お気に入り記事一覧 */
+  readonly favoriteBlogs: DomainFavoriteBlog[];
 }
 /**
  * テンプレート：記事詳細
@@ -89,7 +93,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Item>
               <Title>ブログのコンセプト</Title>
 
-              <SpacerS />
+              <SpacerM />
 
               <Detail>
                 プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。
@@ -104,11 +108,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <SpacerL />
 
             <Item>
-              <Title>おすすめの記事</Title>
-
-              <SpacerS />
-
-              <Detail>記事一覧を載せる予定</Detail>
+              <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
             </Item>
           </Right>
         </Content>

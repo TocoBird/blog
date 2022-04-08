@@ -21,6 +21,27 @@ export const query = graphql`
           }
         }
       }
+      favoriteBlog {
+        data {
+          attributes {
+            toco_blogs {
+              data {
+                attributes {
+                  mainTitle
+                  thumbnail {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                }
+                id
+              }
+            }
+          }
+        }
+      }
       tocoBlog(id: $id) {
         data {
           id
@@ -55,7 +76,7 @@ export const query = graphql`
  */
 const ArticleDetail: React.FC<PageProps> = (page): JSX.Element => {
   const { isPC } = useResponsive();
-  const { blog, categories } = adapterDomainArticleDetail(page);
+  const { blog, categories, favoriteBlogs } = adapterDomainArticleDetail(page);
   const option: MetaOption = {
     title: `${blog.title} | TocoBlog`,
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
@@ -64,9 +85,17 @@ const ArticleDetail: React.FC<PageProps> = (page): JSX.Element => {
   return (
     <Flame isPC={isPC} option={option}>
       {isPC ? (
-        <TemplatePCArticleDetail blog={blog} categories={categories} />
+        <TemplatePCArticleDetail
+          blog={blog}
+          categories={categories}
+          favoriteBlogs={favoriteBlogs}
+        />
       ) : (
-        <TemplateSPArticleDetail blog={blog} categories={categories} />
+        <TemplateSPArticleDetail
+          blog={blog}
+          categories={categories}
+          favoriteBlogs={favoriteBlogs}
+        />
       )}
     </Flame>
   );

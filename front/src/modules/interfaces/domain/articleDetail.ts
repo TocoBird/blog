@@ -20,9 +20,9 @@ export interface DomainCategory {
 }
 
 /**
- * カテゴリごとのブログ
+ * カテゴリ
  */
-export interface DomainCategoryBlog {
+export interface DomainFavoriteBlog {
   readonly id: number;
   readonly title: string;
   readonly thumbnail: string;
