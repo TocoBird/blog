@@ -5,7 +5,7 @@ import { SpacerS } from '@/components/pc/atoms/Spacer';
 
 const Wrapper = styled.div`
   background: whitesmoke;
-  background-image: url('../../../../images/TocoBridBlogTopHeader.jpg');
+  background-image: url('@/images/TocoBridBlogTopHeader.jpg');
   height: 600px;
   background-size: cover;
   background-position: 50% 100%;
@@ -29,7 +29,7 @@ const TopHeader: React.FC = (): JSX.Element => {
     <Wrapper>
       <Inner>
         <StaticImage
-          src="../../../../images/TocoBlogLogo.png"
+          src="@/images/TocoBlogLogo.png"
           alt="TocoBlog"
           height={160}
         />
