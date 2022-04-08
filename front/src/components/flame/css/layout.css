@@ -31,19 +31,16 @@ h1,h2,h3,h4,h5,h6,p,a {
   padding: 0;
 }
 
-.blogMarkdown h1 {
+.blogMarkdownSP h1 {
   position: relative;
   font-size: 18px;
   font-weight: bold;
-  padding-bottom: 12px;
+  padding-bottom: 14px;
   color: #263658;
   border-bottom: solid 2px #e8efff;
   margin-bottom: 16px;
 }
-.blogMarkdown h2 {
-  margin-bottom: 12px;
-}
-.blogMarkdown h1:after {
+.blogMarkdownSP h1:after {
   position: absolute;
   content: " ";
   display: block;
@@ -51,14 +48,21 @@ h1,h2,h3,h4,h5,h6,p,a {
   bottom: -2px;
   width: 50%;
 }
-.blogMarkdown p {
+.blogMarkdownSP h2 {
+  color: #111a2f;
+  margin-bottom: 12px;
+  font-size: 18px;
+  border-bottom: 1px solid #e7eaf0;
+  padding-bottom: 12px;
+}
+.blogMarkdownSP p {
   white-space: pre-line;
-  line-height: 24px;
+  line-height: 26px;
   font-size: 15px;
-  padding-bottom: 16px;
+  padding-bottom: 24px;
   color: #3C475F;
 }
-.blogMarkdown img {
+.blogMarkdownSP img {
   width: 100%;
 }
 
@@ -71,9 +75,6 @@ h1,h2,h3,h4,h5,h6,p,a {
   border-bottom: solid 2px #e8efff;
   margin-bottom: 20px;
 }
-.blogMarkdownPC h2 {
-  margin-bottom: 12px;
-}
 .blogMarkdownPC h1:after {
   position: absolute;
   content: " ";
@@ -82,11 +83,17 @@ h1,h2,h3,h4,h5,h6,p,a {
   bottom: -2px;
   width: 50%;
 }
+.blogMarkdownPC h2 {
+  color: #111a2f;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e7eaf0;
+  padding-bottom: 12px;
+}
 .blogMarkdownPC p {
   font-size: 16px;
   white-space: pre-line;
-  line-height: 28px;
-  padding-bottom: 20px;
+  line-height: 32px;
+  padding-bottom: 32px;
   color: #3C475F;
 }
 .blogMarkdownPC img {

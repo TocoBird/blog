@@ -46,6 +46,9 @@ const Item = styled.div`
   box-shadow: 0 2px 12px #0f1c2c17;
   padding: ${size.ui.l6}px;
 `;
+const ItemArticle = styled(Item)`
+  padding: ${size.ui.l10}px;
+`;
 
 interface Props {
   /** ブログ一覧 */
@@ -76,15 +79,15 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
             <SpacerL />
 
-            <Item>
+            <ItemArticle>
               <ArticleContent text={p.blog.text} />
-            </Item>
+            </ItemArticle>
 
             <SpacerL />
 
-            <Item>
+            <ItemArticle>
               <ArticleConcept />
-            </Item>
+            </ItemArticle>
           </Left>
           <Right>
             <Item>

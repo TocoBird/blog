@@ -4,7 +4,7 @@ import { styled } from 'linaria/react';
 import { DomainCategory } from '@/modules/interfaces/domain/blog';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS, SpacerM } from '@/components/pc/atoms/Spacer';
+import { SpacerS, SpacerXM } from '@/components/pc/atoms/Spacer';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
@@ -27,7 +27,7 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title>カテゴリーで記事を探す</Title>
 
-      <SpacerM />
+      <SpacerXM />
 
       <div>
         {p.categories.map((c, index: number) => (

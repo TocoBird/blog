@@ -29,7 +29,7 @@ const Thumbnail = styled.div`
 const BlogTitle = styled.div`
   flex: 1;
   color: ${colors.text.mainBold};
-  font-weight: 500;
+  font-weight: bold;
   font-size: 14px;
   padding-left: ${size.ui.l3}px;
 `;

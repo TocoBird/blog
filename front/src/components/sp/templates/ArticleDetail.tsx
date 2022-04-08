@@ -7,7 +7,7 @@ import {
 } from '@/modules/interfaces/domain/articleDetail';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS } from '@/components/sp/atoms/Spacer';
+import { SpacerM } from '@/components/sp/atoms/Spacer';
 import ArticleFavoriteBlog from '@/components/sp/organisms/articleDetail/ArticleFavoriteBlog';
 import ArticleTop from '@/components/sp/organisms/articleDetail/ArticleTop';
 import ArticleContent from '@/components/sp/organisms/articleDetail/ArticleContent';
@@ -24,7 +24,8 @@ const Thumbnail = styled.div`
 `;
 const Content = styled.div`
   background: ${colors.card.main};
-  padding: ${size.ui.l3}px;
+  padding: ${size.ui.l5}px;
+  box-shadow: 0 2px 12px #0f1c2c17;
 `;
 
 interface Props {
@@ -47,33 +48,35 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         }}
       />
 
-      <ArticleTop blog={p.blog} />
+      <Content>
+        <ArticleTop blog={p.blog} />
+      </Content>
 
-      <SpacerS />
+      <SpacerM />
 
       <Content>
         <ArticleContent text={p.blog.text} />
       </Content>
 
-      <SpacerS />
+      <SpacerM />
 
       <Content>
         <ArticleCategory categories={p.categories} />
       </Content>
 
-      <SpacerS />
+      <SpacerM />
 
       <Content>
         <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
       </Content>
 
-      <SpacerS />
+      <SpacerM />
 
       <Content>
         <ArticleConcept />
       </Content>
 
-      <SpacerS />
+      <SpacerM />
     </Wrapper>
   );
 };

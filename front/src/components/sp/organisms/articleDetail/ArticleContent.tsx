@@ -21,7 +21,7 @@ interface Props {
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <div className="blogMarkdown">
+      <div className="blogMarkdownSP">
         <ReactMarkdown>{p.text}</ReactMarkdown>
       </div>
 

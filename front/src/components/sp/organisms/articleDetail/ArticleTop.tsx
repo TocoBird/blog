@@ -4,15 +4,11 @@ import { Link } from 'gatsby';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DomainBlogDetail } from '@/modules/interfaces/domain/blog';
-import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
 import { SpacerS } from '@/components/sp/atoms/Spacer';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 
-const Wrapper = styled.div`
-  background: ${colors.card.main};
-  padding: ${size.ui.l5}px;
-`;
+const Wrapper = styled.div``;
 const Title = styled.div`
   font-weight: bold;
   font-size: 18px;
