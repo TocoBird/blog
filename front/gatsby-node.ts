@@ -11,12 +11,12 @@ export const createPages: GatsbyNode['createPages'] = async ({
   const result = await graphql(`
     query {
       strapi {
-        categories {
+        categories(pagination: { limit: 10 }) {
           data {
             id
           }
         }
-        tocoBlogs {
+        tocoBlogs(pagination: { limit: 100 }) {
           data {
             id
           }
