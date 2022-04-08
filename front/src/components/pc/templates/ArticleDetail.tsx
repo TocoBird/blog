@@ -5,11 +5,12 @@ import {
   DomainCategory,
   DomainFavoriteBlog,
 } from '../../../modules/interfaces/domain/articleDetail';
-import { SpacerM, SpacerL } from '../atoms/Spacer';
+import { SpacerL } from '../atoms/Spacer';
 import ArticleTop from '../organisms/articleDetail/ArticleTop';
 import ArticleContent from '../organisms/articleDetail/ArticleContent';
 import ArticleCategory from '../organisms/articleDetail/ArticleCategory';
 import ArticleFavoriteBlog from '../organisms/articleDetail/ArticleFavoriteBlog';
+import ArticleConcept from '../organisms/articleDetail/ArticleConcept';
 import size from '../../../modules/common/size';
 import colors from '../../../modules/common/colors';
 
@@ -39,20 +40,11 @@ const Thumbnail = styled.div`
   box-shadow: 0 2px 12px #0f1c2c17;
   border-radius: 2px;
 `;
-const Title = styled.div`
-  font-weight: bold;
-  font-size: ${size.font.l4}px;
-  color: ${colors.text.mainBold};
-`;
 const Item = styled.div`
   border-radius: 4px;
   background: ${colors.card.main};
   box-shadow: 0 2px 12px #0f1c2c17;
   padding: ${size.ui.l6}px;
-`;
-const Detail = styled.div`
-  color: ${colors.text.main};
-  font-size: 16px;
 `;
 
 interface Props {
@@ -91,13 +83,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <SpacerL />
 
             <Item>
-              <Title>ブログのコンセプト</Title>
-
-              <SpacerM />
-
-              <Detail>
-                プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。
-              </Detail>
+              <ArticleConcept />
             </Item>
           </Left>
           <Right>

@@ -50,6 +50,7 @@ interface Props {
 }
 /**
  * テンプレート：カテゴリ一覧
+ * デザイン途中なのでリファクタは後
  */
 const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (

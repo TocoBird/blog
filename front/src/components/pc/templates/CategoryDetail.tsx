@@ -11,7 +11,6 @@ import { SpacerS } from '../atoms/Spacer';
 import { ButtonCategory } from '../atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
-
 const Inner = styled.div`
   margin: auto;
   min-width: ${size.responsive.pcMin}px;
@@ -63,6 +62,7 @@ interface Props {
 }
 /**
  * テンプレート：カテゴリ一覧
+ * デザイン途中なのでリファクタは後
  */
 const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
