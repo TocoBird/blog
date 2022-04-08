@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Flame from '@/components/common/Flame';
+import Flame from '@/components/flame';
 import TemplatePCArticleDetail from '@/components/pc/templates/ArticleDetail';
 import TemplateSPArticleDetail from '@/components/sp/templates/ArticleDetail';
 import { useResponsive } from '@/modules/common/responsive';

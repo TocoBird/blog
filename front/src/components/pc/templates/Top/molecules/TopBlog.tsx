@@ -29,7 +29,7 @@ const Title = styled.div`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** ブログ詳細 */
   readonly blog: DomainTopPageBlog;
 }
 /**
@@ -45,6 +45,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
               backgroundImage: `url('${p.blog.thumbnail}')`,
             }}
           />
+
           <Title>{p.blog.title}</Title>
         </Card>
       </Link>

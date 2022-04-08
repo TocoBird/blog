@@ -1,5 +1,5 @@
 import React from 'react';
-import HTMLHead from '@/components/common/Head';
+import HTMLHead from '@/components/flame/Head';
 import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
