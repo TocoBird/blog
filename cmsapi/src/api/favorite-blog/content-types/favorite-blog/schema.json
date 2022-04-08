@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "favorite_blogs",
+  "info": {
+    "singularName": "favorite-blog",
+    "pluralName": "favorite-blogs",
+    "displayName": "FavoriteBlog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "toco_blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::toco-blog.toco-blog"
+    }
+  }
+}
