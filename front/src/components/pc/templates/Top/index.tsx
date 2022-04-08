@@ -2,8 +2,8 @@ import React from 'react';
 import { styled } from 'linaria/react';
 import { DomainTopPageCategory } from '@/modules/interfaces/domain/category';
 import colors from '@/modules/common/colors';
-import TopHeader from '@/components/pc/organisms/top/TopHeader';
-import TopBlogs from '@/components/pc/organisms/top/TopBlogs';
+import TopHeader from '@/components/pc/templates/Top/organisms/TopHeader';
+import TopBlogs from '@/components/pc/templates/Top/organisms/TopBlogs';
 import { SpacerL } from '@/components/pc/atoms/Spacer';
 
 const Wrapper = styled.div``;

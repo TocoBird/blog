@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { styled } from 'linaria/react';
-import { Link } from 'gatsby';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
 } from '@/modules/interfaces/domain/category';
-import { SpacerS, SpacerM } from '@/components/pc/atoms/Spacer';
+import { SpacerM, SpacerS } from '@/components/pc/atoms/Spacer';
+import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,27 +33,6 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 24px;
 `;
-const Card = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  width: 120px;
-  height: 80px;
-  background-size: cover;
-  background-position: 50% 50%;
-`;
-const BlogTitle = styled.div`
-  flex: 1;
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 16px;
-  padding-left: ${size.ui.l3}px;
-`;
 
 interface Props {
   /** ブログ一覧 */
@@ -73,16 +52,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
 
           {c.blogs.map((b: DomainTopPageBlog, index: number) => (
             <Fragment key={`${index}_${b.id}`}>
-              <Link to={`/article/${b.id}`}>
-                <Card>
-                  <Thumbnail
-                    style={{
-                      backgroundImage: `url('${b.thumbnail}')`,
-                    }}
-                  />
-                  <BlogTitle>{b.title}</BlogTitle>
-                </Card>
-              </Link>
+              <TopBlog blog={b} />
 
               <SpacerS />
             </Fragment>
