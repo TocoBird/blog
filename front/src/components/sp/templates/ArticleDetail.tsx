@@ -30,7 +30,7 @@ const Title = styled.div`
 `;
 const TopContent = styled.div`
   background: ${colors.card.main};
-  padding: ${size.ui.l3}px;
+  padding: ${size.ui.l5}px;
 `;
 const Content = styled.div`
   background: ${colors.card.main};

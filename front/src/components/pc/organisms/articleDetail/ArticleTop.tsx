@@ -20,7 +20,7 @@ const Content = styled.div`
   box-sizing: border-box;
 `;
 const Inner = styled.div`
-  padding: ${size.ui.l8}px 0;
+  padding: ${size.ui.l10}px 0;
 `;
 const Title = styled.div`
   font-weight: bold;
