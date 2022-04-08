@@ -23,6 +23,7 @@ export const query = graphql`
       }
       tocoBlogs(
         pagination: { limit: 20 }
+        sort: "id:desc"
         filters: { category: { id: { eq: $id } } }
       ) {
         data {

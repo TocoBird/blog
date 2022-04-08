@@ -31,6 +31,7 @@ const Categories = styled.div`
 `;
 const Card = styled.div`
   background: ${colors.card.main};
+  box-shadow: 0 2px 12px #0f1c2c17;
   display: flex;
   &:hover {
     opacity: 0.8;

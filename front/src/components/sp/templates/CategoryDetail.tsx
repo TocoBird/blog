@@ -22,12 +22,13 @@ const Content = styled.div`
 `;
 const Card = styled.div`
   background: ${colors.card.main};
+  box-shadow: 0 2px 12px #0f1c2c17;
   display: flex;
   flex-wrap: wrap;
 `;
 const Thumbnail = styled.div`
   background: whitesmoke;
-  width: 100px;
+  width: 120px;
   height: 80px;
   background-size: cover;
   background-position: 50% 50%;
