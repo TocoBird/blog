@@ -15,6 +15,7 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
   const lang = 'ja';
   const description = p.option.description;
   const keywords = 'tocoblog,blog';
+  const thumbnail = p.option.thumbnail || '';
 
   return (
     <Helmet
@@ -48,6 +49,10 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
         {
           property: 'og:type',
           content: `website`,
+        },
+        {
+          property: 'og:image',
+          content: thumbnail,
         },
         {
           name: 'twitter:card',

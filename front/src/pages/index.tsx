@@ -49,6 +49,7 @@ const Index: React.FC<PageProps> = (page): JSX.Element => {
   const option: MetaOption = {
     title: 'TocoBlog',
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
+    thumbnail: '',
   };
 
   return (
