@@ -74,7 +74,7 @@ export const query = graphql`
 /**
  * ページ: 記事詳細
  */
-const ArticleDetail: React.FC<PageProps> = (page): JSX.Element => {
+const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
   const { blog, categories, favoriteBlogs } = adapterDomainArticleDetail(page);
   const option: MetaOption = {

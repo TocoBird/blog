@@ -47,7 +47,7 @@ export const query = graphql`
 /**
  * ページ: カテゴリー詳細
  */
-const CategoryDetail: React.FC<PageProps> = (page): JSX.Element => {
+const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
   const { blogs, categories, categolyId } = adapterDomainCategoryDetail(page);
   const selectedCategoryName =

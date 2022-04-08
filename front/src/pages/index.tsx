@@ -43,7 +43,7 @@ export const query = graphql`
 /**
  * ページ: トップ
  */
-const Index: React.FC<PageProps> = (page): JSX.Element => {
+const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
   const { categories } = adapterDomainIndex(page);
   const option: MetaOption = {
