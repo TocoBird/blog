@@ -24,7 +24,7 @@ export const query = graphql`
       favoriteBlog {
         data {
           attributes {
-            toco_blogs {
+            toco_blogs(sort: "id:desc") {
               data {
                 attributes {
                   mainTitle

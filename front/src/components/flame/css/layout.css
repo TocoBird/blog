@@ -40,6 +40,9 @@ h1,h2,h3,h4,h5,h6,p,a {
   border-bottom: solid 2px #e8efff;
   margin-bottom: 16px;
 }
+.blogMarkdown h2 {
+  margin-bottom: 12px;
+}
 .blogMarkdown h1:after {
   position: absolute;
   content: " ";
@@ -67,6 +70,9 @@ h1,h2,h3,h4,h5,h6,p,a {
   color: #263658;
   border-bottom: solid 2px #e8efff;
   margin-bottom: 20px;
+}
+.blogMarkdownPC h2 {
+  margin-bottom: 12px;
 }
 .blogMarkdownPC h1:after {
   position: absolute;
