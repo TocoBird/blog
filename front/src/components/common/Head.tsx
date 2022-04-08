@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import './css/layout.css';
-import { MetaOption } from '../../modules/interfaces/compornent/layout';
+import '@/components/common/css/layout.css';
+import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 interface Props {
   readonly option: MetaOption;

@@ -11,6 +11,7 @@
     "dayjs": "^1.11.0",
     "dotenv": "^8.6.0",
     "gatsby": "^4.11.1",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-gatsby-cloud": "^4.11.1",
     "gatsby-plugin-image": "^2.11.1",
     "gatsby-plugin-linaria": "^3.2.0",

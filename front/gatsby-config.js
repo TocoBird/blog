@@ -14,6 +14,15 @@ module.exports = {
     lang: 'ja',
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@': 'src',
+        },
+        extensions: [],
+      },
+    },
     `gatsby-plugin-react-helmet`, // メタタグ
     `gatsby-plugin-image`, // 画像
     {

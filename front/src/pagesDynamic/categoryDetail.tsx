@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Flame from '../components/common/Flame';
-import TemplatePCCategoryDetail from '../components/pc/templates/CategoryDetail';
-import TemplateSPCategoryDetail from '../components/sp/templates/CategoryDetail';
-import { useResponsive } from '../modules/common/responsive';
-import { adapterDomainCategoryDetail } from '../modules/adapter/categoryDetail';
-import { MetaOption } from '../modules/interfaces/compornent/layout';
+import Flame from '@/components/common/Flame';
+import TemplatePCCategoryDetail from '@/components/pc/templates/CategoryDetail';
+import TemplateSPCategoryDetail from '@/components/sp/templates/CategoryDetail';
+import { useResponsive } from '@/modules/common/responsive';
+import { adapterDomainCategoryDetail } from '@/modules/adapter/categoryDetail';
+import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
  * 記事詳細の取得取得

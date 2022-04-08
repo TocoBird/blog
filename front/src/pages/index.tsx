@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import TemplatePCTop from '../components/pc/templates/Top';
-import TemplateSPTop from '../components/sp/templates/Top';
-import Flame from '../components/common/Flame';
-import { useResponsive } from '../modules/common/responsive';
-import { adapterDomainIndex } from '../modules/adapter/index';
-import { MetaOption } from '../modules/interfaces/compornent/layout';
+import TemplatePCTop from '@/components/pc/templates/Top';
+import TemplateSPTop from '@/components/sp/templates/Top';
+import Flame from '@/components/common/Flame';
+import { useResponsive } from '@/modules/common/responsive';
+import { adapterDomainIndex } from '@/modules/adapter/index';
+import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
  * 記事一覧の取得
