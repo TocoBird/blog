@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import ReactMarkdown from 'react-markdown';
-import { SpacerS } from '../../atoms/Spacer';
-import colors from '../../../../modules/common/colors';
+import { SpacerS } from '@/components/sp/atoms/Spacer';
+import colors from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
 const Author = styled.div`

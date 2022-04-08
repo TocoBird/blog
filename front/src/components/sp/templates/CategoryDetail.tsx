@@ -4,11 +4,11 @@ import { Link } from 'gatsby';
 import {
   DomainCategoryBlog,
   DomainCategory,
-} from '../../../modules/interfaces/domain/blog';
-import size from '../../../modules/common/size';
-import colors from '../../../modules/common/colors';
-import { SpacerS, SpacerM } from '../atoms/Spacer';
-import { ButtonCategory } from '../atoms/ButtonCategory';
+} from '@/modules/interfaces/domain/blog';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
+import { SpacerS, SpacerM } from '@/components/sp/atoms/Spacer';
+import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
 const Title = styled.div`

@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import { DomainCategory } from '../../../../modules/interfaces/domain/blog';
-import size from '../../../../modules/common/size';
-import colors from '../../../../modules/common/colors';
-import { SpacerS, SpacerM } from '../../atoms/Spacer';
-import { ButtonCategory } from '../../atoms/ButtonCategory';
+import { DomainCategory } from '@/modules/interfaces/domain/blog';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
+import { SpacerS, SpacerM } from '@/components/pc/atoms/Spacer';
+import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
 const Title = styled.div`

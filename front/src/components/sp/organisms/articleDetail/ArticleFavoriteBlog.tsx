@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import { DomainFavoriteBlog } from '../../../../modules/interfaces/domain/articleDetail';
-import size from '../../../../modules/common/size';
-import colors from '../../../../modules/common/colors';
-import { SpacerS, SpacerM } from '../../atoms/Spacer';
+import { DomainFavoriteBlog } from '@/modules/interfaces/domain/articleDetail';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
+import { SpacerS, SpacerM } from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const Title = styled.div`

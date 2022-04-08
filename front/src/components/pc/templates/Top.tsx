@@ -1,10 +1,10 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import { DomainTopPageCategory } from '../../../modules/interfaces/domain/category';
-import colors from '../../../modules/common/colors';
-import TopHeader from '../organisms/top/TopHeader';
-import TopBlogs from '../organisms/top/TopBlogs';
-import { SpacerL } from '../atoms/Spacer';
+import { DomainTopPageCategory } from '@/modules/interfaces/domain/category';
+import colors from '@/modules/common/colors';
+import TopHeader from '@/components/pc/organisms/top/TopHeader';
+import TopBlogs from '@/components/pc/organisms/top/TopBlogs';
+import { SpacerL } from '@/components/pc/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const BlogsTitle = styled.div`

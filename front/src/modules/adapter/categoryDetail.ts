@@ -3,8 +3,11 @@ import {
   Res,
   ResTocoBlog,
   ResCategory,
-} from '../interfaces/response/categoryDetail';
-import { DomainCategoryBlog, DomainCategory } from '../interfaces/domain/blog';
+} from '@/modules/interfaces/response/categoryDetail';
+import {
+  DomainCategoryBlog,
+  DomainCategory,
+} from '@/modules/interfaces/domain/blog';
 
 interface PageContext {
   readonly id: number;

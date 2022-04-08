@@ -3,11 +3,11 @@ import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DomainBlogDetail } from '../../../../modules/interfaces/domain/blog';
-import size from '../../../../modules/common/size';
-import colors from '../../../../modules/common/colors';
-import { SpacerS } from '../../atoms/Spacer';
-import { ButtonCategory } from '../../atoms/ButtonCategory';
+import { DomainBlogDetail } from '@/modules/interfaces/domain/blog';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
+import { SpacerS } from '@/components/pc/atoms/Spacer';
+import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 
 const Wrapper = styled.div`
   background: ${colors.card.main};

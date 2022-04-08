@@ -1,5 +1,5 @@
 import { styled } from 'linaria/react';
-import size from '../../../modules/common/size';
+import size from '@/modules/common/size';
 
 /** height 最小 */
 export const SpacerXS = styled.div`

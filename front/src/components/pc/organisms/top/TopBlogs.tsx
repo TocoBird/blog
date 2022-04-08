@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
-import size from '../../../../modules/common/size';
-import colors from '../../../../modules/common/colors';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
-} from '../../../../modules/interfaces/domain/category';
-import { SpacerS, SpacerM } from '../../atoms/Spacer';
+} from '@/modules/interfaces/domain/category';
+import { SpacerS, SpacerM } from '@/components/pc/atoms/Spacer';
 
 const Wrapper = styled.div`
   display: flex;

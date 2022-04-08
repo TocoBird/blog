@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import { SpacerM } from '../../atoms/Spacer';
-import colors from '../../../../modules/common/colors';
-import size from '../../../../modules/common/size';
+import { SpacerM } from '@/components/pc/atoms/Spacer';
+import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Title = styled.div`

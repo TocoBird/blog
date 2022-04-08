@@ -5,12 +5,12 @@ import {
   ResTocoBlog,
   ResCategory,
   ResFavoriteBlogAttributeBlog,
-} from '../interfaces/response/articleDetail';
+} from '@/modules/interfaces/response/articleDetail';
 import {
   DomainBlogDetail,
   DomainCategory,
   DomainFavoriteBlog,
-} from '../interfaces/domain/articleDetail';
+} from '@/modules/interfaces/domain/articleDetail';
 
 interface useReturn {
   readonly blog: DomainBlogDetail;

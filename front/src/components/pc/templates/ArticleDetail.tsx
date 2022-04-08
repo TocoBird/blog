@@ -4,15 +4,15 @@ import {
   DomainBlogDetail,
   DomainCategory,
   DomainFavoriteBlog,
-} from '../../../modules/interfaces/domain/articleDetail';
-import { SpacerL } from '../atoms/Spacer';
-import ArticleTop from '../organisms/articleDetail/ArticleTop';
-import ArticleContent from '../organisms/articleDetail/ArticleContent';
-import ArticleCategory from '../organisms/articleDetail/ArticleCategory';
-import ArticleFavoriteBlog from '../organisms/articleDetail/ArticleFavoriteBlog';
-import ArticleConcept from '../organisms/articleDetail/ArticleConcept';
-import size from '../../../modules/common/size';
-import colors from '../../../modules/common/colors';
+} from '@/modules/interfaces/domain/articleDetail';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
+import { SpacerL } from '@/components/pc/atoms/Spacer';
+import ArticleTop from '@/components/pc/organisms/articleDetail/ArticleTop';
+import ArticleContent from '@/components/pc/organisms/articleDetail/ArticleContent';
+import ArticleCategory from '@/components/pc/organisms/articleDetail/ArticleCategory';
+import ArticleFavoriteBlog from '@/components/pc/organisms/articleDetail/ArticleFavoriteBlog';
+import ArticleConcept from '@/components/pc/organisms/articleDetail/ArticleConcept';
 
 const Wrapper = styled.div``;
 const ContentWrapper = styled.div`

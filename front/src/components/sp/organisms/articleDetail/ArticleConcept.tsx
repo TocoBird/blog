@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import colors from '../../../../modules/common/colors';
-import { SpacerS } from '../../atoms/Spacer';
+import colors from '@/modules/common/colors';
+import { SpacerS } from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const Detail = styled.div`

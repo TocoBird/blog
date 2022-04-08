@@ -4,11 +4,11 @@ import { styled } from 'linaria/react';
 import {
   DomainCategoryBlog,
   DomainCategory,
-} from '../../../modules/interfaces/domain/blog';
-import size from '../../../modules/common/size';
-import colors from '../../../modules/common/colors';
-import { SpacerS } from '../atoms/Spacer';
-import { ButtonCategory } from '../atoms/ButtonCategory';
+} from '@/modules/interfaces/domain/blog';
+import size from '@/modules/common/size';
+import colors from '@/modules/common/colors';
+import { SpacerS } from '@/components/pc/atoms/Spacer';
+import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
 const Inner = styled.div`

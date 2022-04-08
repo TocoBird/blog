@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { SpacerS } from '../../atoms/Spacer';
+import { SpacerS } from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div`
   background: whitesmoke;
