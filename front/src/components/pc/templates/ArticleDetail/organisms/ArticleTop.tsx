@@ -5,9 +5,9 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
+import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import { DomainBlogDetail } from '@/modules/domain/blog';
 
 const Wrapper = styled.div`
   background: ${colors.card.main};
@@ -47,7 +47,7 @@ const Icon = styled(FontAwesomeIcon)`
 
 interface Props {
   /** ブログ一覧 */
-  readonly blog: DomainBlogDetail;
+  readonly blog: DomainArticleDetailBlog;
 }
 
 /**

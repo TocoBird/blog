@@ -3,9 +3,10 @@ import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
+import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
+import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import { DomainCategoryBlog, DomainCategory } from '@/modules/domain/blog';
 
 const Wrapper = styled.div``;
 const Inner = styled.div`
@@ -52,9 +53,9 @@ const CardTitle = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly blogs: DomainCategoryBlog[];
+  readonly blogs: DomainCategoryDetailBlog[];
   /** カテゴリ一覧 */
-  readonly categories: DomainCategory[];
+  readonly categories: DomainCategoryDetailCategory[];
   /** 選択しているカテゴリID */
   readonly selectedCategolyId: number;
 }

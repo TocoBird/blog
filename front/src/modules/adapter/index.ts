@@ -1,8 +1,5 @@
 import { PageProps } from 'gatsby';
-import {
-  DomainTopPageBlog,
-  DomainTopPageCategory,
-} from '@/modules/domain/category';
+import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import {
   Res,
   ResTocoBlog,
@@ -10,7 +7,7 @@ import {
 } from '@/modules/interfaces/response/index';
 
 interface useReturn {
-  readonly categories: DomainTopPageCategory[];
+  readonly categories: DomainTopCategory[];
 }
 /**
  * トップページ
@@ -24,12 +21,12 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
   /**
    * ドメインに変換
    */
-  const categories: DomainTopPageCategory[] = resCategories.map(r => {
+  const categories: DomainTopCategory[] = resCategories.map(r => {
     const resblogs: ResTocoBlog[] =
       r?.attributes?.toco_blogs?.data || ([] as ResTocoBlog[]);
 
     // ブログ一覧
-    const blogs: DomainTopPageBlog[] = resblogs.map(b => ({
+    const blogs: DomainTopCategoryBlog[] = resblogs.map(b => ({
       id: Number(b?.id) || 0,
       title: String(b?.attributes?.mainTitle) || '',
       thumbnail: String(b?.attributes?.thumbnail?.data?.attributes?.url) || '',

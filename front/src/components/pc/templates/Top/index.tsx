@@ -3,9 +3,9 @@ import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import TopBlogs from '@/components/pc/templates/Top/organisms/TopBlogs';
 import TopHeader from '@/components/pc/templates/Top/organisms/TopHeader';
+import { DomainTopCategory } from '@/domain/top/blog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import { DomainTopPageCategory } from '@/modules/domain/category';
 
 const Wrapper = styled.div``;
 const BlogsTitle = styled.div`
@@ -17,7 +17,7 @@ const BlogsTitle = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly categories: DomainTopPageCategory[];
+  readonly categories: DomainTopCategory[];
 }
 
 /**

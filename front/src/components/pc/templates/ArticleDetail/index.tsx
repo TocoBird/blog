@@ -6,13 +6,11 @@ import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/Ar
 import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
 import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
+import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
+import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
+import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import {
-  DomainBlogDetail,
-  DomainCategory,
-  DomainFavoriteBlog,
-} from '@/modules/domain/articleDetail';
 
 const Wrapper = styled.div``;
 const ContentWrapper = styled.div`
@@ -52,11 +50,11 @@ const ItemArticle = styled(Item)`
 
 interface Props {
   /** ブログ一覧 */
-  readonly blog: DomainBlogDetail;
+  readonly blog: DomainArticleDetailBlog;
   /** カテゴリ一覧 */
-  readonly categories: DomainCategory[];
+  readonly categories: DomainArticleDetailCategory[];
   /** お気に入り記事一覧 */
-  readonly favoriteBlogs: DomainFavoriteBlog[];
+  readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
 }
 /**
  * テンプレート：記事詳細

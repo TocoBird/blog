@@ -1,5 +1,6 @@
 import { PageProps } from 'gatsby';
-import { DomainCategoryBlog, DomainCategory } from '@/modules/domain/blog';
+import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
+import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import {
   Res,
   ResTocoBlog,
@@ -10,8 +11,8 @@ interface PageContext {
   readonly id: number;
 }
 interface useReturn {
-  readonly blogs: DomainCategoryBlog[];
-  readonly categories: DomainCategory[];
+  readonly blogs: DomainCategoryDetailBlog[];
+  readonly categories: DomainCategoryDetailCategory[];
   readonly categolyId: number;
 }
 /**
@@ -30,16 +31,25 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
   /***
    * ドメインに変換
    */
-  const blogs: DomainCategoryBlog[] = resblogs.map(r => ({
-    id: Number(r?.id) || 0,
-    title: String(r?.attributes?.mainTitle) || '',
-    thumbnail: String(r?.attributes?.thumbnail?.data?.attributes?.url) || '',
-  }));
+  const blogs: DomainCategoryDetailBlog[] = resblogs.map(r => {
+    const id = Number(r?.id) || 0;
+    const title = String(r?.attributes?.mainTitle) || '';
+    const thumbnail =
+      String(r?.attributes?.thumbnail?.data?.attributes?.url) || '';
 
-  const categories: DomainCategory[] = resCategory.map(r => ({
-    id: Number(r?.id) || 0,
-    name: String(r?.attributes?.name) || '',
-  }));
+    return {
+      id,
+      title,
+      thumbnail,
+    };
+  });
+
+  const categories: DomainCategoryDetailCategory[] = resCategory.map(r => {
+    const id = Number(r?.id) || 0;
+    const name = String(r?.attributes?.name) || '';
+
+    return { id, name };
+  });
 
   return { blogs, categories, categolyId };
 };

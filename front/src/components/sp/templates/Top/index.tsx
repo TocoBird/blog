@@ -3,8 +3,8 @@ import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import TopBlogs from '@/components/sp/templates/Top/organisms/TopBlogs';
 import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
+import { DomainTopCategory } from '@/domain/top/blog';
 import colors from '@/modules/common/colors';
-import { DomainTopPageCategory } from '@/modules/domain/category';
 
 const Wrapper = styled.div``;
 const BlogsTitle = styled.div`
@@ -16,7 +16,7 @@ const BlogsTitle = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly categories: DomainTopPageCategory[];
+  readonly categories: DomainTopCategory[];
 }
 /**
  * テンプレート：トップページ

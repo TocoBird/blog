@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
+import { DomainTopCategoryBlog } from '@/domain/top/blog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import { DomainTopPageBlog } from '@/modules/domain/category';
 
 const Wrapper = styled.div``;
 const Card = styled.div`
@@ -30,7 +30,7 @@ const Title = styled.div`
 
 interface Props {
   /** ブログ詳細 */
-  readonly blog: DomainTopPageBlog;
+  readonly blog: DomainTopCategoryBlog;
 }
 /**
  * トップページ：ブログ

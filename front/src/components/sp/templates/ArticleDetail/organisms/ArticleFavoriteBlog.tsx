@@ -2,9 +2,9 @@ import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
+import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import { DomainFavoriteBlog } from '@/modules/domain/articleDetail';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
@@ -36,7 +36,7 @@ const BlogTitle = styled.div`
 
 interface Props {
   /** お気に入り記事一覧 */
-  readonly favoriteBlogs: DomainFavoriteBlog[];
+  readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
 }
 
 /**
@@ -50,22 +50,24 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <div>
-        {p.favoriteBlogs.map((b: DomainFavoriteBlog, index: number) => (
-          <Fragment key={`${index}_${b.id}`}>
-            {index !== 0 && <Spacer.S />}
+        {p.favoriteBlogs.map(
+          (b: DomainArticleDetailRecommendBlog, index: number) => (
+            <Fragment key={`${index}_${b.id}`}>
+              {index !== 0 && <Spacer.S />}
 
-            <Link to={`/article/${b.id}`}>
-              <Card>
-                <Thumbnail
-                  style={{
-                    backgroundImage: `url('${b.thumbnail}')`,
-                  }}
-                />
-                <BlogTitle>{b.title}</BlogTitle>
-              </Card>
-            </Link>
-          </Fragment>
-        ))}
+              <Link to={`/article/${b.id}`}>
+                <Card>
+                  <Thumbnail
+                    style={{
+                      backgroundImage: `url('${b.thumbnail}')`,
+                    }}
+                  />
+                  <BlogTitle>{b.title}</BlogTitle>
+                </Card>
+              </Link>
+            </Fragment>
+          )
+        )}
       </div>
     </Wrapper>
   );

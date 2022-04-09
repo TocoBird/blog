@@ -2,12 +2,9 @@ import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
+import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
-import {
-  DomainTopPageCategory,
-  DomainTopPageBlog,
-} from '@/modules/domain/category';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
@@ -44,7 +41,7 @@ const Content = styled.div`
 
 interface Props {
   /** ブログ一覧 */
-  readonly categories: DomainTopPageCategory[];
+  readonly categories: DomainTopCategory[];
 }
 /**
  * トップページ：カテゴリ別ブログ一覧
@@ -52,14 +49,14 @@ interface Props {
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      {p.categories.map((c: DomainTopPageCategory) => (
+      {p.categories.map((c: DomainTopCategory) => (
         <Fragment key={c.id}>
           <Content>
             <Title>#{c.name}</Title>
 
             <Spacer.M />
 
-            {c.blogs.map((b: DomainTopPageBlog) => (
+            {c.blogs.map((b: DomainTopCategoryBlog) => (
               <Fragment key={b.id}>
                 <Link to={`/article/${b.id}`}>
                   <Card>

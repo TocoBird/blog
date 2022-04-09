@@ -3,8 +3,8 @@ import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 import Spacer from '@/components/sp/atoms/Spacer';
+import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import colors from '@/modules/common/colors';
-import { DomainCategory } from '@/modules/domain/blog';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
@@ -15,7 +15,7 @@ const Title = styled.div`
 
 interface Props {
   /** カテゴリ一覧 */
-  readonly categories: DomainCategory[];
+  readonly categories: DomainArticleDetailCategory[];
 }
 
 /**
