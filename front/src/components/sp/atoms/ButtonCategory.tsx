@@ -4,7 +4,7 @@ import { styled } from 'linaria/react';
  * ボタン: カテゴリ
  */
 export const ButtonCategory = styled.div`
-  background: #4ba094;
+  background: linear-gradient(45deg, #52bbb5, #52b398);
   color: white;
   font-weight: bold;
   border-radius: 50px;

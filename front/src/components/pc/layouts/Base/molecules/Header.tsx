@@ -10,7 +10,7 @@ import size from '@/modules/common/size';
 const Wrapper = styled.div`
   position: fixed;
   z-index: 99;
-  background: #232a39f5;
+  background: linear-gradient(45deg, #232731f4, #121a2df4);
   height: 50px;
   line-height: 50px;
   box-shadow: 0 2px 12px #0f1c2c24;
