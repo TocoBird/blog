@@ -3,8 +3,8 @@ import { styled } from 'linaria/react';
 import { DomainTopPageCategory } from '@/modules/domain/category';
 import colors from '@/modules/common/colors';
 import Spacer from '@/components/sp/atoms/Spacer';
-import TopHeader from '@/components/sp/organisms/top/TopHeader';
-import TopBlogs from '@/components/sp/organisms/top/TopBlogs';
+import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
+import TopBlogs from '@/components/sp/templates/Top/organisms/TopBlogs';
 
 const Wrapper = styled.div``;
 const BlogsTitle = styled.div`

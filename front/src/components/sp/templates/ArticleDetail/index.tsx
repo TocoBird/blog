@@ -8,11 +8,11 @@ import {
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
 import Spacer from '@/components/sp/atoms/Spacer';
-import ArticleFavoriteBlog from '@/components/sp/organisms/articleDetail/ArticleFavoriteBlog';
-import ArticleTop from '@/components/sp/organisms/articleDetail/ArticleTop';
-import ArticleContent from '@/components/sp/organisms/articleDetail/ArticleContent';
-import ArticleCategory from '@/components/sp/organisms/articleDetail/ArticleCategory';
-import ArticleConcept from '@/components/sp/organisms/articleDetail/ArticleConcept';
+import ArticleFavoriteBlog from '@/components/sp/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
+import ArticleTop from '@/components/sp/templates/ArticleDetail/organisms/ArticleTop';
+import ArticleContent from '@/components/sp/templates/ArticleDetail/organisms/ArticleContent';
+import ArticleCategory from '@/components/sp/templates/ArticleDetail/organisms/ArticleCategory';
+import ArticleConcept from '@/components/sp/templates/ArticleDetail/organisms/ArticleConcept';
 
 const Wrapper = styled.div``;
 const Thumbnail = styled.div`

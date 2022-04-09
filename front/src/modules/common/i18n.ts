@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import { use } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { jaTop, enTop } from '@/i18n/pages/index';
 
@@ -27,7 +27,7 @@ const resources = {
   ja,
 };
 
-i18n.use(initReactI18next).init({
+use(initReactI18next).init({
   resources,
   //   lng: 'en',
   fallbackLng: 'ja',
