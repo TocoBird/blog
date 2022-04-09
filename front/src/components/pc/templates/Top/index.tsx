@@ -5,7 +5,7 @@ import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 import TopHeader from '@/components/pc/templates/Top/organisms/TopHeader';
 import TopBlogs from '@/components/pc/templates/Top/organisms/TopBlogs';
-import { SpacerL } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const BlogsTitle = styled.div`
@@ -28,11 +28,11 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <TopHeader />
 
-      <SpacerL />
+      <Spacer.L />
 
       <BlogsTitle>最新の記事</BlogsTitle>
 
-      <SpacerL />
+      <Spacer.L />
 
       <TopBlogs categories={p.categories} />
     </Wrapper>

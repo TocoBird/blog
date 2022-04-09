@@ -4,7 +4,7 @@ import { styled } from 'linaria/react';
 import { DomainCategoryBlog, DomainCategory } from '@/modules/domain/blog';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
@@ -69,7 +69,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Title>カテゴリーから記事を探す</Title>
 
-          <SpacerS />
+          <Spacer.S />
 
           <Categories>
             {p.categories.map(c => (
@@ -86,14 +86,14 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                   </ButtonCategory>
                 </Link>
 
-                <SpacerS />
+                <Spacer.S />
               </Fragment>
             ))}
           </Categories>
         </Inner>
       </Content>
 
-      <SpacerS />
+      <Spacer.S />
 
       <div>
         <Inner>
@@ -110,13 +110,13 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                 </Card>
               </Link>
 
-              <SpacerS />
+              <Spacer.S />
             </Fragment>
           ))}
         </Inner>
       </div>
 
-      <SpacerS />
+      <Spacer.S />
     </Wrapper>
   );
 };

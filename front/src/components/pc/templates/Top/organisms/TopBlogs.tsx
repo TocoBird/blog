@@ -6,7 +6,7 @@ import {
   DomainTopPageCategory,
   DomainTopPageBlog,
 } from '@/modules/domain/category';
-import { SpacerM, SpacerS } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 
 const Wrapper = styled.div`
@@ -48,13 +48,13 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
         <Content key={`${index}_${c.id}`}>
           <Title>#{c.name}</Title>
 
-          <SpacerM />
+          <Spacer.M />
 
           {c.blogs.map((b: DomainTopPageBlog, index: number) => (
             <Fragment key={`${index}_${b.id}`}>
               <TopBlog blog={b} />
 
-              <SpacerS />
+              <Spacer.S />
             </Fragment>
           ))}
         </Content>

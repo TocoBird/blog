@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import ReactMarkdown from 'react-markdown';
-import { SpacerS } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 import colors from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
@@ -25,7 +25,7 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
         <ReactMarkdown>{p.text}</ReactMarkdown>
       </div>
 
-      <SpacerS />
+      <Spacer.S />
 
       <Author>作者 tocotoco</Author>
     </Wrapper>

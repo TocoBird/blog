@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import { SpacerM } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
@@ -23,7 +23,7 @@ const ArticleConcept: React.FC = (): JSX.Element => {
     <Wrapper>
       <Title>ブログのコンセプト</Title>
 
-      <SpacerM />
+      <Spacer.M />
 
       <Detail>
         プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。

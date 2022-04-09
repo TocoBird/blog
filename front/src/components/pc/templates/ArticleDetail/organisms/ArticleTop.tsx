@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DomainBlogDetail } from '@/modules/domain/blog';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 
 const Wrapper = styled.div`
@@ -60,7 +60,7 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Title>{p.blog.title}</Title>
 
-          <SpacerS />
+          <Spacer.S />
 
           <Items>
             <Date>

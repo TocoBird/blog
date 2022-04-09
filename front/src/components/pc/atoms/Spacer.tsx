@@ -1,27 +1,41 @@
 import { styled } from 'linaria/react';
 import size from '@/modules/common/size';
 
-/** height 最小 */
-export const SpacerXS = styled.div`
+const XS = styled.div`
   height: ${size.ui.l2}px;
 `;
-/** height 小さい */
-export const SpacerS = styled.div`
+const S = styled.div`
   height: ${size.ui.l3}px;
 `;
-/** height 中間 */
-export const SpacerM = styled.div`
+const M = styled.div`
   height: ${size.ui.l4}px;
 `;
-/** height 大きい */
-export const SpacerXM = styled.div`
+const XM = styled.div`
   height: ${size.ui.l6}px;
 `;
-/** height より大きい */
-export const SpacerL = styled.div`
+const L = styled.div`
   height: ${size.ui.l8}px;
 `;
-/** height 最大 */
-export const SpacerXL = styled.div`
+const XL = styled.div`
   height: ${size.ui.l10}px;
 `;
+
+/**
+ * 余白：縦のみ設定している
+ */
+const Spacer = {
+  /** height: 最小 */
+  XS,
+  /** height: 小さい */
+  S,
+  /** height: 中間 */
+  M,
+  /** height: 大きい */
+  XM,
+  /** height: さらに大きい */
+  L,
+  /** height: 最大 */
+  XL,
+};
+
+export default Spacer;

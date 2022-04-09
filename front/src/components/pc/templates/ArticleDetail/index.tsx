@@ -7,7 +7,7 @@ import {
 } from '@/modules/domain/articleDetail';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerL } from '@/components/pc/atoms/Spacer';
+import Spacer from '@/components/pc/atoms/Spacer';
 import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
 import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
@@ -66,7 +66,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <ArticleTop blog={p.blog} />
 
-      <SpacerL />
+      <Spacer.L />
 
       <ContentWrapper>
         <Content>
@@ -77,13 +77,13 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
               }}
             />
 
-            <SpacerL />
+            <Spacer.L />
 
             <ItemArticle>
               <ArticleContent text={p.blog.text} />
             </ItemArticle>
 
-            <SpacerL />
+            <Spacer.L />
 
             <ItemArticle>
               <ArticleConcept />
@@ -94,7 +94,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <ArticleCategory categories={p.categories} />
             </Item>
 
-            <SpacerL />
+            <Spacer.L />
 
             <Item>
               <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
@@ -103,7 +103,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         </Content>
       </ContentWrapper>
 
-      <SpacerL />
+      <Spacer.L />
     </Wrapper>
   );
 };
