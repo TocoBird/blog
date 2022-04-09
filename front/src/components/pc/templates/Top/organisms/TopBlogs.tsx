@@ -5,7 +5,7 @@ import colors from '@/modules/common/colors';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
-} from '@/modules/interfaces/domain/category';
+} from '@/modules/domain/category';
 import { SpacerM, SpacerS } from '@/components/pc/atoms/Spacer';
 import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 

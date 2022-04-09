@@ -14,6 +14,7 @@ const Detail = styled.div`
   color: ${colors.text.main};
   font-size: 16px;
 `;
+
 /**
  * 記事詳細：コンセプト説明
  */

@@ -1,7 +1,8 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import { DomainTopPageCategory } from '@/modules/interfaces/domain/category';
+import { DomainTopPageCategory } from '@/modules/domain/category';
 import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 import TopHeader from '@/components/pc/templates/Top/organisms/TopHeader';
 import TopBlogs from '@/components/pc/templates/Top/organisms/TopBlogs';
 import { SpacerL } from '@/components/pc/atoms/Spacer';
@@ -9,8 +10,8 @@ import { SpacerL } from '@/components/pc/atoms/Spacer';
 const Wrapper = styled.div``;
 const BlogsTitle = styled.div`
   color: ${colors.text.mainBold};
+  font-size: ${size.font.l6}px;
   font-weight: bold;
-  font-size: 28px;
   text-align: center;
 `;
 

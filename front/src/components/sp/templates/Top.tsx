@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from 'linaria/react';
-import { DomainTopPageCategory } from '@/modules/interfaces/domain/category';
+import { DomainTopPageCategory } from '@/modules/domain/category';
 import colors from '@/modules/common/colors';
 import { SpacerL } from '@/components/sp/atoms/Spacer';
 import TopHeader from '@/components/sp/organisms/top/TopHeader';

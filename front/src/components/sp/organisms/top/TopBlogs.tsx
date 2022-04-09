@@ -4,7 +4,7 @@ import { styled } from 'linaria/react';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
-} from '@/modules/interfaces/domain/category';
+} from '@/modules/domain/category';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
 import { SpacerS, SpacerM, SpacerL } from '@/components/sp/atoms/Spacer';

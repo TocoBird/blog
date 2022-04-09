@@ -3,7 +3,7 @@ import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { DomainTopPageBlog } from '@/modules/interfaces/domain/category';
+import { DomainTopPageBlog } from '@/modules/domain/category';
 
 const Wrapper = styled.div``;
 const Card = styled.div`

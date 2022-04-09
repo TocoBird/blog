@@ -4,7 +4,7 @@ import {
   DomainBlogDetail,
   DomainCategory,
   DomainFavoriteBlog,
-} from '@/modules/interfaces/domain/articleDetail';
+} from '@/modules/domain/articleDetail';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
 import { SpacerM } from '@/components/sp/atoms/Spacer';

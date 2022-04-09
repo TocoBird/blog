@@ -3,7 +3,7 @@ import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { DomainBlogDetail } from '@/modules/interfaces/domain/blog';
+import { DomainBlogDetail } from '@/modules/domain/blog';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
 import { SpacerS } from '@/components/pc/atoms/Spacer';

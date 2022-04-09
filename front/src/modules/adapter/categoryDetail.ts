@@ -4,10 +4,7 @@ import {
   ResTocoBlog,
   ResCategory,
 } from '@/modules/interfaces/response/categoryDetail';
-import {
-  DomainCategoryBlog,
-  DomainCategory,
-} from '@/modules/interfaces/domain/blog';
+import { DomainCategoryBlog, DomainCategory } from '@/modules/domain/blog';
 
 interface PageContext {
   readonly id: number;
@@ -17,6 +14,10 @@ interface useReturn {
   readonly categories: DomainCategory[];
   readonly categolyId: number;
 }
+/**
+ * カテゴリ詳細ページ
+ * GraphQLのレスポンスをドメインに変換
+ */
 export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
   const res = page?.data as Res;
   const resblogs: ResTocoBlog[] =
@@ -24,20 +25,20 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
   const resCategory: ResCategory[] =
     res?.strapi?.categories?.data || ([] as ResCategory[]);
   const context = page?.pageContext as PageContext;
-  const categolyId: number = context?.id || 0;
+  const categolyId = Number(context?.id) || 0;
 
   /***
    * ドメインに変換
    */
   const blogs: DomainCategoryBlog[] = resblogs.map(r => ({
-    id: r?.id || 0,
-    title: r?.attributes?.mainTitle || '',
-    thumbnail: r?.attributes?.thumbnail?.data?.attributes?.url || '',
+    id: Number(r?.id) || 0,
+    title: String(r?.attributes?.mainTitle) || '',
+    thumbnail: String(r?.attributes?.thumbnail?.data?.attributes?.url) || '',
   }));
 
   const categories: DomainCategory[] = resCategory.map(r => ({
-    id: r?.id || 0,
-    name: r?.attributes?.name || '',
+    id: Number(r?.id) || 0,
+    name: String(r?.attributes?.name) || '',
   }));
 
   return { blogs, categories, categolyId };

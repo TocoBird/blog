@@ -7,31 +7,37 @@ import {
 import {
   DomainTopPageBlog,
   DomainTopPageCategory,
-} from '@/modules/interfaces/domain/category';
+} from '@/modules/domain/category';
 
 interface useReturn {
   readonly categories: DomainTopPageCategory[];
 }
+/**
+ * トップページ
+ * GraphQLのレスポンスをドメインに変換
+ */
 export const adapterDomainIndex = (page: PageProps): useReturn => {
   const res = page?.data as Res;
-  const resCategories: ResCategory[] = res?.strapi?.categories?.data || [];
+  const resCategories: ResCategory[] =
+    res?.strapi?.categories?.data || ([] as ResCategory[]);
 
   /**
    * ドメインに変換
    */
   const categories: DomainTopPageCategory[] = resCategories.map(r => {
-    const resblogs: ResTocoBlog[] = r?.attributes?.toco_blogs?.data || [];
+    const resblogs: ResTocoBlog[] =
+      r?.attributes?.toco_blogs?.data || ([] as ResTocoBlog[]);
 
     // ブログ一覧
     const blogs: DomainTopPageBlog[] = resblogs.map(b => ({
-      id: b?.id || 0,
-      title: b?.attributes?.mainTitle || '',
-      thumbnail: b?.attributes?.thumbnail?.data?.attributes?.url || '',
+      id: Number(b?.id) || 0,
+      title: String(b?.attributes?.mainTitle) || '',
+      thumbnail: String(b?.attributes?.thumbnail?.data?.attributes?.url) || '',
     }));
 
     return {
-      id: r?.id || 0,
-      name: r?.attributes?.name || '',
+      id: Number(r?.id) || 0,
+      name: String(r?.attributes?.name) || '',
       blogs,
     };
   });

@@ -10,13 +10,17 @@ import {
   DomainBlogDetail,
   DomainCategory,
   DomainFavoriteBlog,
-} from '@/modules/interfaces/domain/articleDetail';
+} from '@/modules/domain/articleDetail';
 
 interface useReturn {
   readonly blog: DomainBlogDetail;
   readonly categories: DomainCategory[];
   readonly favoriteBlogs: DomainFavoriteBlog[];
 }
+/**
+ * 記事詳細ページ
+ * GraphQLのレスポンスをドメインに変換
+ */
 export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
   const res = page?.data as Res;
   const resblog: ResTocoBlog =
@@ -31,24 +35,26 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
    * ドメインに変換
    */
   const blog: DomainBlogDetail = {
-    id: resblog?.id || 0,
-    title: resblog?.attributes?.mainTitle || '',
-    text: resblog?.attributes?.mainText || '',
+    id: Number(resblog?.id) || 0,
+    title: String(resblog?.attributes?.mainTitle) || '',
+    text: String(resblog?.attributes?.mainText) || '',
     updatedAt: dayjs(resblog?.attributes?.updatedAt).format('YYYY/M/D') || '',
-    thumbnail: resblog?.attributes?.thumbnail?.data?.attributes?.url || '',
-    categoryId: resblog?.attributes?.category?.data?.id || 0,
-    categoryName: resblog?.attributes?.category?.data?.attributes.name || '',
+    thumbnail:
+      String(resblog?.attributes?.thumbnail?.data?.attributes?.url) || '',
+    categoryId: Number(resblog?.attributes?.category?.data?.id) || 0,
+    categoryName:
+      String(resblog?.attributes?.category?.data?.attributes.name) || '',
   };
 
   const categories: DomainCategory[] = resCategory.map(r => ({
-    id: r?.id || 0,
-    name: r?.attributes?.name || '',
+    id: Number(r?.id) || 0,
+    name: String(r?.attributes?.name) || '',
   }));
 
   const favoriteBlogs: DomainFavoriteBlog[] = resFavoriteBlogs.map(r => ({
-    id: r?.id || 0,
-    title: r?.attributes?.mainTitle || '',
-    thumbnail: r?.attributes?.thumbnail?.data?.attributes?.url || '',
+    id: Number(r?.id) || 0,
+    title: String(r?.attributes?.mainTitle) || '',
+    thumbnail: String(r?.attributes?.thumbnail?.data?.attributes?.url) || '',
   }));
 
   return { blog, categories, favoriteBlogs };

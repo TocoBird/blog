@@ -14,7 +14,5 @@ npm run develop
 
 ・コンポーネントの分離  
 ・i18n  
-・hooks に分離  
-・エラー周り  
 ・ダークモード  
 ・graphql のクエリ直接叩くのを変える
