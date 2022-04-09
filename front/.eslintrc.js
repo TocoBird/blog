@@ -6,10 +6,20 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
   ],
   settings: {
     react: {
       version: 'detect',
+    },
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
     },
   },
   env: {
@@ -41,5 +51,8 @@ module.exports = {
       },
     ],
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
+
+    'sort-imports': 0,
+    'import/order': [2, { alphabetize: { order: 'asc' } }],
   },
 };
