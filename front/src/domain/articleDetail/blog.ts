@@ -1,19 +1,26 @@
+import {
+  BlogId,
+  BlogTitle,
+  BlogThumbnail,
+  BlogText,
+  BlogUpdatedAt,
+} from '@/domain/_site/blog';
+
+type Blog = BlogId & BlogTitle & BlogThumbnail & BlogText & BlogUpdatedAt;
+
 /**
  * 記事詳細
  */
-export interface DomainArticleDetailBlog {
-  /** ID */
-  readonly id: number;
-  /** タイトル */
-  readonly title: string;
-  /** 本文 */
-  readonly text: string;
-  /** 最終更新日 */
-  readonly updatedAt: string;
-  /** サムネイル */
-  readonly thumbnail: string;
-  /** カテゴリID */
-  readonly categoryId: number;
-  /** カテゴリ名 */
-  readonly categoryName: string;
+export class DomainArticleDetailBlog implements Blog {
+  constructor(
+    public readonly id: number = 0,
+    public readonly title: string = '',
+    public readonly text: string = '',
+    public readonly thumbnail: string = '',
+    public readonly updatedAt: string = '',
+    /** カテゴリID */
+    public readonly categoryId: number = 0,
+    /** カテゴリ名 */
+    public readonly categoryName: string = ''
+  ) {}
 }

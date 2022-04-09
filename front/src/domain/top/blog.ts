@@ -1,23 +1,29 @@
-/**
- * カテゴリごとの記事
- */
-export interface DomainTopCategory {
-  /** ID */
-  readonly id: number;
-  /** カテゴリ名 */
-  readonly name: string;
-  /** そのカテゴリの記事一覧 */
-  readonly blogs: DomainTopCategoryBlog[];
-}
+import { BlogId, BlogTitle, BlogThumbnail } from '@/domain/_site/blog';
+import { CategoryId, CategoryName } from '@/domain/_site/category';
+
+type Blog = BlogId & BlogTitle & BlogThumbnail;
 
 /**
  * カテゴリごとの記事詳細
  */
-export interface DomainTopCategoryBlog {
-  /** ID */
-  readonly id: number;
-  /** 記事タイトル */
-  readonly title: string;
-  /** サムネイル */
-  readonly thumbnail: string;
+export class DomainTopCategoryBlog implements Blog {
+  constructor(
+    public readonly id: number = 0,
+    public readonly title: string = '',
+    public readonly thumbnail: string = ''
+  ) {}
+}
+
+type Category = CategoryId & CategoryName;
+
+/**
+ * カテゴリごとの記事
+ */
+export class DomainTopCategory implements Category {
+  constructor(
+    public readonly id: number = 0,
+    public readonly name: string = '',
+    /** そのカテゴリの記事一覧 */
+    public readonly blogs: DomainTopCategoryBlog[] = [] as DomainTopCategoryBlog[]
+  ) {}
 }

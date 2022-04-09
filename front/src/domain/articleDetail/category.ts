@@ -1,9 +1,13 @@
+import { CategoryId, CategoryName } from '@/domain/_site/category';
+
+type Category = CategoryId & CategoryName;
+
 /**
  * カテゴリ
  */
-export interface DomainArticleDetailCategory {
-  /** ID */
-  readonly id: number;
-  /** カテゴリ名 */
-  readonly name: string;
+export class DomainArticleDetailCategory implements Category {
+  constructor(
+    public readonly id: number = 0,
+    public readonly name: string = ''
+  ) {}
 }

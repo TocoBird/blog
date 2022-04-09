@@ -1,11 +1,14 @@
+import { BlogId, BlogTitle, BlogThumbnail } from '@/domain/_site/blog';
+
+type Blog = BlogId & BlogTitle & BlogThumbnail;
+
 /**
  * おすすめの記事
  */
-export interface DomainArticleDetailRecommendBlog {
-  /** ID */
-  readonly id: number;
-  /** 記事タイトル */
-  readonly title: string;
-  /** サムネイル */
-  readonly thumbnail: string;
+export class DomainArticleDetailRecommendBlog implements Blog {
+  constructor(
+    public readonly id: number = 0,
+    public readonly title: string = '',
+    public readonly thumbnail: string = ''
+  ) {}
 }

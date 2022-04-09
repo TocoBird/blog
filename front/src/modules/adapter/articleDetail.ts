@@ -32,26 +32,32 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
   /**
    * ドメインに変換
    */
-  const blog: DomainArticleDetailBlog = {
-    id: Number(resblog?.id) || 0,
-    title: String(resblog?.attributes?.mainTitle) || '',
-    text: String(resblog?.attributes?.mainText) || '',
-    updatedAt: dayjs(resblog?.attributes?.updatedAt).format('YYYY/M/D') || '',
-    thumbnail:
-      String(resblog?.attributes?.thumbnail?.data?.attributes?.url) || '',
-    categoryId: Number(resblog?.attributes?.category?.data?.id) || 0,
-    categoryName:
-      String(resblog?.attributes?.category?.data?.attributes.name) || '',
-  };
+  const id = Number(resblog?.id) || 0;
+  const title = String(resblog?.attributes?.mainTitle) || '';
+  const text = String(resblog?.attributes?.mainText) || '';
+  const updatedAt =
+    dayjs(resblog?.attributes?.updatedAt).format('YYYY/M/D') || '';
+  const thumbnail =
+    String(resblog?.attributes?.thumbnail?.data?.attributes?.url) || '';
+  const categoryId = Number(resblog?.attributes?.category?.data?.id) || 0;
+  const categoryName =
+    String(resblog?.attributes?.category?.data?.attributes.name) || '';
+
+  const blog: DomainArticleDetailBlog = new DomainArticleDetailBlog(
+    id,
+    title,
+    text,
+    thumbnail,
+    updatedAt,
+    categoryId,
+    categoryName
+  );
 
   const categories: DomainArticleDetailCategory[] = resCategory.map(r => {
     const id = Number(r?.id) || 0;
     const name = String(r?.attributes?.name) || '';
 
-    return {
-      id,
-      name,
-    };
+    return new DomainArticleDetailCategory(id, name);
   });
 
   const favoriteBlogs: DomainArticleDetailRecommendBlog[] =
@@ -61,11 +67,7 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
       const thumbnail =
         String(r?.attributes?.thumbnail?.data?.attributes?.url) || '';
 
-      return {
-        id,
-        title,
-        thumbnail,
-      };
+      return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
     });
 
   return { blog, categories, favoriteBlogs };

@@ -32,18 +32,12 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
       const thumbnail =
         String(b?.attributes?.thumbnail?.data?.attributes?.url) || '';
 
-      return {
-        id,
-        title,
-        thumbnail,
-      };
+      return new DomainTopCategoryBlog(id, title, thumbnail);
     });
 
-    return {
-      id: Number(r?.id) || 0,
-      name: String(r?.attributes?.name) || '',
-      blogs,
-    };
+    const id = Number(r?.id) || 0;
+    const name = String(r?.attributes?.name) || '';
+    return new DomainTopCategory(id, name, blogs);
   });
 
   return { categories };

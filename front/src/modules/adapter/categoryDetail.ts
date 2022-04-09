@@ -37,18 +37,14 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
     const thumbnail =
       String(r?.attributes?.thumbnail?.data?.attributes?.url) || '';
 
-    return {
-      id,
-      title,
-      thumbnail,
-    };
+    return new DomainCategoryDetailBlog(id, title, thumbnail);
   });
 
   const categories: DomainCategoryDetailCategory[] = resCategory.map(r => {
     const id = Number(r?.id) || 0;
     const name = String(r?.attributes?.name) || '';
 
-    return { id, name };
+    return new DomainCategoryDetailCategory(id, name);
   });
 
   return { blogs, categories, categolyId };
