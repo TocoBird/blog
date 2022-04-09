@@ -44,17 +44,29 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
       String(resblog?.attributes?.category?.data?.attributes.name) || '',
   };
 
-  const categories: DomainArticleDetailCategory[] = resCategory.map(r => ({
-    id: Number(r?.id) || 0,
-    name: String(r?.attributes?.name) || '',
-  }));
+  const categories: DomainArticleDetailCategory[] = resCategory.map(r => {
+    const id = Number(r?.id) || 0;
+    const name = String(r?.attributes?.name) || '';
+
+    return {
+      id,
+      name,
+    };
+  });
 
   const favoriteBlogs: DomainArticleDetailRecommendBlog[] =
-    resFavoriteBlogs.map(r => ({
-      id: Number(r?.id) || 0,
-      title: String(r?.attributes?.mainTitle) || '',
-      thumbnail: String(r?.attributes?.thumbnail?.data?.attributes?.url) || '',
-    }));
+    resFavoriteBlogs.map(r => {
+      const id = Number(r?.id) || 0;
+      const title = String(r?.attributes?.mainTitle) || '';
+      const thumbnail =
+        String(r?.attributes?.thumbnail?.data?.attributes?.url) || '';
+
+      return {
+        id,
+        title,
+        thumbnail,
+      };
+    });
 
   return { blog, categories, favoriteBlogs };
 };

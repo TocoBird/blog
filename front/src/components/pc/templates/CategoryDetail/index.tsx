@@ -52,7 +52,7 @@ const CardTitle = styled.div`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** 記事一覧 */
   readonly blogs: DomainCategoryDetailBlog[];
   /** カテゴリ一覧 */
   readonly categories: DomainCategoryDetailCategory[];

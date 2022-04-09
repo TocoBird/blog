@@ -46,7 +46,7 @@ const Icon = styled(FontAwesomeIcon)`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** 記事一覧 */
   readonly blog: DomainArticleDetailBlog;
 }
 

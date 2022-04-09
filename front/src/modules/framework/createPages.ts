@@ -29,7 +29,7 @@ export const srcCreatePages: GatsbyNode['createPages'] = async ({
   const tocoBlogs = data?.strapi?.tocoBlogs?.data || [];
   const categories = data?.strapi?.categories?.data || [];
 
-  // ブログ一覧
+  // 記事一覧
   const ARTICLE_DETAIL_PATH = `./src/pagesDynamic/articleDetail.tsx`;
   tocoBlogs.forEach(t => {
     const id = t.id;

@@ -29,11 +29,11 @@ const Title = styled.div`
 `;
 
 interface Props {
-  /** ブログ詳細 */
+  /** 記事詳細 */
   readonly blog: DomainTopCategoryBlog;
 }
 /**
- * トップページ：ブログ
+ * トップページ：記事
  */
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
   return (

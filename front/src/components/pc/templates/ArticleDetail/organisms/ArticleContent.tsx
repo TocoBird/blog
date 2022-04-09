@@ -11,7 +11,7 @@ const Author = styled.div`
 `;
 
 interface Props {
-  /** ブログ内容 */
+  /** 記事内容 */
   readonly text: string;
 }
 

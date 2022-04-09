@@ -25,12 +25,19 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
     const resblogs: ResTocoBlog[] =
       r?.attributes?.toco_blogs?.data || ([] as ResTocoBlog[]);
 
-    // ブログ一覧
-    const blogs: DomainTopCategoryBlog[] = resblogs.map(b => ({
-      id: Number(b?.id) || 0,
-      title: String(b?.attributes?.mainTitle) || '',
-      thumbnail: String(b?.attributes?.thumbnail?.data?.attributes?.url) || '',
-    }));
+    // 記事一覧
+    const blogs: DomainTopCategoryBlog[] = resblogs.map(b => {
+      const id = Number(b?.id) || 0;
+      const title = String(b?.attributes?.mainTitle) || '';
+      const thumbnail =
+        String(b?.attributes?.thumbnail?.data?.attributes?.url) || '';
+
+      return {
+        id,
+        title,
+        thumbnail,
+      };
+    });
 
     return {
       id: Number(r?.id) || 0,

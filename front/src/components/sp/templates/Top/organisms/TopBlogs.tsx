@@ -40,11 +40,11 @@ const Content = styled.div`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** 記事一覧 */
   readonly categories: DomainTopCategory[];
 }
 /**
- * トップページ：カテゴリ別ブログ一覧
+ * トップページ：カテゴリ別記事一覧
  */
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
   return (

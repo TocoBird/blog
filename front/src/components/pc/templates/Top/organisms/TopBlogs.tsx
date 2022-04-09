@@ -32,11 +32,11 @@ const Title = styled.div`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** 記事一覧 */
   readonly categories: DomainTopCategory[];
 }
 /**
- * トップページ：ブログ一覧
+ * トップページ：記事一覧
  */
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
   return (

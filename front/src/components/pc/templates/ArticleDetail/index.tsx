@@ -49,7 +49,7 @@ const ItemArticle = styled(Item)`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** 記事一覧 */
   readonly blog: DomainArticleDetailBlog;
   /** カテゴリ一覧 */
   readonly categories: DomainArticleDetailCategory[];

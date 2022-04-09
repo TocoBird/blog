@@ -15,7 +15,7 @@ const BlogsTitle = styled.div`
 `;
 
 interface Props {
-  /** ブログ一覧 */
+  /** 記事一覧 */
   readonly categories: DomainTopCategory[];
 }
 /**
