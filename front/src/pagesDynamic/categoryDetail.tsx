@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Flame from '@/components/flame';
+import Frame from '@/components/frame';
 import TemplatePCCategoryDetail from '@/components/pc/templates/CategoryDetail';
 import TemplateSPCategoryDetail from '@/components/sp/templates/CategoryDetail';
 import { useResponsive } from '@/modules/common/responsive';
@@ -59,7 +59,7 @@ const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Flame isPC={isPC} option={option}>
+    <Frame isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCCategoryDetail
           blogs={blogs}
@@ -73,7 +73,7 @@ const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           selectedCategolyId={categolyId}
         />
       )}
-    </Flame>
+    </Frame>
   );
 };
 

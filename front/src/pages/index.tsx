@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, PageProps } from 'gatsby';
 import TemplatePCTop from '@/components/pc/templates/Top';
 import TemplateSPTop from '@/components/sp/templates/Top';
-import Flame from '@/components/flame';
+import Frame from '@/components/frame';
 import { useResponsive } from '@/modules/common/responsive';
 import { adapterDomainIndex } from '@/modules/adapter/index';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
@@ -53,10 +53,10 @@ const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Flame isPC={isPC} option={option}>
+    <Frame isPC={isPC} option={option}>
       <div>{isPC && <TemplatePCTop categories={categories} />}</div>
       <div>{!isPC && <TemplateSPTop categories={categories} />}</div>
-    </Flame>
+    </Frame>
   );
 };
 

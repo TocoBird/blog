@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-import Flame from '@/components/flame';
+import Frame from '@/components/frame';
 import TemplatePCArticleDetail from '@/components/pc/templates/ArticleDetail';
 import TemplateSPArticleDetail from '@/components/sp/templates/ArticleDetail';
 import { useResponsive } from '@/modules/common/responsive';
@@ -84,7 +84,7 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Flame isPC={isPC} option={option}>
+    <Frame isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCArticleDetail
           blog={blog}
@@ -98,7 +98,7 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           favoriteBlogs={favoriteBlogs}
         />
       )}
-    </Flame>
+    </Frame>
   );
 };
 

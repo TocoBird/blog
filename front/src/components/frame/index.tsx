@@ -1,5 +1,5 @@
 import React from 'react';
-import HTMLHead from '@/components/flame/Head';
+import HTMLHead from '@/components/frame/Head';
 import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
@@ -13,7 +13,7 @@ interface Props {
 /***
  * レイアウト
  */
-const Flame: React.FC<Props> = (p: Props): JSX.Element => {
+const Frame: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <>
       <HTMLHead option={p.option} />
@@ -24,4 +24,4 @@ const Flame: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default Flame;
+export default Frame;
