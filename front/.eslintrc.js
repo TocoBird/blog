@@ -52,7 +52,15 @@ module.exports = {
     ],
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
 
-    'sort-imports': 0,
-    'import/order': [2, { alphabetize: { order: 'asc' } }],
+    'sort-imports': 'off',
+
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+      },
+    ],
   },
 };

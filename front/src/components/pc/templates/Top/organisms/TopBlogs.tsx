@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
 import { styled } from 'linaria/react';
-import size from '@/modules/common/size';
+import React, { Fragment } from 'react';
+import Spacer from '@/components/pc/atoms/Spacer';
+import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 import {
   DomainTopPageCategory,
   DomainTopPageBlog,
 } from '@/modules/domain/category';
-import Spacer from '@/components/pc/atoms/Spacer';
-import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 
 const Wrapper = styled.div`
   display: flex;

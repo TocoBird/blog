@@ -1,6 +1,6 @@
-import React from 'react';
-import { styled } from 'linaria/react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { styled } from 'linaria/react';
+import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div`

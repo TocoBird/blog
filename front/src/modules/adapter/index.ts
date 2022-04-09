@@ -1,13 +1,13 @@
 import { PageProps } from 'gatsby';
 import {
+  DomainTopPageBlog,
+  DomainTopPageCategory,
+} from '@/modules/domain/category';
+import {
   Res,
   ResTocoBlog,
   ResCategory,
 } from '@/modules/interfaces/response/index';
-import {
-  DomainTopPageBlog,
-  DomainTopPageCategory,
-} from '@/modules/domain/category';
 
 interface useReturn {
   readonly categories: DomainTopPageCategory[];

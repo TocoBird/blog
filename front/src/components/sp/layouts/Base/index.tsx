@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '@/components/sp/layouts/Base/molecules/Header';
 import Footer from '@/components/sp/layouts/Base/molecules/Footer';
+import Header from '@/components/sp/layouts/Base/molecules/Header';
 
 interface Props {
   readonly children: JSX.Element | JSX.Element[];

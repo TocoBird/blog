@@ -1,10 +1,10 @@
-import React from 'react';
 import { graphql, PageProps } from 'gatsby';
+import React from 'react';
 import Frame from '@/components/frame';
 import TemplatePCArticleDetail from '@/components/pc/templates/ArticleDetail';
 import TemplateSPArticleDetail from '@/components/sp/templates/ArticleDetail';
-import { useResponsive } from '@/modules/common/responsive';
 import { adapterDomainArticleDetail } from '@/modules/adapter/articleDetail';
+import { useResponsive } from '@/modules/common/responsive';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**

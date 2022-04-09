@@ -1,11 +1,11 @@
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
+import { styled } from 'linaria/react';
 import React from 'react';
 // import React, { useState } from 'react';
-import { styled } from 'linaria/react';
-import { Link } from 'gatsby';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import size from '@/modules/common/size';
-import { StaticImage } from 'gatsby-plugin-image';
 
 const Wrapper = styled.div`
   position: fixed;

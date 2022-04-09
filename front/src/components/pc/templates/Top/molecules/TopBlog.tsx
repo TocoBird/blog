@@ -1,8 +1,8 @@
-import React from 'react';
-import { styled } from 'linaria/react';
 import { Link } from 'gatsby';
-import size from '@/modules/common/size';
+import { styled } from 'linaria/react';
+import React from 'react';
 import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 import { DomainTopPageBlog } from '@/modules/domain/category';
 
 const Wrapper = styled.div``;

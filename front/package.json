@@ -60,6 +60,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint './**/*.{ts,tsx}'",
+    "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }

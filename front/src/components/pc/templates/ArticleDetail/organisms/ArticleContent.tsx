@@ -1,5 +1,5 @@
-import React from 'react';
 import { styled } from 'linaria/react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Spacer from '@/components/pc/atoms/Spacer';
 import colors from '@/modules/common/colors';

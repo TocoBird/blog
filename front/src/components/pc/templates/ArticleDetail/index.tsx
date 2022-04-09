@@ -1,18 +1,18 @@
-import React from 'react';
 import { styled } from 'linaria/react';
+import React from 'react';
+import Spacer from '@/components/pc/atoms/Spacer';
+import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
+import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/ArticleConcept';
+import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
+import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
+import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
+import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 import {
   DomainBlogDetail,
   DomainCategory,
   DomainFavoriteBlog,
 } from '@/modules/domain/articleDetail';
-import size from '@/modules/common/size';
-import colors from '@/modules/common/colors';
-import Spacer from '@/components/pc/atoms/Spacer';
-import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
-import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
-import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
-import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
-import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/ArticleConcept';
 
 const Wrapper = styled.div``;
 const ContentWrapper = styled.div`

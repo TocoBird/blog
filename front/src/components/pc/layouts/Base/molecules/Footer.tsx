@@ -1,5 +1,5 @@
-import React from 'react';
 import { styled } from 'linaria/react';
+import React from 'react';
 
 const Wrapper = styled.div`
   background: #0b1c31;
