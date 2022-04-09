@@ -1,5 +1,6 @@
 import { BlogId, BlogTitle, BlogThumbnail } from '@/domain/_site/blog';
 
+/** サイト単位のドメインの部分集合 */
 type Blog = BlogId & BlogTitle & BlogThumbnail;
 
 /**

@@ -1,6 +1,7 @@
 import { BlogId, BlogTitle, BlogThumbnail } from '@/domain/_site/blog';
 import { CategoryId, CategoryName } from '@/domain/_site/category';
 
+/** サイト単位のドメインの部分集合 */
 type Blog = BlogId & BlogTitle & BlogThumbnail;
 
 /**
@@ -14,6 +15,7 @@ export class DomainTopCategoryBlog implements Blog {
   ) {}
 }
 
+/** サイト単位のドメインの部分集合 */
 type Category = CategoryId & CategoryName;
 
 /**

@@ -6,6 +6,7 @@ import {
   BlogUpdatedAt,
 } from '@/domain/_site/blog';
 
+/** サイト単位のドメインの部分集合 */
 type Blog = BlogId & BlogTitle & BlogThumbnail & BlogText & BlogUpdatedAt;
 
 /**
