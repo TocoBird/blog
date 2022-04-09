@@ -70,5 +70,9 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
       return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
     });
 
-  return { blog, categories, favoriteBlogs };
+  return {
+    blog,
+    categories,
+    favoriteBlogs,
+  };
 };

@@ -40,5 +40,7 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
     return new DomainTopCategory(id, name, blogs);
   });
 
-  return { categories };
+  return {
+    categories,
+  };
 };

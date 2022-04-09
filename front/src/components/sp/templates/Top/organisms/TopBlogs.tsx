@@ -1,3 +1,5 @@
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
@@ -38,6 +40,9 @@ const Content = styled.div`
   padding: ${size.ui.l4}px;
   box-sizing: border-box;
 `;
+const IconHash = styled(FontAwesomeIcon)`
+  margin-right: 2px;
+`;
 
 interface Props {
   /** 記事一覧 */
@@ -52,7 +57,10 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
       {p.categories.map((c: DomainTopCategory) => (
         <Fragment key={c.id}>
           <Content>
-            <Title>#{c.name}</Title>
+            <Title>
+              <IconHash icon={faHashtag} />
+              {c.name}
+            </Title>
 
             <Spacer.M />
 

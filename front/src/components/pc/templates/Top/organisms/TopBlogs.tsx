@@ -1,3 +1,5 @@
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
@@ -21,7 +23,7 @@ const Content = styled.div`
   border-radius: 4px;
   background: ${colors.card.main};
   box-shadow: 0 2px 12px #0f1c2c17;
-  padding: ${size.ui.l6}px;
+  padding: ${size.ui.l8}px;
   box-sizing: border-box;
   margin-bottom: ${size.ui.l8}px;
 `;
@@ -29,6 +31,9 @@ const Title = styled.div`
   color: ${colors.text.mainBold};
   font-weight: bold;
   font-size: 24px;
+`;
+const IconHash = styled(FontAwesomeIcon)`
+  margin-right: 4px;
 `;
 
 interface Props {
@@ -43,9 +48,12 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       {p.categories.map((c: DomainTopCategory, index: number) => (
         <Content key={`${index}_${c.id}`}>
-          <Title>#{c.name}</Title>
+          <Title>
+            <IconHash icon={faHashtag} />
+            {c.name}
+          </Title>
 
-          <Spacer.M />
+          <Spacer.XM />
 
           {c.blogs.map((b: DomainTopCategoryBlog, index: number) => (
             <Fragment key={`${index}_${b.id}`}>

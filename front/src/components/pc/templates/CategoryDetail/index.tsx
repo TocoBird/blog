@@ -1,3 +1,5 @@
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
@@ -19,7 +21,7 @@ const Inner = styled.div`
 const Title = styled.div`
   color: ${colors.text.mainBold};
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
 `;
 const Content = styled.div`
   background: ${colors.card.main};
@@ -50,6 +52,9 @@ const CardTitle = styled.div`
   flex: 1;
   color: ${colors.text.mainBold};
 `;
+const IconHash = styled(FontAwesomeIcon)`
+  margin-right: 2px;
+`;
 
 interface Props {
   /** 記事一覧 */
@@ -68,9 +73,11 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Content style={{ padding: size.ui.l3 }}>
         <Inner>
-          <Title>カテゴリーから記事を探す</Title>
+          <Spacer.L />
 
-          <Spacer.S />
+          <Title>カテゴリーで記事を探す</Title>
+
+          <Spacer.M />
 
           <Categories>
             {p.categories.map(c => (
@@ -83,7 +90,8 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                       marginRight: 20,
                     }}
                   >
-                    #{c.name}
+                    <IconHash icon={faHashtag} />
+                    {c.name}
                   </ButtonCategory>
                 </Link>
 
@@ -91,10 +99,12 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               </Fragment>
             ))}
           </Categories>
+
+          <Spacer.L />
         </Inner>
       </Content>
 
-      <Spacer.S />
+      <Spacer.L />
 
       <div>
         <Inner>
@@ -111,7 +121,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                 </Card>
               </Link>
 
-              <Spacer.S />
+              <Spacer.M />
             </Fragment>
           ))}
         </Inner>

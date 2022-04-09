@@ -1,3 +1,5 @@
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
@@ -38,6 +40,9 @@ const CardTitle = styled.div`
   font-size: 15px;
   color: ${colors.text.mainBold};
 `;
+const IconHash = styled(FontAwesomeIcon)`
+  margin-right: 2px;
+`;
 
 interface Props {
   /** 記事一覧 */
@@ -55,7 +60,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <Content style={{ padding: size.ui.l3 }}>
-        <Title>カテゴリーから記事を探す</Title>
+        <Title>カテゴリーで記事を探す</Title>
 
         <Spacer.M />
 
@@ -68,7 +73,8 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                     color: c.id === p.selectedCategolyId ? '#ffc770' : 'white',
                   }}
                 >
-                  #{c.name}
+                  <IconHash icon={faHashtag} />
+                  {c.name}
                 </ButtonCategory>
               </Link>
 
@@ -78,7 +84,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         </div>
       </Content>
 
-      <Spacer.S />
+      <Spacer.M />
 
       <div>
         {p.blogs.map(b => (
@@ -94,12 +100,12 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               </Card>
             </Link>
 
-            <Spacer.S />
+            <Spacer.M />
           </Fragment>
         ))}
       </div>
 
-      <Spacer.S />
+      <Spacer.M />
     </Wrapper>
   );
 };

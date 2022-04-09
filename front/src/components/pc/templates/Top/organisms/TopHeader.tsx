@@ -13,12 +13,13 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Inner = styled.div``;
+const Inner = styled.div`
+  text-align: center;
+`;
 const TitleSub = styled.div`
   font-size: 32px;
   font-weight: bold;
   color: white;
-  text-align: center;
 `;
 
 /**

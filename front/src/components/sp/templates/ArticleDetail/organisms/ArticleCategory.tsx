@@ -1,3 +1,5 @@
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
@@ -11,6 +13,9 @@ const Title = styled.div`
   font-weight: bold;
   font-size: 18px;
   color: ${colors.text.mainBold};
+`;
+const IconHash = styled(FontAwesomeIcon)`
+  margin-right: 2px;
 `;
 
 interface Props {
@@ -32,7 +37,10 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
         {p.categories.map(c => (
           <Fragment key={c.id}>
             <Link to={`/category/${c.id}`}>
-              <ButtonCategory>#{c.name}</ButtonCategory>
+              <ButtonCategory>
+                <IconHash icon={faHashtag} />
+                {c.name}
+              </ButtonCategory>
             </Link>
 
             <Spacer.S />

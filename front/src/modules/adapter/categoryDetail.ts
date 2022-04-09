@@ -47,5 +47,9 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
     return new DomainCategoryDetailCategory(id, name);
   });
 
-  return { blogs, categories, categolyId };
+  return {
+    blogs,
+    categories,
+    categolyId,
+  };
 };

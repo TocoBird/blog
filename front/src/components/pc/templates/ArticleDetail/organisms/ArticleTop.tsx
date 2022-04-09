@@ -1,4 +1,4 @@
-import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays, faHashtag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
@@ -24,7 +24,7 @@ const Inner = styled.div`
 `;
 const Title = styled.div`
   font-weight: bold;
-  font-size: 28px;
+  font-size: 32px;
   color: ${colors.text.mainBold};
 `;
 const Items = styled.div`
@@ -43,6 +43,9 @@ const Category = styled.div`
 `;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;
+`;
+const IconHash = styled(FontAwesomeIcon)`
+  margin-right: 4px;
 `;
 
 interface Props {
@@ -69,7 +72,10 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
             </Date>
             <Category>
               <Link to={`/category/${p.blog.categoryId}`}>
-                <ButtonCategory>#{p.blog.categoryName}</ButtonCategory>
+                <ButtonCategory>
+                  <IconHash icon={faHashtag} />
+                  {p.blog.categoryName}
+                </ButtonCategory>
               </Link>
             </Category>
           </Items>

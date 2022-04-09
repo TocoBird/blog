@@ -29,9 +29,13 @@ const Thumbnail = styled.div`
 const BlogTitle = styled.div`
   flex: 1;
   color: ${colors.text.mainBold};
-  font-weight: 500;
+  font-weight: bold;
   font-size: 14px;
   padding-left: ${size.ui.l3}px;
+`;
+const Bar = styled.div`
+  height: 1px;
+  background: #eef3ff;
 `;
 
 interface Props {
@@ -53,7 +57,14 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
         {p.favoriteBlogs.map(
           (b: DomainArticleDetailRecommendBlog, index: number) => (
             <Fragment key={`${index}_${b.id}`}>
-              {index !== 0 && <Spacer.S />}
+              {index !== 0 && <Spacer.M />}
+
+              {index !== 0 && (
+                <>
+                  <Bar />
+                  <Spacer.M />
+                </>
+              )}
 
               <Link to={`/article/${b.id}`}>
                 <Card>
