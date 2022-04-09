@@ -59,7 +59,7 @@ const Header: React.FC = (): JSX.Element => {
           <Link to="/">
             <LeftItem>
               <StaticImage
-                src="../../../images/TocoBlogLogo.png"
+                src="../../../../../images/TocoBlogLogo.png"
                 alt="TocoBlog"
                 height={30}
               />
