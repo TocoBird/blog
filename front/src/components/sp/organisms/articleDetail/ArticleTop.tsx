@@ -5,7 +5,7 @@ import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DomainBlogDetail } from '@/modules/domain/blog';
 import colors from '@/modules/common/colors';
-import { SpacerS } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
@@ -45,7 +45,7 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title>{p.blog.title}</Title>
 
-      <SpacerS />
+      <Spacer.S />
 
       <TopContentItems>
         <Date>

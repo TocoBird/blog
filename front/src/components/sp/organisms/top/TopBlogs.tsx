@@ -7,7 +7,7 @@ import {
 } from '@/modules/domain/category';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS, SpacerM, SpacerL } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
@@ -57,7 +57,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
           <Content>
             <Title>#{c.name}</Title>
 
-            <SpacerM />
+            <Spacer.M />
 
             {c.blogs.map((b: DomainTopPageBlog) => (
               <Fragment key={b.id}>
@@ -72,12 +72,12 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                   </Card>
                 </Link>
 
-                <SpacerS />
+                <Spacer.S />
               </Fragment>
             ))}
           </Content>
 
-          <SpacerL />
+          <Spacer.L />
         </Fragment>
       ))}
     </Wrapper>

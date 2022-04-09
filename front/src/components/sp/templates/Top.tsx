@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from 'linaria/react';
 import { DomainTopPageCategory } from '@/modules/domain/category';
 import colors from '@/modules/common/colors';
-import { SpacerL } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 import TopHeader from '@/components/sp/organisms/top/TopHeader';
 import TopBlogs from '@/components/sp/organisms/top/TopBlogs';
 
@@ -26,11 +26,11 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <TopHeader />
 
-      <SpacerL />
+      <Spacer.L />
 
       <BlogsTitle>最新の記事</BlogsTitle>
 
-      <SpacerL />
+      <Spacer.L />
 
       <TopBlogs categories={p.categories} />
     </Wrapper>

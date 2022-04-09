@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import { DomainCategory } from '@/modules/domain/blog';
 import colors from '@/modules/common/colors';
-import { SpacerS, SpacerM } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
@@ -26,7 +26,7 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title>カテゴリーで記事を探す</Title>
 
-      <SpacerM />
+      <Spacer.M />
 
       <div>
         {p.categories.map(c => (
@@ -35,7 +35,7 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
               <ButtonCategory>#{c.name}</ButtonCategory>
             </Link>
 
-            <SpacerS />
+            <Spacer.S />
           </Fragment>
         ))}
       </div>

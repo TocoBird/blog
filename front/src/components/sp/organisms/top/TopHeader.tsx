@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { SpacerS } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div`
   background: whitesmoke;
@@ -38,7 +38,7 @@ const TopHeader: React.FC = (): JSX.Element => {
           />
         </Title>
 
-        <SpacerS />
+        <Spacer.S />
 
         <TitleSub>プロダクト開発の情報を発信</TitleSub>
       </Inner>

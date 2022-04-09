@@ -4,7 +4,7 @@ import { styled } from 'linaria/react';
 import { DomainFavoriteBlog } from '@/modules/domain/articleDetail';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS, SpacerM } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const Title = styled.div`
@@ -47,12 +47,12 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title>おすすめの記事</Title>
 
-      <SpacerM />
+      <Spacer.M />
 
       <div>
         {p.favoriteBlogs.map((b: DomainFavoriteBlog, index: number) => (
           <Fragment key={`${index}_${b.id}`}>
-            {index !== 0 && <SpacerS />}
+            {index !== 0 && <Spacer.S />}
 
             <Link to={`/article/${b.id}`}>
               <Card>

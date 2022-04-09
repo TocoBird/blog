@@ -7,7 +7,7 @@ import {
 } from '@/modules/domain/articleDetail';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerM } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 import ArticleFavoriteBlog from '@/components/sp/organisms/articleDetail/ArticleFavoriteBlog';
 import ArticleTop from '@/components/sp/organisms/articleDetail/ArticleTop';
 import ArticleContent from '@/components/sp/organisms/articleDetail/ArticleContent';
@@ -52,31 +52,31 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <ArticleTop blog={p.blog} />
       </Content>
 
-      <SpacerM />
+      <Spacer.M />
 
       <Content>
         <ArticleContent text={p.blog.text} />
       </Content>
 
-      <SpacerM />
+      <Spacer.M />
 
       <Content>
         <ArticleCategory categories={p.categories} />
       </Content>
 
-      <SpacerM />
+      <Spacer.M />
 
       <Content>
         <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
       </Content>
 
-      <SpacerM />
+      <Spacer.M />
 
       <Content>
         <ArticleConcept />
       </Content>
 
-      <SpacerM />
+      <Spacer.M />
     </Wrapper>
   );
 };

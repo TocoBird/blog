@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { DomainCategoryBlog, DomainCategory } from '@/modules/domain/blog';
 import size from '@/modules/common/size';
 import colors from '@/modules/common/colors';
-import { SpacerS, SpacerM } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 
 const Wrapper = styled.div``;
@@ -56,7 +56,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Content style={{ padding: size.ui.l3 }}>
         <Title>カテゴリーから記事を探す</Title>
 
-        <SpacerM />
+        <Spacer.M />
 
         <div>
           {p.categories.map(c => (
@@ -71,13 +71,13 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                 </ButtonCategory>
               </Link>
 
-              <SpacerS />
+              <Spacer.S />
             </Fragment>
           ))}
         </div>
       </Content>
 
-      <SpacerS />
+      <Spacer.S />
 
       <div>
         {p.blogs.map(b => (
@@ -93,12 +93,12 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               </Card>
             </Link>
 
-            <SpacerS />
+            <Spacer.S />
           </Fragment>
         ))}
       </div>
 
-      <SpacerS />
+      <Spacer.S />
     </Wrapper>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from 'linaria/react';
 import colors from '@/modules/common/colors';
-import { SpacerS } from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/atoms/Spacer';
 
 const Wrapper = styled.div``;
 const Detail = styled.div`
@@ -22,7 +22,7 @@ const ArticleConcept: React.FC = (): JSX.Element => {
     <Wrapper>
       <Title>ブログのコンセプト</Title>
 
-      <SpacerS />
+      <Spacer.S />
 
       <Detail>
         プロダクト開発の効率を最大限に上げるため、様々な手法やアイデアなどを発信します。
