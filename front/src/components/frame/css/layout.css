@@ -36,7 +36,7 @@ h1,h2,h3,h4,h5,h6,p,a {
   font-size: 18px;
   font-weight: bold;
   padding-bottom: 14px;
-  color: #263658;
+  color: #182c55;
   border-bottom: solid 2px #e8efff;
   margin-bottom: 16px;
 }
@@ -54,6 +54,8 @@ h1,h2,h3,h4,h5,h6,p,a {
   font-size: 18px;
   border-bottom: 1px solid #e7eaf0;
   padding-bottom: 12px;
+  border-left: 4px solid #b4c2f8;
+  padding-left: 14px;
 }
 .blogMarkdownSP p {
   white-space: pre-line;
@@ -71,7 +73,7 @@ h1,h2,h3,h4,h5,h6,p,a {
   font-size: 24px;
   font-weight: bold;
   padding-bottom: 12px;
-  color: #263658;
+  color: #182c55;
   border-bottom: solid 2px #e8efff;
   margin-bottom: 20px;
 }
@@ -81,6 +83,7 @@ h1,h2,h3,h4,h5,h6,p,a {
   display: block;
   border-bottom: solid 2px #c6d8f4;
   bottom: -2px;
+  left: 0;
   width: 50%;
 }
 .blogMarkdownPC h2 {
@@ -88,12 +91,14 @@ h1,h2,h3,h4,h5,h6,p,a {
   margin-bottom: 12px;
   border-bottom: 1px solid #e7eaf0;
   padding-bottom: 12px;
+  border-left: 8px solid #b4c2f8;
+  padding-left: 14px;
 }
 .blogMarkdownPC p {
   font-size: 16px;
   white-space: pre-line;
   line-height: 32px;
-  padding-bottom: 32px;
+  padding-bottom: 40px;
   color: #3C475F;
 }
 .blogMarkdownPC img {

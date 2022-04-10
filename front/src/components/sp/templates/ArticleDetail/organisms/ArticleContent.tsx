@@ -1,3 +1,5 @@
+import { faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -8,6 +10,9 @@ const Wrapper = styled.div``;
 const Author = styled.div`
   color: ${colors.text.mainThin};
   font-weight: 500;
+`;
+const Icon = styled(FontAwesomeIcon)`
+  margin-right: 4px;
 `;
 
 interface Props {
@@ -27,7 +32,10 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
 
       <Spacer.S />
 
-      <Author>作者 tocotoco</Author>
+      <Author>
+        <Icon icon={faPenNib} />
+        作者 tocotoco
+      </Author>
     </Wrapper>
   );
 };
