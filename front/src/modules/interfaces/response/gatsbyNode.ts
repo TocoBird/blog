@@ -1,4 +1,4 @@
-interface ResTocoBlog {
+export interface ResTocoBlog {
   readonly id: number;
 }
 interface ResTocoBlogData {
@@ -6,7 +6,7 @@ interface ResTocoBlogData {
 }
 
 // カテゴリー
-interface ResCategory {
+export interface ResCategory {
   readonly id: number;
 }
 interface ResCategoryData {

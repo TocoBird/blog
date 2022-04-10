@@ -35,7 +35,7 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.XM />
 
       <div>
-        {p.categories.map((c, index: number) => (
+        {p.categories.map((c: DomainArticleDetailCategory, index: number) => (
           <Fragment key={c.id}>
             {index !== 0 && <Spacer.S />}
 
