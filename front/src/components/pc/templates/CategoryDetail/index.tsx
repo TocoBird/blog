@@ -21,13 +21,13 @@ const Inner = styled.div`
   box-sizing: border-box;
 `;
 const Content = styled.div`
-  background: ${colors.card.main};
+  background: ${colors.box.background};
 `;
 const Categories = styled.div`
   display: flex;
 `;
 const Card = styled.div`
-  background: ${colors.card.main};
+  background: ${colors.box.background};
   box-shadow: 0 2px 12px #0f1c2c17;
   display: flex;
   &:hover {

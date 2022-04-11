@@ -2,10 +2,11 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
+import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div`
-  background: whitesmoke;
+  background: ${colors.image.loadBackground};
   background-image: url('@/images/TocoBridBlogTopHeader.jpg');
   height: 600px;
   background-size: cover;
@@ -20,7 +21,7 @@ const Inner = styled.div`
 const TitleSub = styled.div`
   font-size: ${size.font.pc.l7}px;
   font-weight: bold;
-  color: white;
+  color: ${colors.text.onImage};
 `;
 
 /**

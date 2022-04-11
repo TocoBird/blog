@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
+import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 // import React, { useState } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,7 +11,7 @@ import size from '@/modules/common/size';
 const Wrapper = styled.div`
   position: fixed;
   z-index: 99;
-  background: linear-gradient(45deg, #232731f4, #121a2df4);
+  background: ${colors.header.background};
   height: 50px;
   line-height: 50px;
   box-shadow: 0 2px 12px #0f1c2c24;
@@ -30,7 +31,7 @@ const LeftItem = styled.div`
   height: 100%;
 `;
 const Right = styled.div`
-  color: #fff28b;
+  // color: #fff28b;
   font-size: ${size.font.sp.l4}px;
   cursor: pointer;
   transition: 0.2s;

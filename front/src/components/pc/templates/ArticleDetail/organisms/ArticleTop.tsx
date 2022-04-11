@@ -11,7 +11,7 @@ import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div`
-  background: ${colors.card.main};
+  background: ${colors.box.background};
 `;
 const Content = styled.div`
   margin: auto;
@@ -33,10 +33,7 @@ const Date = styled.div`
   color: ${colors.text.mainThin};
   font-weight: 500;
 `;
-const Category = styled.div`
-  color: ${colors.text.link};
-  font-weight: 500;
-`;
+const Category = styled.div``;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;
 `;

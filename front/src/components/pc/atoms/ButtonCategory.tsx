@@ -1,11 +1,12 @@
 import { styled } from 'linaria/react';
+import colors from '@/modules/common/colors';
 
 /**
  * ボタン: カテゴリ
  */
 export const ButtonCategory = styled.div`
-  background: linear-gradient(45deg, #52bbb5, #52b398);
-  color: white;
+  background: ${colors.button.background};
+  color: ${colors.button.text};
   font-weight: bold;
   border-radius: 50px;
   padding: 0 20px;

@@ -12,7 +12,7 @@ import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Card = styled.div`
-  background: ${colors.card.main};
+  background: ${colors.box.background};
   display: flex;
 `;
 const BlogTitle = styled(Title.S)`
@@ -21,7 +21,7 @@ const BlogTitle = styled(Title.S)`
 `;
 const Content = styled.div`
   border-radius: 4px;
-  background: ${colors.card.main};
+  background: ${colors.box.background};
   box-shadow: 0 2px 12px #0f1c2c17;
   padding: ${size.ui.l4}px;
   box-sizing: border-box;

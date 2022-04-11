@@ -19,44 +19,47 @@ const Markdown = styled.div`
   h1 {
     position: relative;
     font-size: ${size.font.pc.l5}px;
+    color: ${colors.text.mainBoldThin};
     font-weight: bold;
     padding-bottom: 12px;
-    color: #182c55;
-    border-bottom: solid 2px #e8efff;
+    border-bottom: solid 2px ${colors.border.h1};
     margin-bottom: 20px;
   }
   h1:after {
     position: absolute;
     content: ' ';
     display: block;
-    border-bottom: solid 2px #c6d8f4;
+    border-bottom: solid 2px ${colors.border.h1Accent};
     bottom: -2px;
     left: 0;
     width: 50%;
   }
   h2 {
     font-size: ${size.font.pc.l4}px;
-    color: #111a2f;
+    color: ${colors.text.mainBoldAccent};
     margin-bottom: 12px;
-    border-bottom: 1px solid #e7eaf0;
+    border-bottom: 1px solid ${colors.border.h2};
     padding-bottom: 12px;
-    border-left: 8px solid #b4c2f8;
+    border-left: 8px solid ${colors.border.h2Left};
     padding-left: 14px;
   }
   h3 {
     font-size: ${size.font.pc.l4}px;
-    color: #20293d;
+    color: ${colors.text.mainBold};
     margin-bottom: 12px;
   }
   p {
     font-size: ${size.font.pc.l3}px;
+    color: ${colors.text.main};
     white-space: pre-line;
     line-height: 32px;
     padding-bottom: 40px;
-    color: #3c475f;
   }
   img {
     width: 100%;
+  }
+  a {
+    color: ${colors.text.link};
   }
 `;
 

@@ -7,7 +7,7 @@ import size from '@/modules/common/size';
  */
 export const Box = styled.div`
   border-radius: 4px;
-  background: ${colors.card.main};
+  background: ${colors.box.background};
   box-shadow: 0 2px 12px #0f1c2c17;
   padding: ${size.ui.l6}px;
 `;

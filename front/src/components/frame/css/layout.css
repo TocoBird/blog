@@ -1,4 +1,4 @@
-html, body {
+html, body, #___gatsby {
   height: 100%;
 }
 
@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #ecf2f7;
+  background: #081c2c;
 }
 
 input,

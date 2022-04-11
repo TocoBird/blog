@@ -21,10 +21,7 @@ const Date = styled.div`
   color: ${colors.text.mainThin};
   font-weight: 500;
 `;
-const Category = styled.div`
-  color: ${colors.text.link};
-  font-weight: 500;
-`;
+const Category = styled.div``;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;
 `;
