@@ -43,7 +43,7 @@ const Markdown = styled.div`
     padding-left: 14px;
   }
   h3 {
-    font-size: ${size.font.pc.l3}px;
+    font-size: ${size.font.sp.l3}px;
     margin-bottom: 12px;
   }
   p {
