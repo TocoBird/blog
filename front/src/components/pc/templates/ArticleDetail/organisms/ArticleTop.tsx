@@ -27,7 +27,7 @@ const Items = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  font-size: 16px;
+  font-size: ${size.font.pc.l3}px;
 `;
 const Date = styled.div`
   color: ${colors.text.mainThin};

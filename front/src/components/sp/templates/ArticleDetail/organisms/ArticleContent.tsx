@@ -5,6 +5,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Spacer from '@/components/sp/atoms/Spacer';
 import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Author = styled.div`
@@ -13,6 +14,48 @@ const Author = styled.div`
 `;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 4px;
+`;
+const Markdown = styled.div`
+  h1 {
+    position: relative;
+    font-size: ${size.font.sp.l4}px;
+    font-weight: bold;
+    padding-bottom: 14px;
+    color: #182c55;
+    border-bottom: solid 2px #e8efff;
+    margin-bottom: 16px;
+  }
+  h1:after {
+    position: absolute;
+    content: ' ';
+    display: block;
+    border-bottom: solid 2px #c6d8f4;
+    bottom: -2px;
+    width: 50%;
+  }
+  h2 {
+    color: #111a2f;
+    margin-bottom: 12px;
+    font-size: ${size.font.sp.l4}px;
+    border-bottom: 1px solid #e7eaf0;
+    padding-bottom: 12px;
+    border-left: 4px solid #b4c2f8;
+    padding-left: 14px;
+  }
+  h3 {
+    font-size: ${size.font.pc.l3}px;
+    margin-bottom: 12px;
+  }
+  p {
+    white-space: pre-line;
+    line-height: 26px;
+    font-size: ${size.font.sp.l3}px;
+    padding-bottom: 24px;
+    color: #3c475f;
+  }
+  img {
+    width: 100%;
+  }
 `;
 
 interface Props {
@@ -26,9 +69,9 @@ interface Props {
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <div className="blogMarkdownSP">
+      <Markdown>
         <ReactMarkdown>{p.text}</ReactMarkdown>
-      </div>
+      </Markdown>
 
       <Spacer.S />
 

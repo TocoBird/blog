@@ -1,4 +1,5 @@
 import { styled } from 'linaria/react';
+import size from '@/modules/common/size';
 
 /**
  * ボタン: カテゴリ
@@ -7,6 +8,7 @@ export const ButtonCategory = styled.div`
   background: linear-gradient(45deg, #52bbb5, #52b398);
   color: white;
   font-weight: bold;
+  font-size: ${size.font.sp.l3}px;
   border-radius: 50px;
   padding: 0 20px;
   height: 36px;

@@ -8,13 +8,14 @@ import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const TopContentItems = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  font-size: 15px;
+  font-size: ${size.font.sp.l3}px;
 `;
 const Date = styled.div`
   color: ${colors.text.mainThin};

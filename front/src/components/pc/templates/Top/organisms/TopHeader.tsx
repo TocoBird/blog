@@ -2,6 +2,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
+import size from '@/modules/common/size';
 
 const Wrapper = styled.div`
   background: whitesmoke;
@@ -17,7 +18,7 @@ const Inner = styled.div`
   text-align: center;
 `;
 const TitleSub = styled.div`
-  font-size: 32px;
+  font-size: ${size.font.pc.l7}px;
   font-weight: bold;
   color: white;
 `;

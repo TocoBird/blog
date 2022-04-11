@@ -7,22 +7,22 @@ const Base = styled.div`
   color: ${colors.text.mainBold};
 `;
 const XS = styled(Base)`
-  font-size: ${size.font.l2}px;
+  font-size: ${size.font.sp.l2}px;
 `;
 const S = styled(Base)`
-  font-size: ${size.font.l3}px;
+  font-size: ${size.font.sp.l3}px;
 `;
 const M = styled(Base)`
-  font-size: ${size.font.l4}px;
+  font-size: ${size.font.sp.l4}px;
 `;
 const XM = styled(Base)`
-  font-size: ${size.font.l5}px;
+  font-size: ${size.font.sp.l5}px;
 `;
 const L = styled(Base)`
-  font-size: ${size.font.l6}px;
+  font-size: ${size.font.sp.l6}px;
 `;
 const XL = styled(Base)`
-  font-size: ${size.font.l7}px;
+  font-size: ${size.font.sp.l7}px;
 `;
 
 /**

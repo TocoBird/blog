@@ -15,7 +15,7 @@ const Card = styled.div`
     opacity: 0.8;
   }
 `;
-const BlogTitle = styled(Title.XS)`
+const BlogTitle = styled(Title.S)`
   flex: 1;
   padding-left: ${size.ui.l3}px;
 `;

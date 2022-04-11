@@ -3,11 +3,12 @@ import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import colors from '@/modules/common/colors';
+import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Detail = styled.div`
   color: ${colors.text.main};
-  font-size: 15px;
+  font-size: ${size.font.sp.l3}px;
 `;
 
 /**

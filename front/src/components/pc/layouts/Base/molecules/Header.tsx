@@ -43,7 +43,7 @@ const LeftItem = styled.div`
 `;
 const Right = styled.div`
   color: #fff28b;
-  font-size: 20px;
+  font-size: ${size.font.pc.l4}px;
   cursor: pointer;
   transition: 0.2s;
   &:hover {

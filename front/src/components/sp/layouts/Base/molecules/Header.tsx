@@ -2,6 +2,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
+import size from '@/modules/common/size';
 // import React, { useState } from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -30,7 +31,7 @@ const LeftItem = styled.div`
 `;
 const Right = styled.div`
   color: #fff28b;
-  font-size: 20px;
+  font-size: ${size.font.sp.l4}px;
   cursor: pointer;
   transition: 0.2s;
   &:hover {
