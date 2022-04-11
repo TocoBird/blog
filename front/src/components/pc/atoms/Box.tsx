@@ -1,20 +1,40 @@
 import { styled } from 'linaria/react';
-import colors from '@/modules/common/colors';
+import React, { CSSProperties, ReactNode } from 'react';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
-/**
- * コンテンツの背景
- */
-export const Box = styled.div`
+const Wrapper = styled.div`
   border-radius: 4px;
-  background: ${colors.box.background};
   box-shadow: 0 2px 12px #0f1c2c17;
   padding: ${size.ui.l6}px;
 `;
 
+interface Props {
+  /** style */
+  readonly style?: CSSProperties;
+  /** paddingの余白 */
+  readonly size: 'M' | 'L';
+  readonly children: ReactNode;
+}
+
 /**
- * コンテンツの背景: padding大きい
+ * コンテンツの背景
  */
-export const BoxL = styled(Box)`
-  padding: ${size.ui.l10}px;
-`;
+const Box: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+  const padding = p.size === 'M' ? size.ui.l6 : size.ui.l10;
+
+  return (
+    <Wrapper
+      style={{
+        background: color.box.background,
+        padding,
+        ...p.style,
+      }}
+    >
+      {p.children}
+    </Wrapper>
+  );
+};
+
+export default Box;

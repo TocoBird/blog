@@ -7,9 +7,6 @@ import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
 import { DomainTopCategory } from '@/domain/top/blog';
 
 const Wrapper = styled.div``;
-const BlogsTitle = styled(Title.XM)`
-  text-align: center;
-`;
 
 interface Props {
   /** 記事一覧 */
@@ -25,7 +22,14 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
 
       <Spacer.L />
 
-      <BlogsTitle>最新の記事</BlogsTitle>
+      <Title
+        size="XM"
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        最新の記事
+      </Title>
 
       <Spacer.L />
 

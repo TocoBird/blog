@@ -2,65 +2,25 @@ import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from '@/components/sp/atoms/Markdown';
 import Spacer from '@/components/sp/atoms/Spacer';
-import colors from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import { useColor } from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
 const Author = styled.div`
-  color: ${colors.text.mainThin};
   font-weight: 500;
 `;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 4px;
 `;
-const Markdown = styled.div`
-  h1 {
-    position: relative;
-    font-size: ${size.font.sp.l4}px;
-    color: ${colors.text.mainBoldThin};
-    font-weight: bold;
-    padding-bottom: 14px;
-    border-bottom: solid 2px ${colors.border.h1};
-    margin-bottom: 16px;
-  }
-  h1:after {
-    position: absolute;
-    content: ' ';
-    display: block;
-    border-bottom: solid 2px ${colors.border.h1Accent};
-    bottom: -2px;
-    width: 50%;
-  }
-  h2 {
-    font-size: ${size.font.sp.l4}px;
-    color: ${colors.text.mainBoldAccent};
-    margin-bottom: 12px;
-    border-bottom: 1px solid ${colors.border.h2};
-    padding-bottom: 12px;
-    border-left: 4px solid ${colors.border.h2Left};
-    padding-left: 14px;
-  }
-  h3 {
-    font-size: ${size.font.sp.l3}px;
-    color: ${colors.text.mainBold};
-    margin-bottom: 12px;
-  }
-  p {
-    font-size: ${size.font.sp.l3}px;
-    color: ${colors.text.main};
-    white-space: pre-line;
-    line-height: 26px;
-    padding-bottom: 24px;
-  }
+const MarkdownWrap = styled.div`
   img {
     width: 100%;
   }
-  a {
-    color: ${colors.text.link};
-  }
 `;
+// a {
+//   color: ${colors.text.link};
+// }
 
 interface Props {
   /** 記事内容 */
@@ -71,15 +31,21 @@ interface Props {
  * 記事詳細：本文
  */
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
   return (
     <Wrapper>
-      <Markdown>
-        <ReactMarkdown>{p.text}</ReactMarkdown>
-      </Markdown>
+      <MarkdownWrap>
+        <Markdown text={p.text} />
+      </MarkdownWrap>
 
       <Spacer.S />
 
-      <Author>
+      <Author
+        style={{
+          color: color.text.mainThin,
+        }}
+      >
         <Icon icon={faPenNib} />
         作者 tocotoco
       </Author>

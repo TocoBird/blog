@@ -10,12 +10,11 @@ import ArticleTop from '@/components/sp/templates/ArticleDetail/organisms/Articl
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
-import colors from '@/modules/common/colors';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Content = styled.div`
-  background: ${colors.box.background};
   padding: ${size.ui.l5}px;
   box-shadow: 0 2px 12px #0f1c2c17;
 `;
@@ -32,6 +31,8 @@ interface Props {
  * テンプレート：記事詳細
  */
 const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
   return (
     <Wrapper>
       <Thumbnail
@@ -43,31 +44,31 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         }}
       />
 
-      <Content>
+      <Content style={{ background: color.box.background }}>
         <ArticleTop blog={p.blog} />
       </Content>
 
       <Spacer.M />
 
-      <Content>
+      <Content style={{ background: color.box.background }}>
         <ArticleContent text={p.blog.text} />
       </Content>
 
       <Spacer.M />
 
-      <Content>
+      <Content style={{ background: color.box.background }}>
         <ArticleCategory categories={p.categories} />
       </Content>
 
       <Spacer.M />
 
-      <Content>
+      <Content style={{ background: color.box.background }}>
         <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
       </Content>
 
       <Spacer.M />
 
-      <Content>
+      <Content style={{ background: color.box.background }}>
         <ArticleConcept />
       </Content>
 

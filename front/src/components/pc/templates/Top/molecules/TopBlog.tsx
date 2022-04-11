@@ -14,10 +14,6 @@ const Card = styled.div`
     opacity: 0.8;
   }
 `;
-const TitleStyled = styled(Title.S)`
-  flex: 1;
-  padding-left: ${size.ui.l3}px;
-`;
 
 interface Props {
   /** 記事詳細 */
@@ -33,7 +29,15 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
         <Card>
           <Thumbnail width="120px" height="80px" url={p.blog.thumbnail} />
 
-          <TitleStyled>{p.blog.title}</TitleStyled>
+          <Title
+            size="S"
+            style={{
+              flex: 1,
+              paddingLeft: `${size.ui.l3}px`,
+            }}
+          >
+            {p.blog.title}
+          </Title>
         </Card>
       </Link>
     </Wrapper>

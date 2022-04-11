@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
+import ButtonCategory from '@/components/sp/atoms/ButtonCategory';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
@@ -24,7 +24,7 @@ interface Props {
 const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title.M>カテゴリーで記事を探す</Title.M>
+      <Title size="M">カテゴリーで記事を探す</Title>
 
       <Spacer.M />
 

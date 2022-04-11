@@ -3,12 +3,10 @@ import React from 'react';
 import HTMLHead from '@/components/frame/Head';
 import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
-import colors from '@/modules/common/colors';
+import { useColor } from '@/modules/common/colors';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
-const Wrapper = styled.div`
-  background: ${colors.site.background};
-`;
+const Wrapper = styled.div``;
 
 interface Props {
   readonly children: JSX.Element | JSX.Element[];
@@ -20,8 +18,14 @@ interface Props {
  * レイアウト
  */
 const Frame: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
   return (
-    <Wrapper>
+    <Wrapper
+      style={{
+        background: color.site.background,
+      }}
+    >
       <HTMLHead option={p.option} />
 
       <div>{p.isPC && <LayoutPC>{p.children}</LayoutPC>}</div>

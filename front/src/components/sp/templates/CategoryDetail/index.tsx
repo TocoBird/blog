@@ -3,29 +3,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
+import ButtonCategory from '@/components/sp/atoms/ButtonCategory';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
 import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
-import colors from '@/modules/common/colors';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Content = styled.div`
   text-align: center;
-  background: ${colors.box.background};
 `;
 const Card = styled.div`
-  background: ${colors.box.background};
   box-shadow: 0 2px 12px #0f1c2c17;
   display: flex;
   flex-wrap: wrap;
-`;
-const CardTitle = styled(Title.S)`
-  flex: 1;
-  padding: ${size.ui.l4}px;
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
@@ -44,10 +38,14 @@ interface Props {
  * デザイン途中なのでリファクタは後
  */
 const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
   return (
     <Wrapper>
-      <Content style={{ padding: size.ui.l3 }}>
-        <Title.M>カテゴリーで記事を探す</Title.M>
+      <Content
+        style={{ padding: size.ui.l3, background: color.box.background }}
+      >
+        <Title size="M">カテゴリーで記事を探す</Title>
 
         <Spacer.M />
 
@@ -57,7 +55,10 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <Link to={`/category/${c.id}`}>
                 <ButtonCategory
                   style={{
-                    color: c.id === p.selectedCategolyId ? '#ffc770' : 'white',
+                    color:
+                      c.id === p.selectedCategolyId
+                        ? '#ffc770'
+                        : color.button.text,
                   }}
                 >
                   <IconHash icon={faHashtag} />
@@ -77,9 +78,17 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         {p.blogs.map(b => (
           <Fragment key={b.id}>
             <Link to={`/article/${b.id}`}>
-              <Card>
+              <Card style={{ background: color.box.background }}>
                 <Thumbnail width="120px" height="80px" url={b.thumbnail} />
-                <CardTitle>{b.title}</CardTitle>
+                <Title
+                  size="S"
+                  style={{
+                    flex: 1,
+                    padding: `${size.ui.l4}px`,
+                  }}
+                >
+                  {b.title}
+                </Title>
               </Card>
             </Link>
 

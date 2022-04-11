@@ -1,12 +1,8 @@
 import { styled } from 'linaria/react';
-import colors from '@/modules/common/colors';
+import React, { CSSProperties, ReactNode } from 'react';
+import { useColor } from '@/modules/common/colors';
 
-/**
- * ボタン: カテゴリ
- */
-export const ButtonCategory = styled.div`
-  background: ${colors.button.background};
-  color: ${colors.button.text};
+const Wrapper = styled.div`
   font-weight: bold;
   border-radius: 50px;
   padding: 0 20px;
@@ -18,3 +14,29 @@ export const ButtonCategory = styled.div`
     opacity: 0.8;
   }
 `;
+
+interface Props {
+  /** style */
+  readonly style?: CSSProperties;
+  readonly children: ReactNode;
+}
+/**
+ * ボタン: カテゴリ
+ */
+const ButtonCategory: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
+  return (
+    <Wrapper
+      style={{
+        background: color.button.background,
+        color: color.button.text,
+        ...p.style,
+      }}
+    >
+      {p.children}
+    </Wrapper>
+  );
+};
+
+export default ButtonCategory;

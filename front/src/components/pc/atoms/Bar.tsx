@@ -1,10 +1,24 @@
 import { styled } from 'linaria/react';
-import colors from '@/modules/common/colors';
+import React from 'react';
+import { useColor } from '@/modules/common/colors';
+
+const Wrapper = styled.div`
+  height: 1px;
+`;
 
 /**
  * 線
  */
-export const Bar = styled.div`
-  height: 1px;
-  background: ${colors.bar.background};
-`;
+const Bar: React.FC = (): JSX.Element => {
+  const { color } = useColor();
+
+  return (
+    <Wrapper
+      style={{
+        background: color.bar.background,
+      }}
+    />
+  );
+};
+
+export default Bar;

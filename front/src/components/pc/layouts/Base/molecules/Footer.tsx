@@ -1,10 +1,8 @@
 import { styled } from 'linaria/react';
 import React from 'react';
-import colors from '@/modules/common/colors';
+import { useColor } from '@/modules/common/colors';
 
 const Wrapper = styled.div`
-  background: ${colors.footer.background};
-  color: ${colors.footer.text};
   height: 40px;
   line-height: 40px;
   text-align: center;
@@ -14,7 +12,18 @@ const Wrapper = styled.div`
  * フッター
  */
 const Footer: React.FC = (): JSX.Element => {
-  return <Wrapper>©︎ tocobird</Wrapper>;
+  const { color } = useColor();
+
+  return (
+    <Wrapper
+      style={{
+        background: color.footer.background,
+        color: color.footer.text,
+      }}
+    >
+      ©︎ tocobird
+    </Wrapper>
+  );
 };
 
 export default Footer;

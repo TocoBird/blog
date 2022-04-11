@@ -1,9 +1,7 @@
 import { styled } from 'linaria/react';
 import React, { CSSProperties } from 'react';
-import colors from '@/modules/common/colors';
 
 const Wrapper = styled.div`
-  background: ${colors.image.loadBackground};
   background-size: cover;
   background-position: 50% 50%;
 `;

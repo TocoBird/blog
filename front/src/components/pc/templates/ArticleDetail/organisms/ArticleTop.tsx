@@ -3,16 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
-import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
+import ButtonCategory from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
-import colors from '@/modules/common/colors';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
-const Wrapper = styled.div`
-  background: ${colors.box.background};
-`;
+const Wrapper = styled.div``;
 const Content = styled.div`
   margin: auto;
   min-width: ${size.responsive.pcMin}px;
@@ -30,7 +28,6 @@ const Items = styled.div`
   font-size: ${size.font.pc.l3}px;
 `;
 const Date = styled.div`
-  color: ${colors.text.mainThin};
   font-weight: 500;
 `;
 const Category = styled.div``;
@@ -50,16 +47,26 @@ interface Props {
  * 記事詳細：上部
  */
 const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
   return (
-    <Wrapper>
+    <Wrapper
+      style={{
+        background: color.box.background,
+      }}
+    >
       <Content>
         <Inner>
-          <Title.XL>{p.blog.title}</Title.XL>
+          <Title size="XL">{p.blog.title}</Title>
 
           <Spacer.S />
 
           <Items>
-            <Date>
+            <Date
+              style={{
+                color: color.text.mainThin,
+              }}
+            >
               <Icon icon={faCalendarDays} />
               {p.blog.updatedAt}更新
             </Date>

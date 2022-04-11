@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react';
 import React from 'react';
-import { Box, BoxL } from '@/components/pc/atoms/Box';
+import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
@@ -65,24 +65,24 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Spacer.L />
 
-            <BoxL>
+            <Box size="L">
               <ArticleContent text={p.blog.text} />
-            </BoxL>
+            </Box>
 
             <Spacer.L />
 
-            <BoxL>
+            <Box size="L">
               <ArticleConcept />
-            </BoxL>
+            </Box>
           </Left>
           <Right>
-            <Box>
+            <Box size="M">
               <ArticleCategory categories={p.categories} />
             </Box>
 
             <Spacer.L />
 
-            <Box>
+            <Box size="M">
               <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
             </Box>
           </Right>

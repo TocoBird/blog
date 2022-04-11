@@ -7,21 +7,15 @@ import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
-import colors from '@/modules/common/colors';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
 const Card = styled.div`
-  background: ${colors.box.background};
   display: flex;
-`;
-const BlogTitle = styled(Title.S)`
-  flex: 1;
-  padding-left: ${size.ui.l4}px;
 `;
 const Content = styled.div`
   border-radius: 4px;
-  background: ${colors.box.background};
   box-shadow: 0 2px 12px #0f1c2c17;
   padding: ${size.ui.l4}px;
   box-sizing: border-box;
@@ -38,24 +32,42 @@ interface Props {
  * トップページ：カテゴリ別記事一覧
  */
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
   return (
     <Wrapper>
       {p.categories.map((c: DomainTopCategory) => (
         <Fragment key={c.id}>
-          <Content>
-            <Title.M>
+          <Content
+            style={{
+              background: color.box.background,
+            }}
+          >
+            <Title size="M">
               <IconHash icon={faHashtag} />
               {c.name}
-            </Title.M>
+            </Title>
 
             <Spacer.M />
 
             {c.blogs.map((b: DomainTopCategoryBlog) => (
               <Fragment key={b.id}>
                 <Link to={`/article/${b.id}`}>
-                  <Card>
+                  <Card
+                    style={{
+                      background: color.box.background,
+                    }}
+                  >
                     <Thumbnail width="110px" height="70px" url={b.thumbnail} />
-                    <BlogTitle>{b.title}</BlogTitle>
+                    <Title
+                      size="S"
+                      style={{
+                        flex: 1,
+                        paddingLeft: `${size.ui.l4}px`,
+                      }}
+                    >
+                      {b.title}
+                    </Title>
                   </Card>
                 </Link>
 

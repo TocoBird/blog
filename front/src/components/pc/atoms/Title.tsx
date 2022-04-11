@@ -1,47 +1,64 @@
 import { styled } from 'linaria/react';
-import colors from '@/modules/common/colors';
+import React, { CSSProperties, ReactNode } from 'react';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
-const Base = styled.div`
+const Wrapper = styled.div`
   font-weight: bold;
-  color: ${colors.text.mainBold};
 `;
-const XS = styled(Base)`
-  font-size: ${size.font.pc.l2}px;
-`;
-const S = styled(Base)`
-  font-size: ${size.font.pc.l3}px;
-`;
-const M = styled(Base)`
-  font-size: ${size.font.pc.l4}px;
-`;
-const XM = styled(Base)`
-  font-size: ${size.font.pc.l5}px;
-`;
-const L = styled(Base)`
-  font-size: ${size.font.pc.l6}px;
-`;
-const XL = styled(Base)`
-  font-size: ${size.font.pc.l7}px;
-`;
+
+interface Props {
+  /**
+   * XS とても小さい
+   * S 小さい
+   * M 中間
+   * XM 少し大きい
+   * L 大きい
+   * XL とても大きい
+   */
+  readonly size: 'XS' | 'S' | 'M' | 'XM' | 'L' | 'XL';
+  /** style */
+  readonly style?: CSSProperties;
+  readonly children: ReactNode;
+}
 
 /**
  * タイトル
  * ここのスタイルは変えない
  */
-const Title = {
-  /** height: とても小さい */
-  XS,
-  /** height: 小さい */
-  S,
-  /** height: 中間 */
-  M,
-  /** height: 少し大きい */
-  XM,
-  /** height: 大きい */
-  L,
-  /** height: とても大きい */
-  XL,
+const Title: React.FC<Props> = (p: Props): JSX.Element => {
+  const { color } = useColor();
+
+  const fontSize = (): number => {
+    switch (p.size) {
+      case 'XS':
+        return size.font.pc.l2;
+      case 'S':
+        return size.font.pc.l3;
+      case 'M':
+        return size.font.pc.l4;
+      case 'XM':
+        return size.font.pc.l5;
+      case 'L':
+        return size.font.pc.l6;
+      case 'XL':
+        return size.font.pc.l7;
+      default:
+        return 0;
+    }
+  };
+
+  return (
+    <Wrapper
+      style={{
+        color: color.text.mainBold,
+        fontSize: fontSize(),
+        ...p.style,
+      }}
+    >
+      {p.children}
+    </Wrapper>
+  );
 };
 
 export default Title;

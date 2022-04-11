@@ -15,10 +15,6 @@ const Card = styled.div`
     opacity: 0.8;
   }
 `;
-const BlogTitle = styled(Title.S)`
-  flex: 1;
-  padding-left: ${size.ui.l3}px;
-`;
 
 interface Props {
   /** お気に入り記事一覧 */
@@ -31,7 +27,7 @@ interface Props {
 const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title.M>おすすめの記事</Title.M>
+      <Title size="M">おすすめの記事</Title>
 
       <Spacer.M />
 
@@ -44,7 +40,15 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
               <Link to={`/article/${b.id}`}>
                 <Card>
                   <Thumbnail width="100px" height="60px" url={b.thumbnail} />
-                  <BlogTitle>{b.title}</BlogTitle>
+                  <Title
+                    size="S"
+                    style={{
+                      flex: 1,
+                      paddingLeft: `${size.ui.l3}px`,
+                    }}
+                  >
+                    {b.title}
+                  </Title>
                 </Card>
               </Link>
             </Fragment>

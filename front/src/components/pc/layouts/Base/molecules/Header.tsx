@@ -1,17 +1,16 @@
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
-// import React, { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faMoon } from '@fortawesome/free-solid-svg-icons';
-import colors from '@/modules/common/colors';
+import { useHookHeader } from '@/components/pc/layouts/Base/molecules/hooks';
+import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div`
   position: fixed;
   z-index: 99;
-  background: ${colors.header.background};
   height: 50px;
   line-height: 50px;
   box-shadow: 0 2px 12px #0f1c2c24;
@@ -40,28 +39,36 @@ const LeftItem = styled.div`
   height: 100%;
 `;
 const Right = styled.div`
-  // color: #fff28b;
-  font-size: ${size.font.pc.l4}px;
+  height: 100%;
+`;
+const IconWrapper = styled.div`
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  height: 100%;
   transition: 0.2s;
   &:hover {
     opacity: 0.8;
   }
 `;
-// const Icon = styled(FontAwesomeIcon)``;
+const Icon = styled(FontAwesomeIcon)`
+  font-size: ${size.font.pc.l5}px;
+`;
 
 /**
  * ヘッダー
  */
 const Header: React.FC = (): JSX.Element => {
-  // const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  // const onClickDarkMode = () => {
-  //   setIsDarkMode(!isDarkMode);
-  // };
+  const { color } = useColor();
+  const { isLight, onClickDarkMode } = useHookHeader();
 
   return (
     <>
-      <Wrapper>
+      <Wrapper
+        style={{
+          background: color.header.background,
+        }}
+      >
         <WrapperInner>
           <Left>
             <Link to="/">
@@ -75,9 +82,14 @@ const Header: React.FC = (): JSX.Element => {
             </Link>
           </Left>
           <Right>
-            {/* <div onClick={onClickDarkMode}>
-              <Icon icon={faMoon} />
-            </div> */}
+            <IconWrapper onClick={onClickDarkMode}>
+              <Icon
+                icon={isLight ? faMoon : faSun}
+                style={{
+                  color: color.colorMode.background,
+                }}
+              />
+            </IconWrapper>
           </Right>
         </WrapperInner>
       </Wrapper>
