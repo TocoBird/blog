@@ -1,16 +1,13 @@
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
+import Title from '@/components/sp/atoms/Title';
 import TopBlogs from '@/components/sp/templates/Top/organisms/TopBlogs';
 import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
 import { DomainTopCategory } from '@/domain/top/blog';
-import colors from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
-const BlogsTitle = styled.div`
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 24px;
+const BlogsTitle = styled(Title.XM)`
   text-align: center;
 `;
 

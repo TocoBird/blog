@@ -22,11 +22,7 @@ const Wrapper = styled.div`
 const HeaderSpace = styled.div`
   height: 50px;
 `;
-const Left = styled.div`
-  a {
-    color: white;
-  }
-`;
+const Left = styled.div``;
 const LeftItem = styled.div`
   display: flex;
   align-items: center;

@@ -1,17 +1,13 @@
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
+import Title from '@/components/sp/atoms/Title';
 import colors from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
 const Detail = styled.div`
   color: ${colors.text.main};
   font-size: 15px;
-`;
-const Title = styled.div`
-  font-weight: bold;
-  font-size: 18px;
-  color: ${colors.text.mainBold};
 `;
 
 /**
@@ -20,7 +16,7 @@ const Title = styled.div`
 const ArticleConcept: React.FC = (): JSX.Element => {
   return (
     <Wrapper>
-      <Title>ブログのコンセプト</Title>
+      <Title.M>ブログのコンセプト</Title.M>
 
       <Spacer.S />
 

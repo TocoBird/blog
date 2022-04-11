@@ -24,17 +24,17 @@ const XL = styled.div`
  * 余白：縦のみ設定している
  */
 const Spacer = {
-  /** height: 最小 */
+  /** height: とても小さい */
   XS,
   /** height: 小さい */
   S,
   /** height: 中間 */
   M,
-  /** height: 大きい */
+  /** height: 少し大きい */
   XM,
-  /** height: さらに大きい */
+  /** height: 大きい */
   L,
-  /** height: 最大 */
+  /** height: とても大きい */
   XL,
 };
 

@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const Title = styled.div``;
 const Inner = styled.div`
   text-align: center;
 `;
@@ -30,13 +29,11 @@ const TopHeader: React.FC = (): JSX.Element => {
   return (
     <Wrapper>
       <Inner>
-        <Title>
-          <StaticImage
-            src="../../../../../images/TocoBlogLogo.png"
-            alt="TocoBlog"
-            height={50}
-          />
-        </Title>
+        <StaticImage
+          src="../../../../../images/TocoBlogLogo.png"
+          alt="TocoBlog"
+          height={50}
+        />
 
         <Spacer.S />
 

@@ -4,34 +4,20 @@ import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
+import Thumbnail from '@/components/sp/atoms/Thumbnail';
+import Title from '@/components/sp/atoms/Title';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
-const Title = styled.div`
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 22px;
-`;
 const Card = styled.div`
   background: ${colors.card.main};
   display: flex;
 `;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  width: 110px;
-  height: 70px;
-  background-size: cover;
-  background-position: 50% 50%;
-`;
-const BlogTitle = styled.div`
+const BlogTitle = styled(Title.S)`
   flex: 1;
   padding-left: ${size.ui.l4}px;
-  font-weight: bold;
-  font-size: 15px;
-  flex: 1;
-  color: ${colors.text.mainBold};
 `;
 const Content = styled.div`
   border-radius: 4px;
@@ -57,10 +43,10 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
       {p.categories.map((c: DomainTopCategory) => (
         <Fragment key={c.id}>
           <Content>
-            <Title>
+            <Title.M>
               <IconHash icon={faHashtag} />
               {c.name}
-            </Title>
+            </Title.M>
 
             <Spacer.M />
 
@@ -68,11 +54,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
               <Fragment key={b.id}>
                 <Link to={`/article/${b.id}`}>
                   <Card>
-                    <Thumbnail
-                      style={{
-                        backgroundImage: `url('${b.thumbnail}')`,
-                      }}
-                    />
+                    <Thumbnail width="110px" height="70px" url={b.thumbnail} />
                     <BlogTitle>{b.title}</BlogTitle>
                   </Card>
                 </Link>

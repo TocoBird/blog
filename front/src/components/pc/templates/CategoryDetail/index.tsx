@@ -5,6 +5,8 @@ import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
+import Thumbnail from '@/components/pc/atoms/Thumbnail';
+import Title from '@/components/pc/atoms/Title';
 import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import colors from '@/modules/common/colors';
@@ -17,11 +19,6 @@ const Inner = styled.div`
   max-width: ${size.responsive.pcMax}px;
   padding: 0 ${size.ui.l8}px;
   box-sizing: border-box;
-`;
-const Title = styled.div`
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 24px;
 `;
 const Content = styled.div`
   background: ${colors.card.main};
@@ -37,20 +34,9 @@ const Card = styled.div`
     opacity: 0.8;
   }
 `;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  width: 140px;
-  height: 100px;
-  background-size: cover;
-  background-position: 50% 50%;
-`;
-const CardTitle = styled.div`
+const CardTitle = styled(Title.XS)`
   flex: 1;
   padding: ${size.ui.l4}px;
-  font-weight: bold;
-  font-size: 15px;
-  flex: 1;
-  color: ${colors.text.mainBold};
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
@@ -75,7 +61,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Spacer.L />
 
-          <Title>カテゴリーで記事を探す</Title>
+          <Title.XM>カテゴリーで記事を探す</Title.XM>
 
           <Spacer.M />
 
@@ -112,11 +98,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Fragment key={b.id}>
               <Link to={`/article/${b.id}`}>
                 <Card>
-                  <Thumbnail
-                    style={{
-                      backgroundImage: `url('${b.thumbnail}')`,
-                    }}
-                  />
+                  <Thumbnail width="140px" height="100px" url={b.thumbnail} />
                   <CardTitle>{b.title}</CardTitle>
                 </Card>
               </Link>

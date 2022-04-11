@@ -1,8 +1,9 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
+import Thumbnail from '@/components/pc/atoms/Thumbnail';
+import Title from '@/components/pc/atoms/Title';
 import { DomainTopCategoryBlog } from '@/domain/top/blog';
-import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
@@ -13,18 +14,8 @@ const Card = styled.div`
     opacity: 0.8;
   }
 `;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  width: 120px;
-  height: 80px;
-  background-size: cover;
-  background-position: 50% 50%;
-`;
-const Title = styled.div`
+const TitleStyled = styled(Title.S)`
   flex: 1;
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 16px;
   padding-left: ${size.ui.l3}px;
 `;
 
@@ -40,13 +31,9 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Link to={`/article/${p.blog.id}`}>
         <Card>
-          <Thumbnail
-            style={{
-              backgroundImage: `url('${p.blog.thumbnail}')`,
-            }}
-          />
+          <Thumbnail width="120px" height="80px" url={p.blog.thumbnail} />
 
-          <Title>{p.blog.title}</Title>
+          <TitleStyled>{p.blog.title}</TitleStyled>
         </Card>
       </Link>
     </Wrapper>

@@ -2,10 +2,11 @@ import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
+import { BoxL } from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
+import Title from '@/components/pc/atoms/Title';
 import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
-import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div`
@@ -18,19 +19,10 @@ const Wrapper = styled.div`
   padding: 0 ${size.ui.l8}px;
   box-sizing: border-box;
 `;
-const Content = styled.div`
+const Content = styled(BoxL)`
   width: 48.5%;
-  border-radius: 4px;
-  background: ${colors.card.main};
-  box-shadow: 0 2px 12px #0f1c2c17;
-  padding: ${size.ui.l8}px;
   box-sizing: border-box;
   margin-bottom: ${size.ui.l8}px;
-`;
-const Title = styled.div`
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 24px;
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 4px;
@@ -48,10 +40,10 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       {p.categories.map((c: DomainTopCategory, index: number) => (
         <Content key={`${index}_${c.id}`}>
-          <Title>
+          <Title.XM>
             <IconHash icon={faHashtag} />
             {c.name}
-          </Title>
+          </Title.XM>
 
           <Spacer.XM />
 

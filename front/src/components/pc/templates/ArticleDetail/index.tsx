@@ -1,6 +1,8 @@
 import { styled } from 'linaria/react';
 import React from 'react';
+import { Box, BoxL } from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
+import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
 import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/ArticleConcept';
 import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
@@ -9,7 +11,6 @@ import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/Articl
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
-import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
@@ -29,23 +30,6 @@ const Left = styled.div`
 const Right = styled.div`
   width: 280px;
   margin-left: ${size.ui.l8}px;
-`;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  height: 280px;
-  background-size: cover;
-  background-position: 50% 50%;
-  box-shadow: 0 2px 12px #0f1c2c17;
-  border-radius: 2px;
-`;
-const Item = styled.div`
-  border-radius: 4px;
-  background: ${colors.card.main};
-  box-shadow: 0 2px 12px #0f1c2c17;
-  padding: ${size.ui.l6}px;
-`;
-const ItemArticle = styled(Item)`
-  padding: ${size.ui.l10}px;
 `;
 
 interface Props {
@@ -70,33 +54,37 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <Content>
           <Left>
             <Thumbnail
+              width="100%"
+              height="280px"
+              url={p.blog.thumbnail}
               style={{
-                backgroundImage: `url('${p.blog.thumbnail}')`,
+                borderRadius: 2,
+                boxShadow: '0 2px 12px #0f1c2c17',
               }}
             />
 
             <Spacer.L />
 
-            <ItemArticle>
+            <BoxL>
               <ArticleContent text={p.blog.text} />
-            </ItemArticle>
+            </BoxL>
 
             <Spacer.L />
 
-            <ItemArticle>
+            <BoxL>
               <ArticleConcept />
-            </ItemArticle>
+            </BoxL>
           </Left>
           <Right>
-            <Item>
+            <Box>
               <ArticleCategory categories={p.categories} />
-            </Item>
+            </Box>
 
             <Spacer.L />
 
-            <Item>
+            <Box>
               <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
-            </Item>
+            </Box>
           </Right>
         </Content>
       </ContentWrapper>

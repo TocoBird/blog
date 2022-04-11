@@ -5,19 +5,16 @@ import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 import Spacer from '@/components/sp/atoms/Spacer';
+import Thumbnail from '@/components/sp/atoms/Thumbnail';
+import Title from '@/components/sp/atoms/Title';
 import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
-const Title = styled.div`
-  color: ${colors.text.mainBold};
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-`;
 const Content = styled.div`
+  text-align: center;
   background: ${colors.card.main};
 `;
 const Card = styled.div`
@@ -26,19 +23,9 @@ const Card = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  width: 120px;
-  height: 80px;
-  background-size: cover;
-  background-position: 50% 50%;
-`;
-const CardTitle = styled.div`
+const CardTitle = styled(Title.S)`
   flex: 1;
   padding: ${size.ui.l4}px;
-  font-weight: 500;
-  font-size: 15px;
-  color: ${colors.text.mainBold};
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
@@ -60,7 +47,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <Content style={{ padding: size.ui.l3 }}>
-        <Title>カテゴリーで記事を探す</Title>
+        <Title.M>カテゴリーで記事を探す</Title.M>
 
         <Spacer.M />
 
@@ -91,11 +78,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
           <Fragment key={b.id}>
             <Link to={`/article/${b.id}`}>
               <Card>
-                <Thumbnail
-                  style={{
-                    backgroundImage: `url('${b.thumbnail}')`,
-                  }}
-                />
+                <Thumbnail width="120px" height="80px" url={b.thumbnail} />
                 <CardTitle>{b.title}</CardTitle>
               </Card>
             </Link>

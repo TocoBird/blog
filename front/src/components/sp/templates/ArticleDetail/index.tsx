@@ -1,6 +1,7 @@
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
+import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import ArticleCategory from '@/components/sp/templates/ArticleDetail/organisms/ArticleCategory';
 import ArticleConcept from '@/components/sp/templates/ArticleDetail/organisms/ArticleConcept';
 import ArticleContent from '@/components/sp/templates/ArticleDetail/organisms/ArticleContent';
@@ -13,13 +14,6 @@ import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
-const Thumbnail = styled.div`
-  background: whitesmoke;
-  height: 120px;
-  background-size: cover;
-  background-position: 50% 50%;
-  border-radius: 2px;
-`;
 const Content = styled.div`
   background: ${colors.card.main};
   padding: ${size.ui.l5}px;
@@ -41,8 +35,11 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <Thumbnail
+        width="100%"
+        height="120px"
+        url={p.blog.thumbnail}
         style={{
-          backgroundImage: `url('${p.blog.thumbnail}')`,
+          borderRadius: 2,
         }}
       />
 

@@ -5,15 +5,11 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import { ButtonCategory } from '@/components/sp/atoms/ButtonCategory';
 import Spacer from '@/components/sp/atoms/Spacer';
+import Title from '@/components/sp/atoms/Title';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import colors from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
-const Title = styled.div`
-  font-weight: bold;
-  font-size: 18px;
-  color: ${colors.text.mainBold};
-`;
 const TopContentItems = styled.div`
   display: flex;
   justify-content: space-between;
@@ -46,7 +42,7 @@ interface Props {
 const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title>{p.blog.title}</Title>
+      <Title.M>{p.blog.title}</Title.M>
 
       <Spacer.S />
 

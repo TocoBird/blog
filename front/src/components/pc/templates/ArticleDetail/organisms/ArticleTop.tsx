@@ -5,6 +5,7 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
+import Title from '@/components/pc/atoms/Title';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import colors from '@/modules/common/colors';
 import size from '@/modules/common/size';
@@ -21,11 +22,6 @@ const Content = styled.div`
 `;
 const Inner = styled.div`
   padding: ${size.ui.l10}px 0;
-`;
-const Title = styled.div`
-  font-weight: bold;
-  font-size: 32px;
-  color: ${colors.text.mainBold};
 `;
 const Items = styled.div`
   display: flex;
@@ -61,7 +57,7 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Content>
         <Inner>
-          <Title>{p.blog.title}</Title>
+          <Title.XL>{p.blog.title}</Title.XL>
 
           <Spacer.S />
 

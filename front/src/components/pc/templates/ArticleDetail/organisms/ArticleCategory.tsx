@@ -5,16 +5,10 @@ import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import { ButtonCategory } from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
+import Title from '@/components/pc/atoms/Title';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
-import colors from '@/modules/common/colors';
-import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
-const Title = styled.div`
-  font-weight: bold;
-  font-size: ${size.font.l4}px;
-  color: ${colors.text.mainBold};
-`;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
 `;
@@ -30,7 +24,7 @@ interface Props {
 const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title>カテゴリーで記事を探す</Title>
+      <Title.M>カテゴリーで記事を探す</Title.M>
 
       <Spacer.XM />
 
