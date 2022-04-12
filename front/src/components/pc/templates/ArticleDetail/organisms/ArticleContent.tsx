@@ -5,6 +5,7 @@ import React from 'react';
 import Markdown from '@/components/pc/atoms/Markdown';
 import Spacer from '@/components/pc/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
+import { Node } from '@/modules/common/markdown';
 
 const Wrapper = styled.div``;
 const Author = styled.div`
@@ -19,13 +20,9 @@ const MarkdownWrapper = styled.div`
   }
 `;
 
-// a {
-//   color: ${colors.text.link};
-// }
-
 interface Props {
   /** 記事内容 */
-  readonly text: string;
+  readonly nodes: Node[];
 }
 
 /**
@@ -37,7 +34,7 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <MarkdownWrapper>
-        <Markdown text={p.text} />
+        <Markdown nodes={p.nodes} />
       </MarkdownWrapper>
 
       <Spacer.S />

@@ -5,6 +5,7 @@ import {
   BlogText,
   BlogUpdatedAt,
 } from '@/domain/_site/blog';
+import { Node } from '@/modules/common/markdown';
 
 /** サイト単位のドメインの部分集合 */
 type Blog = BlogId & BlogTitle & BlogThumbnail & BlogText & BlogUpdatedAt;
@@ -17,6 +18,8 @@ export class DomainArticleDetailBlog implements Blog {
     public readonly id: number = 0,
     public readonly title: string = '',
     public readonly text: string = '',
+    /** markdown用の本文テキストのNode */
+    public readonly textNodes: Node[] = [] as Node[],
     public readonly thumbnail: string = '',
     public readonly updatedAt: string = '',
     /** カテゴリID */

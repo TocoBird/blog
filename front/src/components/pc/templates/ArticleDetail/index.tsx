@@ -7,6 +7,7 @@ import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/A
 import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/ArticleConcept';
 import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
+import ArticleTableOfContents from '@/components/pc/templates/ArticleDetail/organisms/ArticleTableOfContents';
 import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
@@ -66,7 +67,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Spacer.L />
 
             <Box size="L">
-              <ArticleContent text={p.blog.text} />
+              <ArticleContent nodes={p.blog.textNodes} />
             </Box>
 
             <Spacer.L />
@@ -78,6 +79,12 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
           <Right>
             <Box size="M">
               <ArticleCategory categories={p.categories} />
+            </Box>
+
+            <Spacer.L />
+
+            <Box size="M">
+              <ArticleTableOfContents />
             </Box>
 
             <Spacer.L />

@@ -4,6 +4,7 @@ import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import { errorWrapper } from '@/modules/common/error';
+import { convertNodes, Node } from '@/modules/common/markdown';
 import {
   Res,
   ResTocoBlog,
@@ -67,10 +68,14 @@ const getDomainArticleDetailBlog = (
     const categoryName =
       String(resblog.attributes.category.data.attributes.name) || '';
 
+    // 本文をNodeに変換
+    const textNodes: Node[] = convertNodes(text);
+
     return new DomainArticleDetailBlog(
       id,
       title,
       text,
+      textNodes,
       thumbnail,
       updatedAt,
       categoryId,

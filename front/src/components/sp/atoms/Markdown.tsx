@@ -1,8 +1,8 @@
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import { useHooks } from '@/components/sp/atoms/Markdown/hooks';
 import Spacer from '@/components/sp/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
+import { Node } from '@/modules/common/markdown';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
@@ -43,7 +43,7 @@ const A = styled.a``;
 
 interface Props {
   /** テキスト */
-  readonly text: string;
+  readonly nodes: Node[];
 }
 
 /**
@@ -52,11 +52,10 @@ interface Props {
  */
 const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
-  const { nodes } = useHooks(p.text);
 
   return (
     <Wrapper>
-      {nodes.map((n, index: number) => {
+      {p.nodes.map((n, index: number) => {
         const key = `node_id_${index}`;
 
         if (n.type === 'br') return <br key={key} />;
@@ -105,6 +104,9 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
               href={n.href}
               target="_blank"
               rel="noopener noreferrer"
+              style={{
+                color: color.text.link,
+              }}
             >
               {n.text}
             </A>

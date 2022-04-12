@@ -51,7 +51,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <Content style={{ background: color.box.background }}>
-        <ArticleContent text={p.blog.text} />
+        <ArticleContent nodes={p.blog.textNodes} />
       </Content>
 
       <Spacer.M />
