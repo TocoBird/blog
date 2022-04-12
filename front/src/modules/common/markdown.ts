@@ -1,30 +1,31 @@
-interface TagImg {
+export interface TagImg {
   readonly type: 'img';
   readonly src: string;
   readonly alt: string;
 }
-interface TagA {
+export interface TagA {
   readonly type: 'a';
   readonly href: string;
   readonly text: string;
 }
-interface TagH {
+export interface TagH {
   readonly type: 'h';
+  readonly id: string;
   readonly text: string;
   readonly size: 1 | 2 | 3 | 4 | 5 | 6;
 }
-interface TagStrong {
+export interface TagStrong {
   readonly type: 'strong';
   readonly text: string;
 }
-interface TagSpan {
+export interface TagSpan {
   readonly type: 'span';
   readonly text: string;
 }
-interface TagBr {
+export interface TagBr {
   readonly type: 'br';
 }
-interface TagSpacer {
+export interface TagSpacer {
   readonly type: 'spacer';
 }
 
@@ -36,18 +37,20 @@ interface TagP {
   readonly inlines?: NodeInline[];
 }
 
-export type Node = TagH | TagP | TagA | TagImg | TagBr | TagSpacer;
+export type TagNode = TagH | TagP | TagA | TagImg | TagBr | TagSpacer;
 
 /**
  * h1
  */
-const hTag = (line: string, num: number): TagH => {
+const hTag = (line: string, num: number, lineIndex: number): TagH => {
   const text = line.replace(/#/g, '');
+  const id = `markdown_h_id_${lineIndex}`;
 
   if (num > 0 && num < 7) {
     const size = num as 1 | 2 | 3 | 4 | 5 | 6;
     return {
       type: 'h',
+      id,
       size,
       text,
     };
@@ -55,6 +58,7 @@ const hTag = (line: string, num: number): TagH => {
 
   return {
     type: 'h',
+    id,
     size: 6,
     text,
   };
@@ -118,9 +122,9 @@ const aTag = (as: string[]): TagA => {
 /**
  * 簡易的にやってしまう。後々ライブラリ入れて正確にする。
  */
-export const convertNodes = (str: string): Node[] => {
+export const convertNodes = (str: string): TagNode[] => {
   const lines = str.split('\n');
-  const ns: Node[] = [];
+  const ns: TagNode[] = [];
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
@@ -140,7 +144,7 @@ export const convertNodes = (str: string): Node[] => {
         ns.push({
           type: 'spacer',
         });
-      ns.push(hTag(line, sharpCount));
+      ns.push(hTag(line, sharpCount, i));
       continue;
     }
 

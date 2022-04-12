@@ -68,7 +68,7 @@ export const useColor = (): UseColor => {
     },
     /** カラーモード変更の色 */
     colorMode: {
-      background: isDark ? '#fff28b' : '#fff28b',
+      background: isDark ? '#cfbe6d' : '#fff28b',
     },
   };
 

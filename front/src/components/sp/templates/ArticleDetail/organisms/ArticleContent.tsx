@@ -5,7 +5,7 @@ import React from 'react';
 import Markdown from '@/components/sp/atoms/Markdown';
 import Spacer from '@/components/sp/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
-import { Node } from '@/modules/common/markdown';
+import { TagNode } from '@/modules/common/markdown';
 
 const Wrapper = styled.div``;
 const Author = styled.div`
@@ -14,15 +14,10 @@ const Author = styled.div`
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 4px;
 `;
-const MarkdownWrap = styled.div`
-  img {
-    width: 100%;
-  }
-`;
 
 interface Props {
   /** 記事内容 */
-  readonly nodes: Node[];
+  readonly nodes: TagNode[];
 }
 
 /**
@@ -33,9 +28,7 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      <MarkdownWrap>
-        <Markdown nodes={p.nodes} />
-      </MarkdownWrap>
+      <Markdown nodes={p.nodes} />
 
       <Spacer.S />
 

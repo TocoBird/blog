@@ -84,7 +84,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Spacer.L />
 
             <Box size="M">
-              <ArticleTableOfContents />
+              <ArticleTableOfContents nodes={p.blog.textNodes} />
             </Box>
 
             <Spacer.L />

@@ -8,6 +8,7 @@ const key = {
 
 interface UserReturn {
   readonly isLightMode: () => boolean;
+  readonly isDarkMode: () => boolean;
   readonly toggleMode: () => void;
 }
 
@@ -26,27 +27,33 @@ export const useColorMode = (): UserReturn => {
   };
 
   /**
+   * ダークモードかどうか
+   */
+  const isDarkMode = (): boolean => {
+    const mode = cookies[key.name];
+    return mode === key.dark;
+  };
+
+  /**
    * モードを切り替える
    */
   const toggleMode = (): void => {
-    const mode = cookies[key.name];
+    const isDark = isDarkMode();
 
-    if (mode === key.light) {
-      setCookie(key.name, key.dark);
+    if (isDark) {
+      console.log(key.light);
+      setCookie(key.name, key.light, { path: '/' });
       return;
     }
 
-    if (mode === key.dark) {
-      setCookie(key.name, key.light);
-      return;
-    }
-
+    console.log(key.dark);
     // それ以外の場合darkに変える
-    setCookie(key.name, key.dark);
+    setCookie(key.name, key.dark, { path: '/' });
   };
 
   return {
     isLightMode,
+    isDarkMode,
     toggleMode,
   };
 };

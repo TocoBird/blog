@@ -2,7 +2,7 @@ import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
-import { Node } from '@/modules/common/markdown';
+import { TagNode } from '@/modules/common/markdown';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
@@ -12,6 +12,12 @@ const H1 = styled.h1`
   font-weight: bold;
   padding-bottom: 12px;
   margin-bottom: 20px;
+  :before {
+    content: '';
+    display: block;
+    height: 6rem;
+    margin-top: -6rem;
+  }
 `;
 const H1Border = styled.div`
   position: absolute;
@@ -39,12 +45,14 @@ const P = styled.p`
   line-height: 32px;
 `;
 const Strong = styled.strong``;
-const Img = styled.img``;
+const Img = styled.img`
+  width: 100%;
+`;
 const A = styled.a``;
 
 interface Props {
   /** テキスト */
-  readonly nodes: Node[];
+  readonly nodes: TagNode[];
 }
 
 /**
@@ -118,6 +126,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
             return (
               <H1
                 key={key}
+                id={n.id}
                 style={{
                   color: color.text.mainBoldThin,
                   borderBottom: `solid 2px ${color.border.h1}`,
@@ -136,6 +145,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
             return (
               <H2
                 key={key}
+                id={n.id}
                 style={{
                   color: color.text.mainBoldAccent,
                   borderBottom: `1px solid ${color.border.h2}`,
@@ -150,6 +160,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
             return (
               <H3
                 key={key}
+                id={n.id}
                 style={{
                   color: color.text.mainBold,
                 }}
@@ -158,11 +169,25 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
               </H3>
             );
 
-          if (n.size === 4) return <H4 key={key}>{n.text}</H4>;
+          if (n.size === 4)
+            return (
+              <H4 key={key} id={n.id}>
+                {n.text}
+              </H4>
+            );
 
-          if (n.size === 5) return <H5 key={key}>{n.text}</H5>;
+          if (n.size === 5)
+            return (
+              <H5 key={key} id={n.id}>
+                {n.text}
+              </H5>
+            );
 
-          return <H6 key={key}>{n.text}</H6>;
+          return (
+            <H6 key={key} id={n.id}>
+              {n.text}
+            </H6>
+          );
         }
       })}
 
