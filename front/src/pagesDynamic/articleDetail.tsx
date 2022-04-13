@@ -31,6 +31,7 @@ export const query = graphql`
                   thumbnail {
                     data {
                       attributes {
+                        url
                         formats
                       }
                     }
@@ -64,6 +65,7 @@ export const query = graphql`
                         thumbnail {
                           data {
                             attributes {
+                              url
                               formats
                             }
                           }

@@ -40,8 +40,9 @@ const getDomainCategoryDetailBlog = (
     return resblogs.map(r => {
       const id = Number(r.id) || 0;
       const title = String(r.attributes.mainTitle) || '';
-      const thumbnail =
-        String(r.attributes.thumbnail.data.attributes.formats.small.url) || '';
+      const resAttributes = r.attributes.thumbnail.data.attributes;
+      const resUrl = resAttributes?.formats?.small?.url || resAttributes.url;
+      const thumbnail = String(resUrl) || '';
 
       return new DomainCategoryDetailBlog(id, title, thumbnail);
     });

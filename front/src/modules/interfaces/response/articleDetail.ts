@@ -7,6 +7,7 @@ interface ResTocoBlogThumbnailFormats {
 interface ResTocoBlogThumbnail {
   readonly data: {
     readonly attributes: {
+      readonly url: string;
       readonly formats: ResTocoBlogThumbnailFormats;
     };
   };
@@ -74,6 +75,7 @@ interface ResFavoriteBlogAttributeBlogAttributeThumbnailFormats {
 interface ResFavoriteBlogAttributeBlogAttributeThumbnail {
   readonly data: {
     readonly attributes: {
+      readonly url: string;
       readonly formats: ResFavoriteBlogAttributeBlogAttributeThumbnailFormats;
     };
   };
