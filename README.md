@@ -5,6 +5,7 @@
 edit blog => strapi + s3 + sqlite => front ssg => s3 + cloudfront + acm + route53 => viewer
 
 ## site
+
 https://blog.tocobird.com/
 
 ## コンセプト
@@ -48,6 +49,10 @@ TocoBird の課題：記事がクローズドだと未完成になりがち。
 
 ・色の認識ができない人向けも考慮する  
 カラーユニバーサルデザインを意識する。
+
+## サービスの扱うもの
+
+![サービスで扱うもの設計](https://github.com/TocoBird/blog/tree/main/docs/images/tocoblog_service_structure.jpg "サービスで扱うもの設計")
 
 ## ペルソナ ver1
 
