@@ -2,6 +2,7 @@ import { useColorMode } from '@/modules/common/cookie/colorMode';
 
 interface UserCookieReturn {
   readonly isLightMode: () => boolean;
+  readonly isDarkMode: () => boolean;
   readonly toggleMode: () => void;
 }
 
@@ -9,10 +10,11 @@ interface UserCookieReturn {
  * クッキーを扱う
  */
 export const useCookie = (): UserCookieReturn => {
-  const { isLightMode, toggleMode } = useColorMode();
+  const { isLightMode, isDarkMode, toggleMode } = useColorMode();
 
   return {
     isLightMode,
+    isDarkMode,
     toggleMode,
   };
 };

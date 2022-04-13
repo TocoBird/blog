@@ -41,12 +41,10 @@ export const useColorMode = (): UserReturn => {
     const isDark = isDarkMode();
 
     if (isDark) {
-      console.log(key.light);
       setCookie(key.name, key.light, { path: '/' });
       return;
     }
 
-    console.log(key.dark);
     // それ以外の場合darkに変える
     setCookie(key.name, key.dark, { path: '/' });
   };

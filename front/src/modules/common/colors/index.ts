@@ -14,9 +14,9 @@ interface UseColor {
 }
 
 export const useColor = (): UseColor => {
-  const { isLightMode } = useCookie();
+  const { isDarkMode } = useCookie();
 
-  const isDark = !isLightMode();
+  const isDark = isDarkMode();
 
   const color: Color = {
     /** サイト背景色 */
@@ -49,6 +49,7 @@ export const useColor = (): UseColor => {
     /** フッターの色 */
     footer: {
       background: isDark ? d.blue.darkThinMore : l.blue.darkGradient,
+      infoBackground: isDark ? '#343640' : '#343640',
       text: isDark ? d.white.blueThin : l.basic.white,
     },
     /** 線の色 */

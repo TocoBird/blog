@@ -25,6 +25,14 @@ const L = styled.div`
 const XL = styled.div`
   height: ${size.ui.l8}px;
 `;
+/** height: さらにとても大きい */
+const XXL = styled.div`
+  height: ${size.ui.l11}px;
+`;
+/** height: 一番大きい */
+const XXXL = styled.div`
+  height: ${size.ui.l12}px;
+`;
 
 /**
  * 余白：縦のみ設定している
@@ -42,6 +50,10 @@ const Spacer = {
   L,
   /** height: とても大きい */
   XL,
+  /** height: さらにとても大きい */
+  XXL,
+  /** height: 一番大きい */
+  XXXL,
 };
 
 export default Spacer;

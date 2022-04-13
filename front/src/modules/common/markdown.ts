@@ -27,6 +27,7 @@ export interface TagBr {
 }
 export interface TagSpacer {
   readonly type: 'spacer';
+  readonly size: 1 | 2;
 }
 
 type NodeInline = TagStrong | TagSpan;
@@ -143,6 +144,7 @@ export const convertNodes = (str: string): TagNode[] => {
       if (i !== 0)
         ns.push({
           type: 'spacer',
+          size: sharpCount > 1 ? 2 : 1,
         });
       ns.push(hTag(line, sharpCount, i));
       continue;
