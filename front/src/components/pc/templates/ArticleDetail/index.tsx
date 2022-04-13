@@ -7,11 +7,13 @@ import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/A
 import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/ArticleConcept';
 import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
+import ArticleRelated from '@/components/pc/templates/ArticleDetail/organisms/ArticleRelated';
 import ArticleTableOfContents from '@/components/pc/templates/ArticleDetail/organisms/ArticleTableOfContents';
 import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
+import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 import size from '@/modules/common/size';
 
 const Wrapper = styled.div``;
@@ -40,6 +42,8 @@ interface Props {
   readonly categories: DomainArticleDetailCategory[];
   /** お気に入り記事一覧 */
   readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
+  /** 関連する記事一覧 */
+  readonly relatedBlogs: DomainArticleDetailRelatedBlog[];
 }
 /**
  * テンプレート：記事詳細
@@ -68,6 +72,12 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Box size="L">
               <ArticleContent nodes={p.blog.textNodes} />
+            </Box>
+
+            <Spacer.L />
+
+            <Box size="L">
+              <ArticleRelated blogs={p.relatedBlogs} />
             </Box>
 
             <Spacer.L />

@@ -53,6 +53,25 @@ export const query = graphql`
               data {
                 attributes {
                   name
+                  toco_blogs(
+                    pagination: { limit: 2 }
+                    sort: "id:desc"
+                    filters: { not: { id: { eq: $id } } }
+                  ) {
+                    data {
+                      attributes {
+                        mainTitle
+                        thumbnail {
+                          data {
+                            attributes {
+                              url
+                            }
+                          }
+                        }
+                      }
+                      id
+                    }
+                  }
                 }
                 id
               }
@@ -76,7 +95,8 @@ export const query = graphql`
  */
 const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
-  const { blog, categories, favoriteBlogs } = adapterDomainArticleDetail(page);
+  const { blog, categories, favoriteBlogs, relatedBlogs } =
+    adapterDomainArticleDetail(page);
   const option: MetaOption = {
     title: `${blog.title} | TocoBlog`,
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
@@ -90,12 +110,14 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           blog={blog}
           categories={categories}
           favoriteBlogs={favoriteBlogs}
+          relatedBlogs={relatedBlogs}
         />
       ) : (
         <TemplateSPArticleDetail
           blog={blog}
           categories={categories}
           favoriteBlogs={favoriteBlogs}
+          relatedBlogs={relatedBlogs}
         />
       )}
     </Frame>

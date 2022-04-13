@@ -4,10 +4,24 @@ interface ResTocoBlogThumbnail {
     readonly attributes: { readonly url: string };
   };
 }
+interface ResCategoryAttributeRelatedBlogAttribute {
+  readonly mainTitle: string;
+  readonly thumbnail: ResTocoBlogThumbnail;
+}
+export interface ResCategoryAttributeRelatedBlog {
+  readonly id: number;
+  readonly attributes: ResCategoryAttributeRelatedBlogAttribute;
+}
+interface ResCategoryAttributeRelatedBlogData {
+  readonly data: ResCategoryAttributeRelatedBlog[];
+}
 interface ResTocoBlogCategory {
   readonly data: {
     readonly id: number;
-    readonly attributes: { readonly name: string };
+    readonly attributes: {
+      readonly name: string;
+      readonly toco_blogs: ResCategoryAttributeRelatedBlogData;
+    };
   };
 }
 interface ResTocoBlogAttribute {

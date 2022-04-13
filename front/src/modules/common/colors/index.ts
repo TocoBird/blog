@@ -49,7 +49,7 @@ export const useColor = (): UseColor => {
     /** フッターの色 */
     footer: {
       background: isDark ? d.blue.darkThinMore : l.blue.darkGradient,
-      infoBackground: isDark ? '#343640' : '#343640',
+      infoBackground: isDark ? d.blue.darkThin : '#343640',
       text: isDark ? d.white.blueThin : l.basic.white,
     },
     /** 線の色 */

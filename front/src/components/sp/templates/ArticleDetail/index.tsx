@@ -6,10 +6,12 @@ import ArticleCategory from '@/components/sp/templates/ArticleDetail/organisms/A
 import ArticleConcept from '@/components/sp/templates/ArticleDetail/organisms/ArticleConcept';
 import ArticleContent from '@/components/sp/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/sp/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
+import ArticleRelated from '@/components/sp/templates/ArticleDetail/organisms/ArticleRelated';
 import ArticleTop from '@/components/sp/templates/ArticleDetail/organisms/ArticleTop';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
+import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/common/size';
 
@@ -26,6 +28,8 @@ interface Props {
   readonly categories: DomainArticleDetailCategory[];
   /** お気に入り記事一覧 */
   readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
+  /** 関連する記事一覧 */
+  readonly relatedBlogs: DomainArticleDetailRelatedBlog[];
 }
 /**
  * テンプレート：記事詳細
@@ -64,6 +68,12 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <Content style={{ background: color.box.background }}>
         <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
+      </Content>
+
+      <Spacer.M />
+
+      <Content style={{ background: color.box.background }}>
+        <ArticleRelated blogs={p.relatedBlogs} />
       </Content>
 
       <Spacer.M />

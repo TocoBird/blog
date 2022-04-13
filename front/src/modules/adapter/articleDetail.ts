@@ -3,6 +3,7 @@ import { PageProps } from 'gatsby';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
+import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 import { errorWrapper } from '@/modules/common/error';
 import { convertNodes, TagNode } from '@/modules/common/markdown';
 import {
@@ -10,6 +11,7 @@ import {
   ResTocoBlog,
   ResCategory,
   ResFavoriteBlogAttributeBlog,
+  ResCategoryAttributeRelatedBlog,
 } from '@/modules/interfaces/response/articleDetail';
 
 /**
@@ -44,6 +46,22 @@ const getResFavoriteBlogAttributeBlog = (
     return (
       r.strapi.favoriteBlog.data.attributes.toco_blogs.data ||
       ([] as ResFavoriteBlogAttributeBlog[])
+    );
+  } catch (e) {
+    throw errorWrapper(e, 'レスポンス取得エラー:お気に入りの記事一覧');
+  }
+};
+
+/**
+ * レスポンス取得: 関連記事一覧
+ */
+const getResRelatedBlogAttributeBlog = (
+  r: Res
+): ResCategoryAttributeRelatedBlog[] => {
+  try {
+    return (
+      r.strapi.tocoBlog.data.attributes.category.data.attributes.toco_blogs
+        .data || ([] as ResCategoryAttributeRelatedBlog[])
     );
   } catch (e) {
     throw errorWrapper(e, 'レスポンス取得エラー:お気に入りの記事一覧');
@@ -123,11 +141,31 @@ const getDomainArticleDetailRecommendBlog = (
     throw errorWrapper(e, 'ドメイン変換エラー:お気に入りの記事一覧');
   }
 };
+/**
+ * レスポンスドメイン変換: 関連する記事一覧
+ */
+const getDomainArticleDetailRelatedBlog = (
+  relatedBlogs: ResCategoryAttributeRelatedBlog[]
+): DomainArticleDetailRelatedBlog[] => {
+  try {
+    return relatedBlogs.map(r => {
+      const id = Number(r.id) || 0;
+      const title = String(r.attributes.mainTitle) || '';
+      const thumbnail =
+        String(r.attributes.thumbnail.data.attributes.url) || '';
+
+      return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
+    });
+  } catch (e) {
+    throw errorWrapper(e, 'ドメイン変換エラー:関連する記事一覧');
+  }
+};
 
 interface useReturn {
   readonly blog: DomainArticleDetailBlog;
   readonly categories: DomainArticleDetailCategory[];
   readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
+  readonly relatedBlogs: DomainArticleDetailRelatedBlog[];
 }
 
 /**
@@ -141,6 +179,8 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
     const resCategory: ResCategory[] = getResCategory(res);
     const resFavoriteBlogs: ResFavoriteBlogAttributeBlog[] =
       getResFavoriteBlogAttributeBlog(res);
+    const resRelatedBlogs: ResCategoryAttributeRelatedBlog[] =
+      getResRelatedBlogAttributeBlog(res);
 
     /**
      * ドメインに変換
@@ -150,11 +190,14 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
       getDomainArticleDetailCategory(resCategory);
     const favoriteBlogs: DomainArticleDetailRecommendBlog[] =
       getDomainArticleDetailRecommendBlog(resFavoriteBlogs);
+    const relatedBlogs: DomainArticleDetailRelatedBlog[] =
+      getDomainArticleDetailRelatedBlog(resRelatedBlogs);
 
     return {
       blog,
       categories,
       favoriteBlogs,
+      relatedBlogs,
     };
   } catch (e) {
     throw errorWrapper(e, 'レスポンス変換エラー');
