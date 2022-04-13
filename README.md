@@ -10,7 +10,7 @@ https://blog.tocobird.com/
 
 ## コンセプト
 
-プロダクト開発、チーム開発、デザイン、ゲーム開発、アイデアの質の高い情報を発信する。
+プロダクト開発、チーム開発、デザイン、経営、アイデアの質の高い情報を発信する。
 
 ### 課題の想定とブログの目的
 
@@ -52,6 +52,7 @@ TocoBird の課題：記事がクローズドだと未完成になりがち。
 
 ## サービスの扱うもの
 
+以下の 4 要素を扱いたい。
 ![サービスで扱うもの設計](https://github.com/TocoBird/blog/blob/main/docs/images/tocoblog_service_structure.jpg?raw=true "サービスで扱うもの設計")
 
 ## ペルソナ ver1
