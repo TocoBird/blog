@@ -52,7 +52,7 @@ TocoBird の課題：記事がクローズドだと未完成になりがち。
 
 ## サービスの扱うもの
 
-![サービスで扱うもの設計](https://github.com/TocoBird/blog/tree/main/docs/images/tocoblog_service_structure.jpg "サービスで扱うもの設計")
+![サービスで扱うもの設計](https://github.com/TocoBird/blog/blob/main/docs/images/tocoblog_service_structure.jpg?raw=true "サービスで扱うもの設計")
 
 ## ペルソナ ver1
 
