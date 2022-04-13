@@ -23,9 +23,11 @@ const Date = styled.div`
 const Category = styled.div``;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;
+  font-size: ${size.font.sp.l3}px;
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
+  font-size: ${size.font.sp.l3}px;
 `;
 
 interface Props {

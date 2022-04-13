@@ -24,6 +24,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`, // メタタグ
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          placeholder: `none`,
+        },
+      },
+    },
     `gatsby-plugin-image`, // 画像
     {
       resolve: `gatsby-source-filesystem`,
@@ -33,7 +41,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-source-graphql',
       options: {
@@ -66,7 +73,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `TocoBlog`,
         start_url: `/`,
         display: `minimal-ui`,
         icon: './src/images/TocoBlogFavicon.png',

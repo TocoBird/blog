@@ -39,14 +39,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      <Thumbnail
-        width="100%"
-        height="120px"
-        url={p.blog.thumbnail}
-        style={{
-          borderRadius: 2,
-        }}
-      />
+      <Thumbnail width="100%" height="140px" url={p.blog.thumbnail} />
 
       <Content style={{ background: color.box.background }}>
         <ArticleTop blog={p.blog} />
