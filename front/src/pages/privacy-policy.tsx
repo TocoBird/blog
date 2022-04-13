@@ -8,7 +8,7 @@ import { MetaOption } from '@/modules/interfaces/compornent/layout';
 const PrivacyPolicy: React.FC = (): JSX.Element => {
   const { isPC } = useResponsive();
   const option: MetaOption = {
-    title: 'TocoBlog',
+    title: 'プライバシーポリシー',
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
     thumbnail: '',
   };

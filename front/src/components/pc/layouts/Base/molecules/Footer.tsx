@@ -21,7 +21,7 @@ const Footer: React.FC = (): JSX.Element => {
         color: color.footer.text,
       }}
     >
-      ©︎ tocobird
+      ©︎ TocoBird
     </Wrapper>
   );
 };
