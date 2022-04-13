@@ -133,7 +133,8 @@ const getDomainArticleDetailRecommendBlog = (
       const id = Number(r.id) || 0;
       const title = String(r.attributes.mainTitle) || '';
       const thumbnail =
-        String(r.attributes.thumbnail.data.attributes.url) || '';
+        String(r.attributes.thumbnail.data.attributes.formats.thumbnail.url) ||
+        '';
 
       return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
     });
@@ -152,7 +153,7 @@ const getDomainArticleDetailRelatedBlog = (
       const id = Number(r.id) || 0;
       const title = String(r.attributes.mainTitle) || '';
       const thumbnail =
-        String(r.attributes.thumbnail.data.attributes.url) || '';
+        String(r.attributes.thumbnail.data.attributes.formats.small.url) || '';
 
       return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
     });

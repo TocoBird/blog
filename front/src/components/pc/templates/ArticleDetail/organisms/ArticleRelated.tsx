@@ -26,8 +26,6 @@ interface Props {
  * 記事詳細：関連する記事
  */
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
-  const blogs = [p.blogs[0], p.blogs[1]];
-
   return (
     <Wrapper>
       <Title size="M">関連する記事</Title>
@@ -35,7 +33,7 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.XM />
 
       <Articles>
-        {blogs.map((b: DomainArticleDetailRelatedBlog, index: number) => (
+        {p.blogs.map((b: DomainArticleDetailRelatedBlog, index: number) => (
           <Link
             to={`/article/${b.id}`}
             key={`${index}_${b.id}`}

@@ -1,7 +1,14 @@
 // 記事詳細
+interface ResTocoBlogThumbnailFormats {
+  readonly small: {
+    readonly url: string;
+  };
+}
 interface ResTocoBlogThumbnail {
   readonly data: {
-    readonly attributes: { readonly url: string };
+    readonly attributes: {
+      readonly formats: ResTocoBlogThumbnailFormats;
+    };
   };
 }
 interface ResTocoBlogAttribute {

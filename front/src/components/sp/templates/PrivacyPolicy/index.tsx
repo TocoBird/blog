@@ -46,7 +46,7 @@ const TemplateSPPrivacyPolicy: React.FC = (): JSX.Element => {
 
       <Spacer.S />
 
-      <Detail>・お問い合わせいただい内容の保持</Detail>
+      <Detail>・お問い合わせ内容の保持</Detail>
 
       <Spacer.L />
 

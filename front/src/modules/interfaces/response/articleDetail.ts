@@ -1,7 +1,14 @@
 // 記事詳細
+interface ResTocoBlogThumbnailFormats {
+  readonly small: {
+    readonly url: string;
+  };
+}
 interface ResTocoBlogThumbnail {
   readonly data: {
-    readonly attributes: { readonly url: string };
+    readonly attributes: {
+      readonly formats: ResTocoBlogThumbnailFormats;
+    };
   };
 }
 interface ResCategoryAttributeRelatedBlogAttribute {
@@ -24,11 +31,18 @@ interface ResTocoBlogCategory {
     };
   };
 }
+interface ResTocoBlogAttributeThumbnail {
+  readonly data: {
+    readonly attributes: {
+      readonly url: string;
+    };
+  };
+}
 interface ResTocoBlogAttribute {
   readonly mainTitle: string;
   readonly mainText: string;
   readonly updatedAt: Date;
-  readonly thumbnail: ResTocoBlogThumbnail;
+  readonly thumbnail: ResTocoBlogAttributeThumbnail;
   readonly category: ResTocoBlogCategory;
 }
 export interface ResTocoBlog {
@@ -52,9 +66,16 @@ interface ResCategoryData {
 }
 
 // お気に入りの記事
+interface ResFavoriteBlogAttributeBlogAttributeThumbnailFormats {
+  readonly thumbnail: {
+    readonly url: string;
+  };
+}
 interface ResFavoriteBlogAttributeBlogAttributeThumbnail {
   readonly data: {
-    readonly attributes: { readonly url: string };
+    readonly attributes: {
+      readonly formats: ResFavoriteBlogAttributeBlogAttributeThumbnailFormats;
+    };
   };
 }
 interface ResFavoriteBlogAttributeBlogAttribute {

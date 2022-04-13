@@ -41,7 +41,7 @@ const getDomainCategoryDetailBlog = (
       const id = Number(r.id) || 0;
       const title = String(r.attributes.mainTitle) || '';
       const thumbnail =
-        String(r.attributes.thumbnail.data.attributes.url) || '';
+        String(r.attributes.thumbnail.data.attributes.formats.small.url) || '';
 
       return new DomainCategoryDetailBlog(id, title, thumbnail);
     });

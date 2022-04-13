@@ -18,7 +18,7 @@ const Card = styled.div`
 
 interface Props {
   /** お気に入り記事一覧 */
-  readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
+  readonly blogs: DomainArticleDetailRecommendBlog[];
 }
 
 /**
@@ -32,28 +32,26 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <div>
-        {p.favoriteBlogs.map(
-          (b: DomainArticleDetailRecommendBlog, index: number) => (
-            <Fragment key={`${index}_${b.id}`}>
-              {index !== 0 && <Spacer.S />}
+        {p.blogs.map((b: DomainArticleDetailRecommendBlog, index: number) => (
+          <Fragment key={`${index}_${b.id}`}>
+            {index !== 0 && <Spacer.S />}
 
-              <Link to={`/article/${b.id}`}>
-                <Card>
-                  <Thumbnail width="100px" height="60px" url={b.thumbnail} />
-                  <Title
-                    size="S"
-                    style={{
-                      flex: 1,
-                      paddingLeft: `${size.ui.l3}px`,
-                    }}
-                  >
-                    {b.title}
-                  </Title>
-                </Card>
-              </Link>
-            </Fragment>
-          )
-        )}
+            <Link to={`/article/${b.id}`}>
+              <Card>
+                <Thumbnail width="100px" height="60px" url={b.thumbnail} />
+                <Title
+                  size="S"
+                  style={{
+                    flex: 1,
+                    paddingLeft: `${size.ui.l3}px`,
+                  }}
+                >
+                  {b.title}
+                </Title>
+              </Card>
+            </Link>
+          </Fragment>
+        ))}
       </div>
     </Wrapper>
   );

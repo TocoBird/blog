@@ -67,7 +67,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <Content style={{ background: color.box.background }}>
-        <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
+        <ArticleFavoriteBlog blogs={p.favoriteBlogs} />
       </Content>
 
       <Spacer.M />

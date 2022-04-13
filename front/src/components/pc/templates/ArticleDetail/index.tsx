@@ -100,7 +100,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Spacer.L />
 
             <Box size="M">
-              <ArticleFavoriteBlog favoriteBlogs={p.favoriteBlogs} />
+              <ArticleFavoriteBlog blogs={p.favoriteBlogs} />
             </Box>
           </Right>
         </Content>

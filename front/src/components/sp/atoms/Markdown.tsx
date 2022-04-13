@@ -12,13 +12,15 @@ const H1 = styled.h1`
   font-weight: bold;
   padding-bottom: 14px;
   margin-bottom: 16px;
-  :before {
-    content: '';
-    display: block;
-    height: 6rem;
-    margin-top: -6rem;
-  }
 `;
+// 目次をつけるときに使用する。
+// ただリンクと、このエリアがかぶるとリンクが押せなくなるなど起きる可能性があるので考慮する
+// :before {
+//   content: '';
+//   display: block;
+//   height: 6rem;
+//   margin-top: -6rem;
+// }
 const H1Border = styled.div`
   position: absolute;
   height: 2px;

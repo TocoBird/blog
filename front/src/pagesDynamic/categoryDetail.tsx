@@ -33,7 +33,7 @@ export const query = graphql`
             thumbnail {
               data {
                 attributes {
-                  url
+                  formats
                 }
               }
             }

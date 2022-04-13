@@ -22,21 +22,19 @@ interface Props {
  * 記事詳細：関連する記事
  */
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
-  const blogs = [p.blogs[0], p.blogs[1]];
-
   return (
     <Wrapper>
       <Title size="M">関連する記事</Title>
 
       <Spacer.XM />
 
-      {blogs.map((b: DomainArticleDetailRelatedBlog, index: number) => (
+      {p.blogs.map((b: DomainArticleDetailRelatedBlog, index: number) => (
         <Fragment key={`${index}_${b.id}`}>
           {index !== 0 && <Spacer.M />}
 
           <Link to={`/article/${b.id}`}>
             <Card>
-              <Thumbnail width="100%" height="80px" url={b.thumbnail} />
+              <Thumbnail width="100%" height="120px" url={b.thumbnail} />
 
               <Spacer.S />
 

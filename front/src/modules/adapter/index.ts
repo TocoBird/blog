@@ -29,7 +29,7 @@ const getDomainTopCategoryBlog = (
       const id = Number(b.id) || 0;
       const title = String(b.attributes.mainTitle) || '';
       const thumbnail =
-        String(b.attributes.thumbnail.data.attributes.url) || '';
+        String(b.attributes.thumbnail.data.attributes.formats.small.url) || '';
 
       return new DomainTopCategoryBlog(id, title, thumbnail);
     });
