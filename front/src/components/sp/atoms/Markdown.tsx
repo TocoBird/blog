@@ -10,8 +10,8 @@ const H1 = styled.h1`
   position: relative;
   font-size: ${size.font.sp.l4}px;
   font-weight: bold;
-  padding-bottom: 14px;
-  margin-bottom: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
 `;
 // 目次をつけるときに使用する。
 // ただリンクと、このエリアがかぶるとリンクが押せなくなるなど起きる可能性があるので考慮する
@@ -29,7 +29,8 @@ const H1Border = styled.div`
 `;
 const H2 = styled.h2`
   font-size: ${size.font.sp.l4}px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  padding-top: 4px;
   padding-bottom: 12px;
   padding-left: 14px;
 `;

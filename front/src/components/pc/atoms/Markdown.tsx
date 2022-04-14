@@ -10,8 +10,8 @@ const H1 = styled.h1`
   position: relative;
   font-size: ${size.font.pc.l5}px;
   font-weight: bold;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
   :before {
     content: '';
     display: block;
@@ -28,7 +28,8 @@ const H1Border = styled.div`
 `;
 const H2 = styled.h2`
   font-size: ${size.font.pc.l4}px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  padding-top: 6px;
   padding-bottom: 12px;
   padding-left: 14px;
 `;
