@@ -1,4 +1,4 @@
-import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
@@ -21,7 +21,18 @@ const Content = styled.div`
   box-sizing: border-box;
 `;
 const IconHash = styled(FontAwesomeIcon)`
-  margin-right: 2px;
+  margin-right: 4px;
+`;
+const IconLink = styled.div`
+  margin-right: 8px;
+  transition: 0.2s;
+  font-weight: bold;
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+const IconArrow = styled(FontAwesomeIcon)`
+  margin-right: 4px;
 `;
 
 interface Props {
@@ -74,6 +85,20 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                 <Spacer.S />
               </Fragment>
             ))}
+
+            <Spacer.S />
+
+            <Link
+              to={`/category/${c.id}`}
+              style={{
+                color: color.text.main,
+              }}
+            >
+              <IconLink>
+                <IconArrow icon={faAngleRight} />
+                {c.name}の記事
+              </IconLink>
+            </Link>
           </Content>
 
           <Spacer.L />

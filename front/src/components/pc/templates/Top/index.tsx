@@ -21,7 +21,7 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <TopHeader />
 
-      <Spacer.L />
+      <Spacer.XXL />
 
       <Title
         size="L"
@@ -32,9 +32,11 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
         最新の記事
       </Title>
 
-      <Spacer.L />
+      <Spacer.XXL />
 
       <TopBlogs categories={p.categories} />
+
+      <Spacer.L />
     </Wrapper>
   );
 };

@@ -43,15 +43,22 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <Content
-        style={{ padding: size.ui.l3, background: color.box.background }}
+        style={{
+          padding: `0 ${size.ui.l3}px`,
+          background: color.box.background,
+        }}
       >
+        <Spacer.L />
+
         <Title size="M">カテゴリーで記事を探す</Title>
 
-        <Spacer.M />
+        <Spacer.L />
 
         <div>
-          {p.categories.map(c => (
+          {p.categories.map((c, index: number) => (
             <Fragment key={c.id}>
+              {index !== 0 && <Spacer.M />}
+
               <Link to={`/category/${c.id}`}>
                 <ButtonCategory
                   style={{
@@ -65,18 +72,24 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                   {c.name}
                 </ButtonCategory>
               </Link>
-
-              <Spacer.S />
             </Fragment>
           ))}
         </div>
+
+        <Spacer.L />
       </Content>
 
       <Spacer.M />
 
-      <div>
-        {p.blogs.map(b => (
+      <div
+        style={{
+          padding: `0 ${size.ui.l3}px`,
+        }}
+      >
+        {p.blogs.map((b, index: number) => (
           <Fragment key={b.id}>
+            {index !== 0 && <Spacer.M />}
+
             <Link to={`/article/${b.id}`}>
               <Card style={{ background: color.box.background }}>
                 <Thumbnail width="120px" height="80px" url={b.thumbnail} />
@@ -91,8 +104,6 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                 </Title>
               </Card>
             </Link>
-
-            <Spacer.M />
           </Fragment>
         ))}
       </div>
