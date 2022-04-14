@@ -12,3 +12,10 @@ https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html
 ## graphql
 
 http://localhost:1337/graphql
+
+## install
+
+```
+npm i @strapi/strapi better-sqlite3
+npm i strapi-plugin-comments @strapi/plugin-graphql @strapi/plugin-i18n @strapi/plugin-users-permissions @strapi/provider-upload-aws-s3
+```
