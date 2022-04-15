@@ -43,7 +43,7 @@ const H6 = styled.h6``;
 const P = styled.p`
   font-size: ${size.font.pc.l3}px;
   white-space: pre-line;
-  line-height: 32px;
+  line-height: ${size.font.pc.l8}px;
 `;
 const Strong = styled.strong``;
 const Img = styled.img`

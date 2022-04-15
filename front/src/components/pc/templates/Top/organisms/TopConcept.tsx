@@ -50,6 +50,8 @@ const TopConcept: React.FC = (): JSX.Element => {
           size="XL"
           style={{
             color: color.footer.text,
+            borderBottom: '1px solid #ffffff1c',
+            paddingBottom: size.ui.l6,
           }}
         >
           Blog Concept

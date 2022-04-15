@@ -4,9 +4,9 @@
  */
 export const d = {
   white: {
-    blue: '#dce7f0',
+    blue: '#c3cfd9',
     blueAccent: '#eef3ff',
-    blueThin: '#ecf2f7',
+    blueThin: '#d4dde5',
   },
   blue: {
     dark: '#17182d',
