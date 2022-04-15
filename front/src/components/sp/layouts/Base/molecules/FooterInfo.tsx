@@ -7,7 +7,7 @@ import { useColor } from '@/modules/common/colors';
 
 const Wrapper = styled.div`
   height: 160px;
-  box-shadow: 0 0px 12px #0f1c2c24;
+  box-shadow: 0 0 12px #0f1c2c24;
 `;
 const Inner = styled.div`
   text-align: center;

@@ -50,6 +50,9 @@ export const useColor = (): UseColor => {
     footer: {
       background: isDark ? d.blue.darkThinMore : l.blue.darkGradient,
       infoBackground: isDark ? d.blue.darkThin : '#343640',
+      conceptBackground: isDark
+        ? 'linear-gradient(135deg, #2271ce, #4529be)'
+        : 'linear-gradient(135deg, #5FA9FF, #6845ff)',
       text: isDark ? d.white.blueThin : l.basic.white,
     },
     /** 線の色 */

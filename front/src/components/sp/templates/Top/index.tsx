@@ -3,6 +3,7 @@ import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import TopBlogs from '@/components/sp/templates/Top/organisms/TopBlogs';
+import TopConcept from '@/components/sp/templates/Top/organisms/TopConcept';
 import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
 import { DomainTopCategory } from '@/domain/top/blog';
 
@@ -34,6 +35,10 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.L />
 
       <TopBlogs categories={p.categories} />
+
+      <Spacer.L />
+
+      <TopConcept />
     </Wrapper>
   );
 };
