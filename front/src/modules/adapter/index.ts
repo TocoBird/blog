@@ -28,9 +28,11 @@ const getDomainTopCategoryBlog = (
     return resblogs.map(b => {
       const id = Number(b.id) || 0;
       const title = String(b.attributes.mainTitle) || '';
-      const resAttributes = b.attributes.thumbnail.data.attributes;
-      const resUrl = resAttributes?.formats?.small?.url || resAttributes.url;
-      const thumbnail = String(resUrl) || '';
+      const rAttributes = b.attributes.thumbnail.data.attributes;
+      const rFormat = rAttributes?.formats;
+      const rUrl =
+        rFormat?.thumbnail?.url || rFormat?.small?.url || rAttributes.url;
+      const thumbnail = String(rUrl) || '';
 
       return new DomainTopCategoryBlog(id, title, thumbnail);
     });

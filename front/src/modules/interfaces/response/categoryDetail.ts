@@ -3,6 +3,9 @@ interface ResTocoBlogThumbnailFormats {
   readonly small: {
     readonly url: string;
   };
+  readonly thumbnail: {
+    readonly url: string;
+  };
 }
 interface ResTocoBlogThumbnail {
   readonly data: {
