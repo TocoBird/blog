@@ -64,7 +64,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
           <Title size="XM">カテゴリーで記事を探す</Title>
 
-          <Spacer.M />
+          <Spacer.XM />
 
           <Categories>
             {p.categories.map(c => (
@@ -95,8 +95,10 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <div>
         <Inner>
-          {p.blogs.map(b => (
+          {p.blogs.map((b, index: number) => (
             <Fragment key={b.id}>
+              {index !== 0 && <Spacer.S />}
+
               <Link to={`/article/${b.id}`}>
                 <Card
                   style={{
@@ -115,14 +117,12 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                   </Title>
                 </Card>
               </Link>
-
-              <Spacer.M />
             </Fragment>
           ))}
         </Inner>
       </div>
 
-      <Spacer.S />
+      <Spacer.L />
     </Wrapper>
   );
 };
