@@ -1,7 +1,8 @@
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
-import Title from '@/components/pc/atoms/Title';
+import LabelTitle from '@/components/pc/templates/ArticleDetail/molecules/LabelTitle';
 import { useColor } from '@/modules/common/colors';
 
 const Wrapper = styled.div``;
@@ -15,7 +16,9 @@ const ArticleConcept: React.FC = (): JSX.Element => {
 
   return (
     <Wrapper>
-      <Title size="M">ブログのコンセプト</Title>
+      <LabelTitle size="M" icon={faLightbulb}>
+        ブログのコンセプト
+      </LabelTitle>
 
       <Spacer.M />
 

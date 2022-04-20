@@ -7,7 +7,7 @@ export interface BlogTitle {
   readonly title: string;
 }
 export interface BlogText {
-  /** 記事本文*/
+  /** 記事本文 */
   readonly text: string;
 }
 export interface BlogThumbnail {

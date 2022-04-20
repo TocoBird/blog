@@ -50,7 +50,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Spacer.L />
 
-        <Title size="M">カテゴリーで記事を探す</Title>
+        <Title size="M">記事を探す</Title>
 
         <Spacer.L />
 

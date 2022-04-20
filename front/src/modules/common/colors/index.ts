@@ -29,7 +29,7 @@ export const useColor = (): UseColor => {
       mainBold: isDark ? d.white.blue : l.blue.darkThin,
       mainBoldAccent: isDark ? d.white.blue : l.black.thin,
       mainBoldThin: isDark ? d.white.blue : l.blue.darkThinMore,
-      mainThin: isDark ? d.white.blue : l.white.blue,
+      mainThin: isDark ? d.white.blueDark : l.white.blue,
       link: isDark ? d.blue.purple : l.blue.purple,
       onImage: isDark ? d.white.blueThin : l.basic.white,
     },

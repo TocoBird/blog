@@ -1,3 +1,4 @@
+import { faFire } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
@@ -5,6 +6,7 @@ import Bar from '@/components/pc/atoms/Bar';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
+import LabelTitle from '@/components/pc/templates/ArticleDetail/molecules/LabelTitle';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import size from '@/modules/const/size';
 
@@ -28,7 +30,9 @@ interface Props {
 const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title size="M">おすすめの記事</Title>
+      <LabelTitle size="M" icon={faFire}>
+        おすすめの記事
+      </LabelTitle>
 
       <Spacer.XM />
 

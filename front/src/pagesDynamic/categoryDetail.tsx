@@ -8,7 +8,7 @@ import { useResponsive } from '@/modules/common/responsive';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * 記事詳細の取得取得
+ * 記事詳細の取得
  */
 export const query = graphql`
   query ($id: ID) {

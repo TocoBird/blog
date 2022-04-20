@@ -1,9 +1,11 @@
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
+import LabelTitle from '@/components/pc/templates/ArticleDetail/molecules/LabelTitle';
 import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 
 const Wrapper = styled.div``;
@@ -28,7 +30,9 @@ interface Props {
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title size="M">関連する記事</Title>
+      <LabelTitle size="M" icon={faBookOpen}>
+        関連する記事
+      </LabelTitle>
 
       <Spacer.XM />
 

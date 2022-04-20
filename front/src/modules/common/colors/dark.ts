@@ -7,6 +7,7 @@ export const d = {
     blue: '#c3cfd9',
     blueAccent: '#eef3ff',
     blueThin: '#d4dde5',
+    blueDark: '#8c99a3',
   },
   blue: {
     dark: '#17182d',

@@ -19,6 +19,10 @@ interface ResTocoBlogAttribute {
   readonly mainTitle: string;
   readonly thumbnail: ResTocoBlogThumbnail;
 }
+
+/**
+ * カテゴリの記事
+ */
 export interface ResTocoBlog {
   readonly id: number;
   readonly attributes: ResTocoBlogAttribute;
@@ -30,19 +34,18 @@ interface ResCategoryAttribute {
   readonly name: string;
   readonly toco_blogs: ResTocoBlogData;
 }
+
+/**
+ * カテゴリの詳細
+ */
 export interface ResCategory {
   readonly id: number;
   readonly attributes: ResCategoryAttribute;
 }
-interface ResCategoryData {
-  readonly data: ResCategory[];
-}
-interface ResStrapi {
-  readonly categories: ResCategoryData;
-}
+
 /**
- * GraphQLのレスポンス: Blog
+ * カテゴリ一覧
  */
-export interface Res {
-  readonly strapi: ResStrapi;
+export interface ResCategoryData {
+  readonly data: ResCategory[];
 }

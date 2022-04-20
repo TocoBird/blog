@@ -1,11 +1,10 @@
 import path from 'path';
 import type { GatsbyNode, Actions } from 'gatsby';
 import { errorWrapper } from '../common/error';
-import {
-  Res,
-  ResTocoBlog,
-  ResCategory,
-} from '../interfaces/response/gatsbyNode';
+import { Res } from '../interfaces/response/gatsbyNode';
+import { ResCategory } from '../interfaces/response/gatsbyNode/categories';
+import { ResStoryBlog } from '../interfaces/response/gatsbyNode/storyBlogs';
+import { ResTocoBlog } from '../interfaces/response/gatsbyNode/tocoBlogs';
 
 /**
  * ページ作成: 記事一覧
@@ -58,6 +57,33 @@ const createPageCategories = (
   }
 };
 
+/**
+ * ページ作成: ストーリー記事一覧
+ */
+const createPageStoryBlogs = (
+  blogs: ResStoryBlog[],
+  actions: Actions
+): void => {
+  try {
+    const { createPage } = actions;
+
+    const ARTICLE_DETAIL_PATH = `./src/pagesDynamic/storyDetail.tsx`;
+    blogs.forEach(t => {
+      const id = t.id;
+
+      createPage({
+        path: `/story/${id}`,
+        component: path.resolve(ARTICLE_DETAIL_PATH),
+        context: {
+          id,
+        },
+      });
+    });
+  } catch (e) {
+    throw errorWrapper(e, 'ページ作成エラー:ストーリー記事一覧');
+  }
+};
+
 export const srcCreatePages: GatsbyNode['createPages'] = async ({
   graphql,
   actions,
@@ -75,6 +101,11 @@ export const srcCreatePages: GatsbyNode['createPages'] = async ({
             id
           }
         }
+        storyBlogs(pagination: { limit: 100 }) {
+          data {
+            id
+          }
+        }
       }
     }
   `);
@@ -82,6 +113,7 @@ export const srcCreatePages: GatsbyNode['createPages'] = async ({
   const data = result?.data as Res;
   const tocoBlogs = data?.strapi?.tocoBlogs?.data || [];
   const categories = data?.strapi?.categories?.data || [];
+  const storyBlogs = data?.strapi?.storyBlogs?.data || [];
 
   /**
    * ページ作成
@@ -90,4 +122,6 @@ export const srcCreatePages: GatsbyNode['createPages'] = async ({
   createPageBlogs(tocoBlogs, actions);
   // カテゴリ一覧
   createPageCategories(categories, actions);
+  // ストーリー記事一覧
+  createPageStoryBlogs(storyBlogs, actions);
 };

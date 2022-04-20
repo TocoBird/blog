@@ -8,12 +8,14 @@ import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/Ar
 import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
 import ArticleRelated from '@/components/pc/templates/ArticleDetail/organisms/ArticleRelated';
+import ArticleStory from '@/components/pc/templates/ArticleDetail/organisms/ArticleStory';
 import ArticleTableOfContents from '@/components/pc/templates/ArticleDetail/organisms/ArticleTableOfContents';
 import ArticleTop from '@/components/pc/templates/ArticleDetail/organisms/ArticleTop';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
+import { DomainArticleDetailStoryBlog } from '@/domain/articleDetail/storyBlog';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
@@ -44,6 +46,8 @@ interface Props {
   readonly favoriteBlogs: DomainArticleDetailRecommendBlog[];
   /** 関連する記事一覧 */
   readonly relatedBlogs: DomainArticleDetailRelatedBlog[];
+  /** ストーリー記事一覧 */
+  readonly stroyBlogs: DomainArticleDetailStoryBlog[];
 }
 /**
  * テンプレート：記事詳細
@@ -78,6 +82,12 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Box size="L">
               <ArticleRelated blogs={p.relatedBlogs} />
+            </Box>
+
+            <Spacer.L />
+
+            <Box size="L">
+              <ArticleStory blogs={p.stroyBlogs} />
             </Box>
 
             <Spacer.L />

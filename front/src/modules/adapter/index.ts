@@ -1,11 +1,11 @@
 import { PageProps } from 'gatsby';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import { errorWrapper } from '@/modules/common/error';
+import { Res } from '@/modules/interfaces/response/home';
 import {
-  Res,
   ResTocoBlog,
   ResCategory,
-} from '@/modules/interfaces/response/index';
+} from '@/modules/interfaces/response/home/categories';
 
 /**
  * レスポンス取得: カテゴリ一覧
@@ -75,6 +75,9 @@ interface useReturn {
  */
 export const adapterDomainIndex = (page: PageProps): useReturn => {
   try {
+    /**
+     * レスポンスを取得
+     */
     const res = page.data as Res;
     const resCategories: ResCategory[] = getResCategory(res);
 

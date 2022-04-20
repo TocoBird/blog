@@ -1,7 +1,8 @@
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
-import Title from '@/components/pc/atoms/Title';
+import LabelTitle from '@/components/pc/templates/ArticleDetail/molecules/LabelTitle';
 import { useColor } from '@/modules/common/colors';
 import { TagNode, TagH } from '@/modules/common/markdown';
 import size from '@/modules/const/size';
@@ -30,7 +31,9 @@ const ArticleTableOfContents: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      <Title size="M">目次</Title>
+      <LabelTitle size="M" icon={faClipboardList}>
+        目次
+      </LabelTitle>
 
       <Spacer.M />
 

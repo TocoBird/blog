@@ -2,11 +2,9 @@ import { PageProps } from 'gatsby';
 import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import { errorWrapper } from '@/modules/common/error';
-import {
-  Res,
-  ResTocoBlog,
-  ResCategory,
-} from '@/modules/interfaces/response/categoryDetail';
+import { Res } from '@/modules/interfaces/response/categoryDetail';
+import { ResCategory } from '@/modules/interfaces/response/categoryDetail/categories';
+import { ResTocoBlog } from '@/modules/interfaces/response/categoryDetail/tocoBlogs';
 
 /**
  * レスポンス取得: ブログ一覧
@@ -87,9 +85,16 @@ interface useReturn {
  */
 export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
   try {
+    /**
+     * レスポンスを取得
+     */
     const res = page.data as Res;
     const resblogs: ResTocoBlog[] = getResTocoBlog(res);
     const resCategory: ResCategory[] = getResCategory(res);
+
+    /**
+     * URLParam取得
+     */
     const context = page.pageContext as PageContext;
     const categolyId = Number(context.id) || 0;
 
