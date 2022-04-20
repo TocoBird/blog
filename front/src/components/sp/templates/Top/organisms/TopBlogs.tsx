@@ -8,7 +8,7 @@ import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const Card = styled.div`

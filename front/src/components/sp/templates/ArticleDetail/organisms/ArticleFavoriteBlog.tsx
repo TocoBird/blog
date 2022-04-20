@@ -5,7 +5,7 @@ import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const Card = styled.div`

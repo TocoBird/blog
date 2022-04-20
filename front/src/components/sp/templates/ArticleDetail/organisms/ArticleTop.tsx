@@ -8,7 +8,7 @@ import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const TopContentItems = styled.div`

@@ -3,7 +3,7 @@ import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
   box-shadow: 0 0 12px #0f1c2c24;

@@ -9,7 +9,7 @@ import Title from '@/components/pc/atoms/Title';
 import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
   display: flex;

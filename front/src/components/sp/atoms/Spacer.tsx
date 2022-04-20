@@ -1,5 +1,5 @@
 import { styled } from 'linaria/react';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 /** height 最小 */
 const XS = styled.div`

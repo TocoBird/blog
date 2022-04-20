@@ -3,7 +3,7 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
   background-image: url('@/images/TocoBridBlogTopHeader.jpg');

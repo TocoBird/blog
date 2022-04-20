@@ -53,13 +53,13 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format": "prettier --write \"**/*.{js,ts,tsx}\"",
     "prod:check": "serve ./public -p 8999",
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint './**/*.{ts,tsx}'",
-    "lint:fix": "eslint './**/*.{ts,tsx}' --fix",
+    "lint:fix": "npm run format && eslint './**/*.{ts,tsx}' --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
-}
+} 

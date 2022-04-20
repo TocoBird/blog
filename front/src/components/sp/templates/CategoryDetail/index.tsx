@@ -10,7 +10,7 @@ import Title from '@/components/sp/atoms/Title';
 import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const Content = styled.div`

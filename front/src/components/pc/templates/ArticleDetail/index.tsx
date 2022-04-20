@@ -14,7 +14,7 @@ import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const ContentWrapper = styled.div`

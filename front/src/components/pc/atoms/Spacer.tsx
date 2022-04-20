@@ -1,5 +1,5 @@
 import { styled } from 'linaria/react';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const XS = styled.div`
   height: ${size.ui.l2}px;

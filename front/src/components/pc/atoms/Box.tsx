@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react';
 import React, { CSSProperties, ReactNode } from 'react';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
   border-radius: 4px;

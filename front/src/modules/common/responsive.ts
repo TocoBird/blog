@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
-import size from '@/modules/common/size';
+import size from '@/modules/const/size';
 
 interface UseReturn {
   /** PCのレイアウトかどうか */
