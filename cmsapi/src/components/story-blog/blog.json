@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_story_blog_blogs",
+  "info": {
+    "displayName": "Blog",
+    "icon": "book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "toco_blog": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::toco-blog.toco-blog"
+    },
+    "text": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 1000
+    }
+  }
+}

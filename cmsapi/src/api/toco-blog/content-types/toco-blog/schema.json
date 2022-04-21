@@ -15,11 +15,13 @@
     "mainTitle": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": true,
+      "maxLength": 100
     },
     "mainText": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "maxLength": 5000
     },
     "thumbnail": {
       "type": "media",

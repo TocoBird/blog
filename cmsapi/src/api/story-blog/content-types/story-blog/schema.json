@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "story_blogs",
+  "info": {
+    "singularName": "story-blog",
+    "pluralName": "story-blogs",
+    "displayName": "StoryBlog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "toco_blogs": {
+      "displayName": "Blog",
+      "type": "component",
+      "repeatable": true,
+      "component": "story-blog.blog"
+    },
+    "textIntroduction": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 1000
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "textConclusion": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 1000
+    },
+    "titleSub": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    }
+  }
+}
