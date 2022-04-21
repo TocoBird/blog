@@ -9,7 +9,7 @@ import React, { Fragment } from 'react';
 import ButtonCategory from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
 import LabelTitle from '@/components/pc/molecules/LabelTitle';
-import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
+import { DomainStoryDetailCategory } from '@/domain/storyDetail/category';
 
 const Wrapper = styled.div``;
 const IconHash = styled(FontAwesomeIcon)`
@@ -18,13 +18,13 @@ const IconHash = styled(FontAwesomeIcon)`
 
 interface Props {
   /** カテゴリ一覧 */
-  readonly categories: DomainArticleDetailCategory[];
+  readonly categories: DomainStoryDetailCategory[];
 }
 
 /**
- * 記事詳細：カテゴリ一覧
+ * ストーリー記事詳細：カテゴリ一覧
  */
-const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
+const StoryCategory: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <LabelTitle size="M" icon={faMagnifyingGlass}>
@@ -34,7 +34,7 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.XM />
 
       <div>
-        {p.categories.map((c: DomainArticleDetailCategory, index: number) => (
+        {p.categories.map((c: DomainStoryDetailCategory, index: number) => (
           <Fragment key={c.id}>
             {index !== 0 && <Spacer.S />}
 
@@ -53,4 +53,4 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default ArticleCategory;
+export default StoryCategory;

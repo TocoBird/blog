@@ -1,3 +1,5 @@
+import { ResCategoryData } from '@/modules/interfaces/response/storyDetail/categories';
+import { ResFavoriteBlogData } from '@/modules/interfaces/response/storyDetail/favoriteBlog';
 import { ResStoryBlogData } from '@/modules/interfaces/response/storyDetail/storyBlogs';
 
 /**
@@ -5,6 +7,8 @@ import { ResStoryBlogData } from '@/modules/interfaces/response/storyDetail/stor
  */
 interface ResStrAPI {
   readonly storyBlog: ResStoryBlogData;
+  readonly categories: ResCategoryData;
+  readonly favoriteBlog: ResFavoriteBlogData;
 }
 
 /**

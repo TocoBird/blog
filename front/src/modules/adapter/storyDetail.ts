@@ -1,10 +1,14 @@
 import dayjs from 'dayjs';
 import { PageProps } from 'gatsby';
 import { DomainStoryDetailBlog } from '@/domain/storyDetail/blog';
+import { DomainStoryDetailCategory } from '@/domain/storyDetail/category';
+import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
 import { DomainStoryDetailStoryBlog } from '@/domain/storyDetail/storyBlog';
 import { errorWrapper } from '@/modules/common/error';
 import { convertNodes, TagNode } from '@/modules/common/markdown';
 import { Res } from '@/modules/interfaces/response/storyDetail';
+import { ResCategory } from '@/modules/interfaces/response/storyDetail/categories';
+import { ResFavoriteBlogAttributeBlog } from '@/modules/interfaces/response/storyDetail/favoriteBlog';
 import { ResStoryBlog } from '@/modules/interfaces/response/storyDetail/storyBlogs';
 
 /**
@@ -15,6 +19,33 @@ const getResStoryBlog = (r: Res): ResStoryBlog => {
     return r.strapi.storyBlog.data || ({} as ResStoryBlog);
   } catch (e) {
     throw errorWrapper(e, 'レスポンス取得エラー:ストーリー記事一覧');
+  }
+};
+
+/**
+ * レスポンス取得: カテゴリ一覧
+ */
+const getResCategory = (r: Res): ResCategory[] => {
+  try {
+    return r.strapi.categories.data || ([] as ResCategory[]);
+  } catch (e) {
+    throw errorWrapper(e, 'レスポンス取得エラー:カテゴリ');
+  }
+};
+
+/**
+ * レスポンス取得: お気に入りの記事一覧
+ */
+const getResFavoriteBlogAttributeBlog = (
+  r: Res
+): ResFavoriteBlogAttributeBlog[] => {
+  try {
+    return (
+      r.strapi.favoriteBlog.data.attributes.toco_blogs.data ||
+      ([] as ResFavoriteBlogAttributeBlog[])
+    );
+  } catch (e) {
+    throw errorWrapper(e, 'レスポンス取得エラー:お気に入りの記事一覧');
   }
 };
 
@@ -84,13 +115,51 @@ const getDomainStoryBlog = (r: ResStoryBlog): DomainStoryDetailStoryBlog => {
   }
 };
 
-interface PageContext {
-  readonly id: number;
-}
+/**
+ * レスポンスドメイン変換: カテゴリ一覧
+ */
+const getDomainCategory = (
+  resCategories: ResCategory[]
+): DomainStoryDetailCategory[] => {
+  try {
+    return resCategories.map(r => {
+      const id = Number(r.id) || 0;
+      const name = String(r.attributes.name) || '';
+
+      return new DomainStoryDetailCategory(id, name);
+    });
+  } catch (e) {
+    throw errorWrapper(e, 'ドメイン変換エラー:カテゴリ一覧');
+  }
+};
+
+/**
+ * レスポンスドメイン変換: お気に入りの記事一覧
+ */
+const getDomainRecommendBlog = (
+  resFavoriteBlogs: ResFavoriteBlogAttributeBlog[]
+): DomainStoryDetailRecommendBlog[] => {
+  try {
+    return resFavoriteBlogs.map(r => {
+      const id = Number(r.id) || 0;
+      const title = String(r.attributes.mainTitle) || '';
+      const rAttributes = r.attributes.thumbnail.data.attributes;
+      const rFormats = rAttributes?.formats;
+      const rUrl =
+        rFormats?.thumbnail?.url || rFormats?.small?.url || rAttributes.url;
+      const thumbnail = String(rUrl) || '';
+
+      return new DomainStoryDetailRecommendBlog(id, title, thumbnail);
+    });
+  } catch (e) {
+    throw errorWrapper(e, 'ドメイン変換エラー:お気に入りの記事一覧');
+  }
+};
 
 interface useReturn {
-  readonly storyBlogId: number;
   readonly storyBlog: DomainStoryDetailStoryBlog;
+  readonly categories: DomainStoryDetailCategory[];
+  readonly favoriteBlogs: DomainStoryDetailRecommendBlog[];
 }
 
 /**
@@ -104,22 +173,24 @@ export const adapterDomainStoryDetail = (page: PageProps): useReturn => {
      */
     const res = page.data as Res;
     const resStoryBlog: ResStoryBlog = getResStoryBlog(res);
-
-    /**
-     * URLParam取得
-     */
-    const context = page.pageContext as PageContext;
-    const storyBlogId = Number(context.id) || 0;
+    const resCategory: ResCategory[] = getResCategory(res);
+    const resFavoriteBlogs: ResFavoriteBlogAttributeBlog[] =
+      getResFavoriteBlogAttributeBlog(res);
 
     /***
      * ドメインに変換
      */
     const storyBlog: DomainStoryDetailStoryBlog =
       getDomainStoryBlog(resStoryBlog);
+    const categories: DomainStoryDetailCategory[] =
+      getDomainCategory(resCategory);
+    const favoriteBlogs: DomainStoryDetailRecommendBlog[] =
+      getDomainRecommendBlog(resFavoriteBlogs);
 
     return {
-      storyBlogId,
       storyBlog,
+      categories,
+      favoriteBlogs,
     };
   } catch (e) {
     throw errorWrapper(e, 'レスポンス変換エラー');

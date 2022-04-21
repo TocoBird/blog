@@ -3,9 +3,10 @@ import React from 'react';
 import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
+import BlogAuthor from '@/components/pc/molecules/blogDetail/BlogAuthor';
+import BlogConcept from '@/components/pc/molecules/blogDetail/BlogConcept';
+import BlogMarkdown from '@/components/pc/molecules/blogDetail/BlogMarkdown';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
-import ArticleConcept from '@/components/pc/templates/ArticleDetail/organisms/ArticleConcept';
-import ArticleContent from '@/components/pc/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
 import ArticleRelated from '@/components/pc/templates/ArticleDetail/organisms/ArticleRelated';
 import ArticleStory from '@/components/pc/templates/ArticleDetail/organisms/ArticleStory';
@@ -75,7 +76,11 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Spacer.L />
 
             <Box size="L">
-              <ArticleContent nodes={p.blog.textNodes} />
+              <BlogMarkdown nodes={p.blog.textNodes} />
+
+              <Spacer.S />
+
+              <BlogAuthor />
             </Box>
 
             <Spacer.L />
@@ -93,7 +98,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Spacer.L />
 
             <Box size="L">
-              <ArticleConcept />
+              <BlogConcept />
             </Box>
           </Left>
           <Right>

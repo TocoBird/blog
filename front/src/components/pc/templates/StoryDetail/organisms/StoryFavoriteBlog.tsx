@@ -7,7 +7,7 @@ import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
 import LabelTitle from '@/components/pc/molecules/LabelTitle';
-import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
+import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
@@ -21,13 +21,13 @@ const Card = styled.div`
 
 interface Props {
   /** お気に入り記事一覧 */
-  readonly blogs: DomainArticleDetailRecommendBlog[];
+  readonly blogs: DomainStoryDetailRecommendBlog[];
 }
 
 /**
- * 記事詳細：お気に入り記事一覧
+ * ストーリー記事詳細：お気に入り記事一覧
  */
-const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
+const StoryFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <LabelTitle size="M" icon={faFire}>
@@ -37,7 +37,7 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.XM />
 
       <div>
-        {p.blogs.map((b: DomainArticleDetailRecommendBlog, index: number) => (
+        {p.blogs.map((b: DomainStoryDetailRecommendBlog, index: number) => (
           <Fragment key={`${index}_${b.id}`}>
             {index !== 0 && (
               <>
@@ -68,4 +68,4 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default ArticleFavoriteBlog;
+export default StoryFavoriteBlog;

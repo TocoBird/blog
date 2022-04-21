@@ -5,7 +5,7 @@ import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
-import LabelTitle from '@/components/pc/templates/ArticleDetail/molecules/LabelTitle';
+import LabelTitle from '@/components/pc/molecules/LabelTitle';
 import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 
 const Wrapper = styled.div``;

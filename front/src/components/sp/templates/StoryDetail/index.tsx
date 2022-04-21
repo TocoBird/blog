@@ -5,6 +5,8 @@ import Markdown from '@/components/sp/atoms/Markdown';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
+import { DomainStoryDetailCategory } from '@/domain/storyDetail/category';
+import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
 import { DomainStoryDetailStoryBlog } from '@/domain/storyDetail/storyBlog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
@@ -19,6 +21,10 @@ const Card = styled.div`
 interface Props {
   /** ストーリー記事一覧 */
   readonly storyBlog: DomainStoryDetailStoryBlog;
+  /** カテゴリ一覧 */
+  readonly categories: DomainStoryDetailCategory[];
+  /** お気に入り記事一覧 */
+  readonly favoriteBlogs: DomainStoryDetailRecommendBlog[];
 }
 /**
  * テンプレート：ストーリー記事一覧

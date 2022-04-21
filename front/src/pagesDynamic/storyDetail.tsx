@@ -13,6 +13,36 @@ import { MetaOption } from '@/modules/interfaces/compornent/layout';
 export const query = graphql`
   query ($id: ID) {
     strapi {
+      categories {
+        data {
+          id
+          attributes {
+            name
+          }
+        }
+      }
+      favoriteBlog {
+        data {
+          attributes {
+            toco_blogs(sort: "id:desc") {
+              data {
+                attributes {
+                  mainTitle
+                  thumbnail {
+                    data {
+                      attributes {
+                        url
+                        formats
+                      }
+                    }
+                  }
+                }
+                id
+              }
+            }
+          }
+        }
+      }
       storyBlog(id: $id) {
         data {
           attributes {
@@ -61,19 +91,28 @@ export const query = graphql`
  */
 const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
-  const { storyBlog } = adapterDomainStoryDetail(page);
+  const { storyBlog, categories, favoriteBlogs } =
+    adapterDomainStoryDetail(page);
   const option: MetaOption = {
-    title: ` | TocoBlog`,
+    title: `${storyBlog.title} | TocoBlog`,
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
-    thumbnail: '',
+    thumbnail: storyBlog.thumbnail,
   };
 
   return (
     <Frame isPC={isPC} option={option}>
       {isPC ? (
-        <TemplatePCStoryDetail storyBlog={storyBlog} />
+        <TemplatePCStoryDetail
+          storyBlog={storyBlog}
+          categories={categories}
+          favoriteBlogs={favoriteBlogs}
+        />
       ) : (
-        <TemplateSPStoryDetail storyBlog={storyBlog} />
+        <TemplateSPStoryDetail
+          storyBlog={storyBlog}
+          categories={categories}
+          favoriteBlogs={favoriteBlogs}
+        />
       )}
     </Frame>
   );
