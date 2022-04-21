@@ -9,9 +9,11 @@ import BlogMarkdown from '@/components/pc/molecules/blogDetail/BlogMarkdown';
 import StoryCategory from '@/components/pc/templates/StoryDetail/organisms/StoryCategory';
 import StoryContentBlogs from '@/components/pc/templates/StoryDetail/organisms/StoryContentBlogs';
 import StoryFavoriteBlog from '@/components/pc/templates/StoryDetail/organisms/StoryFavoriteBlog';
+import StoryRelatedStoryBlog from '@/components/pc/templates/StoryDetail/organisms/StoryRelatedStoryBlog';
 import StoryTop from '@/components/pc/templates/StoryDetail/organisms/StoryTop';
 import { DomainStoryDetailCategory } from '@/domain/storyDetail/category';
 import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
+import { DomainStoryDetailRelatedStoryBlog } from '@/domain/storyDetail/relatedStoryBlog';
 import { DomainStoryDetailStoryBlog } from '@/domain/storyDetail/storyBlog';
 import size from '@/modules/const/size';
 
@@ -41,6 +43,8 @@ interface Props {
   readonly categories: DomainStoryDetailCategory[];
   /** お気に入り記事一覧 */
   readonly favoriteBlogs: DomainStoryDetailRecommendBlog[];
+  /** 関連するストーリー記事一覧 */
+  readonly relatedStoryBlogs: DomainStoryDetailRelatedStoryBlog[];
 }
 /**
  * テンプレート：ストーリー記事一覧
@@ -81,6 +85,12 @@ const TemplatePCStoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <Spacer.S />
 
               <BlogAuthor />
+            </Box>
+
+            <Spacer.L />
+
+            <Box size="L">
+              <StoryRelatedStoryBlog blogs={p.relatedStoryBlogs} />
             </Box>
 
             <Spacer.L />

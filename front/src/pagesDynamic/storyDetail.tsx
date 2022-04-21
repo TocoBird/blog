@@ -21,6 +21,27 @@ export const query = graphql`
           }
         }
       }
+      storyBlogs(
+        pagination: { limit: 3 }
+        sort: "id:desc"
+        filters: { not: { id: { eq: $id } } }
+      ) {
+        data {
+          id
+          attributes {
+            thumbnail {
+              data {
+                attributes {
+                  url
+                  formats
+                }
+              }
+            }
+            titleSub
+            title
+          }
+        }
+      }
       favoriteBlog {
         data {
           attributes {
@@ -91,7 +112,7 @@ export const query = graphql`
  */
 const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
-  const { storyBlog, categories, favoriteBlogs } =
+  const { storyBlog, categories, favoriteBlogs, relatedStoryBlogs } =
     adapterDomainStoryDetail(page);
   const option: MetaOption = {
     title: `${storyBlog.title} | TocoBlog`,
@@ -106,12 +127,14 @@ const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           storyBlog={storyBlog}
           categories={categories}
           favoriteBlogs={favoriteBlogs}
+          relatedStoryBlogs={relatedStoryBlogs}
         />
       ) : (
         <TemplateSPStoryDetail
           storyBlog={storyBlog}
           categories={categories}
           favoriteBlogs={favoriteBlogs}
+          relatedStoryBlogs={relatedStoryBlogs}
         />
       )}
     </Frame>

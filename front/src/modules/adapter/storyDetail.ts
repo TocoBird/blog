@@ -3,13 +3,15 @@ import { PageProps } from 'gatsby';
 import { DomainStoryDetailBlog } from '@/domain/storyDetail/blog';
 import { DomainStoryDetailCategory } from '@/domain/storyDetail/category';
 import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
+import { DomainStoryDetailRelatedStoryBlog } from '@/domain/storyDetail/relatedStoryBlog';
 import { DomainStoryDetailStoryBlog } from '@/domain/storyDetail/storyBlog';
 import { errorWrapper } from '@/modules/common/error';
 import { convertNodes, TagNode } from '@/modules/common/markdown';
 import { Res } from '@/modules/interfaces/response/storyDetail';
 import { ResCategory } from '@/modules/interfaces/response/storyDetail/categories';
 import { ResFavoriteBlogAttributeBlog } from '@/modules/interfaces/response/storyDetail/favoriteBlog';
-import { ResStoryBlog } from '@/modules/interfaces/response/storyDetail/storyBlogs';
+import { ResRelatedStoryBlog } from '@/modules/interfaces/response/storyDetail/relatedStoryBlog';
+import { ResStoryBlog } from '@/modules/interfaces/response/storyDetail/storyBlog';
 
 /**
  * レスポンス取得: ストーリー記事一覧
@@ -46,6 +48,17 @@ const getResFavoriteBlogAttributeBlog = (
     );
   } catch (e) {
     throw errorWrapper(e, 'レスポンス取得エラー:お気に入りの記事一覧');
+  }
+};
+
+/**
+ * レスポンス取得: 関連するストーリー記事一覧
+ */
+const getResRelatedStoryBlog = (r: Res): ResRelatedStoryBlog[] => {
+  try {
+    return r.strapi.storyBlogs.data || ([] as ResRelatedStoryBlog[]);
+  } catch (e) {
+    throw errorWrapper(e, 'レスポンス取得エラー:関連するストーリー記事一覧');
   }
 };
 
@@ -156,10 +169,40 @@ const getDomainRecommendBlog = (
   }
 };
 
+/**
+ * レスポンスドメイン変換: 関連するストーリー記事一覧
+ */
+const getDomainRelatedStoryBlog = (
+  blogs: ResRelatedStoryBlog[]
+): DomainStoryDetailRelatedStoryBlog[] => {
+  try {
+    return blogs.map(r => {
+      const id = Number(r.id) || 0;
+      const title = String(r.attributes.title) || '';
+      const titleSub = String(r.attributes.titleSub) || '';
+      const rAttributes = r.attributes.thumbnail.data.attributes;
+      const rFormats = rAttributes?.formats;
+      const rUrl =
+        rFormats?.thumbnail?.url || rFormats?.small?.url || rAttributes.url;
+      const thumbnail = String(rUrl) || '';
+
+      return new DomainStoryDetailRelatedStoryBlog(
+        id,
+        title,
+        titleSub,
+        thumbnail
+      );
+    });
+  } catch (e) {
+    throw errorWrapper(e, 'ドメイン変換エラー:関連するストーリー記事一覧');
+  }
+};
+
 interface useReturn {
   readonly storyBlog: DomainStoryDetailStoryBlog;
   readonly categories: DomainStoryDetailCategory[];
   readonly favoriteBlogs: DomainStoryDetailRecommendBlog[];
+  readonly relatedStoryBlogs: DomainStoryDetailRelatedStoryBlog[];
 }
 
 /**
@@ -176,6 +219,7 @@ export const adapterDomainStoryDetail = (page: PageProps): useReturn => {
     const resCategory: ResCategory[] = getResCategory(res);
     const resFavoriteBlogs: ResFavoriteBlogAttributeBlog[] =
       getResFavoriteBlogAttributeBlog(res);
+    const resStoryBlogs: ResRelatedStoryBlog[] = getResRelatedStoryBlog(res);
 
     /***
      * ドメインに変換
@@ -186,11 +230,14 @@ export const adapterDomainStoryDetail = (page: PageProps): useReturn => {
       getDomainCategory(resCategory);
     const favoriteBlogs: DomainStoryDetailRecommendBlog[] =
       getDomainRecommendBlog(resFavoriteBlogs);
+    const relatedStoryBlogs: DomainStoryDetailRelatedStoryBlog[] =
+      getDomainRelatedStoryBlog(resStoryBlogs);
 
     return {
       storyBlog,
       categories,
       favoriteBlogs,
+      relatedStoryBlogs,
     };
   } catch (e) {
     throw errorWrapper(e, 'レスポンス変換エラー');

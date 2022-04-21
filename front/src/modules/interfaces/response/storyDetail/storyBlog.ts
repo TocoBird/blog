@@ -1,4 +1,4 @@
-// ストーリー記事
+// ストーリー記事詳細
 
 interface ResStoryBlogAttributeTocoBlogAttributeThumbnailFormats {
   readonly thumbnail?: {

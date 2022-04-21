@@ -73,7 +73,7 @@ const getResRelatedBlogAttributeBlog = (
 /**
  * レスポンス取得: ストーリー記事一覧
  */
-const getResStoryBlog = (r: Res): ResStoryBlog[] => {
+const getResStoryBlogs = (r: Res): ResStoryBlog[] => {
   try {
     return r.strapi.storyBlogs.data || ([] as ResStoryBlog[]);
   } catch (e) {
@@ -226,7 +226,7 @@ export const adapterDomainArticleDetail = (page: PageProps): useReturn => {
       getResFavoriteBlogAttributeBlog(res);
     const resRelatedBlogs: ResCategoryAttributeRelatedBlog[] =
       getResRelatedBlogAttributeBlog(res);
-    const resStoryBlogs: ResStoryBlog[] = getResStoryBlog(res);
+    const resStoryBlogs: ResStoryBlog[] = getResStoryBlogs(res);
 
     /**
      * ドメインに変換
