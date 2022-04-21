@@ -1,32 +1,12 @@
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
+import MarkdownH1 from '@/components/sp/atoms/MarkdownH1';
 import Spacer from '@/components/sp/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
 import { TagNode } from '@/modules/common/markdown';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
-const H1 = styled.h1`
-  position: relative;
-  font-size: ${size.font.sp.l4}px;
-  font-weight: bold;
-  padding-bottom: 16px;
-  margin-bottom: 20px;
-`;
-// 目次をつけるときに使用する。
-// ただリンクと、このエリアがかぶるとリンクが押せなくなるなど起きる可能性があるので考慮する
-// :before {
-//   content: '';
-//   display: block;
-//   height: 6rem;
-//   margin-top: -6rem;
-// }
-const H1Border = styled.div`
-  position: absolute;
-  height: 2px;
-  bottom: -2px;
-  width: 50%;
-`;
 const H2 = styled.h2`
   font-size: ${size.font.sp.l4}px;
   margin-bottom: 16px;
@@ -128,23 +108,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
 
         if (n.type === 'h') {
           if (n.size === 1)
-            return (
-              <H1
-                key={key}
-                id={n.id}
-                style={{
-                  color: color.text.mainBoldThin,
-                  borderBottom: `solid 2px ${color.border.h1}`,
-                }}
-              >
-                <H1Border
-                  style={{
-                    background: color.border.h1Accent,
-                  }}
-                />
-                {n.text}
-              </H1>
-            );
+            return <MarkdownH1 key={key} id={n.id} text={n.text} />;
 
           if (n.size === 2)
             return (

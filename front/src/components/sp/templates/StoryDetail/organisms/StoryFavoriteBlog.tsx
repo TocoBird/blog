@@ -24,9 +24,9 @@ interface Props {
 }
 
 /**
- *
+ * ストーリー記事詳細: おすすめ記事一覧
  */
-const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
+const StoryFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <LabelTitle size="M" icon={faFire}>
@@ -61,4 +61,4 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default ArticleFavoriteBlog;
+export default StoryFavoriteBlog;

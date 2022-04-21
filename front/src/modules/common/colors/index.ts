@@ -36,6 +36,7 @@ export const useColor = (): UseColor => {
     /** コンテンツ背景色 */
     box: {
       background: isDark ? d.blue.darkThin : l.basic.white,
+      cardBackground: isDark ? d.blue.darkThinMore : l.basic.white,
     },
     /** ボタンの色 */
     button: {

@@ -22,9 +22,9 @@ interface Props {
 }
 
 /**
- * 記事詳細：カテゴリ一覧
+ * ストーリー記事詳細：カテゴリ一覧
  */
-const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
+const StoryCategory: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <LabelTitle size="M" icon={faMagnifyingGlass}>
@@ -51,4 +51,4 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default ArticleCategory;
+export default StoryCategory;

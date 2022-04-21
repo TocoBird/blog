@@ -2,7 +2,7 @@ import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
-import LabelTitle from '@/components/sp/templates/ArticleDetail/molecules/LabelTitle';
+import LabelTitle from '@/components/sp/molecules/LabelTitle';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
@@ -12,9 +12,9 @@ const Detail = styled.div`
 `;
 
 /**
- * 記事詳細：コンセプト説明
+ * コンセプト説明
  */
-const ArticleConcept: React.FC = (): JSX.Element => {
+const BlogConcept: React.FC = (): JSX.Element => {
   const { color } = useColor();
 
   return (
@@ -36,4 +36,4 @@ const ArticleConcept: React.FC = (): JSX.Element => {
   );
 };
 
-export default ArticleConcept;
+export default BlogConcept;

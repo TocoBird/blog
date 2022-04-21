@@ -5,7 +5,7 @@ import React, { Fragment } from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
-import LabelTitle from '@/components/sp/templates/ArticleDetail/molecules/LabelTitle';
+import LabelTitle from '@/components/sp/molecules/LabelTitle';
 import { DomainArticleDetailStoryBlog } from '@/domain/articleDetail/storyBlog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';

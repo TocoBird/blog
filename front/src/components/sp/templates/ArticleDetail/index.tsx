@@ -2,9 +2,10 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
+import BlogAuthor from '@/components/sp/molecules/blogDetail/BlogAuthor';
+import BlogConcept from '@/components/sp/molecules/blogDetail/BlogConcept';
+import BlogContent from '@/components/sp/molecules/blogDetail/BlogContent';
 import ArticleCategory from '@/components/sp/templates/ArticleDetail/organisms/ArticleCategory';
-import ArticleConcept from '@/components/sp/templates/ArticleDetail/organisms/ArticleConcept';
-import ArticleContent from '@/components/sp/templates/ArticleDetail/organisms/ArticleContent';
 import ArticleFavoriteBlog from '@/components/sp/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
 import ArticleRelated from '@/components/sp/templates/ArticleDetail/organisms/ArticleRelated';
 import ArticleStory from '@/components/sp/templates/ArticleDetail/organisms/ArticleStory';
@@ -52,7 +53,11 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <Content style={{ background: color.box.background }}>
-        <ArticleContent nodes={p.blog.textNodes} />
+        <BlogContent nodes={p.blog.textNodes} />
+
+        <Spacer.S />
+
+        <BlogAuthor />
       </Content>
 
       <Spacer.M />
@@ -82,7 +87,7 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <Content style={{ background: color.box.background }}>
-        <ArticleConcept />
+        <BlogConcept />
       </Content>
 
       <Spacer.M />

@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/pc/atoms/Markdown/H1';
-import Spacer from '@/components/pc/atoms/Spacer';
-import Thumbnail from '@/components/pc/atoms/Thumbnail';
-import Title from '@/components/pc/atoms/Title';
+import MarkdownH1 from '@/components/sp/atoms/MarkdownH1';
+import Spacer from '@/components/sp/atoms/Spacer';
+import Thumbnail from '@/components/sp/atoms/Thumbnail';
+import Title from '@/components/sp/atoms/Title';
 import { DomainStoryDetailBlog } from '@/domain/storyDetail/blog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
@@ -27,7 +27,7 @@ interface Props {
 }
 
 /**
- * ストーリー記事詳細：本文
+ * ストーリー記事詳細：上部
  */
 const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
@@ -36,12 +36,11 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       {p.blogs.map((b: DomainStoryDetailBlog, index: number) => (
         <Fragment key={b.id}>
-          {index !== 0 && <Spacer.XXXL />}
+          {index !== 0 && <Spacer.XL />}
 
           <MarkdownH1
             id={`markdown_h_story_id_${b.id}`}
             text={b.introduceTitle}
-            isBeforeArea={false}
           />
 
           <div
@@ -52,7 +51,7 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
             {b.introduceText}
           </div>
 
-          <Spacer.L />
+          <Spacer.M />
 
           <Link to={`/article/${b.id}`}>
             <Card

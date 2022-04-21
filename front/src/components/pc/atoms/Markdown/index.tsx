@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/pc/atoms/MarkdownH1';
+import MarkdownH1 from '@/components/pc/atoms/Markdown/H1';
 import Spacer from '@/components/pc/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
 import { TagNode } from '@/modules/common/markdown';
@@ -108,7 +108,14 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
 
         if (n.type === 'h') {
           if (n.size === 1)
-            return <MarkdownH1 key={key} id={n.id} text={n.text} />;
+            return (
+              <MarkdownH1
+                key={key}
+                id={n.id}
+                text={n.text}
+                isBeforeArea={true}
+              />
+            );
 
           if (n.size === 2)
             return (

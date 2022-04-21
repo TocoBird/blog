@@ -9,12 +9,10 @@ const H1 = styled.h1`
   font-weight: bold;
   padding-bottom: 20px;
   margin-bottom: 24px;
-  :before {
-    content: '';
-    display: block;
-    height: 6rem;
-    margin-top: -6rem;
-  }
+`;
+const LinkBefore = styled.div`
+  height: 6rem;
+  margin-top: -6rem;
 `;
 const H1Border = styled.div`
   position: absolute;
@@ -27,12 +25,13 @@ const H1Border = styled.div`
 interface Props {
   readonly id: string;
   readonly text: string;
+  readonly isBeforeArea: boolean;
 }
 
 /**
  * マークダウン: H1タイトル
  */
-const Bar: React.FC<Props> = (p: Props): JSX.Element => {
+const MarkdownH1: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
 
   return (
@@ -43,6 +42,7 @@ const Bar: React.FC<Props> = (p: Props): JSX.Element => {
         borderBottom: `solid 2px ${color.border.h1}`,
       }}
     >
+      {p.isBeforeArea && <LinkBefore />}
       <H1Border
         style={{
           background: color.border.h1Accent,
@@ -53,4 +53,4 @@ const Bar: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default Bar;
+export default MarkdownH1;

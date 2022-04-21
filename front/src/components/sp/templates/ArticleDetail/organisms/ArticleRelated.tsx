@@ -5,7 +5,7 @@ import React, { Fragment } from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
-import LabelTitle from '@/components/sp/templates/ArticleDetail/molecules/LabelTitle';
+import LabelTitle from '@/components/sp/molecules/LabelTitle';
 import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 
 const Wrapper = styled.div``;

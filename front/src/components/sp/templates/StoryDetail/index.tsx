@@ -1,10 +1,14 @@
-import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import React, { Fragment } from 'react';
-import Markdown from '@/components/sp/atoms/Markdown';
+import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
-import Title from '@/components/sp/atoms/Title';
+import BlogAuthor from '@/components/sp/molecules/blogDetail/BlogAuthor';
+import BlogConcept from '@/components/sp/molecules/blogDetail/BlogConcept';
+import BlogContent from '@/components/sp/molecules/blogDetail/BlogContent';
+import StoryCategory from '@/components/sp/templates/StoryDetail/organisms/StoryCategory';
+import StoryContentBlogs from '@/components/sp/templates/StoryDetail/organisms/StoryContentBlogs';
+import StoryFavoriteBlog from '@/components/sp/templates/StoryDetail/organisms/StoryFavoriteBlog';
+import StoryTop from '@/components/sp/templates/StoryDetail/organisms/StoryTop';
 import { DomainStoryDetailCategory } from '@/domain/storyDetail/category';
 import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
 import { DomainStoryDetailStoryBlog } from '@/domain/storyDetail/storyBlog';
@@ -12,10 +16,9 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
-const Card = styled.div`
+const Content = styled.div`
+  padding: ${size.ui.l5}px;
   box-shadow: 0 2px 12px #0f1c2c17;
-  display: flex;
-  flex-wrap: wrap;
 `;
 
 interface Props {
@@ -34,37 +37,49 @@ const TemplateSPStoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      <div>{p.storyBlog.title}</div>
-      <div>{p.storyBlog.titleSub}</div>
-      <div>{p.storyBlog.thumbnail}</div>
-      <div>{p.storyBlog.updatedAt}</div>
+      <Thumbnail width="100%" height="140px" url={p.storyBlog.thumbnail} />
 
-      <Markdown nodes={p.storyBlog.textIntroductionNodes} />
+      <Content style={{ background: color.box.background }}>
+        <StoryTop blog={p.storyBlog} />
+      </Content>
 
-      <Markdown nodes={p.storyBlog.textConclusionNodes} />
+      <Spacer.M />
 
-      {p.storyBlog.blogs.map((b, index: number) => (
-        <Fragment key={b.id}>
-          {index !== 0 && <Spacer.M />}
-          <div>{b.introduceTitle}</div>
-          <div>{b.introduceText}</div>
+      <Content style={{ background: color.box.background }}>
+        <BlogContent nodes={p.storyBlog.textIntroductionNodes} />
 
-          <Link to={`/article/${b.id}`}>
-            <Card style={{ background: color.box.background }}>
-              <Thumbnail width="120px" height="80px" url={b.thumbnail} />
-              <Title
-                size="S"
-                style={{
-                  flex: 1,
-                  padding: `${size.ui.l4}px`,
-                }}
-              >
-                {b.title}
-              </Title>
-            </Card>
-          </Link>
-        </Fragment>
-      ))}
+        <Spacer.M />
+
+        <StoryContentBlogs blogs={p.storyBlog.blogs} />
+
+        <Spacer.XL />
+
+        <BlogContent nodes={p.storyBlog.textConclusionNodes} />
+
+        <Spacer.M />
+
+        <BlogAuthor />
+      </Content>
+
+      <Spacer.M />
+
+      <Content style={{ background: color.box.background }}>
+        <StoryCategory categories={p.categories} />
+      </Content>
+
+      <Spacer.M />
+
+      <Content style={{ background: color.box.background }}>
+        <StoryFavoriteBlog blogs={p.favoriteBlogs} />
+      </Content>
+
+      <Spacer.M />
+
+      <Content style={{ background: color.box.background }}>
+        <BlogConcept />
+      </Content>
+
+      <Spacer.M />
     </Wrapper>
   );
 };
