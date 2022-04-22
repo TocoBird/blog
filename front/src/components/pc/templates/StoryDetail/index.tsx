@@ -64,8 +64,8 @@ const TemplatePCStoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               height="280px"
               url={p.storyBlog.thumbnail}
               style={{
-                borderRadius: 2,
-                boxShadow: '0 2px 12px #0f1c2c17',
+                borderRadius: size.ui.l1,
+                boxShadow: '0 2px 24px #0f1c2c12',
               }}
             />
 

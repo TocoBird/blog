@@ -10,7 +10,9 @@ import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  box-shadow: 0 2px 24px #0f1c2c12;
+`;
 const Content = styled.div`
   margin: auto;
   min-width: ${size.responsive.pcMin}px;

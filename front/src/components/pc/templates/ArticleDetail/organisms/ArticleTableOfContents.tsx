@@ -11,6 +11,7 @@ const Wrapper = styled.div``;
 const Detail = styled.div``;
 const A = styled.a`
   font-size: ${size.font.pc.l2}px;
+  font-weight: 500;
   transition: 0.2s;
   &:hover {
     opacity: 0.6;

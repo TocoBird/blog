@@ -6,7 +6,7 @@ export const d = {
   white: {
     blue: '#c3cfd9',
     blueAccent: '#eef3ff',
-    blueThin: '#d4dde5',
+    blueThin: '#c1ccd6',
     blueDark: '#8c99a3',
   },
   blue: {

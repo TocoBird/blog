@@ -37,6 +37,10 @@ const LeftItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 const Right = styled.div`
   height: 100%;

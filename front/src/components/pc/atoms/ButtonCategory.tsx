@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   line-height: 40px;
   text-align: center;
   box-shadow: 0 2px 8px #0f1c2c38;
+  transition: 0.2s;
   &:hover {
     opacity: 0.8;
   }

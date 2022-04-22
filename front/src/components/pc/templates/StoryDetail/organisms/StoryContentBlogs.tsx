@@ -11,11 +11,12 @@ import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const Card = styled.div`
-  box-shadow: 0 2px 12px #0f1c2c17;
+  box-shadow: 0 2px 8px #0f1c2c1f;
   display: flex;
-  padding: ${size.ui.l4}px;
-  border-radius: ${size.ui.l1}px;
+  border-radius: ${size.ui.l2}px;
+  overflow: hidden;
   box-sizing: border-box;
+  transition: 0.2s;
   &:hover {
     opacity: 0.8;
   }
@@ -60,12 +61,12 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                 background: color.box.cardBackground,
               }}
             >
-              <Thumbnail width="120px" height="80px" url={b.thumbnail} />
+              <Thumbnail width="150px" height="110px" url={b.thumbnail} />
               <Title
                 size="S"
                 style={{
                   flex: 1,
-                  padding: `0 ${size.ui.l4}px`,
+                  padding: size.ui.l4,
                 }}
               >
                 {b.title}

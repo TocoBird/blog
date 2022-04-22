@@ -21,7 +21,7 @@ export const useColor = (): UseColor => {
   const color: Color = {
     /** サイト背景色 */
     site: {
-      background: isDark ? d.blue.dark : l.white.blueThin,
+      background: isDark ? d.blue.dark : l.white.blueGradient,
     },
     /** 文字の色 */
     text: {

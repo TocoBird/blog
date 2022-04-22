@@ -4,8 +4,8 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
-  border-radius: 4px;
-  box-shadow: 0 2px 12px #0f1c2c17;
+  border-radius: ${size.ui.l1}px;
+  box-shadow: 0 2px 24px #0f1c2c12;
   padding: ${size.ui.l6}px;
 `;
 

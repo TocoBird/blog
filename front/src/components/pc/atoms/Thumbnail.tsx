@@ -5,6 +5,7 @@ const Wrapper = styled.div`
   background-size: cover;
   background-position: 50% 50%;
   box-shadow: 0 1px 2px #0f1c2c21;
+  border-radius: 2px;
 `;
 
 interface Props {

@@ -11,6 +11,7 @@ export const l = {
     blue: '#b5bfd5',
     blueAccent: '#eef3ff',
     blueThin: '#eaecf1',
+    blueGradient: 'linear-gradient(135deg, #f2f9ff, #f4f5ff)',
   },
   blue: {
     dark: '#3C475F',

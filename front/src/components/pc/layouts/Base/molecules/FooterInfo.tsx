@@ -7,7 +7,7 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
-  height: 160px;
+  height: 200px;
   box-shadow: 0 0 12px #0f1c2c24;
 `;
 const Inner = styled.div`
@@ -26,6 +26,9 @@ const Item = styled.div`
 `;
 const ItemLinks = styled.div`
   padding-left: ${size.ui.l8}px;
+  a:hover {
+    opacity: 0.8;
+  }
 `;
 
 /**
