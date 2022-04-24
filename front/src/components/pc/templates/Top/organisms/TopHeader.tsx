@@ -6,10 +6,12 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
+  position: relative;
   background-image: url('@/images/TocoBridBlogTopHeader.jpg');
   height: 600px;
   background-size: cover;
   background-position: 50% 100%;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
