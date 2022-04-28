@@ -7,9 +7,7 @@ const Wrapper = styled.div`
   font-weight: bold;
   font-size: ${size.font.sp.l3}px;
   border-radius: 50px;
-  padding: 0 20px;
-  height: 36px;
-  line-height: 36px;
+  padding: 8px 20px;
   text-align: center;
   box-shadow: 0 2px 8px #0f1c2c38;
   &:hover {
@@ -20,6 +18,8 @@ const Wrapper = styled.div`
 interface Props {
   /** style */
   readonly style?: CSSProperties;
+  /** アクティブかどうか */
+  readonly isActive?: boolean;
   readonly children: ReactNode;
 }
 
@@ -28,12 +28,17 @@ interface Props {
  */
 const ButtonCategory: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
+  const border = p.isActive
+    ? `2px solid #3291ba`
+    : `2px solid ${color.button.border}`;
 
   return (
     <Wrapper
       style={{
         background: color.button.background,
         color: color.button.text,
+        border,
+        boxShadow: p.isActive ? '0 2px 12px #0f396c7d' : '0 2px 8px #0f1c2c38',
         ...p.style,
       }}
     >

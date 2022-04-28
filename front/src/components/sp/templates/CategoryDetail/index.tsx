@@ -39,6 +39,9 @@ interface Props {
  */
 const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
+  const selectedCategory = p.categories.find(
+    c => c.id === p.selectedCategolyId
+  );
 
   return (
     <Wrapper>
@@ -50,7 +53,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Spacer.L />
 
-        <Title size="M">記事を探す</Title>
+        <Title size="M">{selectedCategory?.name}の記事</Title>
 
         <Spacer.L />
 
@@ -60,14 +63,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               {index !== 0 && <Spacer.M />}
 
               <Link to={`/category/${c.id}`}>
-                <ButtonCategory
-                  style={{
-                    color:
-                      c.id === p.selectedCategolyId
-                        ? '#ffc770'
-                        : color.button.text,
-                  }}
-                >
+                <ButtonCategory isActive={c.id === p.selectedCategolyId}>
                   <IconHash icon={faHashtag} />
                   {c.name}
                 </ButtonCategory>

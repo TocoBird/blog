@@ -3,6 +3,9 @@
  * ./index.tsからしか呼び出さない
  */
 export const d = {
+  basic: {
+    white: 'white',
+  },
   white: {
     blue: '#b9c4cd',
     blueAccent: '#eef3ff',
@@ -22,6 +25,6 @@ export const d = {
     thin: '#111a2f',
   },
   emerald: {
-    gradient: 'linear-gradient(45deg,#307c89,#298c71)',
+    gradient: 'linear-gradient(45deg, #266490, #1f8875)',
   },
 };

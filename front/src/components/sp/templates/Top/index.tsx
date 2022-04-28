@@ -1,3 +1,5 @@
+import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
@@ -8,6 +10,9 @@ import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
 import { DomainTopCategory } from '@/domain/top/blog';
 
 const Wrapper = styled.div``;
+const Icon = styled(FontAwesomeIcon)`
+  font-size: 32px;
+`;
 
 interface Props {
   /** 記事一覧 */
@@ -29,7 +34,9 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
           textAlign: 'center',
         }}
       >
-        最新の記事
+        <Icon icon={faFire} />
+        <br />
+        おすすめの記事
       </Title>
 
       <Spacer.L />

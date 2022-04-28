@@ -31,7 +31,7 @@ export const useColor = (): UseColor => {
       mainBoldThin: isDark ? d.white.blue : l.blue.darkThinMore,
       mainThin: isDark ? d.white.blueDark : l.white.blue,
       link: isDark ? d.blue.purple : l.blue.purple,
-      onImage: isDark ? d.white.blueThin : l.basic.white,
+      onImage: isDark ? d.basic.white : l.basic.white,
     },
     /** コンテンツ背景色 */
     box: {
@@ -42,6 +42,7 @@ export const useColor = (): UseColor => {
     button: {
       background: isDark ? d.emerald.gradient : l.emerald.thinGradient,
       text: isDark ? d.white.blue : l.basic.white,
+      border: isDark ? '#8799a8' : l.basic.white,
     },
     /** ヘッダーの色 */
     header: {

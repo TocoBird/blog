@@ -62,6 +62,9 @@ interface Props {
  */
 const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
+  const selectedCategory = p.categories.find(
+    c => c.id === p.selectedCategolyId
+  );
 
   return (
     <Wrapper>
@@ -73,7 +76,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Spacer.L />
 
-          <Title size="XM">記事を探す</Title>
+          <Title size="XM">{selectedCategory?.name}の記事</Title>
 
           <Spacer.XM />
 
@@ -82,9 +85,8 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <Fragment key={c.id}>
                 <Link to={`/category/${c.id}`}>
                   <ButtonCategory
+                    isActive={c.id === p.selectedCategolyId}
                     style={{
-                      color:
-                        c.id === p.selectedCategolyId ? '#ffc770' : 'white',
                       marginRight: 20,
                     }}
                   >

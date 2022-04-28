@@ -25,6 +25,6 @@ export const l = {
     thin: '#111a2f',
   },
   emerald: {
-    thinGradient: 'linear-gradient(45deg, #52bbb5, #52b398)',
+    thinGradient: 'linear-gradient(45deg, #49b0f1, #34c29b)',
   },
 };

@@ -27,7 +27,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Link to={`/article/${p.blog.id}`}>
         <Card>
-          <Thumbnail width="120px" height="80px" url={p.blog.thumbnail} />
+          <Thumbnail width="140px" height="80px" url={p.blog.thumbnail} />
 
           <Title
             size="S"

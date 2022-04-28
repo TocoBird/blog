@@ -27,7 +27,6 @@ const Detail = styled.div`
 const CategoryFrame = styled.div`
   width: 22.5%;
   border-radius: ${size.ui.l3}px;
-  border: 2px solid white;
   height: ${size.ui.l12}px;
   line-height: ${size.ui.l12}px;
   font-weight: bold;
@@ -99,7 +98,12 @@ const Concept: React.FC = (): JSX.Element => {
 
         <Detail>
           {concepts.map(c => (
-            <CategoryFrame key={c.name}>
+            <CategoryFrame
+              key={c.name}
+              style={{
+                border: `2px solid ${color.footer.text}`,
+              }}
+            >
               <Link
                 to={c.to}
                 style={{

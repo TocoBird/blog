@@ -21,7 +21,6 @@ const Detail = styled.div`
 `;
 const CategoryFrame = styled.div`
   border-radius: ${size.ui.l3}px;
-  border: 2px solid white;
   height: ${size.ui.l12}px;
   line-height: ${size.ui.l12}px;
   font-weight: bold;
@@ -92,7 +91,11 @@ const TopConcept: React.FC = (): JSX.Element => {
             <Fragment key={c.name}>
               {index !== 0 && <Spacer.M />}
 
-              <CategoryFrame>
+              <CategoryFrame
+                style={{
+                  border: `2px solid ${color.footer.text}`,
+                }}
+              >
                 <Link
                   to={c.to}
                   style={{
