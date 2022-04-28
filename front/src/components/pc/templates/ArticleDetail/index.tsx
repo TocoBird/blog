@@ -4,7 +4,6 @@ import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import BlogAuthor from '@/components/pc/molecules/blogDetail/BlogAuthor';
-import BlogConcept from '@/components/pc/molecules/blogDetail/BlogConcept';
 import BlogMarkdown from '@/components/pc/molecules/blogDetail/BlogMarkdown';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
@@ -90,10 +89,6 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Spacer.XXL />
 
             <ArticleStory blogs={p.stroyBlogs} />
-
-            <Spacer.XXL />
-
-            <BlogConcept />
           </Left>
           <Right>
             <Box size="M">
@@ -115,7 +110,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
         </Content>
       </ContentWrapper>
 
-      <Spacer.L />
+      <Spacer.XXL />
     </Wrapper>
   );
 };

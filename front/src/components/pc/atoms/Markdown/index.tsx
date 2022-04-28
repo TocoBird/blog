@@ -17,6 +17,8 @@ const H2 = styled.h2`
   font-size: ${size.font.pc.l4}px;
   margin-bottom: 16px;
   padding: 8px 0 12px 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px #0f1c2c14;
 `;
 const H3 = styled.h3`
   font-size: ${size.font.pc.l4}px;

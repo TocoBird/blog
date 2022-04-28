@@ -1,7 +1,9 @@
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
+import LabelTitle from '@/components/pc/molecules/LabelTitle';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
@@ -33,7 +35,7 @@ const CategoryFrame = styled.div`
 /**
  * フッター上部のコンセプト
  */
-const TopConcept: React.FC = (): JSX.Element => {
+const Concept: React.FC = (): JSX.Element => {
   const { color } = useColor();
 
   return (
@@ -46,8 +48,9 @@ const TopConcept: React.FC = (): JSX.Element => {
       <Inner>
         <Spacer.XXL />
 
-        <Title
+        <LabelTitle
           size="XL"
+          icon={faLightbulb}
           style={{
             color: color.footer.text,
             borderBottom: '1px solid #ffffff1c',
@@ -55,7 +58,7 @@ const TopConcept: React.FC = (): JSX.Element => {
           }}
         >
           Blog Concept
-        </Title>
+        </LabelTitle>
 
         <Spacer.XXL />
 
@@ -94,4 +97,4 @@ const TopConcept: React.FC = (): JSX.Element => {
   );
 };
 
-export default TopConcept;
+export default Concept;

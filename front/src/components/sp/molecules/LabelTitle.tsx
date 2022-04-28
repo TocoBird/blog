@@ -1,7 +1,7 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
 import Title from '@/components/sp/atoms/Title';
 import size from '@/modules/const/size';
 
@@ -22,6 +22,8 @@ interface Props {
   readonly size: 'XS' | 'S' | 'M' | 'XM' | 'L' | 'XL';
   readonly icon: IconDefinition;
   readonly children: ReactNode;
+  /** style */
+  readonly style?: CSSProperties;
 }
 
 /**
@@ -30,7 +32,7 @@ interface Props {
 const LabelTitle: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Title size={p.size}>
+      <Title size={p.size} style={p.style}>
         <Icon icon={p.icon} />
         {p.children}
       </Title>

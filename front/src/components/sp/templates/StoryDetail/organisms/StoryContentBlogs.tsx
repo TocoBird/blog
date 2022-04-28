@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/sp/atoms/MarkdownH1';
+import MarkdownH1 from '@/components/sp/atoms/Markdown/H1';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';

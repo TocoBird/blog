@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/sp/atoms/MarkdownH1';
+import MarkdownH1 from '@/components/sp/atoms/Markdown/H1';
 import Spacer from '@/components/sp/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
 import { TagNode } from '@/modules/common/markdown';
@@ -10,9 +10,9 @@ const Wrapper = styled.div``;
 const H2 = styled.h2`
   font-size: ${size.font.sp.l4}px;
   margin-bottom: 16px;
-  padding-top: 4px;
-  padding-bottom: 12px;
-  padding-left: 14px;
+  padding: 8px 0 12px 14px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px #0f1c2c14;
 `;
 const H3 = styled.h3`
   font-size: ${size.font.sp.l3}px;

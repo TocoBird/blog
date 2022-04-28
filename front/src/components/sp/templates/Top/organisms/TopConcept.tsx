@@ -1,7 +1,9 @@
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
+import LabelTitle from '@/components/sp/molecules/LabelTitle';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
@@ -40,8 +42,9 @@ const TopConcept: React.FC = (): JSX.Element => {
       <Inner>
         <Spacer.L />
 
-        <Title
+        <LabelTitle
           size="XL"
+          icon={faLightbulb}
           style={{
             color: color.footer.text,
             borderBottom: '1px solid #ffffff1c',
@@ -49,7 +52,7 @@ const TopConcept: React.FC = (): JSX.Element => {
           }}
         >
           Blog Concept
-        </Title>
+        </LabelTitle>
 
         <Spacer.L />
 
