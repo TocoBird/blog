@@ -87,27 +87,23 @@ const TemplatePCStoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <BlogAuthor />
             </Box>
 
-            <Spacer.L />
+            <Spacer.XL />
 
-            <Box size="L">
-              <StoryRelatedStoryBlog blogs={p.relatedStoryBlogs} />
-            </Box>
+            <StoryRelatedStoryBlog blogs={p.relatedStoryBlogs} />
 
-            <Spacer.L />
+            <Spacer.XL />
 
-            <Box size="L">
-              <BlogConcept />
-            </Box>
+            <BlogConcept />
           </Left>
           <Right>
             <Box size="M">
-              <StoryCategory categories={p.categories} />
+              <StoryFavoriteBlog blogs={p.favoriteBlogs} />
             </Box>
 
             <Spacer.L />
 
             <Box size="M">
-              <StoryFavoriteBlog blogs={p.favoriteBlogs} />
+              <StoryCategory categories={p.categories} />
             </Box>
           </Right>
         </Content>

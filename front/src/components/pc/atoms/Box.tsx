@@ -13,7 +13,7 @@ interface Props {
   /** style */
   readonly style?: CSSProperties;
   /** paddingの余白 */
-  readonly size: 'M' | 'L';
+  readonly size: 'S' | 'M' | 'L';
   readonly children: ReactNode;
 }
 
@@ -22,7 +22,14 @@ interface Props {
  */
 const Box: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
-  const padding = p.size === 'M' ? size.ui.l6 : size.ui.l10;
+  const getSize = (): number => {
+    if (p.size === 'S') return size.ui.l4;
+    if (p.size === 'M') return size.ui.l6;
+    if (p.size === 'L') return size.ui.l10;
+    return 0;
+  };
+
+  const padding = getSize();
 
   return (
     <Wrapper

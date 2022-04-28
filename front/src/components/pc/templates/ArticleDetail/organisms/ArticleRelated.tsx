@@ -2,6 +2,7 @@ import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
+import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
@@ -13,7 +14,7 @@ const Articles = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const Card = styled.div`
+const LinkInner = styled.div`
   &:hover {
     opacity: 0.8;
   }
@@ -30,7 +31,7 @@ interface Props {
 const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <LabelTitle size="M" icon={faBookOpen}>
+      <LabelTitle size="XM" icon={faBookOpen}>
         関連する記事
       </LabelTitle>
 
@@ -45,13 +46,15 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
               width: '49%',
             }}
           >
-            <Card>
-              <Thumbnail width="100%" height="180px" url={b.thumbnail} />
+            <LinkInner>
+              <Box size="S">
+                <Thumbnail width="100%" height="180px" url={b.thumbnail} />
 
-              <Spacer.M />
+                <Spacer.M />
 
-              <Title size="S">{b.title}</Title>
-            </Card>
+                <Title size="S">{b.title}</Title>
+              </Box>
+            </LinkInner>
           </Link>
         ))}
       </Articles>

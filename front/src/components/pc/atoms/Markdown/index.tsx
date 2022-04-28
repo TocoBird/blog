@@ -7,12 +7,16 @@ import { TagNode } from '@/modules/common/markdown';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
+const LinkBefore = styled.div`
+  height: 6rem;
+  position: absolute;
+  top: -6em;
+`;
 const H2 = styled.h2`
+  position: relative;
   font-size: ${size.font.pc.l4}px;
   margin-bottom: 16px;
-  padding-top: 6px;
-  padding-bottom: 12px;
-  padding-left: 14px;
+  padding: 8px 0 12px 14px;
 `;
 const H3 = styled.h3`
   font-size: ${size.font.pc.l4}px;
@@ -29,6 +33,8 @@ const P = styled.p`
 const Strong = styled.strong``;
 const Img = styled.img`
   width: 100%;
+  box-shadow: 0 2px 4px #0f1c2c15;
+  border-radius: 2px;
 `;
 const A = styled.a``;
 
@@ -46,7 +52,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      {p.nodes.map((n, index: number) => {
+      {p.nodes.map((n: TagNode, index: number) => {
         const key = `node_id_${index}`;
 
         if (n.type === 'br') return <br key={key} />;
@@ -121,14 +127,16 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
             return (
               <H2
                 key={key}
-                id={n.id}
                 style={{
                   color: color.text.mainBoldAccent,
                   borderBottom: `1px solid ${color.border.h2}`,
                   borderLeft: `4px solid ${color.border.h2Left}`,
+                  background: color.hTag.background,
                 }}
               >
-                {n.text}
+                <LinkBefore id={n.id} />
+
+                <div>{n.text}</div>
               </H2>
             );
 

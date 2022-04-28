@@ -11,10 +11,6 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
-const TitleSub = styled.div`
-  font-size: ${size.font.sp.l3}px;
-  font-weight: bold;
-`;
 const Text = styled.div`
   font-size: ${size.font.sp.l3}px;
   font-weight: 500;
@@ -43,28 +39,18 @@ const StoryRelatedStoryBlog: React.FC<Props> = (p: Props): JSX.Element => {
         関連するストーリー
       </LabelTitle>
 
-      <Spacer.S />
-
-      <TitleSub
-        style={{
-          color: color.text.mainThin,
-        }}
-      >
-        記事をストーリーにまとめました
-      </TitleSub>
-
       <Spacer.XM />
 
       <Articles>
         {p.blogs.map((b: DomainStoryDetailRelatedStoryBlog, index: number) => (
           <Fragment key={`${index}_${b.id}`}>
-            {index !== 0 && <Spacer.M />}
+            {index !== 0 && <Spacer.XM />}
 
             <Link to={`/story/${b.id}`}>
               <Card>
                 <Thumbnail width="100%" height="120px" url={b.thumbnail} />
 
-                <Spacer.M />
+                <Spacer.S />
 
                 <Title size="S">{b.title}</Title>
 

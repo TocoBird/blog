@@ -83,31 +83,19 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
               <BlogAuthor />
             </Box>
 
-            <Spacer.L />
+            <Spacer.XXL />
 
-            <Box size="L">
-              <ArticleRelated blogs={p.relatedBlogs} />
-            </Box>
+            <ArticleRelated blogs={p.relatedBlogs} />
 
-            <Spacer.L />
+            <Spacer.XXL />
 
-            <Box size="L">
-              <ArticleStory blogs={p.stroyBlogs} />
-            </Box>
+            <ArticleStory blogs={p.stroyBlogs} />
 
-            <Spacer.L />
+            <Spacer.XXL />
 
-            <Box size="L">
-              <BlogConcept />
-            </Box>
+            <BlogConcept />
           </Left>
           <Right>
-            <Box size="M">
-              <ArticleCategory categories={p.categories} />
-            </Box>
-
-            <Spacer.L />
-
             <Box size="M">
               <ArticleTableOfContents nodes={p.blog.textNodes} />
             </Box>
@@ -116,6 +104,12 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Box size="M">
               <ArticleFavoriteBlog blogs={p.favoriteBlogs} />
+            </Box>
+
+            <Spacer.L />
+
+            <Box size="M">
+              <ArticleCategory categories={p.categories} />
             </Box>
           </Right>
         </Content>

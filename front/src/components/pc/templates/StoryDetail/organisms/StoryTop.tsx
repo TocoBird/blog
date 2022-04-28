@@ -1,4 +1,4 @@
-import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
@@ -76,7 +76,7 @@ const StoryTop: React.FC<Props> = (p: Props): JSX.Element => {
                 color: color.text.mainThin,
               }}
             >
-              <Icon icon={faCalendarDays} />
+              <Icon icon={faClock} />
               {p.blog.updatedAt}更新
             </Date>
 

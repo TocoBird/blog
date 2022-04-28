@@ -119,6 +119,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
                   color: color.text.mainBoldAccent,
                   borderBottom: `1px solid ${color.border.h2}`,
                   borderLeft: `4px solid ${color.border.h2Left}`,
+                  background: color.hTag.background,
                 }}
               >
                 {n.text}

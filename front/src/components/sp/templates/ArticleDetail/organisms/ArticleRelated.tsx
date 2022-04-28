@@ -34,7 +34,7 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
 
       {p.blogs.map((b: DomainArticleDetailRelatedBlog, index: number) => (
         <Fragment key={`${index}_${b.id}`}>
-          {index !== 0 && <Spacer.M />}
+          {index !== 0 && <Spacer.XM />}
 
           <Link to={`/article/${b.id}`}>
             <Card>

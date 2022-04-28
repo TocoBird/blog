@@ -11,8 +11,9 @@ const H1 = styled.h1`
   margin-bottom: 24px;
 `;
 const LinkBefore = styled.div`
+  position: absolute;
   height: 6rem;
-  margin-top: -6rem;
+  top: -6rem;
 `;
 const H1Border = styled.div`
   position: absolute;
@@ -36,13 +37,13 @@ const MarkdownH1: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <H1
-      id={p.id}
       style={{
         color: color.text.mainBoldThin,
         borderBottom: `solid 2px ${color.border.h1}`,
       }}
     >
-      {p.isBeforeArea && <LinkBefore />}
+      {p.isBeforeArea && <LinkBefore id={p.id} />}
+
       <H1Border
         style={{
           background: color.border.h1Accent,

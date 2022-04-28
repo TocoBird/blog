@@ -2,6 +2,7 @@ import { faBookBookmark } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
+import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
@@ -11,10 +12,6 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
-const TitleSub = styled.div`
-  font-size: ${size.font.pc.l3}px;
-  font-weight: bold;
-`;
 const Text = styled.div`
   font-size: ${size.font.pc.l3}px;
   font-weight: 500;
@@ -23,7 +20,7 @@ const Articles = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const Card = styled.div`
+const LinkInner = styled.div`
   &:hover {
     opacity: 0.8;
   }
@@ -42,19 +39,9 @@ const StoryRelatedStoryBlog: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      <LabelTitle size="M" icon={faBookBookmark}>
+      <LabelTitle size="XM" icon={faBookBookmark}>
         関連するストーリー
       </LabelTitle>
-
-      <Spacer.S />
-
-      <TitleSub
-        style={{
-          color: color.text.mainThin,
-        }}
-      >
-        記事をストーリーにまとめました
-      </TitleSub>
 
       <Spacer.XM />
 
@@ -67,23 +54,25 @@ const StoryRelatedStoryBlog: React.FC<Props> = (p: Props): JSX.Element => {
               width: '32%',
             }}
           >
-            <Card>
-              <Thumbnail width="100%" height="120px" url={b.thumbnail} />
+            <LinkInner>
+              <Box size="S">
+                <Thumbnail width="100%" height="120px" url={b.thumbnail} />
 
-              <Spacer.M />
+                <Spacer.M />
 
-              <Title size="S">{b.title}</Title>
+                <Title size="S">{b.title}</Title>
 
-              <Spacer.XS />
+                <Spacer.XS />
 
-              <Text
-                style={{
-                  color: color.text.mainThin,
-                }}
-              >
-                {b.titleSub}
-              </Text>
-            </Card>
+                <Text
+                  style={{
+                    color: color.text.mainThin,
+                  }}
+                >
+                  {b.titleSub}
+                </Text>
+              </Box>
+            </LinkInner>
           </Link>
         ))}
       </Articles>

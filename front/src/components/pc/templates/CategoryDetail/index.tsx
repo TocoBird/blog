@@ -26,15 +26,26 @@ const Content = styled.div`
 const Categories = styled.div`
   display: flex;
 `;
+const Cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  a {
+    display: block;
+    width: 23.5%;
+  }
+`;
 const Card = styled.div`
   box-shadow: 0 2px 12px #0f1c2c17;
-  display: flex;
+  margin-bottom: ${size.ui.l6}px;
+  height: 200px;
+  border-radius: 2px;
   &:hover {
     opacity: 0.8;
   }
 `;
 const IconHash = styled(FontAwesomeIcon)`
-  margin-right: 2px;
+  margin-right: 4px;
 `;
 
 interface Props {
@@ -95,19 +106,17 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <div>
         <Inner>
-          {p.blogs.map((b, index: number) => (
-            <Fragment key={b.id}>
-              {index !== 0 && <Spacer.S />}
-
-              <Link to={`/article/${b.id}`}>
+          <Cards>
+            {p.blogs.map(b => (
+              <Link to={`/article/${b.id}`} key={b.id}>
                 <Card
                   style={{
                     background: color.box.background,
                   }}
                 >
-                  <Thumbnail width="140px" height="100px" url={b.thumbnail} />
+                  <Thumbnail width="100%" height="120px" url={b.thumbnail} />
                   <Title
-                    size="XS"
+                    size="S"
                     style={{
                       flex: 1,
                       padding: `${size.ui.l4}px`,
@@ -117,8 +126,8 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                   </Title>
                 </Card>
               </Link>
-            </Fragment>
-          ))}
+            ))}
+          </Cards>
         </Inner>
       </div>
 

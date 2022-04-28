@@ -43,7 +43,7 @@ const StoryCategory: React.FC<Props> = (p: Props): JSX.Element => {
               </ButtonCategory>
             </Link>
 
-            <Spacer.S />
+            <Spacer.M />
           </Fragment>
         ))}
       </div>

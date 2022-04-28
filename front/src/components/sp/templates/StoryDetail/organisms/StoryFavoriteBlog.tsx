@@ -38,7 +38,7 @@ const StoryFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
       <div>
         {p.blogs.map((b: DomainArticleDetailRecommendBlog, index: number) => (
           <Fragment key={`${index}_${b.id}`}>
-            {index !== 0 && <Spacer.S />}
+            {index !== 0 && <Spacer.M />}
 
             <Link to={`/article/${b.id}`}>
               <Card>

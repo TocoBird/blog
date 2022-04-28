@@ -13,7 +13,7 @@ const Wrapper = styled.div``;
 const Card = styled.div`
   box-shadow: 0 2px 12px #0f1c2c17;
   display: flex;
-  padding: ${size.ui.l4}px;
+  overflow: hidden;
   border-radius: ${size.ui.l1}px;
   box-sizing: border-box;
   &:hover {
@@ -51,7 +51,7 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
             {b.introduceText}
           </div>
 
-          <Spacer.M />
+          <Spacer.XM />
 
           <Link to={`/article/${b.id}`}>
             <Card
@@ -59,12 +59,12 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                 background: color.box.cardBackground,
               }}
             >
-              <Thumbnail width="120px" height="80px" url={b.thumbnail} />
+              <Thumbnail width="110px" height="70px" url={b.thumbnail} />
               <Title
                 size="S"
                 style={{
                   flex: 1,
-                  padding: `0 ${size.ui.l4}px`,
+                  padding: size.ui.l3,
                 }}
               >
                 {b.title}

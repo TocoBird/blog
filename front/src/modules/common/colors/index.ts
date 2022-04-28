@@ -41,7 +41,7 @@ export const useColor = (): UseColor => {
     /** ボタンの色 */
     button: {
       background: isDark ? d.emerald.gradient : l.emerald.thinGradient,
-      text: isDark ? d.white.blueThin : l.basic.white,
+      text: isDark ? d.white.blue : l.basic.white,
     },
     /** ヘッダーの色 */
     header: {
@@ -66,6 +66,9 @@ export const useColor = (): UseColor => {
       h1Accent: isDark ? '#5e78a2' : '#92b7ef',
       h2: isDark ? '#5f636c' : '#e7eaf0',
       h2Left: isDark ? '#5a6797' : '#b4c2f8',
+    },
+    hTag: {
+      background: isDark ? d.white.thinOpacity : l.white.blueMoreThin,
     },
     /** 画像読み込み前の色 */
     image: {

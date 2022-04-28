@@ -3,8 +3,9 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import LabelTitle from '@/components/pc/molecules/LabelTitle';
+import { useHooks } from '@/components/pc/templates/ArticleDetail/organisms/ArticleTableOfContents/hooks';
 import { useColor } from '@/modules/common/colors';
-import { TagNode, TagH } from '@/modules/common/markdown';
+import { TagNode } from '@/modules/common/markdown';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
@@ -17,6 +18,10 @@ const A = styled.a`
     opacity: 0.6;
   }
 `;
+const Ah2 = styled(A)`
+  padding-left: ${size.ui.l2}px;
+  font-size: ${size.font.pc.l1}px;
+`;
 
 interface Props {
   /** 記事内容 */
@@ -28,7 +33,7 @@ interface Props {
  */
 const ArticleTableOfContents: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
-  const h1s = p.nodes.filter(n => n.type === 'h' && n.size === 1) as TagH[];
+  const { hs } = useHooks(p.nodes);
 
   return (
     <Wrapper>
@@ -38,19 +43,33 @@ const ArticleTableOfContents: React.FC<Props> = (p: Props): JSX.Element => {
 
       <Spacer.M />
 
-      {h1s.map((h: TagH, index: number) => (
-        <Detail key={`${h.text}_${index}`}>
+      {hs.map((t, index: number) => (
+        <Detail key={`${t.text}_${index}`}>
           {index !== 0 && <Spacer.S />}
 
-          <A
-            href={`#${h.id}`}
-            rel="noopener noreferrer"
-            style={{
-              color: color.text.link,
-            }}
-          >
-            ・{h.text}
-          </A>
+          {t.size === 1 && (
+            <A
+              href={`#${t.id}`}
+              rel="noopener noreferrer"
+              style={{
+                color: color.text.link,
+              }}
+            >
+              {t.num}.{t.text}
+            </A>
+          )}
+
+          {t.size === 2 && (
+            <Ah2
+              href={`#${t.id}`}
+              rel="noopener noreferrer"
+              style={{
+                color: color.text.link,
+              }}
+            >
+              ・{t.text}
+            </Ah2>
+          )}
         </Detail>
       ))}
     </Wrapper>

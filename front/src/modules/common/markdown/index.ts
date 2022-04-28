@@ -43,9 +43,9 @@ export type TagNode = TagH | TagP | TagA | TagImg | TagBr | TagSpacer;
 /**
  * h1
  */
-const hTag = (line: string, num: number, lineIndex: number): TagH => {
-  const text = line.replace(/#/g, '');
-  const id = `markdown_h_id_${lineIndex}`;
+const hTag = (line: string, num: number): TagH => {
+  const text = line.replace(/#/g, '').replace(/\s+/g, '');
+  const id = `id_${text}`;
 
   if (num > 0 && num < 7) {
     const size = num as 1 | 2 | 3 | 4 | 5 | 6;
@@ -146,7 +146,7 @@ export const convertNodes = (str: string): TagNode[] => {
           type: 'spacer',
           size: sharpCount > 1 ? 2 : 1,
         });
-      ns.push(hTag(line, sharpCount, i));
+      ns.push(hTag(line, sharpCount));
       continue;
     }
 

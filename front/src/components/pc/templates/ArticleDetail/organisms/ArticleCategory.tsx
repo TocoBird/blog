@@ -36,7 +36,7 @@ const ArticleCategory: React.FC<Props> = (p: Props): JSX.Element => {
       <div>
         {p.categories.map((c: DomainArticleDetailCategory, index: number) => (
           <Fragment key={c.id}>
-            {index !== 0 && <Spacer.S />}
+            {index !== 0 && <Spacer.M />}
 
             <div>
               <Link to={`/category/${c.id}`}>

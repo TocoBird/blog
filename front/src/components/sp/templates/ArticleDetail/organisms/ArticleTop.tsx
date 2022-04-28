@@ -1,4 +1,4 @@
-import { faCalendarDays, faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faHashtag } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
@@ -49,7 +49,7 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
 
       <TopContentItems>
         <Date style={{ color: color.text.mainThin }}>
-          <Icon icon={faCalendarDays} />
+          <Icon icon={faClock} />
           {p.blog.updatedAt}更新
         </Date>
         <Category>

@@ -4,10 +4,11 @@
  */
 export const d = {
   white: {
-    blue: '#c3cfd9',
+    blue: '#b9c4cd',
     blueAccent: '#eef3ff',
-    blueThin: '#c1ccd6',
+    blueThin: '#b1bdc8',
     blueDark: '#8c99a3',
+    thinOpacity: '#ffffff0a',
   },
   blue: {
     dark: '#17182d',
@@ -15,7 +16,7 @@ export const d = {
     darkThinMore: '#383a51',
     darkThinVeryMore: '#48536b',
     darkGradient: 'linear-gradient(45deg, #232731f4, #121a2df4)',
-    purple: '#99b7f9',
+    purple: '#7792ce',
   },
   black: {
     thin: '#111a2f',
