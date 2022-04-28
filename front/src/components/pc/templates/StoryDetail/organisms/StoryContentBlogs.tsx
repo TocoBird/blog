@@ -42,7 +42,6 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
           <MarkdownH1
             id={`markdown_h_story_id_${b.id}`}
             text={b.introduceTitle}
-            isBeforeArea={false}
           />
 
           <div

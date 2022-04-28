@@ -116,14 +116,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
 
         if (n.type === 'h') {
           if (n.size === 1)
-            return (
-              <MarkdownH1
-                key={key}
-                id={n.id}
-                text={n.text}
-                isBeforeArea={true}
-              />
-            );
+            return <MarkdownH1 key={key} id={n.id} text={n.text} />;
 
           if (n.size === 2)
             return (

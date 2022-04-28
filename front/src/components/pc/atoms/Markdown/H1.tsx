@@ -26,7 +26,6 @@ const H1Border = styled.div`
 interface Props {
   readonly id: string;
   readonly text: string;
-  readonly isBeforeArea: boolean;
 }
 
 /**
@@ -42,7 +41,7 @@ const MarkdownH1: React.FC<Props> = (p: Props): JSX.Element => {
         borderBottom: `solid 2px ${color.border.h1}`,
       }}
     >
-      {p.isBeforeArea && <LinkBefore id={p.id} />}
+      <LinkBefore id={p.id} />
 
       <H1Border
         style={{

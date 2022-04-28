@@ -1,4 +1,5 @@
 import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
@@ -27,9 +28,14 @@ const CategoryFrame = styled.div`
   width: 22.5%;
   border-radius: ${size.ui.l3}px;
   border: 2px solid white;
-  padding: ${size.ui.l4}px 0;
+  height: ${size.ui.l12}px;
+  line-height: ${size.ui.l12}px;
   font-weight: bold;
   font-size: ${size.font.pc.l3}px;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.6;
+  }
 `;
 
 /**
@@ -37,6 +43,24 @@ const CategoryFrame = styled.div`
  */
 const Concept: React.FC = (): JSX.Element => {
   const { color } = useColor();
+  const concepts = [
+    {
+      name: 'デザイン',
+      to: '/category/3',
+    },
+    {
+      name: 'プロダクト設計',
+      to: '/category/1',
+    },
+    {
+      name: 'チームビルディング',
+      to: '/category/2',
+    },
+    {
+      name: '経営',
+      to: '/category/4',
+    },
+  ];
 
   return (
     <Wrapper
@@ -68,16 +92,27 @@ const Concept: React.FC = (): JSX.Element => {
             color: color.footer.text,
           }}
         >
-          TocoBlogでは、下の抽象的な4つの分野を扱います。
+          TocoBlogでは、抽象的な4つの分野を扱います。
         </Title>
 
         <Spacer.XXL />
 
         <Detail>
-          <CategoryFrame>デザイン</CategoryFrame>
-          <CategoryFrame>プロダクト設計</CategoryFrame>
-          <CategoryFrame>チームビルディング</CategoryFrame>
-          <CategoryFrame>経営</CategoryFrame>
+          {concepts.map(c => (
+            <CategoryFrame key={c.name}>
+              <Link
+                to={c.to}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  height: '100%',
+                  color: color.footer.text,
+                }}
+              >
+                {c.name}
+              </Link>
+            </CategoryFrame>
+          ))}
         </Detail>
 
         <Spacer.XXL />
@@ -88,7 +123,7 @@ const Concept: React.FC = (): JSX.Element => {
             color: color.footer.text,
           }}
         >
-          実用を想定し、海外もキャッチアップした記事を発信します。
+          海外もキャッチアップし、実用を想定した記事を発信します。
         </Title>
 
         <Spacer.XXL />

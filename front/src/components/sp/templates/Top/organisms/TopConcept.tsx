@@ -1,6 +1,7 @@
 import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
-import React from 'react';
+import React, { Fragment } from 'react';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Title from '@/components/sp/atoms/Title';
 import LabelTitle from '@/components/sp/molecules/LabelTitle';
@@ -21,7 +22,8 @@ const Detail = styled.div`
 const CategoryFrame = styled.div`
   border-radius: ${size.ui.l3}px;
   border: 2px solid white;
-  padding: ${size.ui.l4}px 0;
+  height: ${size.ui.l12}px;
+  line-height: ${size.ui.l12}px;
   font-weight: bold;
   font-size: ${size.font.pc.l3}px;
 `;
@@ -31,6 +33,24 @@ const CategoryFrame = styled.div`
  */
 const TopConcept: React.FC = (): JSX.Element => {
   const { color } = useColor();
+  const concepts = [
+    {
+      name: 'デザイン',
+      to: '/category/3',
+    },
+    {
+      name: 'プロダクト設計',
+      to: '/category/1',
+    },
+    {
+      name: 'チームビルディング',
+      to: '/category/2',
+    },
+    {
+      name: '経営',
+      to: '/category/4',
+    },
+  ];
 
   return (
     <Wrapper
@@ -62,19 +82,31 @@ const TopConcept: React.FC = (): JSX.Element => {
             color: color.footer.text,
           }}
         >
-          TocoBlogでは、下の抽象的な4つの分野を扱います。
+          TocoBlogでは、抽象的な4つの分野を扱います。
         </Title>
 
         <Spacer.L />
 
         <Detail>
-          <CategoryFrame>デザイン</CategoryFrame>
-          <Spacer.M />
-          <CategoryFrame>プロダクト設計</CategoryFrame>
-          <Spacer.M />
-          <CategoryFrame>チームビルディング</CategoryFrame>
-          <Spacer.M />
-          <CategoryFrame>経営</CategoryFrame>
+          {concepts.map((c, index: number) => (
+            <Fragment key={c.name}>
+              {index !== 0 && <Spacer.M />}
+
+              <CategoryFrame>
+                <Link
+                  to={c.to}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    color: color.footer.text,
+                  }}
+                >
+                  {c.name}
+                </Link>
+              </CategoryFrame>
+            </Fragment>
+          ))}
         </Detail>
 
         <Spacer.L />
@@ -85,7 +117,7 @@ const TopConcept: React.FC = (): JSX.Element => {
             color: color.footer.text,
           }}
         >
-          実用を想定し、海外もキャッチアップした記事を発信します。
+          海外もキャッチアップし、実用を想定した記事を発信します。
         </Title>
 
         <Spacer.L />
