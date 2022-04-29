@@ -40,16 +40,16 @@ const StoryTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title size="M">{p.blog.title}</Title>
 
-      <Spacer.S />
+      <Spacer.M />
 
       <TopContentItems>
+        <Category>
+          <ButtonCategory>ストーリー</ButtonCategory>
+        </Category>
         <Date style={{ color: color.text.mainThin }}>
           <Icon icon={faClock} />
           {p.blog.updatedAt}更新
         </Date>
-        <Category>
-          <ButtonCategory>ストーリー</ButtonCategory>
-        </Category>
       </TopContentItems>
     </Wrapper>
   );

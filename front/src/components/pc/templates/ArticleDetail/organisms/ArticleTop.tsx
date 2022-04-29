@@ -21,7 +21,7 @@ const Content = styled.div`
   box-sizing: border-box;
 `;
 const Inner = styled.div`
-  padding: ${size.ui.l10}px 0;
+  padding: ${size.ui.l12}px 0;
 `;
 const Items = styled.div`
   display: flex;
@@ -61,17 +61,9 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Title size="XL">{p.blog.title}</Title>
 
-          <Spacer.S />
+          <Spacer.M />
 
           <Items>
-            <Date
-              style={{
-                color: color.text.mainThin,
-              }}
-            >
-              <Icon icon={faClock} />
-              {p.blog.updatedAt}更新
-            </Date>
             <Category>
               <Link to={`/category/${p.blog.categoryId}`}>
                 <ButtonCategory>
@@ -80,6 +72,14 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
                 </ButtonCategory>
               </Link>
             </Category>
+            <Date
+              style={{
+                color: color.text.mainThin,
+              }}
+            >
+              <Icon icon={faClock} />
+              {p.blog.updatedAt}更新
+            </Date>
           </Items>
         </Inner>
       </Content>

@@ -1,11 +1,12 @@
 import { styled } from 'linaria/react';
 import React, { CSSProperties, ReactNode } from 'react';
 import { useColor } from '@/modules/common/colors';
+import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
   font-weight: bold;
   border-radius: 50px;
-  padding: 8px 40px;
+  padding: ${size.ui.l2}px ${size.ui.l10}px;
   text-align: center;
   box-sizing: border-box;
   transition: 0.2s;

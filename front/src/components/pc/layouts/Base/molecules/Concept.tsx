@@ -26,7 +26,7 @@ const Detail = styled.div`
 `;
 const CategoryFrame = styled.div`
   width: 22.5%;
-  border-radius: ${size.ui.l3}px;
+  border-radius: ${size.ui.l2}px;
   height: ${size.ui.l12}px;
   line-height: ${size.ui.l12}px;
   font-weight: bold;
@@ -69,7 +69,7 @@ const Concept: React.FC = (): JSX.Element => {
       }}
     >
       <Inner>
-        <Spacer.XXL />
+        <Spacer.XXXL />
 
         <LabelTitle
           size="XL"
@@ -83,7 +83,7 @@ const Concept: React.FC = (): JSX.Element => {
           Blog Concept
         </LabelTitle>
 
-        <Spacer.XXL />
+        <Spacer.XXXL />
 
         <Title
           size="S"

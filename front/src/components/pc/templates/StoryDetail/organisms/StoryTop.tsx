@@ -20,7 +20,7 @@ const Content = styled.div`
   box-sizing: border-box;
 `;
 const Inner = styled.div`
-  padding: ${size.ui.l10}px 0;
+  padding: ${size.ui.l12}px 0;
 `;
 const Items = styled.div`
   display: flex;
@@ -57,20 +57,13 @@ const StoryTop: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Title size="XL">{p.blog.title}</Title>
 
-          <Spacer.S />
-
-          <Title
-            size="S"
-            style={{
-              color: color.text.mainThin,
-            }}
-          >
-            {p.blog.titleSub}
-          </Title>
-
-          <Spacer.S />
+          <Spacer.M />
 
           <Items>
+            <Category>
+              <ButtonCategory>ストーリー</ButtonCategory>
+            </Category>
+
             <Date
               style={{
                 color: color.text.mainThin,
@@ -79,10 +72,6 @@ const StoryTop: React.FC<Props> = (p: Props): JSX.Element => {
               <Icon icon={faClock} />
               {p.blog.updatedAt}更新
             </Date>
-
-            <Category>
-              <ButtonCategory>ストーリー</ButtonCategory>
-            </Category>
           </Items>
         </Inner>
       </Content>

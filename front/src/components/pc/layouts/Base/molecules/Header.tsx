@@ -32,6 +32,7 @@ const WrapperInner = styled.div`
 `;
 const Left = styled.div`
   height: 100%;
+  display: flex;
 `;
 const LeftItem = styled.div`
   display: flex;
@@ -44,6 +45,11 @@ const LeftItem = styled.div`
 `;
 const Right = styled.div`
   height: 100%;
+`;
+const SubTitle = styled.div`
+  font-weight: bold;
+  margin-left: ${size.ui.l4}px;
+  font-size: ${size.font.pc.l2}px;
 `;
 const IconWrapper = styled.div`
   cursor: pointer;
@@ -84,6 +90,13 @@ const Header: React.FC = (): JSX.Element => {
                 />
               </LeftItem>
             </Link>
+            <SubTitle
+              style={{
+                color: '#ffffff70',
+              }}
+            >
+              プロダクト開発の情報サイト
+            </SubTitle>
           </Left>
           <Right>
             <IconWrapper onClick={onClickDarkMode}>

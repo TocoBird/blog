@@ -51,10 +51,10 @@ export const useColor = (): UseColor => {
     /** フッターの色 */
     footer: {
       background: isDark ? d.blue.darkThinMore : l.blue.darkGradient,
-      infoBackground: isDark ? d.blue.darkThin : '#343640',
+      infoBackground: isDark ? d.blue.darkThin : '#222530',
       conceptBackground: isDark
-        ? 'linear-gradient(135deg, #2271ce, #4529be)'
-        : 'linear-gradient(135deg, #5FA9FF, #6845ff)',
+        ? 'linear-gradient(135deg, #3060cd, #0b817c)'
+        : 'linear-gradient(135deg, #4a80ff, #0eb1d0)',
       text: isDark ? d.white.blueThin : l.basic.white,
     },
     /** 線の色 */

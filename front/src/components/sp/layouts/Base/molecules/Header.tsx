@@ -23,13 +23,19 @@ const Wrapper = styled.div`
 const HeaderSpace = styled.div`
   height: 50px;
 `;
-const Left = styled.div``;
+const Left = styled.div`
+  display: flex;
+`;
 const LeftItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
 `;
-
+const SubTitle = styled.div`
+  font-weight: bold;
+  margin-left: ${size.ui.l4}px;
+  font-size: ${size.font.sp.l1}px;
+`;
 const Right = styled.div`
   height: 100%;
 `;
@@ -71,6 +77,13 @@ const Header: React.FC = (): JSX.Element => {
               />
             </LeftItem>
           </Link>
+          <SubTitle
+            style={{
+              color: '#ffffff70',
+            }}
+          >
+            プロダクト開発の情報サイト
+          </SubTitle>
         </Left>
         <Right>
           <IconWrapper onClick={onClickDarkMode}>

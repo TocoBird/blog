@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   font-weight: bold;
   font-size: ${size.font.sp.l3}px;
   border-radius: 50px;
-  padding: 8px 20px;
+  padding: ${size.ui.l2}px ${size.ui.l10}px;
   text-align: center;
   box-shadow: 0 2px 8px #0f1c2c38;
   &:hover {

@@ -8,7 +8,7 @@ export const l = {
     white: 'white',
   },
   white: {
-    blue: '#a9b4cb',
+    blue: '#bec8dc',
     blueAccent: '#eef3ff',
     blueThin: '#eaecf1',
     blueMoreThin: '#f8f9ff',

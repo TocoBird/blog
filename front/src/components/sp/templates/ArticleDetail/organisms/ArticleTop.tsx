@@ -45,13 +45,9 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper>
       <Title size="M">{p.blog.title}</Title>
 
-      <Spacer.S />
+      <Spacer.M />
 
       <TopContentItems>
-        <Date style={{ color: color.text.mainThin }}>
-          <Icon icon={faClock} />
-          {p.blog.updatedAt}更新
-        </Date>
         <Category>
           <Link to={`/category/${p.blog.categoryId}`}>
             <ButtonCategory>
@@ -60,6 +56,10 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
             </ButtonCategory>
           </Link>
         </Category>
+        <Date style={{ color: color.text.mainThin }}>
+          <Icon icon={faClock} />
+          {p.blog.updatedAt}更新
+        </Date>
       </TopContentItems>
     </Wrapper>
   );
