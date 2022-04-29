@@ -17,7 +17,8 @@ const LinkBefore = styled.div`
 `;
 const H1Border = styled.div`
   position: absolute;
-  height: 2px;
+  border-radius: 5px;
+  height: 4px;
   bottom: -2px;
   width: 50%;
   left: 0;

@@ -64,7 +64,9 @@ export const useColor = (): UseColor => {
     /** 枠線の色 */
     border: {
       h1: isDark ? '#4b5468' : '#e8efff',
-      h1Accent: isDark ? '#5e78a2' : '#92b7ef',
+      h1Accent: isDark
+        ? 'linear-gradient(45deg, #406699, #41796d)'
+        : 'linear-gradient(45deg, #8bbcff, #bbeae0)',
       h2: isDark ? '#5f636c' : '#e7eaf0',
       h2Left: isDark ? '#5a6797' : '#b4c2f8',
     },
