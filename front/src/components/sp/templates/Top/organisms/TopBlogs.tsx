@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
+import ButtonCategory from '@/components/sp/atoms/ButtonCategory';
 import Spacer from '@/components/sp/atoms/Spacer';
 import Thumbnail from '@/components/sp/atoms/Thumbnail';
 import Title from '@/components/sp/atoms/Title';
@@ -23,16 +24,8 @@ const Content = styled.div`
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 4px;
 `;
-const IconLink = styled.div`
-  margin-right: 8px;
-  transition: 0.2s;
-  font-weight: bold;
-  &:hover {
-    opacity: 0.8;
-  }
-`;
 const IconArrow = styled(FontAwesomeIcon)`
-  margin-right: 4px;
+  margin-left: 8px;
 `;
 
 interface Props {
@@ -94,10 +87,10 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                 color: color.text.main,
               }}
             >
-              <IconLink>
-                <IconArrow icon={faAngleRight} />
+              <ButtonCategory>
                 {c.name}の記事
-              </IconLink>
+                <IconArrow icon={faAngleRight} />
+              </ButtonCategory>
             </Link>
           </Content>
 

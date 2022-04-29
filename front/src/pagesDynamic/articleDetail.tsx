@@ -43,7 +43,7 @@ export const query = graphql`
           }
         }
       }
-      storyBlogs(pagination: { limit: 3 }, sort: "id:desc") {
+      storyBlogs(pagination: { limit: 3 }, sort: "updatedAt:desc") {
         data {
           id
           attributes {
@@ -73,7 +73,7 @@ export const query = graphql`
                   name
                   toco_blogs(
                     pagination: { limit: 2 }
-                    sort: "id:desc"
+                    sort: "updatedAt:desc"
                     filters: { not: { id: { eq: $id } } }
                   ) {
                     data {

@@ -4,11 +4,11 @@ import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
 import Box from '@/components/pc/atoms/Box';
+import ButtonCategory from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
 import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
-import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
@@ -24,15 +24,8 @@ const Wrapper = styled.div`
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 4px;
 `;
-const IconLink = styled.div`
-  transition: 0.2s;
-  font-weight: 500;
-  &:hover {
-    opacity: 0.8;
-  }
-`;
 const IconArrow = styled(FontAwesomeIcon)`
-  margin-right: 8px;
+  margin-left: 8px;
 `;
 
 interface Props {
@@ -43,8 +36,6 @@ interface Props {
  * トップページ：記事一覧
  */
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
-  const { color } = useColor();
-
   return (
     <Wrapper>
       {p.categories.map((c: DomainTopCategory, index: number) => (
@@ -54,7 +45,7 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
           style={{
             width: '48.5%',
             boxSizing: 'border-box',
-            marginBottom: index < 2 ? `${size.ui.l8}px` : 0,
+            marginBottom: index < 2 ? size.ui.l8 : 0,
           }}
         >
           <Title size="XM">
@@ -72,18 +63,13 @@ const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
             </Fragment>
           ))}
 
-          <Spacer.XS />
+          <Spacer.S />
 
-          <Link
-            to={`/category/${c.id}`}
-            style={{
-              color: color.text.main,
-            }}
-          >
-            <IconLink>
-              <IconArrow icon={faAngleRight} />
+          <Link to={`/category/${c.id}`}>
+            <ButtonCategory>
               {c.name}の記事
-            </IconLink>
+              <IconArrow icon={faAngleRight} />
+            </ButtonCategory>
           </Link>
         </Box>
       ))}

@@ -23,7 +23,7 @@ export const query = graphql`
       }
       storyBlogs(
         pagination: { limit: 3 }
-        sort: "id:desc"
+        sort: "updatedAt:desc"
         filters: { not: { id: { eq: $id } } }
       ) {
         data {

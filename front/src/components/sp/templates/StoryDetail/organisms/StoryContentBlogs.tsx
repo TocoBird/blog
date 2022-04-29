@@ -46,6 +46,7 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
           <div
             style={{
               color: color.text.main,
+              whiteSpace: 'pre-line',
             }}
           >
             {b.introduceText}
