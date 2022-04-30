@@ -60,7 +60,7 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                 background: color.box.cardBackground,
               }}
             >
-              <Thumbnail width="110px" height="70px" url={b.thumbnail} />
+              <Thumbnail width="110px" height="80px" url={b.thumbnail} />
               <Title
                 size="S"
                 style={{

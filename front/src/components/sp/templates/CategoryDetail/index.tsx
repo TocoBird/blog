@@ -20,6 +20,8 @@ const Card = styled.div`
   box-shadow: 0 2px 12px #0f1c2c17;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  border-radius: 2px;
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
@@ -53,7 +55,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Spacer.L />
 
-        <Title size="M">{selectedCategory?.name}の記事</Title>
+        <Title size="L">{selectedCategory?.name}の記事</Title>
 
         <Spacer.L />
 
@@ -84,7 +86,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
       >
         {p.blogs.map((b, index: number) => (
           <Fragment key={b.id}>
-            {index !== 0 && <Spacer.M />}
+            {index !== 0 && <Spacer.XM />}
 
             <Link to={`/article/${b.id}`}>
               <Card style={{ background: color.box.background }}>

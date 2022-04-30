@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
-import { useHookHeader } from '@/components/pc/layouts/Base/molecules/hooks';
+import { useHookHeader } from '@/components/pc/layouts/Base/molecules/Header/hooks';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 

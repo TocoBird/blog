@@ -76,7 +76,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Spacer.L />
 
-          <Title size="XM">{selectedCategory?.name}の記事</Title>
+          <Title size="L">{selectedCategory?.name}の記事</Title>
 
           <Spacer.XM />
 

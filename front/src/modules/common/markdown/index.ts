@@ -44,7 +44,7 @@ export type TagNode = TagH | TagP | TagA | TagImg | TagBr | TagSpacer;
  * h1
  */
 const hTag = (line: string, num: number): TagH => {
-  const text = line.replace(/#/g, '').replace(/\s+/g, '');
+  const text = line.replace(/#/g, '').replace(/^\s+/g, '');
   const id = `id_${text}`;
 
   if (num > 0 && num < 7) {
