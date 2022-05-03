@@ -30,6 +30,8 @@ const Items = styled.div`
 `;
 const Date = styled.div`
   font-weight: 500;
+  display: flex;
+  align-items: center;
 `;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;

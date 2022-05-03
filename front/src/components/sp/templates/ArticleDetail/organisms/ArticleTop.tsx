@@ -19,6 +19,8 @@ const TopContentItems = styled.div`
 `;
 const Date = styled.div`
   font-weight: 500;
+  display: flex;
+  align-items: center;
 `;
 const Category = styled.div``;
 const Icon = styled(FontAwesomeIcon)`

@@ -33,11 +33,13 @@ const FooterInfo: React.FC = (): JSX.Element => {
     >
       <Inner>
         <div>
-          <StaticImage
-            src="../../../../../images/TocoBlogLogo.png"
-            alt="TocoBlog"
-            height={30}
-          />
+          <Link to="/">
+            <StaticImage
+              src="../../../../../images/TocoBlogLogo.png"
+              alt="TocoBlog"
+              height={30}
+            />
+          </Link>
 
           <Spacer.S />
 

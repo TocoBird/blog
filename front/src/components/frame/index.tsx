@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
-import HTMLHead from '@/components/frame/Head';
+import HTMLHead from '@/components/frame/HTMLHead';
 import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
@@ -14,7 +14,7 @@ interface Props {
   readonly option: MetaOption;
 }
 
-/***
+/**
  * レイアウト
  */
 const Frame: React.FC<Props> = (p: Props): JSX.Element => {

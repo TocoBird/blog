@@ -98,7 +98,7 @@ export const adapterDomainCategoryDetail = (page: PageProps): useReturn => {
     const context = page.pageContext as PageContext;
     const categolyId = Number(context.id) || 0;
 
-    /***
+    /**
      * ドメインに変換
      */
     const blogs: DomainCategoryDetailBlog[] =

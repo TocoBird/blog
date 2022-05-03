@@ -221,7 +221,7 @@ export const adapterDomainStoryDetail = (page: PageProps): useReturn => {
       getResFavoriteBlogAttributeBlog(res);
     const resStoryBlogs: ResRelatedStoryBlog[] = getResRelatedStoryBlog(res);
 
-    /***
+    /**
      * ドメインに変換
      */
     const storyBlog: DomainStoryDetailStoryBlog =
