@@ -26,7 +26,7 @@ const Text = styled.div`
 const LinkInner = styled.div`
   transition: 0.2s;
   &:hover {
-    opacity: 0.6;
+    opacity: 0.75;
   }
 `;
 

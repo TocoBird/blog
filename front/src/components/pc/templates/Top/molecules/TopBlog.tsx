@@ -12,7 +12,7 @@ const Card = styled.div`
   flex-wrap: wrap;
   transition: 0.2s;
   &:hover {
-    opacity: 0.6;
+    opacity: 0.75;
   }
 `;
 
