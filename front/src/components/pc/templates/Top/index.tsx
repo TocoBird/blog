@@ -1,4 +1,4 @@
-import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { faFire, faBookBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
@@ -6,7 +6,9 @@ import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
 import TopBlogs from '@/components/pc/templates/Top/organisms/TopBlogs';
 import TopHeader from '@/components/pc/templates/Top/organisms/TopHeader';
+import TopStories from '@/components/pc/templates/Top/organisms/TopStories';
 import { DomainTopCategory } from '@/domain/top/blog';
+import { DomainTopStoryBlog } from '@/domain/top/storyBlog';
 
 const Wrapper = styled.div``;
 const Icon = styled(FontAwesomeIcon)`
@@ -16,6 +18,8 @@ const Icon = styled(FontAwesomeIcon)`
 interface Props {
   /** 記事一覧 */
   readonly categories: DomainTopCategory[];
+  /** ストーリー記事一覧 */
+  readonly stroyBlogs: DomainTopStoryBlog[];
 }
 
 /**
@@ -42,6 +46,23 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.XXL />
 
       <TopBlogs categories={p.categories} />
+
+      <Spacer.XXL />
+
+      <Title
+        size="L"
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <Icon icon={faBookBookmark} />
+        <br />
+        問題を解決したい
+      </Title>
+
+      <Spacer.XXL />
+
+      <TopStories stroyBlogs={p.stroyBlogs} />
 
       <Spacer.XXL />
     </Wrapper>

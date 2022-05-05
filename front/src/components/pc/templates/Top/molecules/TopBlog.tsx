@@ -10,8 +10,9 @@ const Wrapper = styled.div``;
 const Card = styled.div`
   display: flex;
   flex-wrap: wrap;
+  transition: 0.2s;
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 `;
 

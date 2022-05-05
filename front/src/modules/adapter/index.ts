@@ -1,11 +1,13 @@
 import { PageProps } from 'gatsby';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
+import { DomainTopStoryBlog } from '@/domain/top/storyBlog';
 import { errorWrapper } from '@/modules/common/error';
 import { Res } from '@/modules/interfaces/response/home';
 import {
   ResTocoBlog,
   ResCategory,
 } from '@/modules/interfaces/response/home/categories';
+import { ResStoryBlog } from '@/modules/interfaces/response/home/storyBlogs';
 
 /**
  * レスポンス取得: カテゴリ一覧
@@ -15,6 +17,17 @@ const getResCategory = (r: Res): ResCategory[] => {
     return r.strapi.categories.data || ([] as ResCategory[]);
   } catch (e) {
     throw errorWrapper(e, 'レスポンス取得エラー');
+  }
+};
+
+/**
+ * レスポンス取得: ストーリー記事一覧
+ */
+const getResStoryBlogs = (r: Res): ResStoryBlog[] => {
+  try {
+    return r.strapi.storyBlogs.data || ([] as ResStoryBlog[]);
+  } catch (e) {
+    throw errorWrapper(e, 'レスポンス取得エラー:ストーリー記事一覧');
   }
 };
 
@@ -65,8 +78,31 @@ const getDomainTopCategory = (
   }
 };
 
+/**
+ * レスポンスドメイン変換: ストーリー記事一覧
+ */
+const getDomainStoryBlog = (blogs: ResStoryBlog[]): DomainTopStoryBlog[] => {
+  try {
+    return blogs.map(r => {
+      const id = Number(r.id) || 0;
+      const title = String(r.attributes.title) || '';
+      const titleSub = String(r.attributes.titleSub) || '';
+      const rAttributes = r.attributes.thumbnail.data.attributes;
+      const rFormats = rAttributes?.formats;
+      const rUrl =
+        rFormats?.thumbnail?.url || rFormats?.small?.url || rAttributes.url;
+      const thumbnail = String(rUrl) || '';
+
+      return new DomainTopStoryBlog(id, title, titleSub, thumbnail);
+    });
+  } catch (e) {
+    throw errorWrapper(e, 'ドメイン変換エラー:ストーリー記事一覧');
+  }
+};
+
 interface useReturn {
   readonly categories: DomainTopCategory[];
+  readonly stroyBlogs: DomainTopStoryBlog[];
 }
 
 /**
@@ -80,14 +116,17 @@ export const adapterDomainIndex = (page: PageProps): useReturn => {
      */
     const res = page.data as Res;
     const resCategories: ResCategory[] = getResCategory(res);
+    const resStoryBlogs: ResStoryBlog[] = getResStoryBlogs(res);
 
     /**
      * ドメインに変換
      */
     const categories: DomainTopCategory[] = getDomainTopCategory(resCategories);
+    const stroyBlogs: DomainTopStoryBlog[] = getDomainStoryBlog(resStoryBlogs);
 
     return {
       categories,
+      stroyBlogs,
     };
   } catch (e) {
     throw errorWrapper(e, 'レスポンス変換エラー');

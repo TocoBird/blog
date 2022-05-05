@@ -37,6 +37,23 @@ export const query = graphql`
           id
         }
       }
+      storyBlogs(pagination: { limit: 4 }, sort: "updatedAt:desc") {
+        data {
+          id
+          attributes {
+            thumbnail {
+              data {
+                attributes {
+                  url
+                  formats
+                }
+              }
+            }
+            titleSub
+            title
+          }
+        }
+      }
     }
   }
 `;
@@ -46,7 +63,7 @@ export const query = graphql`
  */
 const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { isPC } = useResponsive();
-  const { categories } = adapterDomainIndex(page);
+  const { categories, stroyBlogs } = adapterDomainIndex(page);
   const option: MetaOption = {
     title: 'TocoBlog',
     description: 'TocoBlogはプロダクト開発の情報を発信します。',
@@ -55,8 +72,16 @@ const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
 
   return (
     <Frame isPC={isPC} option={option}>
-      <div>{isPC && <TemplatePCTop categories={categories} />}</div>
-      <div>{!isPC && <TemplateSPTop categories={categories} />}</div>
+      <div>
+        {isPC && (
+          <TemplatePCTop categories={categories} stroyBlogs={stroyBlogs} />
+        )}
+      </div>
+      <div>
+        {!isPC && (
+          <TemplateSPTop categories={categories} stroyBlogs={stroyBlogs} />
+        )}
+      </div>
     </Frame>
   );
 };

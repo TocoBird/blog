@@ -8,6 +8,7 @@ import TopBlogs from '@/components/sp/templates/Top/organisms/TopBlogs';
 import TopConcept from '@/components/sp/templates/Top/organisms/TopConcept';
 import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
 import { DomainTopCategory } from '@/domain/top/blog';
+import { DomainTopStoryBlog } from '@/domain/top/storyBlog';
 
 const Wrapper = styled.div``;
 const Icon = styled(FontAwesomeIcon)`
@@ -17,6 +18,8 @@ const Icon = styled(FontAwesomeIcon)`
 interface Props {
   /** 記事一覧 */
   readonly categories: DomainTopCategory[];
+  /** ストーリー記事一覧 */
+  readonly stroyBlogs: DomainTopStoryBlog[];
 }
 /**
  * テンプレート：トップページ
