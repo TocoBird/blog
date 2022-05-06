@@ -1,4 +1,4 @@
-import { faFire } from '@fortawesome/free-solid-svg-icons';
+import { faFire, faBookBookmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
@@ -7,6 +7,7 @@ import Title from '@/components/sp/atoms/Title';
 import TopBlogs from '@/components/sp/templates/Top/organisms/TopBlogs';
 import TopConcept from '@/components/sp/templates/Top/organisms/TopConcept';
 import TopHeader from '@/components/sp/templates/Top/organisms/TopHeader';
+import TopStories from '@/components/sp/templates/Top/organisms/TopStories';
 import { DomainTopCategory } from '@/domain/top/blog';
 import { DomainTopStoryBlog } from '@/domain/top/storyBlog';
 
@@ -45,6 +46,23 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.L />
 
       <TopBlogs categories={p.categories} />
+
+      <Spacer.L />
+
+      <Title
+        size="L"
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <Icon icon={faBookBookmark} />
+        <br />
+        問題を解決したい
+      </Title>
+
+      <Spacer.L />
+
+      <TopStories stroyBlogs={p.stroyBlogs} />
 
       <Spacer.L />
 
