@@ -18,6 +18,7 @@
     "gatsby-plugin-offline": "^5.11.1",
     "gatsby-plugin-react-helmet": "^5.11.0",
     "gatsby-plugin-sharp": "^4.11.1",
+    "gatsby-plugin-sitemap": "^5.13.0",
     "gatsby-plugin-typescript": "^4.11.1",
     "gatsby-source-filesystem": "^4.11.1",
     "gatsby-source-graphql": "^4.11.1",
@@ -62,4 +63,4 @@
     "lint:fix": "npm run format && eslint './**/*.{ts,tsx}' --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
-} 
+}
