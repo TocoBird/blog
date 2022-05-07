@@ -14,12 +14,12 @@ export const d = {
     thinOpacity: '#ffffff0a',
   },
   blue: {
-    dark: '#17182d',
-    darkThin: '#28293c',
-    darkThinMore: '#383a51',
+    dark: '#1c1e27',
+    darkThin: '#282836',
+    darkThinMore: '#323341',
     darkThinVeryMore: '#48536b',
     darkGradient: 'linear-gradient(45deg, #232731f4, #121a2df4)',
-    purple: '#7792ce',
+    purple: '#637bae',
   },
   black: {
     thin: '#111a2f',
