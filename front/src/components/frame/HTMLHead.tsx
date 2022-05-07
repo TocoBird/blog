@@ -11,10 +11,10 @@ interface Props {
  * HTMLのHead
  */
 const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
-  const title = `${p.option.title}`;
+  const title = p.option.title;
   const lang = 'ja';
   const description = p.option.description;
-  const keywords = 'tocoblog,blog';
+  const keywords = 'tocoblog,プロダクト開発,記事,デザイン';
   const thumbnail = p.option.thumbnail || '';
 
   return (
@@ -68,7 +68,7 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
         },
         {
           name: 'viewport',
-          content: 'initial-scale=1.0, width=device-width, user-scalable=no',
+          content: 'initial-scale=1.0, width=device-width',
         },
       ]}
     />
