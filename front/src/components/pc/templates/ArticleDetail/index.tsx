@@ -7,6 +7,7 @@ import BlogAuthor from '@/components/pc/molecules/blogDetail/BlogAuthor';
 import BlogMarkdown from '@/components/pc/molecules/blogDetail/BlogMarkdown';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
+import ArticleInfo from '@/components/pc/templates/ArticleDetail/organisms/ArticleInfo';
 import ArticleRelated from '@/components/pc/templates/ArticleDetail/organisms/ArticleRelated';
 import ArticleStory from '@/components/pc/templates/ArticleDetail/organisms/ArticleStory';
 import ArticleTableOfContents from '@/components/pc/templates/ArticleDetail/organisms/ArticleTableOfContents';
@@ -91,6 +92,12 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <ArticleStory blogs={p.stroyBlogs} />
           </Left>
           <Right>
+            <Box size="M">
+              <ArticleInfo text={p.blog.featureText} />
+            </Box>
+
+            <Spacer.L />
+
             <Box size="M">
               <ArticleTableOfContents nodes={p.blog.textNodes} />
             </Box>

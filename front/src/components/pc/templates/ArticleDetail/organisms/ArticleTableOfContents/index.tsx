@@ -15,7 +15,8 @@ const A = styled.a`
   font-weight: 500;
   transition: 0.2s;
   &:hover {
-    opacity: 0.6;
+    text-decoration: underline;
+    opacity: 0.8;
   }
 `;
 const Ah2 = styled(A)`

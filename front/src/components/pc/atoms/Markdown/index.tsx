@@ -38,7 +38,11 @@ const Img = styled.img`
   box-shadow: 0 2px 4px #0f1c2c15;
   border-radius: 2px;
 `;
-const A = styled.a``;
+const A = styled.a`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 interface Props {
   /** テキスト */

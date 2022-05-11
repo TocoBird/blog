@@ -10,6 +10,10 @@ export interface BlogText {
   /** 記事本文 */
   readonly text: string;
 }
+export interface BlogFeatureText {
+  /** 記事本文 */
+  readonly featureText: string;
+}
 export interface BlogThumbnail {
   /** サムネイル */
   readonly thumbnail: string;

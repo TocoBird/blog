@@ -66,6 +66,7 @@ export const query = graphql`
           attributes {
             mainTitle
             mainText
+            featureText
             updatedAt
             category {
               data {

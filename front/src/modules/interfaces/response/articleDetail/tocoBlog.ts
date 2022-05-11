@@ -42,6 +42,7 @@ interface ResTocoBlogAttributeThumbnail {
 interface ResTocoBlogAttribute {
   readonly mainTitle: string;
   readonly mainText: string;
+  readonly featureText: string;
   readonly updatedAt: Date;
   readonly thumbnail: ResTocoBlogAttributeThumbnail;
   readonly category: ResTocoBlogCategory;

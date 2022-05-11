@@ -18,7 +18,6 @@ export const d = {
     darkThin: '#282836',
     darkThinMore: '#323341',
     darkThinVeryMore: '#48536b',
-    darkGradient: 'linear-gradient(45deg, #232731f4, #121a2df4)',
     purple: '#637bae',
   },
   black: {
