@@ -23,7 +23,8 @@ const Articles = styled.div`
 const LinkInner = styled.div`
   transition: 0.2s;
   &:hover {
-    opacity: 0.75;
+    opacity: 0.85;
+    box-shadow: 0 8px 24px #0f1c2c20;
   }
 `;
 
