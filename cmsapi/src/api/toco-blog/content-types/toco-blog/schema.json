@@ -36,6 +36,11 @@
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "toco_blogs"
+    },
+    "featureText": {
+      "type": "text",
+      "maxLength": 300,
+      "required": true
     }
   }
 }
