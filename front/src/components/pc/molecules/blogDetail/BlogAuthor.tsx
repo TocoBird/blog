@@ -24,7 +24,7 @@ const BlogAuthor: React.FC = (): JSX.Element => {
       }}
     >
       <Icon icon={faPenNib} />
-      作者 tocotoco
+      作成者 tocotoco
     </Wrapper>
   );
 };
