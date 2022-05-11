@@ -50,7 +50,7 @@ const StoryTop: React.FC<Props> = (p: Props): JSX.Element => {
         </Category>
         <Date style={{ color: color.text.mainThin }}>
           <Icon icon={faClock} />
-          {p.blog.updatedAt}更新
+          更新日 {p.blog.updatedAt}
         </Date>
       </TopContentItems>
     </Wrapper>

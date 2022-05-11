@@ -64,7 +64,7 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
         if (n.type === 'br') return <br key={key} />;
 
         if (n.type === 'spacer') {
-          if (n.size === 1) return <Spacer.XXL key={key} />;
+          if (n.size === 1) return <Spacer.XL key={key} />;
           return <Spacer.L key={key} />;
         }
 
