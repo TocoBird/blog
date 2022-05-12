@@ -20,6 +20,10 @@ const Card = styled.div`
     opacity: 0.8;
   }
 `;
+const IntroText = styled.div`
+  line-height: ${size.font.sp.l8}px;
+  white-space: pre-line;
+`;
 
 interface Props {
   /** 記事内容 */
@@ -43,14 +47,13 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
             text={b.introduceTitle}
           />
 
-          <div
+          <IntroText
             style={{
               color: color.text.main,
-              whiteSpace: 'pre-line',
             }}
           >
             {b.introduceText}
-          </div>
+          </IntroText>
 
           <Spacer.XM />
 
