@@ -36,7 +36,7 @@ const Strong = styled.strong``;
 const Img = styled.img`
   width: 100%;
   box-shadow: 0 2px 4px #0f1c2c15;
-  border-radius: 2px;
+  border-radius: 4px;
 `;
 const A = styled.a`
   &:hover {
