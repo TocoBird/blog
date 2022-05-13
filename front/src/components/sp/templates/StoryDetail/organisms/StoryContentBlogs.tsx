@@ -38,45 +38,46 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
 
   return (
     <Wrapper>
-      {p.blogs.map((b: DomainStoryDetailBlog, index: number) => (
-        <Fragment key={b.id}>
-          {index !== 0 && <Spacer.XL />}
+      {p.blogs.map((b: DomainStoryDetailBlog, index: number) => {
+        const title = `${index + 1}. ${b.introduceTitle}`;
 
-          <MarkdownH1
-            id={`markdown_h_story_id_${b.id}`}
-            text={b.introduceTitle}
-          />
+        return (
+          <Fragment key={b.id}>
+            {index !== 0 && <Spacer.XL />}
 
-          <IntroText
-            style={{
-              color: color.text.main,
-            }}
-          >
-            {b.introduceText}
-          </IntroText>
+            <MarkdownH1 id={`markdown_h_story_id_${b.id}`} text={title} />
 
-          <Spacer.XM />
-
-          <Link to={`/article/${b.id}`}>
-            <Card
+            <IntroText
               style={{
-                background: color.box.cardBackground,
+                color: color.text.main,
               }}
             >
-              <Thumbnail width="110px" height="80px" url={b.thumbnail} />
-              <Title
-                size="S"
+              {b.introduceText}
+            </IntroText>
+
+            <Spacer.XM />
+
+            <Link to={`/article/${b.id}`}>
+              <Card
                 style={{
-                  flex: 1,
-                  padding: size.ui.l3,
+                  background: color.box.cardBackground,
                 }}
               >
-                {b.title}
-              </Title>
-            </Card>
-          </Link>
-        </Fragment>
-      ))}
+                <Thumbnail width="110px" height="80px" url={b.thumbnail} />
+                <Title
+                  size="S"
+                  style={{
+                    flex: 1,
+                    padding: size.ui.l3,
+                  }}
+                >
+                  {b.title}
+                </Title>
+              </Card>
+            </Link>
+          </Fragment>
+        );
+      })}
     </Wrapper>
   );
 };
