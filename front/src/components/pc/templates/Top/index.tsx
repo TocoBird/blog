@@ -57,7 +57,7 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Icon icon={faBookBookmark} />
         <br />
-        問題を解決したい
+        おすすめの具体案
       </Title>
 
       <Spacer.XXL />

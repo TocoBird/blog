@@ -36,7 +36,7 @@ const ArticleStory: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <LabelTitle size="M" icon={faBookBookmark}>
-        関連するストーリー
+        関連する具体案
       </LabelTitle>
 
       <Spacer.XM />
