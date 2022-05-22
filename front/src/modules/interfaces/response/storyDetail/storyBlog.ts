@@ -53,6 +53,7 @@ interface ResStoryBlogAttribute {
   readonly textConclusion: string;
   readonly toco_blogs: ResStoryBlogAttributeTocoBlog[];
   readonly updatedAt: Date;
+  readonly createdAt: Date;
 }
 
 /**

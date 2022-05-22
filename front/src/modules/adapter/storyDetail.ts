@@ -105,6 +105,7 @@ const getDomainStoryBlog = (r: ResStoryBlog): DomainStoryDetailStoryBlog => {
     const textIntroduction = String(r.attributes.textIntroduction) || '';
     const textConclusion = String(r.attributes.textConclusion) || '';
     const updatedAt = dayjs(r.attributes.updatedAt).format('YYYY/M/D') || '';
+    const createdAt = dayjs(r.attributes.createdAt).format('YYYY/M/D') || '';
     const thumbnail = String(r.attributes.thumbnail.data.attributes.url) || '';
 
     // 本文をNodeに変換
@@ -121,6 +122,7 @@ const getDomainStoryBlog = (r: ResStoryBlog): DomainStoryDetailStoryBlog => {
       textIntroductionNodes,
       textConclusionNodes,
       updatedAt,
+      createdAt,
       blogs
     );
   } catch (e) {

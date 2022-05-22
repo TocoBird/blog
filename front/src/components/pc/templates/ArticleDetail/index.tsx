@@ -3,7 +3,7 @@ import React from 'react';
 import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
-import BlogAuthor from '@/components/pc/molecules/blogDetail/BlogAuthor';
+import BlogFooter from '@/components/pc/molecules/blogDetail/BlogFooter';
 import BlogMarkdown from '@/components/pc/molecules/blogDetail/BlogMarkdown';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
 import ArticleFavoriteBlog from '@/components/pc/templates/ArticleDetail/organisms/ArticleFavoriteBlog';
@@ -80,7 +80,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
               <Spacer.S />
 
-              <BlogAuthor />
+              <BlogFooter date={p.blog.createdAt} />
             </Box>
 
             <Spacer.XXL />

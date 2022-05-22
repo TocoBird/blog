@@ -4,6 +4,7 @@ import {
   StoryBlogTitleSub,
   StoryBlogThumbnail,
   StoryBlogUpdatedAt,
+  StoryBlogCreatedAt,
   // StoryBlogTextConclusion,
   // StoryBlogTextIntroduction,
 } from '@/domain/_site/storyBlog';
@@ -13,7 +14,8 @@ import { TagNode } from '@/modules/common/markdown';
 type StoryBlog = StoryBlogTitle &
   StoryBlogTitleSub &
   StoryBlogThumbnail &
-  StoryBlogUpdatedAt;
+  StoryBlogUpdatedAt &
+  StoryBlogCreatedAt;
 // StoryBlogTextIntroduction &
 // StoryBlogTextConclusion;
 
@@ -28,6 +30,7 @@ export class DomainStoryDetailStoryBlog implements StoryBlog {
     public readonly textIntroductionNodes: TagNode[] = [] as TagNode[],
     public readonly textConclusionNodes: TagNode[] = [] as TagNode[],
     public readonly updatedAt: string = '',
+    public readonly createdAt: string = '',
     public readonly blogs: DomainStoryDetailBlog[] = [] as DomainStoryDetailBlog[]
   ) {}
 }

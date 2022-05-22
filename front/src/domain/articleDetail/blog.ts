@@ -5,6 +5,7 @@ import {
   BlogText,
   BlogFeatureText,
   BlogUpdatedAt,
+  BlogCreatedAt,
 } from '@/domain/_site/blog';
 import { TagNode } from '@/modules/common/markdown';
 
@@ -14,7 +15,8 @@ type Blog = BlogId &
   BlogThumbnail &
   BlogText &
   BlogFeatureText &
-  BlogUpdatedAt;
+  BlogUpdatedAt &
+  BlogCreatedAt;
 
 /**
  * 記事詳細
@@ -29,6 +31,7 @@ export class DomainArticleDetailBlog implements Blog {
     public readonly textNodes: TagNode[] = [] as TagNode[],
     public readonly thumbnail: string = '',
     public readonly updatedAt: string = '',
+    public readonly createdAt: string = '',
     /** カテゴリID */
     public readonly categoryId: number = 0,
     /** カテゴリ名 */

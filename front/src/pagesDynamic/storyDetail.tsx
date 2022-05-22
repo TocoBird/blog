@@ -71,6 +71,7 @@ export const query = graphql`
             textIntroduction
             textConclusion
             updatedAt
+            createdAt
             titleSub
             thumbnail {
               data {

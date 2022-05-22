@@ -22,3 +22,7 @@ export interface BlogUpdatedAt {
   /** 最終更新日 */
   readonly updatedAt: string;
 }
+export interface BlogCreatedAt {
+  /** 投稿日 */
+  readonly createdAt: string;
+}
