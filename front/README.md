@@ -22,7 +22,7 @@ npm run develop
 
 ### components
 
-React のコンポーネントが入る。
+React のコンポーネントが入る。  
 SP, PC の端末ごとで分離している。
 
 ### domain
@@ -47,5 +47,5 @@ SP, PC の端末ごとで分離している。
 
 ### pagesDynamic
 
-動的に作成されるサイトのページが入る
+動的に作成されるサイトのページが入る。  
 ID を持った詳細ページなど
