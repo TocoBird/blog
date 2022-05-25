@@ -85,7 +85,10 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Spacer.XXL />
 
-            <ArticleRelated blogs={p.relatedBlogs} />
+            <ArticleRelated
+              blogs={p.relatedBlogs}
+              categoryId={p.blog.categoryId}
+            />
 
             <Spacer.XXL />
 

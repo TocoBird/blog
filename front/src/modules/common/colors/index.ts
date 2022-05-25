@@ -44,6 +44,11 @@ export const useColor = (): UseColor => {
       text: isDark ? d.white.blue : l.basic.white,
       border: isDark ? '#8799a8' : l.basic.white,
     },
+    /** サブボタンの色 */
+    buttonSub: {
+      background: isDark ? d.blue.darkThin : l.basic.white,
+      text: isDark ? d.white.blueThin : l.white.blue,
+    },
     /** ヘッダーの色 */
     header: {
       background: isDark ? d.blue.darkThinMore : l.blue.darkGradient,

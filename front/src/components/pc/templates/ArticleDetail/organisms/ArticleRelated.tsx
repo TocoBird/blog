@@ -1,8 +1,10 @@
-import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
+import { faBookOpen, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
 import Box from '@/components/pc/atoms/Box';
+import ButtonSub from '@/components/pc/atoms/ButtonSub';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
@@ -21,10 +23,15 @@ const LinkInner = styled.div`
     box-shadow: 0 8px 24px #0f1c2c20;
   }
 `;
+const IconArrow = styled(FontAwesomeIcon)`
+  margin-left: 8px;
+`;
 
 interface Props {
   /** 関連する記事一覧 */
   readonly blogs: DomainArticleDetailRelatedBlog[];
+  /** この記事のカテゴリID */
+  readonly categoryId: number;
 }
 
 /**
@@ -60,6 +67,15 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
           </Link>
         ))}
       </Articles>
+
+      <Spacer.L />
+
+      <Link to={`/category/${p.categoryId}`}>
+        <ButtonSub>
+          関連記事を探す
+          <IconArrow icon={faAngleRight} />
+        </ButtonSub>
+      </Link>
     </Wrapper>
   );
 };
