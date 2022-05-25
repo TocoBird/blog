@@ -117,7 +117,7 @@ const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
     adapterDomainStoryDetail(page);
   const option: MetaOption = {
     title: `${storyBlog.title} | TocoBlog`,
-    description: 'TocoBlogはプロダクト開発の情報を発信します。',
+    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
     thumbnail: storyBlog.thumbnail,
   };
 

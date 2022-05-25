@@ -66,7 +66,7 @@ const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const { categories, stroyBlogs } = adapterDomainIndex(page);
   const option: MetaOption = {
     title: 'TocoBlog',
-    description: 'TocoBlogはプロダクト開発の情報を発信します。',
+    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
     thumbnail: '',
   };
 

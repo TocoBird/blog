@@ -9,7 +9,7 @@ const TermsOfService: React.FC = (): JSX.Element => {
   const { isPC } = useResponsive();
   const option: MetaOption = {
     title: '利用規約',
-    description: 'TocoBlogはプロダクト開発の情報を発信します。',
+    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
     thumbnail: '',
   };
 

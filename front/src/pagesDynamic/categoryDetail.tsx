@@ -55,7 +55,7 @@ const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
     categories.find(c => c.id === categolyId)?.name || '';
   const option: MetaOption = {
     title: `${selectedCategoryName} | TocoBlog`,
-    description: 'TocoBlogはプロダクト開発の情報を発信します。',
+    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
     thumbnail: '',
   };
 
