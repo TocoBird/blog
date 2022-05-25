@@ -22,6 +22,7 @@ const Card = styled.div`
   }
 `;
 const IntroText = styled.div`
+  font-size: ${size.font.pc.l3}px;
   line-height: ${size.font.pc.l8}px;
   white-space: pre-line;
 `;
