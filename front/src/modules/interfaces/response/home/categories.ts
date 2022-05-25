@@ -17,6 +17,7 @@ interface ResTocoBlogThumbnail {
 }
 interface ResTocoBlogAttribute {
   readonly mainTitle: string;
+  readonly urlid: string;
   readonly thumbnail: ResTocoBlogThumbnail;
 }
 

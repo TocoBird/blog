@@ -59,7 +59,7 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Spacer.L />
 
-            <Link to={`/article/${b.id}`}>
+            <Link to={`/article/${b.urlid}`}>
               <Card
                 style={{
                   background: color.box.cardBackground,

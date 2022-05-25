@@ -48,7 +48,7 @@ const StoryFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
               </>
             )}
 
-            <Link to={`/article/${b.id}`}>
+            <Link to={`/article/${b.urlid}`}>
               <Card>
                 <Thumbnail width="100px" height="60px" url={b.thumbnail} />
                 <Title

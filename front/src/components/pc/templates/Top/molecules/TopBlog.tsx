@@ -26,7 +26,7 @@ interface Props {
 const TopBlogs: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
-      <Link to={`/article/${p.blog.id}`}>
+      <Link to={`/article/${p.blog.urlid}`}>
         <Card>
           <Thumbnail width="140px" height="80px" url={p.blog.thumbnail} />
 

@@ -20,6 +20,7 @@ export const query = graphql`
             toco_blogs(pagination: { limit: 8 }, sort: "id:desc") {
               data {
                 attributes {
+                  urlid
                   mainTitle
                   thumbnail {
                     data {

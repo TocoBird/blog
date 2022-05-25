@@ -1,7 +1,12 @@
-import { BlogId, BlogTitle, BlogThumbnail } from '@/domain/_site/blog';
+import {
+  BlogId,
+  BlogURLId,
+  BlogTitle,
+  BlogThumbnail,
+} from '@/domain/_site/blog';
 
 /** サイト単位のドメインの部分集合 */
-type Blog = BlogId & BlogTitle & BlogThumbnail;
+type Blog = BlogId & BlogURLId & BlogTitle & BlogThumbnail;
 
 /**
  * 記事詳細
@@ -9,6 +14,7 @@ type Blog = BlogId & BlogTitle & BlogThumbnail;
 export class DomainStoryDetailBlog implements Blog {
   constructor(
     public readonly id: number = 0,
+    public readonly urlid: string = '',
     public readonly introduceTitle: string = '',
     public readonly introduceText: string = '',
     public readonly title: string = '',

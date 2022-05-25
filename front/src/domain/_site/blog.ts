@@ -2,6 +2,10 @@ export interface BlogId {
   /** 記事ID */
   readonly id: number;
 }
+export interface BlogURLId {
+  /** 記事URL_ID */
+  readonly urlid: string;
+}
 export interface BlogTitle {
   /** 記事タイトル */
   readonly title: string;

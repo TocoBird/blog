@@ -1,8 +1,13 @@
+interface ResTocoBlogAttribute {
+  readonly urlid: string;
+}
+
 /**
  * 記事詳細
  */
 export interface ResTocoBlog {
   readonly id: number;
+  readonly attributes: ResTocoBlogAttribute;
 }
 
 /**

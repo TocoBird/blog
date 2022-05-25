@@ -110,7 +110,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
         <Inner>
           <Cards>
             {p.blogs.map(b => (
-              <Link to={`/article/${b.id}`} key={b.id}>
+              <Link to={`/article/${b.urlid}`} key={b.id}>
                 <Card
                   style={{
                     background: color.box.background,

@@ -41,13 +41,14 @@ const getDomainTopCategoryBlog = (
     return resblogs.map(b => {
       const id = Number(b.id) || 0;
       const title = String(b.attributes.mainTitle) || '';
+      const urlid = String(b.attributes.urlid) || '';
       const rAttributes = b.attributes.thumbnail.data.attributes;
       const rFormat = rAttributes?.formats;
       const rUrl =
         rFormat?.thumbnail?.url || rFormat?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
-      return new DomainTopCategoryBlog(id, title, thumbnail);
+      return new DomainTopCategoryBlog(id, urlid, title, thumbnail);
     });
   } catch (e) {
     throw errorWrapper(e, 'ドメイン変換エラー:ブログ一覧');

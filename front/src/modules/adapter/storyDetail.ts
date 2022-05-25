@@ -79,11 +79,13 @@ const getDomainBlog = (r: ResStoryBlog): DomainStoryDetailBlog[] => {
       const thumbnail = String(rUrl) || '';
 
       const title = String(rAttributes.mainTitle) || '';
+      const urlid = String(rAttributes.urlid) || '';
       const introduceTitle = String(b.title) || '';
       const introduceText = String(b.text) || '';
 
       return new DomainStoryDetailBlog(
         id,
+        urlid,
         introduceTitle,
         introduceText,
         title,
@@ -158,13 +160,14 @@ const getDomainRecommendBlog = (
     return resFavoriteBlogs.map(r => {
       const id = Number(r.id) || 0;
       const title = String(r.attributes.mainTitle) || '';
+      const urlid = String(r.attributes.urlid) || '';
       const rAttributes = r.attributes.thumbnail.data.attributes;
       const rFormats = rAttributes?.formats;
       const rUrl =
         rFormats?.thumbnail?.url || rFormats?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
-      return new DomainStoryDetailRecommendBlog(id, title, thumbnail);
+      return new DomainStoryDetailRecommendBlog(id, urlid, title, thumbnail);
     });
   } catch (e) {
     throw errorWrapper(e, 'ドメイン変換エラー:お気に入りの記事一覧');

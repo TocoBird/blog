@@ -88,7 +88,7 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
           <Fragment key={b.id}>
             {index !== 0 && <Spacer.XM />}
 
-            <Link to={`/article/${b.id}`}>
+            <Link to={`/article/${b.urlid}`}>
               <Card style={{ background: color.box.background }}>
                 <Thumbnail width="120px" height="80px" url={b.thumbnail} />
                 <Title

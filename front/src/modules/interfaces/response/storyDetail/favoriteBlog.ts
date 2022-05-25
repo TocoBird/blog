@@ -16,6 +16,7 @@ interface ResFavoriteBlogAttributeBlogAttributeThumbnail {
   };
 }
 interface ResFavoriteBlogAttributeBlogAttribute {
+  readonly urlid: string;
   readonly mainTitle: string;
   readonly thumbnail: ResFavoriteBlogAttributeBlogAttributeThumbnail;
 }

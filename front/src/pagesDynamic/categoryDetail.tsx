@@ -29,6 +29,7 @@ export const query = graphql`
         data {
           id
           attributes {
+            urlid
             mainTitle
             thumbnail {
               data {

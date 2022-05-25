@@ -16,9 +16,10 @@ const createPageBlogs = (blogs: ResTocoBlog[], actions: Actions): void => {
     const ARTICLE_DETAIL_PATH = `./src/pagesDynamic/articleDetail.tsx`;
     blogs.forEach(t => {
       const id = t.id;
+      const urlid = t.attributes.urlid;
 
       createPage({
-        path: `/article/${id}`,
+        path: `/article/${urlid}`,
         component: path.resolve(ARTICLE_DETAIL_PATH),
         context: {
           id,
@@ -99,6 +100,9 @@ export const srcCreatePages: GatsbyNode['createPages'] = async ({
         tocoBlogs(pagination: { limit: 100 }) {
           data {
             id
+            attributes {
+              urlid
+            }
           }
         }
         storyBlogs(pagination: { limit: 100 }) {

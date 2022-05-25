@@ -37,6 +37,7 @@ const getDomainCategoryDetailBlog = (
   try {
     return resblogs.map(r => {
       const id = Number(r.id) || 0;
+      const urlid = String(r.attributes.urlid) || '';
       const title = String(r.attributes.mainTitle) || '';
       const rAttributes = r.attributes.thumbnail.data.attributes;
       const rFormat = rAttributes?.formats;
@@ -44,7 +45,7 @@ const getDomainCategoryDetailBlog = (
         rFormat?.thumbnail?.url || rFormat?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
-      return new DomainCategoryDetailBlog(id, title, thumbnail);
+      return new DomainCategoryDetailBlog(id, urlid, title, thumbnail);
     });
   } catch (e) {
     throw errorWrapper(e, 'ドメイン変換エラー:ブログ一覧');

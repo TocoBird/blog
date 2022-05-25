@@ -29,7 +29,7 @@ const TopBlog: React.FC<Props> = (p: Props): JSX.Element => {
         <Fragment key={b.id}>
           {index !== 0 && <Spacer.S />}
 
-          <Link to={`/article/${b.id}`}>
+          <Link to={`/article/${b.urlid}`}>
             <Card
               style={{
                 background: color.box.background,

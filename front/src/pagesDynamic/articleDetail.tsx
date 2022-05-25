@@ -27,6 +27,7 @@ export const query = graphql`
             toco_blogs(sort: "id:desc") {
               data {
                 attributes {
+                  urlid
                   mainTitle
                   thumbnail {
                     data {
@@ -64,6 +65,7 @@ export const query = graphql`
         data {
           id
           attributes {
+            urlid
             mainTitle
             mainText
             featureText
@@ -80,6 +82,7 @@ export const query = graphql`
                   ) {
                     data {
                       attributes {
+                        urlid
                         mainTitle
                         thumbnail {
                           data {

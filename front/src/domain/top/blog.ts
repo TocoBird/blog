@@ -1,8 +1,13 @@
-import { BlogId, BlogTitle, BlogThumbnail } from '@/domain/_site/blog';
+import {
+  BlogId,
+  BlogURLId,
+  BlogTitle,
+  BlogThumbnail,
+} from '@/domain/_site/blog';
 import { CategoryId, CategoryName } from '@/domain/_site/category';
 
 /** サイト単位のドメインの部分集合 */
-type Blog = BlogId & BlogTitle & BlogThumbnail;
+type Blog = BlogId & BlogURLId & BlogTitle & BlogThumbnail;
 
 /**
  * カテゴリごとの記事詳細
@@ -10,6 +15,7 @@ type Blog = BlogId & BlogTitle & BlogThumbnail;
 export class DomainTopCategoryBlog implements Blog {
   constructor(
     public readonly id: number = 0,
+    public readonly urlid: string = '',
     public readonly title: string = '',
     public readonly thumbnail: string = ''
   ) {}

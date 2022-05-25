@@ -49,7 +49,7 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
       <Articles>
         {p.blogs.map((b: DomainArticleDetailRelatedBlog, index: number) => (
           <Link
-            to={`/article/${b.id}`}
+            to={`/article/${b.urlid}`}
             key={`${index}_${b.id}`}
             style={{
               width: '49%',

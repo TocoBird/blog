@@ -23,6 +23,7 @@ interface ResStoryBlogAttributeTocoBlogAttributeThumbnailData {
 interface ResStoryBlogAttributeTocoBlogAttribute {
   readonly id: number;
   readonly attributes: {
+    readonly urlid: string;
     readonly mainTitle: string;
     readonly thumbnail: ResStoryBlogAttributeTocoBlogAttributeThumbnailData;
   };

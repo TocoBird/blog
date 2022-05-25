@@ -147,6 +147,7 @@ const getDomainRecommendBlog = (
   try {
     return resFavoriteBlogs.map(r => {
       const id = Number(r.id) || 0;
+      const urlid = String(r.attributes.urlid) || '';
       const title = String(r.attributes.mainTitle) || '';
       const rAttributes = r.attributes.thumbnail.data.attributes;
       const rFormats = rAttributes?.formats;
@@ -154,7 +155,7 @@ const getDomainRecommendBlog = (
         rFormats?.thumbnail?.url || rFormats?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
-      return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
+      return new DomainArticleDetailRecommendBlog(id, urlid, title, thumbnail);
     });
   } catch (e) {
     throw errorWrapper(e, 'ドメイン変換エラー:お気に入りの記事一覧');
@@ -170,13 +171,14 @@ const getDomainRelatedBlog = (
   try {
     return relatedBlogs.map(r => {
       const id = Number(r.id) || 0;
+      const urlid = String(r.attributes.urlid) || '';
       const title = String(r.attributes.mainTitle) || '';
       const rAttributes = r.attributes.thumbnail.data.attributes;
       const rFormats = rAttributes?.formats;
       const rUrl = rFormats?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
-      return new DomainArticleDetailRecommendBlog(id, title, thumbnail);
+      return new DomainArticleDetailRecommendBlog(id, urlid, title, thumbnail);
     });
   } catch (e) {
     throw errorWrapper(e, 'ドメイン変換エラー:関連する記事一覧');
