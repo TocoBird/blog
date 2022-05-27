@@ -63,12 +63,6 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.M />
 
       <Content style={{ background: color.box.background }}>
-        <ArticleCategory categories={p.categories} />
-      </Content>
-
-      <Spacer.M />
-
-      <Content style={{ background: color.box.background }}>
         <ArticleFavoriteBlog blogs={p.favoriteBlogs} />
       </Content>
 
@@ -82,6 +76,12 @@ const TemplateSPArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
       <Content style={{ background: color.box.background }}>
         <ArticleStory blogs={p.stroyBlogs} />
+      </Content>
+
+      <Spacer.M />
+
+      <Content style={{ background: color.box.background }}>
+        <ArticleCategory categories={p.categories} />
       </Content>
 
       <Spacer.M />

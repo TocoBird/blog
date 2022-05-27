@@ -23,6 +23,12 @@ const Card = styled.div`
   overflow: hidden;
   border-radius: 2px;
 `;
+const CardRight = styled.div`
+  flex: 1;
+  padding: 0 ${size.ui.l3}px;
+  display: flex;
+  align-items: center;
+`;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
 `;
@@ -91,15 +97,9 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Link to={`/article/${b.urlid}`}>
               <Card style={{ background: color.box.background }}>
                 <Thumbnail width="120px" height="80px" url={b.thumbnail} />
-                <Title
-                  size="S"
-                  style={{
-                    flex: 1,
-                    padding: `${size.ui.l4}px`,
-                  }}
-                >
-                  {b.title}
-                </Title>
+                <CardRight>
+                  <Title size="S">{b.title}</Title>
+                </CardRight>
               </Card>
             </Link>
           </Fragment>
