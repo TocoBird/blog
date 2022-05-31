@@ -16,9 +16,12 @@ const Card = styled.div`
   overflow: hidden;
   border-radius: ${size.ui.l1}px;
   box-sizing: border-box;
-  &:hover {
-    opacity: 0.8;
-  }
+`;
+const CardRight = styled.div`
+  flex: 1;
+  padding: 0 ${size.ui.l3}px;
+  display: flex;
+  align-items: center;
 `;
 const IntroText = styled.div`
   font-size: ${size.font.sp.l3}px;
@@ -65,15 +68,9 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                 }}
               >
                 <Thumbnail width="110px" height="80px" url={b.thumbnail} />
-                <Title
-                  size="S"
-                  style={{
-                    flex: 1,
-                    padding: size.ui.l3,
-                  }}
-                >
-                  {b.title}
-                </Title>
+                <CardRight>
+                  <Title size="S">{b.title}</Title>
+                </CardRight>
               </Card>
             </Link>
           </Fragment>
