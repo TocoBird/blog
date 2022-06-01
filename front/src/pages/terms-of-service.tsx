@@ -4,6 +4,9 @@ import TemplatePCTermsOfService from '@/components/pc/templates/TermsOfService';
 import TemplateSPTermsOfService from '@/components/sp/templates/TermsOfService';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
+/**
+ * ページ: 利用規約
+ */
 const TermsOfService: React.FC = (): JSX.Element => {
   const option: MetaOption = {
     title: '利用規約',

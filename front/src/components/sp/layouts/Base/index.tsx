@@ -8,7 +8,7 @@ import { useColor } from '@/modules/common/colors';
 const Wrapper = styled.div``;
 
 interface Props {
-  readonly children: JSX.Element | JSX.Element[];
+  readonly children: JSX.Element;
 }
 
 /**

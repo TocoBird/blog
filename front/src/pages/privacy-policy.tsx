@@ -4,6 +4,9 @@ import TemplatePCPrivacyPolicy from '@/components/pc/templates/PrivacyPolicy';
 import TemplateSPPrivacyPolicy from '@/components/sp/templates/PrivacyPolicy';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
+/**
+ * ページ: プライバシーポリシー
+ */
 const PrivacyPolicy: React.FC = (): JSX.Element => {
   const option: MetaOption = {
     title: 'プライバシーポリシー',

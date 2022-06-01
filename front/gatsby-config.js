@@ -24,6 +24,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`, // メタタグ
+    `gatsby-plugin-image`, // 画像
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -32,7 +33,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-image`, // 画像
     {
       resolve: `gatsby-source-filesystem`,
       options: {

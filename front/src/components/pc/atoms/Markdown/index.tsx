@@ -68,8 +68,9 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
           return <Spacer.L key={key} />;
         }
 
-        if (n.type === 'img')
+        if (n.type === 'img') {
           return <Img key={key} src={n.src} alt={n.alt} loading="lazy" />;
+        }
 
         if (n.type === 'p') {
           if (n.inlines)
