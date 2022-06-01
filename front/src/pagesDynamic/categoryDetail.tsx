@@ -4,7 +4,6 @@ import Layout from '@/components/layouts';
 import TemplatePCCategoryDetail from '@/components/pc/templates/CategoryDetail';
 import TemplateSPCategoryDetail from '@/components/sp/templates/CategoryDetail';
 import { adapterDomainCategoryDetail } from '@/modules/adapter/categoryDetail';
-import { useResponsive } from '@/modules/common/responsive';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
@@ -50,19 +49,18 @@ export const query = graphql`
  * ページ: カテゴリー詳細
  */
 const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
-  const { isPC } = useResponsive();
   const { blogs, categories, categolyId } = adapterDomainCategoryDetail(page);
   const selectedCategoryName =
     categories.find(c => c.id === categolyId)?.name || '';
   const option: MetaOption = {
     title: `${selectedCategoryName} | TocoBlog`,
-    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
+    keywords: 'tocoblog,プロダクト開発,記事一覧,カテゴリー詳細',
+    description: `プロダクト開発の具体的な情報サイト。${selectedCategoryName}記事一覧 - TocoBlog`,
     thumbnail: '',
   };
 
   return (
     <Layout
-      isPC={isPC}
       option={option}
       pc={
         <TemplatePCCategoryDetail

@@ -14,7 +14,7 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
   const title = p.option.title;
   const lang = 'ja';
   const description = p.option.description;
-  const keywords = 'tocoblog,プロダクト開発,記事,デザイン';
+  const keywords = p.option.keywords;
   const thumbnail = p.option.thumbnail || '';
 
   return (

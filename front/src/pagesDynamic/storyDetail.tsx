@@ -4,7 +4,6 @@ import Layout from '@/components/layouts';
 import TemplatePCStoryDetail from '@/components/pc/templates/StoryDetail';
 import TemplateSPStoryDetail from '@/components/sp/templates/StoryDetail';
 import { adapterDomainStoryDetail } from '@/modules/adapter/storyDetail';
-import { useResponsive } from '@/modules/common/responsive';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
@@ -114,18 +113,17 @@ export const query = graphql`
  * ページ: ストーリー記事詳細
  */
 const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
-  const { isPC } = useResponsive();
   const { storyBlog, categories, favoriteBlogs, relatedStoryBlogs } =
     adapterDomainStoryDetail(page);
   const option: MetaOption = {
     title: `${storyBlog.title} | TocoBlog`,
-    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
+    keywords: 'tocoblog,プロダクト開発,記事,具体案',
+    description: `${storyBlog.titleSub} - TocoBlog`,
     thumbnail: storyBlog.thumbnail,
   };
 
   return (
     <Layout
-      isPC={isPC}
       option={option}
       pc={
         <TemplatePCStoryDetail

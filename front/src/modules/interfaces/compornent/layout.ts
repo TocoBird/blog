@@ -6,6 +6,8 @@ export interface MetaOption {
   readonly title: string;
   /** 詳細 */
   readonly description: string;
-  /** 詳細 */
+  /** キーワード */
+  readonly keywords: string;
+  /** サムネイル */
   readonly thumbnail: string;
 }

@@ -4,7 +4,6 @@ import Layout from '@/components/layouts';
 import TemplatePCTop from '@/components/pc/templates/Top';
 import TemplateSPTop from '@/components/sp/templates/Top';
 import { adapterDomainIndex } from '@/modules/adapter/index';
-import { useResponsive } from '@/modules/common/responsive';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
@@ -63,17 +62,16 @@ export const query = graphql`
  * ページ: トップ
  */
 const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
-  const { isPC } = useResponsive();
   const { categories, stroyBlogs } = adapterDomainIndex(page);
   const option: MetaOption = {
     title: 'TocoBlog',
+    keywords: 'tocoblog,プロダクト開発,記事,デザイン',
     description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
     thumbnail: '',
   };
 
   return (
     <Layout
-      isPC={isPC}
       option={option}
       pc={<TemplatePCTop categories={categories} stroyBlogs={stroyBlogs} />}
       sp={<TemplateSPTop categories={categories} stroyBlogs={stroyBlogs} />}
