@@ -57,7 +57,12 @@ const ArticleContent: React.FC<Props> = (p: Props): JSX.Element => {
           >
             <LinkInner>
               <Box size="S">
-                <Thumbnail width="100%" height="180px" url={b.thumbnail} />
+                <Thumbnail
+                  width="100%"
+                  height="180px"
+                  url={b.thumbnail}
+                  isLazy={true}
+                />
 
                 <Spacer.M />
 

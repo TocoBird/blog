@@ -50,7 +50,12 @@ const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Link to={`/article/${b.urlid}`}>
               <Card>
-                <Thumbnail width="100px" height="60px" url={b.thumbnail} />
+                <Thumbnail
+                  width="100px"
+                  height="60px"
+                  url={b.thumbnail}
+                  isLazy={true}
+                />
                 <Title
                   size="XS"
                   style={{

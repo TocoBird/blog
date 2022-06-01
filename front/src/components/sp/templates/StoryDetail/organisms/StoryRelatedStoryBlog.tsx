@@ -48,7 +48,12 @@ const StoryRelatedStoryBlog: React.FC<Props> = (p: Props): JSX.Element => {
 
             <Link to={`/story/${b.id}`}>
               <Card>
-                <Thumbnail width="100%" height="120px" url={b.thumbnail} />
+                <Thumbnail
+                  width="100%"
+                  height="120px"
+                  url={b.thumbnail}
+                  isLazy={true}
+                />
 
                 <Spacer.S />
 
