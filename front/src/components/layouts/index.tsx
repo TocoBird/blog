@@ -1,4 +1,3 @@
-import { styled } from 'linaria/react';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
 import HTMLHead from '@/components/layouts/HTMLHead';
@@ -6,10 +5,9 @@ import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
-const Wrapper = styled.div``;
-
 interface Props {
-  readonly children: JSX.Element | JSX.Element[];
+  readonly pc: JSX.Element;
+  readonly sp: JSX.Element;
   readonly isPC: boolean;
   readonly option: MetaOption;
 }
@@ -20,12 +18,12 @@ interface Props {
 const Layout: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <CookiesProvider>
-      <Wrapper>
+      <div>
         <HTMLHead option={p.option} />
 
-        <div>{p.isPC && <LayoutPC>{p.children}</LayoutPC>}</div>
-        <div>{!p.isPC && <LayoutSP>{p.children}</LayoutSP>}</div>
-      </Wrapper>
+        <div>{p.isPC && <LayoutPC>{p.pc}</LayoutPC>}</div>
+        <div>{!p.isPC && <LayoutSP>{p.sp}</LayoutSP>}</div>
+      </div>
     </CookiesProvider>
   );
 };

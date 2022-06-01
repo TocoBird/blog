@@ -14,7 +14,7 @@ const createPageBlogs = (blogs: ResTocoBlog[], actions: Actions): void => {
     const { createPage } = actions;
 
     const ARTICLE_DETAIL_PATH = `./src/pagesDynamic/articleDetail.tsx`;
-    blogs.forEach(t => {
+    blogs.forEach((t: ResTocoBlog) => {
       const id = t.id;
       const urlid = t.attributes.urlid;
 
@@ -42,7 +42,7 @@ const createPageCategories = (
     const { createPage } = actions;
 
     const CATEGORY_DETAIL_PATH = `./src/pagesDynamic/categoryDetail.tsx`;
-    categories.forEach(c => {
+    categories.forEach((c: ResCategory) => {
       const id = c.id;
 
       createPage({
@@ -69,7 +69,7 @@ const createPageStoryBlogs = (
     const { createPage } = actions;
 
     const ARTICLE_DETAIL_PATH = `./src/pagesDynamic/storyDetail.tsx`;
-    blogs.forEach(t => {
+    blogs.forEach((t: ResStoryBlog) => {
       const id = t.id;
 
       createPage({

@@ -14,10 +14,12 @@ const TermsOfService: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      <div>{isPC && <TemplatePCTermsOfService />}</div>
-      <div>{!isPC && <TemplateSPTermsOfService />}</div>
-    </Layout>
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={<TemplatePCTermsOfService />}
+      sp={<TemplateSPTermsOfService />}
+    />
   );
 };
 

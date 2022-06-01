@@ -128,8 +128,10 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      {isPC ? (
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={
         <TemplatePCArticleDetail
           blog={blog}
           categories={categories}
@@ -137,7 +139,8 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           relatedBlogs={relatedBlogs}
           stroyBlogs={stroyBlogs}
         />
-      ) : (
+      }
+      sp={
         <TemplateSPArticleDetail
           blog={blog}
           categories={categories}
@@ -145,8 +148,8 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           relatedBlogs={relatedBlogs}
           stroyBlogs={stroyBlogs}
         />
-      )}
-    </Layout>
+      }
+    />
   );
 };
 

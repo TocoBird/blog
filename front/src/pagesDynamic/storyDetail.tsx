@@ -124,23 +124,26 @@ const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      {isPC ? (
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={
         <TemplatePCStoryDetail
           storyBlog={storyBlog}
           categories={categories}
           favoriteBlogs={favoriteBlogs}
           relatedStoryBlogs={relatedStoryBlogs}
         />
-      ) : (
+      }
+      sp={
         <TemplateSPStoryDetail
           storyBlog={storyBlog}
           categories={categories}
           favoriteBlogs={favoriteBlogs}
           relatedStoryBlogs={relatedStoryBlogs}
         />
-      )}
-    </Layout>
+      }
+    />
   );
 };
 

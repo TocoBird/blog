@@ -28,7 +28,6 @@ const Box: React.FC<Props> = (p: Props): JSX.Element => {
     if (p.size === 'L') return size.ui.l10;
     return 0;
   };
-
   const padding = getSize();
 
   return (

@@ -17,10 +17,12 @@ const NotFound: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      <div>{isPC && <TemplatePCNotFound />}</div>
-      <div>{!isPC && <TemplateSPNotFound />}</div>
-    </Layout>
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={<TemplatePCNotFound />}
+      sp={<TemplateSPNotFound />}
+    />
   );
 };
 

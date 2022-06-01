@@ -61,21 +61,24 @@ const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      {isPC ? (
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={
         <TemplatePCCategoryDetail
           blogs={blogs}
           categories={categories}
           selectedCategolyId={categolyId}
         />
-      ) : (
+      }
+      sp={
         <TemplateSPCategoryDetail
           blogs={blogs}
           categories={categories}
           selectedCategolyId={categolyId}
         />
-      )}
-    </Layout>
+      }
+    />
   );
 };
 

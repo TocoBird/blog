@@ -14,10 +14,12 @@ const PrivacyPolicy: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      <div>{isPC && <TemplatePCPrivacyPolicy />}</div>
-      <div>{!isPC && <TemplateSPPrivacyPolicy />}</div>
-    </Layout>
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={<TemplatePCPrivacyPolicy />}
+      sp={<TemplateSPPrivacyPolicy />}
+    />
   );
 };
 

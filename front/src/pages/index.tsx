@@ -72,18 +72,12 @@ const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Layout isPC={isPC} option={option}>
-      <div>
-        {isPC && (
-          <TemplatePCTop categories={categories} stroyBlogs={stroyBlogs} />
-        )}
-      </div>
-      <div>
-        {!isPC && (
-          <TemplateSPTop categories={categories} stroyBlogs={stroyBlogs} />
-        )}
-      </div>
-    </Layout>
+    <Layout
+      isPC={isPC}
+      option={option}
+      pc={<TemplatePCTop categories={categories} stroyBlogs={stroyBlogs} />}
+      sp={<TemplateSPTop categories={categories} stroyBlogs={stroyBlogs} />}
+    />
   );
 };
 

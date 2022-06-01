@@ -29,6 +29,7 @@ interface Props {
  */
 const ButtonSub: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
+
   return (
     <Wrapper
       style={{
