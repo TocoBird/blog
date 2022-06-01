@@ -1,5 +1,5 @@
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCNotFound from '@/components/pc/templates/NotFound';
 import TemplateSPNotFound from '@/components/sp/templates/NotFound';
 import { useResponsive } from '@/modules/common/responsive';
@@ -17,10 +17,10 @@ const NotFound: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       <div>{isPC && <TemplatePCNotFound />}</div>
       <div>{!isPC && <TemplateSPNotFound />}</div>
-    </Frame>
+    </Layout>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCTermsOfService from '@/components/pc/templates/TermsOfService';
 import TemplateSPTermsOfService from '@/components/sp/templates/TermsOfService';
 import { useResponsive } from '@/modules/common/responsive';
@@ -14,10 +14,10 @@ const TermsOfService: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       <div>{isPC && <TemplatePCTermsOfService />}</div>
       <div>{!isPC && <TemplateSPTermsOfService />}</div>
-    </Frame>
+    </Layout>
   );
 };
 

@@ -11,7 +11,7 @@ interface UseReturn {
  */
 export const useResponsive = (): UseReturn => {
   const isPC = useMediaQuery({
-    query: `(min-width: ${size.responsive.pcMin}px)`,
+    minWidth: size.responsive.pcMin,
   });
 
   return { isPC };

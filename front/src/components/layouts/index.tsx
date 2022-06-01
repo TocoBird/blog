@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
-import HTMLHead from '@/components/frame/HTMLHead';
+import HTMLHead from '@/components/layouts/HTMLHead';
 import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
@@ -17,7 +17,7 @@ interface Props {
 /**
  * レイアウト
  */
-const Frame: React.FC<Props> = (p: Props): JSX.Element => {
+const Layout: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <CookiesProvider>
       <Wrapper>
@@ -30,4 +30,4 @@ const Frame: React.FC<Props> = (p: Props): JSX.Element => {
   );
 };
 
-export default Frame;
+export default Layout;

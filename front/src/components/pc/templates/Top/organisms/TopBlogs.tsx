@@ -7,19 +7,15 @@ import Box from '@/components/pc/atoms/Box';
 import ButtonCategory from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
+import ContentCenter from '@/components/pc/frames/ContentCenter';
 import TopBlog from '@/components/pc/templates/Top/molecules/TopBlog';
 import { DomainTopCategory, DomainTopCategoryBlog } from '@/domain/top/blog';
 import size from '@/modules/const/size';
 
-const Wrapper = styled.div`
+const Wrapper = styled(ContentCenter)`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: auto;
-  min-width: ${size.responsive.pcMin}px;
-  max-width: ${size.responsive.pcMax}px;
-  padding: 0 ${size.ui.l8}px;
-  box-sizing: border-box;
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 4px;

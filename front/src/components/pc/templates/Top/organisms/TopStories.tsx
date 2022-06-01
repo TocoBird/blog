@@ -5,19 +5,15 @@ import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
+import ContentCenter from '@/components/pc/frames/ContentCenter';
 import { DomainTopStoryBlog } from '@/domain/top/storyBlog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
-const Wrapper = styled.div`
+const Wrapper = styled(ContentCenter)`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: auto;
-  min-width: ${size.responsive.pcMin}px;
-  max-width: ${size.responsive.pcMax}px;
-  padding: 0 ${size.ui.l8}px;
-  box-sizing: border-box;
 `;
 const Text = styled.div`
   font-size: ${size.font.pc.l3}px;

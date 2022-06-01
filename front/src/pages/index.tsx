@@ -1,6 +1,6 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCTop from '@/components/pc/templates/Top';
 import TemplateSPTop from '@/components/sp/templates/Top';
 import { adapterDomainIndex } from '@/modules/adapter/index';
@@ -72,7 +72,7 @@ const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       <div>
         {isPC && (
           <TemplatePCTop categories={categories} stroyBlogs={stroyBlogs} />
@@ -83,7 +83,7 @@ const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           <TemplateSPTop categories={categories} stroyBlogs={stroyBlogs} />
         )}
       </div>
-    </Frame>
+    </Layout>
   );
 };
 

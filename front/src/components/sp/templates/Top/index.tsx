@@ -57,7 +57,7 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Icon icon={faBookBookmark} />
         <br />
-        おすすめの具体案
+        具体案を探す
       </Title>
 
       <Spacer.L />

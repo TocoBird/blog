@@ -7,19 +7,14 @@ import ButtonCategory from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
+import ContentCenter from '@/components/pc/frames/ContentCenter';
 import { DomainCategoryDetailBlog } from '@/domain/categoryDetail/blog';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
-const Inner = styled.div`
-  margin: auto;
-  min-width: ${size.responsive.pcMin}px;
-  max-width: ${size.responsive.pcMax}px;
-  padding: 0 ${size.ui.l8}px;
-  box-sizing: border-box;
-`;
+const Inner = styled(ContentCenter)``;
 const Content = styled.div`
   padding: ${size.ui.l3}px;
 `;

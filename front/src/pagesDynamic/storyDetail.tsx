@@ -1,6 +1,6 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCStoryDetail from '@/components/pc/templates/StoryDetail';
 import TemplateSPStoryDetail from '@/components/sp/templates/StoryDetail';
 import { adapterDomainStoryDetail } from '@/modules/adapter/storyDetail';
@@ -124,7 +124,7 @@ const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCStoryDetail
           storyBlog={storyBlog}
@@ -140,7 +140,7 @@ const StoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           relatedStoryBlogs={relatedStoryBlogs}
         />
       )}
-    </Frame>
+    </Layout>
   );
 };
 

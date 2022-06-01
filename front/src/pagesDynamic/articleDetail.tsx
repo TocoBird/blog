@@ -1,6 +1,6 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCArticleDetail from '@/components/pc/templates/ArticleDetail';
 import TemplateSPArticleDetail from '@/components/sp/templates/ArticleDetail';
 import { adapterDomainArticleDetail } from '@/modules/adapter/articleDetail';
@@ -128,7 +128,7 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCArticleDetail
           blog={blog}
@@ -146,7 +146,7 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           stroyBlogs={stroyBlogs}
         />
       )}
-    </Frame>
+    </Layout>
   );
 };
 

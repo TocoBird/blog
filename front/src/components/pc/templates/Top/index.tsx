@@ -38,14 +38,14 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
           textAlign: 'center',
         }}
       >
-        <Icon icon={faFire} />
+        <Icon icon={faBookBookmark} />
         <br />
-        おすすめの記事
+        具体案を探す
       </Title>
 
       <Spacer.XXL />
 
-      <TopBlogs categories={p.categories} />
+      <TopStories stroyBlogs={p.stroyBlogs} />
 
       <Spacer.XXL />
 
@@ -55,14 +55,14 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
           textAlign: 'center',
         }}
       >
-        <Icon icon={faBookBookmark} />
+        <Icon icon={faFire} />
         <br />
-        おすすめの具体案
+        おすすめの記事
       </Title>
 
       <Spacer.XXL />
 
-      <TopStories stroyBlogs={p.stroyBlogs} />
+      <TopBlogs categories={p.categories} />
 
       <Spacer.XXL />
     </Wrapper>

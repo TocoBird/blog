@@ -1,6 +1,6 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCCategoryDetail from '@/components/pc/templates/CategoryDetail';
 import TemplateSPCategoryDetail from '@/components/sp/templates/CategoryDetail';
 import { adapterDomainCategoryDetail } from '@/modules/adapter/categoryDetail';
@@ -61,7 +61,7 @@ const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       {isPC ? (
         <TemplatePCCategoryDetail
           blogs={blogs}
@@ -75,7 +75,7 @@ const CategoryDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
           selectedCategolyId={categolyId}
         />
       )}
-    </Frame>
+    </Layout>
   );
 };
 

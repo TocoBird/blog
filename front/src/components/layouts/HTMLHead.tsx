@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import '@/components/frame/css/layout.css';
+import '@/components/layouts/css/layout.css';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 interface Props {

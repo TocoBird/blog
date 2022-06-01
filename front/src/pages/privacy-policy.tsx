@@ -1,5 +1,5 @@
 import React from 'react';
-import Frame from '@/components/frame';
+import Layout from '@/components/layouts';
 import TemplatePCPrivacyPolicy from '@/components/pc/templates/PrivacyPolicy';
 import TemplateSPPrivacyPolicy from '@/components/sp/templates/PrivacyPolicy';
 import { useResponsive } from '@/modules/common/responsive';
@@ -14,10 +14,10 @@ const PrivacyPolicy: React.FC = (): JSX.Element => {
   };
 
   return (
-    <Frame isPC={isPC} option={option}>
+    <Layout isPC={isPC} option={option}>
       <div>{isPC && <TemplatePCPrivacyPolicy />}</div>
       <div>{!isPC && <TemplateSPPrivacyPolicy />}</div>
-    </Frame>
+    </Layout>
   );
 };
 

@@ -3,6 +3,7 @@ import React from 'react';
 import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
+import ContentCenter from '@/components/pc/frames/ContentCenter';
 import BlogFooter from '@/components/pc/molecules/blogDetail/BlogFooter';
 import BlogMarkdown from '@/components/pc/molecules/blogDetail/BlogMarkdown';
 import ArticleCategory from '@/components/pc/templates/ArticleDetail/organisms/ArticleCategory';
@@ -20,13 +21,7 @@ import { DomainArticleDetailStoryBlog } from '@/domain/articleDetail/storyBlog';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
-const ContentWrapper = styled.div`
-  margin: auto;
-  min-width: ${size.responsive.pcMin}px;
-  max-width: ${size.responsive.pcMax}px;
-  padding: 0 ${size.ui.l8}px;
-  box-sizing: border-box;
-`;
+const ContentWrapper = styled(ContentCenter)``;
 const Content = styled.div`
   display: flex;
 `;

@@ -2,18 +2,12 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
+import ContentCenter from '@/components/pc/frames/ContentCenter';
 import { useColor } from '@/modules/common/colors';
-import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const Detail = styled.div``;
-const Inner = styled.div`
-  margin: auto;
-  min-width: ${size.responsive.pcMin}px;
-  max-width: ${size.responsive.pcMax}px;
-  padding: 0 ${size.ui.l8}px;
-  box-sizing: border-box;
-`;
+const Inner = styled(ContentCenter)``;
 
 /**
  * テンプレート：利用規約

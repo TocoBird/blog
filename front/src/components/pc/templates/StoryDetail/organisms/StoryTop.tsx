@@ -5,6 +5,7 @@ import React from 'react';
 import ButtonCategory from '@/components/pc/atoms/ButtonCategory';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Title from '@/components/pc/atoms/Title';
+import ContentCenter from '@/components/pc/frames/ContentCenter';
 import { DomainStoryDetailStoryBlog } from '@/domain/storyDetail/storyBlog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
@@ -12,13 +13,7 @@ import size from '@/modules/const/size';
 const Wrapper = styled.div`
   box-shadow: 0 2px 24px #0f1c2c12;
 `;
-const Content = styled.div`
-  margin: auto;
-  min-width: ${size.responsive.pcMin}px;
-  max-width: ${size.responsive.pcMax}px;
-  padding: 0 ${size.ui.l8}px;
-  box-sizing: border-box;
-`;
+const Content = styled(ContentCenter)``;
 const Inner = styled.div`
   padding: ${size.ui.l12}px 0;
 `;
