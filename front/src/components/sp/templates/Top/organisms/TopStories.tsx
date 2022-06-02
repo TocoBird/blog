@@ -14,15 +14,12 @@ const Wrapper = styled.div`
   padding: ${size.ui.l5}px ${size.ui.l4}px;
   box-sizing: border-box;
 `;
-const Text = styled.div`
-  font-size: ${size.font.pc.l3}px;
-  font-weight: 500;
-`;
-
+// const Text = styled.div`
+//   font-size: ${size.font.pc.l3}px;
+//   font-weight: 500;
+// `;
 const Card = styled.div`
-  &:hover {
-    opacity: 0.8;
-  }
+  display: flex;
 `;
 
 interface Props {
@@ -43,16 +40,26 @@ const TopStories: React.FC<Props> = (p: Props): JSX.Element => {
     >
       {p.stroyBlogs.map((s: DomainTopStoryBlog, index: number) => (
         <Fragment key={`${index}_${s.id}`}>
-          {index !== 0 && <Spacer.XM />}
+          {index !== 0 && <Spacer.S />}
 
           <Link to={`/story/${s.id}`}>
             <Card>
+              <Thumbnail width="110px" height="70px" url={s.thumbnail} />
+              <Title
+                size="S"
+                style={{
+                  flex: 1,
+                  paddingLeft: `${size.ui.l4}px`,
+                }}
+              >
+                {s.title}
+              </Title>
+              {/* 
               <Thumbnail width="100%" height="120px" url={s.thumbnail} />
 
               <Spacer.S />
 
               <Title size="S">{s.title}</Title>
-
               <Spacer.XS />
 
               <Text
@@ -61,7 +68,7 @@ const TopStories: React.FC<Props> = (p: Props): JSX.Element => {
                 }}
               >
                 {s.titleSub}
-              </Text>
+              </Text> */}
             </Card>
           </Link>
         </Fragment>

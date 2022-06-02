@@ -33,23 +33,6 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
       <Spacer.L />
 
       <Title
-        size="XM"
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        <Icon icon={faFire} />
-        <br />
-        おすすめの記事
-      </Title>
-
-      <Spacer.L />
-
-      <TopBlogs categories={p.categories} />
-
-      <Spacer.L />
-
-      <Title
         size="L"
         style={{
           textAlign: 'center',
@@ -57,12 +40,29 @@ const TemplateSPTop: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Icon icon={faBookBookmark} />
         <br />
-        具体案を探す
+        おすすめの具体案
       </Title>
 
       <Spacer.L />
 
       <TopStories stroyBlogs={p.stroyBlogs} />
+
+      <Spacer.L />
+
+      <Title
+        size="XM"
+        style={{
+          textAlign: 'center',
+        }}
+      >
+        <Icon icon={faFire} />
+        <br />
+        新着の記事
+      </Title>
+
+      <Spacer.L />
+
+      <TopBlogs categories={p.categories} />
 
       <Spacer.L />
 

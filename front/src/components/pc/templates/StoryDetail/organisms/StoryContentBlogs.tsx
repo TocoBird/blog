@@ -18,7 +18,8 @@ const Card = styled.div`
   box-sizing: border-box;
   transition: 0.2s;
   &:hover {
-    opacity: 0.75;
+    opacity: 0.85;
+    box-shadow: 0 8px 12px #0f1c2c20;
   }
 `;
 const IntroText = styled.div`
@@ -65,7 +66,7 @@ const StoryContentBlogs: React.FC<Props> = (p: Props): JSX.Element => {
                   background: color.box.cardBackground,
                 }}
               >
-                <Thumbnail width="210px" height="130px" url={b.thumbnail} />
+                <Thumbnail width="180px" height="110px" url={b.thumbnail} />
                 <Title
                   size="S"
                   style={{

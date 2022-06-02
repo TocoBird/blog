@@ -90,8 +90,7 @@ const getDomainStoryBlog = (blogs: ResStoryBlog[]): DomainTopStoryBlog[] => {
       const titleSub = String(r.attributes.titleSub) || '';
       const rAttributes = r.attributes.thumbnail.data.attributes;
       const rFormats = rAttributes?.formats;
-      const rUrl =
-        rFormats?.thumbnail?.url || rFormats?.small?.url || rAttributes.url;
+      const rUrl = rFormats?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
       return new DomainTopStoryBlog(id, title, titleSub, thumbnail);

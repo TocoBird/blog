@@ -40,7 +40,7 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Icon icon={faBookBookmark} />
         <br />
-        具体案を探す
+        おすすめの具体案
       </Title>
 
       <Spacer.XXL />
@@ -57,7 +57,7 @@ const TemplatePCTop: React.FC<Props> = (p: Props): JSX.Element => {
       >
         <Icon icon={faFire} />
         <br />
-        おすすめの記事
+        新着の記事
       </Title>
 
       <Spacer.XXL />
