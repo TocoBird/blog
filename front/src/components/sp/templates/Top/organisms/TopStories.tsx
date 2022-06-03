@@ -14,10 +14,6 @@ const Wrapper = styled.div`
   padding: ${size.ui.l5}px ${size.ui.l4}px;
   box-sizing: border-box;
 `;
-// const Text = styled.div`
-//   font-size: ${size.font.pc.l3}px;
-//   font-weight: 500;
-// `;
 const Card = styled.div`
   display: flex;
 `;
@@ -54,21 +50,6 @@ const TopStories: React.FC<Props> = (p: Props): JSX.Element => {
               >
                 {s.title}
               </Title>
-              {/* 
-              <Thumbnail width="100%" height="120px" url={s.thumbnail} />
-
-              <Spacer.S />
-
-              <Title size="S">{s.title}</Title>
-              <Spacer.XS />
-
-              <Text
-                style={{
-                  color: color.text.mainThin,
-                }}
-              >
-                {s.titleSub}
-              </Text> */}
             </Card>
           </Link>
         </Fragment>

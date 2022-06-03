@@ -8,7 +8,7 @@ import { useHookHeader } from '@/components/pc/layouts/Base/molecules/Header/hoo
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   position: fixed;
   z-index: 99;
   height: 50px;
