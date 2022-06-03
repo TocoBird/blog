@@ -8,6 +8,9 @@ const Img = styled.div`
   box-shadow: 0 1px 2px #0f1c2c21;
   border-radius: 2px;
 `;
+const Background = styled.div`
+  background: #00000014;
+`;
 
 interface Props {
   /** 横幅 */
@@ -33,26 +36,38 @@ const Thumbnail: React.FC<Props> = (p: Props): JSX.Element => {
 
   if (!p.isLazy)
     return (
-      <Img
+      <Background
         style={{
           width: p.width,
           height: p.height,
-          backgroundImage,
-          ...p.style,
         }}
-      />
+      >
+        <Img
+          style={{
+            height: p.height,
+            backgroundImage,
+            ...p.style,
+          }}
+        />
+      </Background>
     );
 
   return (
     <LazyLoad once={true}>
-      <Img
+      <Background
         style={{
           width: p.width,
           height: p.height,
-          backgroundImage,
-          ...p.style,
         }}
-      />
+      >
+        <Img
+          style={{
+            height: p.height,
+            backgroundImage,
+            ...p.style,
+          }}
+        />
+      </Background>
     </LazyLoad>
   );
 };
