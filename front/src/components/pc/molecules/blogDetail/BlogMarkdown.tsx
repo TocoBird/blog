@@ -1,9 +1,6 @@
-import { styled } from 'linaria/react';
 import React from 'react';
 import Markdown from '@/components/pc/atoms/Markdown';
 import { TagNode } from '@/modules/common/markdown';
-
-const Wrapper = styled.div``;
 
 interface Props {
   /** 記事内容 */
@@ -15,9 +12,9 @@ interface Props {
  */
 const BlogMarkdown: React.FC<Props> = (p: Props): JSX.Element => {
   return (
-    <Wrapper>
+    <div>
       <Markdown nodes={p.nodes} />
-    </Wrapper>
+    </div>
   );
 };
 

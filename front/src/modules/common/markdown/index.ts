@@ -41,7 +41,7 @@ interface TagP {
 export type TagNode = TagH | TagP | TagA | TagImg | TagBr | TagSpacer;
 
 /**
- * h1
+ * h1タグ
  */
 const hTag = (line: string, num: number): TagH => {
   const text = line.replace(/#/g, '').replace(/^\s+/g, '');
@@ -66,7 +66,7 @@ const hTag = (line: string, num: number): TagH => {
 };
 
 /**
- * strong
+ * strongタグ
  */
 const strongTag = (asts: string[]): NodeInline[] => {
   const ns: NodeInline[] = [];
@@ -93,7 +93,7 @@ const strongTag = (asts: string[]): NodeInline[] => {
 };
 
 /**
- * img
+ * imgタグ
  */
 const imgTag = (imgs: string[]): TagImg => {
   const alt = imgs[1];
@@ -107,7 +107,7 @@ const imgTag = (imgs: string[]): TagImg => {
 };
 
 /**
- * a
+ * aタグ
  */
 const aTag = (as: string[]): TagA => {
   const text = as[1];
