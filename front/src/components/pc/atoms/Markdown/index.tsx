@@ -37,6 +37,7 @@ const Img = styled.img`
   width: 100%;
   box-shadow: 0 2px 4px #0f1c2c15;
   border-radius: 4px;
+  margin-bottom: ${size.ui.l3}px;
 `;
 const A = styled.a`
   &:hover {

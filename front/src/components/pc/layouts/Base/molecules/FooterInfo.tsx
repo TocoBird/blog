@@ -7,7 +7,7 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
-  height: 200px;
+  height: 240px;
   box-shadow: 0 0 12px #0f1c2c24;
 `;
 const Inner = styled.div`
