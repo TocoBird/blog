@@ -47,6 +47,10 @@
       "unique": true,
       "required": true,
       "maxLength": 25
+    },
+    "seoDescription": {
+      "type": "text",
+      "maxLength": 50
     }
   }
 }
