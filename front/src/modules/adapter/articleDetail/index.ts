@@ -1,4 +1,18 @@
 import { PageProps } from 'gatsby';
+import {
+  getDomainBlog,
+  getDomainCategory,
+  getDomainRecommendBlog,
+  getDomainRelatedBlog,
+  getDomainStoryBlog,
+} from './domain';
+import {
+  getResTocoBlog,
+  getResCategory,
+  getResFavoriteBlogAttributeBlog,
+  getResRelatedBlogAttributeBlog,
+  getResStoryBlogs,
+} from './response';
 import { DomainArticleDetailBlog } from '@/domain/articleDetail/blog';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
@@ -13,20 +27,6 @@ import {
   ResTocoBlog,
   ResCategoryAttributeRelatedBlog,
 } from '@/modules/interfaces/response/articleDetail/tocoBlog';
-import {
-  getResTocoBlog,
-  getResCategory,
-  getResFavoriteBlogAttributeBlog,
-  getResRelatedBlogAttributeBlog,
-  getResStoryBlogs,
-} from './response';
-import {
-  getDomainBlog,
-  getDomainCategory,
-  getDomainRecommendBlog,
-  getDomainRelatedBlog,
-  getDomainStoryBlog,
-} from './domain';
 
 interface useReturn {
   readonly blog: DomainArticleDetailBlog;
