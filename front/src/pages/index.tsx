@@ -3,7 +3,7 @@ import React from 'react';
 import Layout from '@/components/layouts';
 import TemplatePCTop from '@/components/pc/templates/Top';
 import TemplateSPTop from '@/components/sp/templates/Top';
-import { adapterDomainIndex } from '@/modules/adapter/index';
+import { adapterDomainTop } from '@/modules/adapter/top';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
@@ -62,7 +62,7 @@ export const query = graphql`
  * ページ: トップ
  */
 const Index: React.FC<PageProps> = (page: PageProps): JSX.Element => {
-  const { categories, stroyBlogs } = adapterDomainIndex(page);
+  const { categories, stroyBlogs } = adapterDomainTop(page);
   const option: MetaOption = {
     title: 'TocoBlog',
     keywords: 'tocoblog,プロダクト開発,記事,デザイン',

@@ -109,7 +109,7 @@ interface useReturn {
  * トップページ
  * GraphQLのレスポンスをドメインに変換
  */
-export const adapterDomainIndex = (page: PageProps): useReturn => {
+export const adapterDomainTop = (page: PageProps): useReturn => {
   try {
     /**
      * レスポンスを取得
