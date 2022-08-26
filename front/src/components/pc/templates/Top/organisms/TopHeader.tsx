@@ -46,7 +46,7 @@ const TopHeader: React.FC = (): JSX.Element => {
             color: color.text.onImage,
           }}
         >
-          プロダクト開発の問題を記事で具体的に解決
+          プロダクトの問題を記事で解決
         </TitleSub>
       </Inner>
     </Wrapper>

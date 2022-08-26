@@ -1,3 +1,5 @@
+import TocoBlogBackground from '../../../images/TocoBlogBackground.png';
+import TocoBlogBackgroundDark from '../../../images/TocoBlogBackgroundDark.png';
 import { d } from '@/modules/common/colors/dark';
 import { l } from '@/modules/common/colors/light';
 import { useCookie } from '@/modules/common/cookie';
@@ -21,7 +23,9 @@ export const useColor = (): UseColor => {
   const color: Color = {
     /** サイト背景色 */
     site: {
-      background: isDark ? d.blue.dark : l.white.blueGradient,
+      background: isDark
+        ? `url(${TocoBlogBackgroundDark})`
+        : `url(${TocoBlogBackground})`,
     },
     /** 文字の色 */
     text: {
@@ -70,10 +74,10 @@ export const useColor = (): UseColor => {
     border: {
       h1: isDark ? '#4b5468' : '#e8efff',
       h1Accent: isDark
-        ? 'linear-gradient(45deg, #406699, #41796d)'
-        : 'linear-gradient(45deg, #8bbcff, #bbeae0)',
+        ? 'linear-gradient(45deg, #4c7bba, #41796d)'
+        : 'linear-gradient(45deg, #67a6fc, #bbeae0)',
       h2: isDark ? '#5f636c' : '#e7eaf0',
-      h2Left: isDark ? '#5a6797' : '#b4c2f8',
+      h2Left: isDark ? '#5a6797' : '#79b4e3',
     },
     hTag: {
       background: isDark ? d.white.thinOpacity : l.white.blueMoreThin,

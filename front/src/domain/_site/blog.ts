@@ -14,8 +14,12 @@ export interface BlogText {
   /** 記事本文 */
   readonly text: string;
 }
+export interface BlogSeoDescription {
+  /** seo記事詳細 */
+  readonly seoDescription: string;
+}
 export interface BlogFeatureText {
-  /** 記事本文 */
+  /** 記事概要 */
   readonly featureText: string;
 }
 export interface BlogThumbnail {

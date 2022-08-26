@@ -21,6 +21,8 @@ const LayoutSP: React.FC<Props> = (p: Props): JSX.Element => {
     <Wrapper
       style={{
         background: color.site.background,
+        backgroundSize: 'auto',
+        backgroundAttachment: 'fixed',
       }}
     >
       <Header />

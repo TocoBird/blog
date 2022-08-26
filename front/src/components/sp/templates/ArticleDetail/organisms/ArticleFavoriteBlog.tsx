@@ -24,7 +24,7 @@ interface Props {
 }
 
 /**
- *
+ * 記事詳細：お気に入り記事一覧
  */
 const ArticleFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
   return (

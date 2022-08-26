@@ -4,6 +4,7 @@ import {
   BlogThumbnail,
   BlogText,
   BlogFeatureText,
+  BlogSeoDescription,
   BlogUpdatedAt,
   BlogCreatedAt,
 } from '@/domain/_site/blog';
@@ -15,6 +16,7 @@ type Blog = BlogId &
   BlogThumbnail &
   BlogText &
   BlogFeatureText &
+  BlogSeoDescription &
   BlogUpdatedAt &
   BlogCreatedAt;
 
@@ -27,6 +29,7 @@ export class DomainArticleDetailBlog implements Blog {
     public readonly title: string = '',
     public readonly text: string = '',
     public readonly featureText: string = '',
+    public readonly seoDescription: string = '',
     /** markdown用の本文テキストのNode */
     public readonly textNodes: TagNode[] = [] as TagNode[],
     public readonly thumbnail: string = '',

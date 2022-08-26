@@ -36,6 +36,7 @@ interface Props {
   /** ストーリー記事一覧 */
   readonly stroyBlogs: DomainArticleDetailStoryBlog[];
 }
+
 /**
  * テンプレート：記事詳細
  */
