@@ -28,7 +28,7 @@ const ArticleInfo: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <Wrapper>
       <LabelTitle size="M" icon={faBook}>
-        今回解決したい事
+        この記事の目的
       </LabelTitle>
 
       <Spacer.M />
