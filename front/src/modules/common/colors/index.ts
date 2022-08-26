@@ -1,3 +1,5 @@
+import TocoBlogBackground from '../../../images/TocoBlogBackground.png';
+import TocoBlogBackgroundDark from '../../../images/TocoBlogBackgroundDark.png';
 import { d } from '@/modules/common/colors/dark';
 import { l } from '@/modules/common/colors/light';
 import { useCookie } from '@/modules/common/cookie';
@@ -21,7 +23,9 @@ export const useColor = (): UseColor => {
   const color: Color = {
     /** サイト背景色 */
     site: {
-      background: isDark ? d.blue.dark : l.white.blueGradient,
+      background: isDark
+        ? `url(${TocoBlogBackgroundDark})`
+        : `url(${TocoBlogBackground})`,
     },
     /** 文字の色 */
     text: {

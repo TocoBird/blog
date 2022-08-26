@@ -18,7 +18,9 @@ const LayoutPC: React.FC<Props> = (p: Props): JSX.Element => {
   return (
     <div
       style={{
-        background: color.site.background,
+        backgroundImage: color.site.background,
+        backgroundSize: 'auto',
+        backgroundAttachment: 'fixed',
       }}
     >
       <Header />
