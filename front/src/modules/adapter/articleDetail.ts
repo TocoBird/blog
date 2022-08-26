@@ -89,6 +89,7 @@ const getDomainBlog = (resblog: ResTocoBlog): DomainArticleDetailBlog => {
     const id = Number(resblog.id) || 0;
     const title = String(resblog.attributes.mainTitle) || '';
     const text = String(resblog.attributes.mainText) || '';
+    const seoDescription = String(resblog.attributes.seoDescription || '');
     const featureText = String(resblog.attributes.featureText) || '';
     const updatedAt =
       dayjs(resblog.attributes.updatedAt).format('YYYY/M/D') || '';
@@ -108,6 +109,7 @@ const getDomainBlog = (resblog: ResTocoBlog): DomainArticleDetailBlog => {
       title,
       text,
       featureText,
+      seoDescription,
       textNodes,
       thumbnail,
       updatedAt,

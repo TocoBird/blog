@@ -44,6 +44,7 @@ interface ResTocoBlogAttribute {
   readonly mainTitle: string;
   readonly mainText: string;
   readonly featureText: string;
+  readonly seoDescription: string;
   readonly updatedAt: Date;
   readonly createdAt: Date;
   readonly thumbnail: ResTocoBlogAttributeThumbnail;
