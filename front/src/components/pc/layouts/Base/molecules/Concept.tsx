@@ -91,7 +91,7 @@ const Concept: React.FC = (): JSX.Element => {
             color: color.footer.text,
           }}
         >
-          TocoBlogでは、抽象的な4つの分野を扱います。
+          TocoBlogは「プロダクトができる手前」を扱います。
         </Title>
 
         <Spacer.XXL />
@@ -127,7 +127,7 @@ const Concept: React.FC = (): JSX.Element => {
             color: color.footer.text,
           }}
         >
-          海外もキャッチアップし、実用を想定した記事を発信します。
+          海外もキャッチアップし、分かりやすく、実用可能な記事を発信します。
         </Title>
 
         <Spacer.XXL />
