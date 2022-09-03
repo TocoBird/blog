@@ -7,7 +7,7 @@ import { adapterDomainTop } from '@/modules/adapter/top';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * 記事一覧の取得
+ * GraphQL: 記事一覧の取得
  */
 export const query = graphql`
   {

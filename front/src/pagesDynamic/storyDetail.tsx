@@ -7,7 +7,7 @@ import { adapterDomainStoryDetail } from '@/modules/adapter/storyDetail';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * ストーリー記事詳細の取得
+ * GraphQL: ストーリー記事詳細の取得
  */
 export const query = graphql`
   query ($id: ID) {

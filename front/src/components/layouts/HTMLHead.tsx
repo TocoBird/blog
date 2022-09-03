@@ -16,6 +16,56 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
   const description = p.option.description;
   const keywords = p.option.keywords;
   const thumbnail = p.option.thumbnail || '';
+  /** HEADのCSS */
+  const link = [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
+      rel: 'stylesheet',
+    },
+  ];
+  /** HEADのMETA要素 */
+  const meta = [
+    {
+      name: 'description',
+      content: description,
+    },
+    {
+      name: 'keywords',
+      content: keywords,
+    },
+    {
+      property: 'og:title',
+      content: title,
+    },
+    {
+      property: 'og:description',
+      content: description,
+    },
+    {
+      property: 'og:type',
+      content: `website`,
+    },
+    {
+      property: 'og:image',
+      content: thumbnail,
+    },
+    {
+      name: 'twitter:card',
+      content: `summary`,
+    },
+    {
+      name: 'twitter:title',
+      content: title,
+    },
+    {
+      name: 'twitter:description',
+      content: description,
+    },
+    {
+      name: 'viewport',
+      content: 'initial-scale=1.0, width=device-width',
+    },
+  ];
 
   return (
     <Helmet
@@ -23,54 +73,8 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
         lang,
       }}
       title={title}
-      link={[
-        {
-          href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap',
-          rel: 'stylesheet',
-        },
-      ]}
-      meta={[
-        {
-          name: 'description',
-          content: description,
-        },
-        {
-          name: 'keywords',
-          content: keywords,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: description,
-        },
-        {
-          property: 'og:type',
-          content: `website`,
-        },
-        {
-          property: 'og:image',
-          content: thumbnail,
-        },
-        {
-          name: 'twitter:card',
-          content: `summary`,
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: description,
-        },
-        {
-          name: 'viewport',
-          content: 'initial-scale=1.0, width=device-width',
-        },
-      ]}
+      link={link}
+      meta={meta}
     />
   );
 };
