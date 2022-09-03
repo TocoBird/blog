@@ -14,9 +14,13 @@ type Blog = BlogId & BlogURLId & BlogTitle & BlogThumbnail;
  */
 export class DomainTopCategoryBlog implements Blog {
   constructor(
+    /** 記事ID */
     public readonly id: number = 0,
+    /** URLのID */
     public readonly urlid: string = '',
+    /** タイトル */
     public readonly title: string = '',
+    /** サムネイルのURL */
     public readonly thumbnail: string = ''
   ) {}
 }
@@ -29,7 +33,9 @@ type Category = CategoryId & CategoryName;
  */
 export class DomainTopCategory implements Category {
   constructor(
+    /** カテゴリID */
     public readonly id: number = 0,
+    /** カテゴリ名 */
     public readonly name: string = '',
     /** そのカテゴリの記事一覧 */
     public readonly blogs: DomainTopCategoryBlog[] = [] as DomainTopCategoryBlog[]

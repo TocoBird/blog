@@ -13,9 +13,13 @@ type Blog = BlogId & BlogURLId & BlogTitle & BlogThumbnail;
  */
 export class DomainCategoryDetailBlog implements Blog {
   constructor(
+    /** カテゴリID */
     public readonly id: number = 0,
+    /** URLのID */
     public readonly urlid: string = '',
+    /** タイトル */
     public readonly title: string = '',
+    /** サムネイルのURL */
     public readonly thumbnail: string = ''
   ) {}
 }

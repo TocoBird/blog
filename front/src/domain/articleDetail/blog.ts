@@ -25,15 +25,23 @@ type Blog = BlogId &
  */
 export class DomainArticleDetailBlog implements Blog {
   constructor(
+    /** 記事ID */
     public readonly id: number = 0,
+    /** タイトル */
     public readonly title: string = '',
+    /** 文章 */
     public readonly text: string = '',
+    /** 概要 */
     public readonly featureText: string = '',
+    /** SEO記事詳細 */
     public readonly seoDescription: string = '',
     /** markdown用の本文テキストのNode */
     public readonly textNodes: TagNode[] = [] as TagNode[],
+    /** サムネイルURL */
     public readonly thumbnail: string = '',
+    /** 更新日 */
     public readonly updatedAt: string = '',
+    /** 作成日 */
     public readonly createdAt: string = '',
     /** カテゴリID */
     public readonly categoryId: number = 0,
