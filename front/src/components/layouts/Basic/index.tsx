@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { CookiesProvider } from 'react-cookie';
+import { useHooks } from './hooks';
 import HTMLHead from '@/components/layouts/HTMLHead';
 import LayoutPC from '@/components/pc/layouts/Base';
 import LayoutSP from '@/components/sp/layouts/Base';
-import { useResponsive } from '@/modules/common/responsive';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 interface Props {
@@ -13,21 +13,14 @@ interface Props {
 }
 
 /**
- * レイアウト
+ * 共通のLayout
  */
 const Layout: React.FC<Props> = (p: Props): JSX.Element => {
-  const { isPC } = useResponsive();
-  const [isDidMounted, setIsDidMounted] = useState<boolean>(false);
-
-  /**
-   * NOTE
-   * ライブラリ的にcssの割り当てをpcとspにするため、mountされた後に描画しないといけない
-   */
-  useEffect(() => setIsDidMounted(true), []);
+  const { isPC, isDidMounted } = useHooks();
 
   return (
     <CookiesProvider>
-      <div style={{ background: 'white' }}>
+      <div>
         <HTMLHead option={p.option} />
 
         {isDidMounted && (

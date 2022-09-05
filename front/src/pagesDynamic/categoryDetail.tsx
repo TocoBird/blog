@@ -1,6 +1,6 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCCategoryDetail from '@/components/pc/templates/CategoryDetail';
 import TemplateSPCategoryDetail from '@/components/sp/templates/CategoryDetail';
 import { adapterDomainCategoryDetail } from '@/modules/adapter/categoryDetail';
