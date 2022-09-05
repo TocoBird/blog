@@ -123,7 +123,7 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const option: MetaOption = {
     title: `${blog.title} | TocoBlog`,
     keywords: 'tocoblog,プロダクト開発,記事,デザイン,経営',
-    description: blog.seoDescription + ' TocoBlog',
+    description: `${blog.seoDescription} TocoBlog`,
     thumbnail: blog.thumbnail,
   };
 
