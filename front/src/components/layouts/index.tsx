@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CookiesProvider } from 'react-cookie';
 import HTMLHead from '@/components/layouts/HTMLHead';
 import LayoutPC from '@/components/pc/layouts/Base';
@@ -17,14 +17,25 @@ interface Props {
  */
 const Layout: React.FC<Props> = (p: Props): JSX.Element => {
   const { isPC } = useResponsive();
+  const [isDidMounted, setIsDidMounted] = useState<boolean>(false);
+
+  /**
+   * NOTE
+   * ライブラリ的にcssの割り当てをpcとspにするため、mountされた後に描画しないといけない
+   */
+  useEffect(() => setIsDidMounted(true), []);
 
   return (
     <CookiesProvider>
-      <div>
+      <div style={{ background: 'white' }}>
         <HTMLHead option={p.option} />
 
-        <div>{isPC && <LayoutPC>{p.pc}</LayoutPC>}</div>
-        <div>{!isPC && <LayoutSP>{p.sp}</LayoutSP>}</div>
+        {isDidMounted && (
+          <>
+            <div>{isPC && <LayoutPC>{p.pc}</LayoutPC>}</div>
+            <div>{!isPC && <LayoutSP>{p.sp}</LayoutSP>}</div>
+          </>
+        )}
       </div>
     </CookiesProvider>
   );
