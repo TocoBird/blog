@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCPrivacyPolicy from '@/components/pc/templates/PrivacyPolicy';
 import TemplateSPPrivacyPolicy from '@/components/sp/templates/PrivacyPolicy';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';

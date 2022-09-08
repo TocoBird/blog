@@ -1,13 +1,13 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCCategoryDetail from '@/components/pc/templates/CategoryDetail';
 import TemplateSPCategoryDetail from '@/components/sp/templates/CategoryDetail';
 import { adapterDomainCategoryDetail } from '@/modules/adapter/categoryDetail';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * 記事詳細の取得
+ * GraphQL: 指定カテゴリの記事の取得
  */
 export const query = graphql`
   query ($id: ID) {

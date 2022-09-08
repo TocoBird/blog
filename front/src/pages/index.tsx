@@ -1,13 +1,13 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCTop from '@/components/pc/templates/Top';
 import TemplateSPTop from '@/components/sp/templates/Top';
 import { adapterDomainTop } from '@/modules/adapter/top';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * 記事一覧の取得
+ * GraphQL: 記事一覧の取得
  */
 export const query = graphql`
   {

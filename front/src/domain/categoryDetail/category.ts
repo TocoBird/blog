@@ -7,7 +7,9 @@ type Category = CategoryId & CategoryName;
  */
 export class DomainCategoryDetailCategory implements Category {
   constructor(
+    /** カテゴリID */
     public readonly id: number = 0,
+    /** カテゴリ名 */
     public readonly name: string = ''
   ) {}
 }

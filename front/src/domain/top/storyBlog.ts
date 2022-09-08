@@ -16,9 +16,13 @@ type StoryBlog = StoryBlogId &
  */
 export class DomainTopStoryBlog implements StoryBlog {
   constructor(
+    /** ストーリ記事ID */
     public readonly id: number = 0,
+    /** ストーリ記事タイトル */
     public readonly title: string = '',
+    /** ストーリ記事サブタイトル */
     public readonly titleSub: string = '',
+    /** サムネイルのURL */
     public readonly thumbnail: string = ''
   ) {}
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCNotFound from '@/components/pc/templates/NotFound';
 import TemplateSPNotFound from '@/components/sp/templates/NotFound';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';

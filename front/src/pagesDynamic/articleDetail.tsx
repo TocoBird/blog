@@ -1,13 +1,13 @@
 import { graphql, PageProps } from 'gatsby';
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCArticleDetail from '@/components/pc/templates/ArticleDetail';
 import TemplateSPArticleDetail from '@/components/sp/templates/ArticleDetail';
 import { adapterDomainArticleDetail } from '@/modules/adapter/articleDetail';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * 記事詳細の取得
+ * GraphQL: 記事詳細の取得
  */
 export const query = graphql`
   query ($id: ID) {
@@ -123,7 +123,7 @@ const ArticleDetail: React.FC<PageProps> = (page: PageProps): JSX.Element => {
   const option: MetaOption = {
     title: `${blog.title} | TocoBlog`,
     keywords: 'tocoblog,プロダクト開発,記事,デザイン,経営',
-    description: blog.seoDescription + ' TocoBlog',
+    description: `${blog.seoDescription} TocoBlog`,
     thumbnail: blog.thumbnail,
   };
 

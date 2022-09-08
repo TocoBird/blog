@@ -1,13 +1,13 @@
 import { PageProps, graphql } from 'gatsby';
 import React from 'react';
-import Layout from '@/components/layouts';
+import Layout from '@/components/layouts/Basic';
 import TemplatePCStoryDetail from '@/components/pc/templates/StoryDetail';
 import TemplateSPStoryDetail from '@/components/sp/templates/StoryDetail';
 import { adapterDomainStoryDetail } from '@/modules/adapter/storyDetail';
 import { MetaOption } from '@/modules/interfaces/compornent/layout';
 
 /**
- * ストーリー記事詳細の取得
+ * GraphQL: ストーリー記事詳細の取得
  */
 export const query = graphql`
   query ($id: ID) {
