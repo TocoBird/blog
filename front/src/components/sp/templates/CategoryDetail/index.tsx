@@ -43,7 +43,7 @@ interface Props {
 }
 /**
  * テンプレート：カテゴリ一覧
- * デザイン途中なのでリファクタは後
+ * このページのみデザイン途中なのでリファクタはしない
  */
 const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
