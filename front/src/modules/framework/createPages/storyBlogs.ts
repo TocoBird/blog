@@ -3,6 +3,8 @@ import type { Actions } from 'gatsby';
 import { errorWrapper } from '../../common/error';
 import { ResStoryBlog } from '../../interfaces/response/gatsbyNode/storyBlogs';
 
+const PAGE_PATH = `./src/pagesDynamic/storyDetail.tsx`;
+
 /**
  * ページ作成: ストーリー記事一覧
  */
@@ -13,7 +15,6 @@ export const createPageStoryBlogs = (
   try {
     const { createPage } = actions;
 
-    const PAGE_PATH = `./src/pagesDynamic/storyDetail.tsx`;
     blogs.forEach((t: ResStoryBlog) => {
       const id = t.id;
 

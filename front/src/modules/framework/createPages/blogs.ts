@@ -3,6 +3,8 @@ import type { Actions } from 'gatsby';
 import { errorWrapper } from '../../common/error';
 import { ResTocoBlog } from '../../interfaces/response/gatsbyNode/tocoBlogs';
 
+const PAGE_PATH = `./src/pagesDynamic/articleDetail.tsx`;
+
 /**
  * ページ作成: 記事一覧
  */
@@ -13,7 +15,6 @@ export const createPageBlogs = (
   try {
     const { createPage } = actions;
 
-    const PAGE_PATH = `./src/pagesDynamic/articleDetail.tsx`;
     blogs.forEach((t: ResTocoBlog) => {
       const id = t.id;
       const urlid = t.attributes.urlid;

@@ -3,6 +3,8 @@ import type { Actions } from 'gatsby';
 import { errorWrapper } from '../../common/error';
 import { ResCategory } from '../../interfaces/response/gatsbyNode/categories';
 
+const PAGE_PATH = `./src/pagesDynamic/categoryDetail.tsx`;
+
 /**
  * ページ作成: カテゴリ一覧
  */
@@ -13,7 +15,6 @@ export const createPageCategories = (
   try {
     const { createPage } = actions;
 
-    const PAGE_PATH = `./src/pagesDynamic/categoryDetail.tsx`;
     categories.forEach((c: ResCategory) => {
       const id = c.id;
 
