@@ -1,7 +1,7 @@
 import { Res } from '@/modules/interfaces/response/articleDetail';
 import { getResCategory } from '@/modules/adapter/articleDetail/response';
 
-describe('Adapter/ArticleDetail/Response', () => {
+describe('Adapter/CategoryDetail/Response', () => {
   test('レスポンスに変換される/カテゴリ', () => {
     const res: Res = {
       strapi: {

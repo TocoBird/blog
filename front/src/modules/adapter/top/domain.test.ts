@@ -1,7 +1,7 @@
 import { getDomainCategory } from '@/modules/adapter/articleDetail/domain';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 
-describe('Adapter/ArticleDetail/Domain', () => {
+describe('Adapter/Top/Domain', () => {
   test('ドメインに変換される/カテゴリ', () => {
     const res = [
       {

@@ -1,7 +1,7 @@
-import { getDomainCategory } from '@/modules/adapter/articleDetail/domain';
-import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
+import { getDomainCategoryDetailCategory } from '@/modules/adapter/categoryDetail/domain';
+import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
 
-describe('Adapter/ArticleDetail/Domain', () => {
+describe('Adapter/CategoryDetail/Domain', () => {
   test('ドメインに変換される/カテゴリ', () => {
     const res = [
       {
@@ -17,10 +17,10 @@ describe('Adapter/ArticleDetail/Domain', () => {
         },
       },
     ];
-    const domain = getDomainCategory(res);
+    const domain = getDomainCategoryDetailCategory(res);
     const result = [
-      new DomainArticleDetailCategory(1, 'name1'),
-      new DomainArticleDetailCategory(2, 'name2'),
+      new DomainCategoryDetailCategory(1, 'name1'),
+      new DomainCategoryDetailCategory(2, 'name2'),
     ];
     expect(result).toEqual(domain);
   });
