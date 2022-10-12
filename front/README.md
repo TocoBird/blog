@@ -52,9 +52,11 @@ ID を持った詳細ページなど
 
 # other
 
-そのたコマンド
+その他コマンド
 
 ## test
+
+unit test はファイルと同じディレクトに追加
 
 ```
 npm run test
