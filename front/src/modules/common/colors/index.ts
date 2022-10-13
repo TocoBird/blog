@@ -55,7 +55,7 @@ export const useColor = (): UseColor => {
     },
     /** ヘッダーの色 */
     header: {
-      background: isDark ? d.blue.darkThinMore : l.blue.darkGradient,
+      background: isDark ? d.blue.darkThinMore : l.blue.darkGradientAlpha,
     },
     /** フッターの色 */
     footer: {
