@@ -1,5 +1,5 @@
-import { getDomainCategoryDetailCategory } from '@/modules/adapter/categoryDetail/domain';
 import { DomainCategoryDetailCategory } from '@/domain/categoryDetail/category';
+import { getDomainCategoryDetailCategory } from '@/modules/adapter/categoryDetail/domain';
 
 describe('Adapter/CategoryDetail/Domain', () => {
   test('ドメインに変換される/カテゴリ', () => {

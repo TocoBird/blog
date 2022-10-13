@@ -1,9 +1,9 @@
+import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
+import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 import {
   getDomainCategory,
   getDomainRelatedBlog,
 } from '@/modules/adapter/articleDetail/domain';
-import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
-import { DomainArticleDetailRecommendBlog } from '@/domain/articleDetail/recommendBlog';
 
 describe('Adapter/ArticleDetail/Domain', () => {
   test('ドメインに変換できる/カテゴリ', () => {

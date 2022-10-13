@@ -1,5 +1,5 @@
-import { Res } from '@/modules/interfaces/response/articleDetail';
 import { getResCategory } from '@/modules/adapter/articleDetail/response';
+import { Res } from '@/modules/interfaces/response/articleDetail';
 
 describe('Adapter/ArticleDetail/Response', () => {
   test('レスポンスに変換される/カテゴリ', () => {
