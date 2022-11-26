@@ -67,3 +67,9 @@ npm run test
 ```
 npm run lint:fix
 ```
+
+## update
+
+```
+npm i gatsby gatsby-plugin-alias-imports gatsby-plugin-gatsby-cloud gatsby-plugin-image gatsby-plugin-linaria gatsby-plugin-manifest gatsby-plugin-react-helmet gatsby-plugin-sharp gatsby-plugin-sitemap gatsby-plugin-typescript gatsby-source-filesystem gatsby-source-graphql gatsby-transformer-remark gatsby-transformer-sharp
+```
