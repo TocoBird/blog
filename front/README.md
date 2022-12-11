@@ -72,4 +72,6 @@ npm run lint:fix
 
 ```
 npm i gatsby gatsby-plugin-alias-imports gatsby-plugin-gatsby-cloud gatsby-plugin-image gatsby-plugin-linaria gatsby-plugin-manifest gatsby-plugin-react-helmet gatsby-plugin-sharp gatsby-plugin-sitemap gatsby-plugin-typescript gatsby-source-filesystem gatsby-source-graphql gatsby-transformer-remark gatsby-transformer-sharp
+npm i ts-node core-js linaria react react-cookie react-dom react-helmet react-lazyload @types/react-lazyload react-responsive dayjs
+npm i -D @babel/core @babel/preset-env @types/jest @types/node @types/react @types/react-dom @types/react-helmet @typescript-eslint/eslint-plugin @typescript-eslint/parser babel-jest babel-preset-gatsby eslint eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint-plugin-react jest prettier ts-jest typescript
 ```
