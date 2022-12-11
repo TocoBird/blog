@@ -6,7 +6,7 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
-  background-image: url('@/images/TocoBridBlogTopHeader.jpg');
+  background-image: url('@/images/TocoBlogTopBg.jpg');
   height: 400px;
   background-size: cover;
   background-position: 50% 100%;
