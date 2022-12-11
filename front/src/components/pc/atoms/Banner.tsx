@@ -1,5 +1,5 @@
-import { StaticImage } from 'gatsby-plugin-image';
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React, { CSSProperties } from 'react';
 import { useColor } from '@/modules/common/colors';
