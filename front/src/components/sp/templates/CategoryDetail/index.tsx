@@ -32,6 +32,14 @@ const CardRight = styled.div`
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
 `;
+const Categorys = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+const CategoryItem = styled.div`
+  margin-top: ${size.ui.l3}px;
+  margin-right: ${size.ui.l3}px;
+`;
 
 interface Props {
   /** 記事一覧 */
@@ -63,22 +71,20 @@ const TemplateSPCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
         <Title size="L">{selectedCategory?.name}の記事</Title>
 
-        <Spacer.L />
+        <Spacer.M />
 
-        <div>
-          {p.categories.map((c, index: number) => (
-            <Fragment key={c.id}>
-              {index !== 0 && <Spacer.M />}
-
+        <Categorys>
+          {p.categories.map(c => (
+            <CategoryItem key={c.id}>
               <Link to={`/category/${c.id}`}>
                 <ButtonCategory isActive={c.id === p.selectedCategolyId}>
                   <IconHash icon={faHashtag} />
                   {c.name}
                 </ButtonCategory>
               </Link>
-            </Fragment>
+            </CategoryItem>
           ))}
-        </div>
+        </Categorys>
 
         <Spacer.L />
       </Content>
