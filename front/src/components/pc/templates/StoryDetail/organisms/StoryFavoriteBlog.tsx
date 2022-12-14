@@ -8,12 +8,9 @@ import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import Title from '@/components/pc/atoms/Title';
 import LabelTitle from '@/components/pc/molecules/LabelTitle';
 import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
-import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
 const Card = styled.div`
-  display: flex;
-  flex-wrap: wrap;
   transition: 0.2s;
   &:hover {
     opacity: 0.75;
@@ -42,24 +39,17 @@ const StoryFavoriteBlog: React.FC<Props> = (p: Props): JSX.Element => {
           <Fragment key={`${index}_${b.id}`}>
             {index !== 0 && (
               <>
-                <Spacer.M />
+                <Spacer.XS />
                 <Bar />
-                <Spacer.M />
+                <Spacer.S />
               </>
             )}
 
             <Link to={`/article/${b.urlid}`}>
               <Card>
-                <Thumbnail width="100px" height="60px" url={b.thumbnail} />
-                <Title
-                  size="XS"
-                  style={{
-                    flex: 1,
-                    paddingLeft: `${size.ui.l3}px`,
-                  }}
-                >
-                  {b.title}
-                </Title>
+                <Thumbnail width="100%" height="80px" url={b.thumbnail} />
+                <Spacer.XS />
+                <Title size="XS">{b.title}</Title>
               </Card>
             </Link>
           </Fragment>
