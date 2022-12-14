@@ -18,10 +18,14 @@ const Wrapper = styled.div`
 `;
 const Inner = styled.div`
   text-align: center;
+  img {
+    filter: drop-shadow(0px 4px 2px #0000000a);
+  }
 `;
 const TitleSub = styled.div`
   font-size: ${size.font.pc.l7}px;
   font-weight: bold;
+  text-shadow: 0 1px 2px #0000001a;
 `;
 
 /**
@@ -34,9 +38,9 @@ const TopHeader: React.FC = (): JSX.Element => {
     <Wrapper>
       <Inner>
         <StaticImage
-          src="../../../../../images/TocoBlogLogo.svg"
+          src="../../../../../images/TocoBlogLogoTop.svg"
           alt="TocoBlog"
-          height={120}
+          height={160}
         />
 
         <Spacer.S />

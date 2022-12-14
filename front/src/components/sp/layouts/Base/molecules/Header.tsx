@@ -33,7 +33,7 @@ const LeftItem = styled.div`
 `;
 const SubTitle = styled.div`
   font-weight: bold;
-  margin-left: ${size.ui.l4}px;
+  margin-left: ${size.ui.l3}px;
   font-size: ${size.font.sp.l1}px;
 `;
 const Right = styled.div`
