@@ -7,7 +7,7 @@ import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
   position: relative;
-  background-image: url('@/images/TocoBlogTopBg.jpg');
+  background-image: url('@/images/TocoBlogTopHeadBg.jpg');
   height: 600px;
   background-size: cover;
   background-position: 50% 100%;
