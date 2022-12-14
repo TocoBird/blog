@@ -32,7 +32,7 @@ const TopHeader: React.FC = (): JSX.Element => {
     <Wrapper>
       <Inner>
         <StaticImage
-          src="../../../../../images/TocoBlogLogo.png"
+          src="../../../../../images/TocoBlogLogo.svg"
           alt="TocoBlog"
           height={50}
         />

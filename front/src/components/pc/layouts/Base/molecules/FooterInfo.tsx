@@ -48,7 +48,7 @@ const FooterInfo: React.FC = (): JSX.Element => {
         <Item>
           <Link to="/">
             <StaticImage
-              src="../../../../../images/TocoBlogLogo.png"
+              src="../../../../../images/TocoBlogLogo.svg"
               alt="TocoBlog"
               height={40}
             />
