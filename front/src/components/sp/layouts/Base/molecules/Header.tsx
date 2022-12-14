@@ -30,6 +30,7 @@ const LeftItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  opacity: 0.95;
 `;
 const SubTitle = styled.div`
   font-weight: bold;

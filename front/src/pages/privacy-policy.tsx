@@ -11,7 +11,7 @@ const PrivacyPolicy: React.FC = (): JSX.Element => {
   const option: MetaOption = {
     title: 'プライバシーポリシー',
     keywords: 'tocoblog',
-    description: 'プロダクト開発の具体的な情報サイト - TocoBlog',
+    description: 'プロダクト開発の問題を解決する情報サイト - TocoBlog',
     thumbnail: '',
   };
 
