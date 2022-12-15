@@ -1,5 +1,6 @@
 import { styled } from 'linaria/react';
 import React from 'react';
+import Banner from '@/components/pc/atoms/Banner';
 import Box from '@/components/pc/atoms/Box';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
@@ -95,6 +96,10 @@ const TemplatePCStoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Box size="M">
               <StoryCategory categories={p.categories} />
             </Box>
+
+            <Spacer.L />
+
+            <Banner />
           </Right>
         </Content>
       </ContentWrapper>

@@ -38,6 +38,7 @@ const LeftItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  opacity: 0.95;
   transition: 0.2s;
   &:hover {
     opacity: 0.8;
@@ -84,7 +85,7 @@ const Header: React.FC = (): JSX.Element => {
             <Link to="/">
               <LeftItem>
                 <StaticImage
-                  src="../../../../../images/TocoBlogLogo.png"
+                  src="../../../../../images/TocoBlogLogo.svg"
                   alt="TocoBlog"
                   height={30}
                 />

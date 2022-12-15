@@ -6,7 +6,7 @@ import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div`
-  background-image: url('@/images/TocoBridBlogTopHeader.jpg');
+  background-image: url('@/images/TocoBlogTopHeadBg.jpg');
   height: 400px;
   background-size: cover;
   background-position: 50% 100%;
@@ -16,10 +16,14 @@ const Wrapper = styled.div`
 `;
 const Inner = styled.div`
   text-align: center;
+  img {
+    filter: drop-shadow(0px 4px 2px #0000000a);
+  }
 `;
 const TitleSub = styled.div`
   font-size: ${size.font.sp.l5}px;
   font-weight: bold;
+  text-shadow: 0 1px 2px #0000001a;
 `;
 
 /**
@@ -32,9 +36,9 @@ const TopHeader: React.FC = (): JSX.Element => {
     <Wrapper>
       <Inner>
         <StaticImage
-          src="../../../../../images/TocoBlogLogo.png"
+          src="../../../../../images/TocoBlogLogoTop.svg"
           alt="TocoBlog"
-          height={50}
+          height={100}
         />
 
         <Spacer.S />

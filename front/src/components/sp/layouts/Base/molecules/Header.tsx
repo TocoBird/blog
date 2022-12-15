@@ -30,10 +30,11 @@ const LeftItem = styled.div`
   display: flex;
   align-items: center;
   height: 100%;
+  opacity: 0.95;
 `;
 const SubTitle = styled.div`
   font-weight: bold;
-  margin-left: ${size.ui.l4}px;
+  margin-left: ${size.ui.l3}px;
   font-size: ${size.font.sp.l1}px;
 `;
 const Right = styled.div`
@@ -71,9 +72,12 @@ const Header: React.FC = (): JSX.Element => {
           <Link to="/">
             <LeftItem>
               <StaticImage
-                src="../../../../../images/TocoBlogLogo.png"
+                src="../../../../../images/TocoBlogLogo.svg"
                 alt="TocoBlog"
                 height={30}
+                style={{
+                  color: color.text.onImage,
+                }}
               />
             </LeftItem>
           </Link>

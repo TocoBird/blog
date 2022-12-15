@@ -15,7 +15,7 @@ const TopContentItems = styled.div`
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  font-size: ${size.font.sp.l3}px;
+  font-size: ${size.font.sp.l2}px;
 `;
 const Date = styled.div`
   font-weight: 500;
@@ -25,11 +25,11 @@ const Date = styled.div`
 const Category = styled.div``;
 const Icon = styled(FontAwesomeIcon)`
   margin-right: 6px;
-  font-size: ${size.font.sp.l3}px;
+  font-size: ${size.font.sp.l2}px;
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
-  font-size: ${size.font.sp.l3}px;
+  font-size: ${size.font.sp.l2}px;
 `;
 
 interface Props {
@@ -52,7 +52,12 @@ const ArticleTop: React.FC<Props> = (p: Props): JSX.Element => {
       <TopContentItems>
         <Category>
           <Link to={`/category/${p.blog.categoryId}`}>
-            <ButtonCategory>
+            <ButtonCategory
+              style={{
+                padding: `${size.ui.l2}px ${size.ui.l5}px`,
+                fontSize: `${size.font.sp.l2}px`,
+              }}
+            >
               <IconHash icon={faHashtag} />
               {p.blog.categoryName}
             </ButtonCategory>
