@@ -75,6 +75,9 @@ const Header: React.FC = (): JSX.Element => {
                 src="../../../../../images/TocoBlogLogo.svg"
                 alt="TocoBlog"
                 height={30}
+                style={{
+                  color: color.text.onImage,
+                }}
               />
             </LeftItem>
           </Link>
