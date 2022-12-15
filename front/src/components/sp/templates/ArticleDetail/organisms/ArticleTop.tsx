@@ -29,7 +29,7 @@ const Icon = styled(FontAwesomeIcon)`
 `;
 const IconHash = styled(FontAwesomeIcon)`
   margin-right: 2px;
-  font-size: ${size.font.sp.l3}px;
+  font-size: ${size.font.sp.l2}px;
 `;
 
 interface Props {
