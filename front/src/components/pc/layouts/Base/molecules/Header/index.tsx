@@ -1,10 +1,8 @@
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
-import { useHookHeader } from '@/components/pc/layouts/Base/molecules/Header/hooks';
+import SwitchColorMode from '@/components/pc/atoms/SwitchColorMode';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
@@ -53,17 +51,9 @@ const SubTitle = styled.div`
   font-size: ${size.font.pc.l2}px;
 `;
 const IconWrapper = styled.div`
-  cursor: pointer;
   display: flex;
   align-items: center;
   height: 100%;
-  transition: 0.2s;
-  &:hover {
-    opacity: 0.8;
-  }
-`;
-const Icon = styled(FontAwesomeIcon)`
-  font-size: ${size.font.pc.l5}px;
 `;
 
 /**
@@ -71,7 +61,6 @@ const Icon = styled(FontAwesomeIcon)`
  */
 const Header: React.FC = (): JSX.Element => {
   const { color } = useColor();
-  const { isLight, onClickDarkMode } = useHookHeader();
 
   return (
     <>
@@ -100,13 +89,8 @@ const Header: React.FC = (): JSX.Element => {
             </SubTitle>
           </Left>
           <Right>
-            <IconWrapper onClick={onClickDarkMode}>
-              <Icon
-                icon={isLight ? faMoon : faSun}
-                style={{
-                  color: color.colorMode.background,
-                }}
-              />
+            <IconWrapper>
+              <SwitchColorMode />
             </IconWrapper>
           </Right>
         </WrapperInner>
