@@ -38,6 +38,10 @@ const HTMLHead: React.FC<Props> = (p: Props): JSX.Element => {
       content: title,
     },
     {
+      property: 'og:site_name',
+      content: 'TocoBlog',
+    },
+    {
       property: 'og:description',
       content: description,
     },
