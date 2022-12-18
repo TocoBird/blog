@@ -75,7 +75,7 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Box size="L">
               <BlogMarkdown nodes={p.blog.textNodes} />
 
-              <ButtonCopyURL>URLをコピーして記事を共有する</ButtonCopyURL>
+              <ButtonCopyURL>URLをコピーして記事を共有</ButtonCopyURL>
 
               <Spacer.L />
 

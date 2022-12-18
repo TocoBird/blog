@@ -94,7 +94,7 @@ const Header: React.FC = (): JSX.Element => {
             <Icon
               icon={isLight ? faMoon : faSun}
               style={{
-                color: color.colorMode.background,
+                color: color.colorMode.iconMark,
               }}
             />
           </IconWrapper>
