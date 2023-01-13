@@ -88,7 +88,10 @@ export const useColor = (): UseColor => {
     },
     /** カラーモード変更の色 */
     colorMode: {
-      background: isDark ? '#cfbe6d' : '#fff28b',
+      icon: isDark ? '#c2a063' : '#fff28b',
+      iconMark: isDark ? '#cfbe6d' : '#fff28b',
+      background: isDark ? '#131722' : '#3a3a46',
+      circle: isDark ? '#ffffffb2' : '#ffffffd6',
     },
   };
 

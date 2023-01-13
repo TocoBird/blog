@@ -18,7 +18,7 @@ export const d = {
     darkThin: '#282836',
     darkThinMore: '#323341',
     darkThinVeryMore: '#48536b',
-    purple: '#637bae',
+    purple: '#6a7fab',
   },
   black: {
     thin: '#111a2f',

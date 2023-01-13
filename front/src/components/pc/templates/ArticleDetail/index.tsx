@@ -2,6 +2,7 @@ import { styled } from 'linaria/react';
 import React from 'react';
 import Banner from '@/components/pc/atoms/Banner';
 import Box from '@/components/pc/atoms/Box';
+import ButtonCopyURL from '@/components/pc/atoms/ButtonCopyURL';
 import Spacer from '@/components/pc/atoms/Spacer';
 import Thumbnail from '@/components/pc/atoms/Thumbnail';
 import ContentCenter from '@/components/pc/frames/ContentCenter';
@@ -74,7 +75,9 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Box size="L">
               <BlogMarkdown nodes={p.blog.textNodes} />
 
-              <Spacer.S />
+              <ButtonCopyURL>URLをコピーして記事を共有</ButtonCopyURL>
+
+              <Spacer.L />
 
               <BlogFooter date={p.blog.createdAt} />
             </Box>
