@@ -1,0 +1,1 @@
+terraform fmt main.tf ./module/*

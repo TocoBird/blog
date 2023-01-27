@@ -6,6 +6,14 @@
 
 edit blog => strapi + s3 + sqlite => front ssg => s3 + cloudfront + acm + route53 => viewer
 
+## terraform
+
+s3 + cloudfront
+
+```
+cd ./infrastructure/terraform
+```
+
 ## コンセプト
 
 プロダクト開発、チーム開発、デザイン、経営、アイデアの質の高い情報を発信する。
