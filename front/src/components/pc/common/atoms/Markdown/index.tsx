@@ -156,20 +156,38 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
 
           if (n.size === 4)
             return (
-              <H4 key={key} id={n.id}>
+              <H4
+                key={key}
+                id={n.id}
+                style={{
+                  color: color.text.mainBold,
+                }}
+              >
                 {n.text}
               </H4>
             );
 
           if (n.size === 5)
             return (
-              <H5 key={key} id={n.id}>
+              <H5
+                key={key}
+                id={n.id}
+                style={{
+                  color: color.text.mainBold,
+                }}
+              >
                 {n.text}
               </H5>
             );
 
           return (
-            <H6 key={key} id={n.id}>
+            <H6
+              key={key}
+              id={n.id}
+              style={{
+                color: color.text.mainBold,
+              }}
+            >
               {n.text}
             </H6>
           );
