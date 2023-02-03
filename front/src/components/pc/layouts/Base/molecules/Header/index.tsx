@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
 import React from 'react';
-import SwitchColorMode from '@/components/pc/atoms/SwitchColorMode';
+import SwitchColorMode from '@/components/pc/common/atoms/SwitchColorMode';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 

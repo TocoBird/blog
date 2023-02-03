@@ -1,10 +1,10 @@
 import { styled } from 'linaria/react';
 import React from 'react';
-import Spacer from '@/components/sp/atoms/Spacer';
-import Thumbnail from '@/components/sp/atoms/Thumbnail';
-import BlogConcept from '@/components/sp/molecules/blogDetail/BlogConcept';
-import BlogContent from '@/components/sp/molecules/blogDetail/BlogContent';
-import BlogFooter from '@/components/sp/molecules/blogDetail/BlogFooter';
+import Spacer from '@/components/sp/common/atoms/Spacer';
+import Thumbnail from '@/components/sp/common/atoms/Thumbnail';
+import BlogConcept from '@/components/sp/common/molecules/blogDetail/BlogConcept';
+import BlogContent from '@/components/sp/common/molecules/blogDetail/BlogContent';
+import BlogFooter from '@/components/sp/common/molecules/blogDetail/BlogFooter';
 import StoryCategory from '@/components/sp/templates/StoryDetail/organisms/StoryCategory';
 import StoryContentBlogs from '@/components/sp/templates/StoryDetail/organisms/StoryContentBlogs';
 import StoryFavoriteBlog from '@/components/sp/templates/StoryDetail/organisms/StoryFavoriteBlog';

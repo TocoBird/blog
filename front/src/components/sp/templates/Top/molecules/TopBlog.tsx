@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import Spacer from '@/components/sp/atoms/Spacer';
-import Thumbnail from '@/components/sp/atoms/Thumbnail';
-import Title from '@/components/sp/atoms/Title';
+import Spacer from '@/components/sp/common/atoms/Spacer';
+import Thumbnail from '@/components/sp/common/atoms/Thumbnail';
+import Title from '@/components/sp/common/atoms/Title';
 import { DomainTopCategoryBlog } from '@/domain/top/blog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';

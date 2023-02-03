@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
-import Box from '@/components/pc/atoms/Box';
-import ButtonSub from '@/components/pc/atoms/ButtonSub';
-import Spacer from '@/components/pc/atoms/Spacer';
-import Thumbnail from '@/components/pc/atoms/Thumbnail';
-import Title from '@/components/pc/atoms/Title';
-import LabelTitle from '@/components/pc/molecules/LabelTitle';
+import Box from '@/components/pc/common/atoms/Box';
+import ButtonSub from '@/components/pc/common/atoms/ButtonSub';
+import Spacer from '@/components/pc/common/atoms/Spacer';
+import Thumbnail from '@/components/pc/common/atoms/Thumbnail';
+import Title from '@/components/pc/common/atoms/Title';
+import LabelTitle from '@/components/pc/common/molecules/LabelTitle';
 import { DomainArticleDetailRelatedBlog } from '@/domain/articleDetail/relatedBlog';
 
 const Wrapper = styled.div``;

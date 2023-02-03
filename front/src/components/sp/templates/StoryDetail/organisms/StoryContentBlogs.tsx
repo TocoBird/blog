@@ -1,10 +1,10 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/sp/atoms/Markdown/H1';
-import Spacer from '@/components/sp/atoms/Spacer';
-import Thumbnail from '@/components/sp/atoms/Thumbnail';
-import Title from '@/components/sp/atoms/Title';
+import MarkdownH1 from '@/components/sp/common/atoms/Markdown/H1';
+import Spacer from '@/components/sp/common/atoms/Spacer';
+import Thumbnail from '@/components/sp/common/atoms/Thumbnail';
+import Title from '@/components/sp/common/atoms/Title';
 import { DomainStoryDetailBlog } from '@/domain/storyDetail/blog';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';

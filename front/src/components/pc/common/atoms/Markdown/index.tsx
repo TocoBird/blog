@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/pc/atoms/Markdown/H1';
-import Spacer from '@/components/pc/atoms/Spacer';
+import MarkdownH1 from '@/components/pc/common/atoms/Markdown/H1';
+import Spacer from '@/components/pc/common/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
 import { TagNode } from '@/modules/common/markdown';
 import size from '@/modules/const/size';
