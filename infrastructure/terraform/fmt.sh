@@ -1,1 +1,1 @@
-terraform fmt main.tf ./module/*
+terraform fmt ./environments/*/*.tf ./module/*
