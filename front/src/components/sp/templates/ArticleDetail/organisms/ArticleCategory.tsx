@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import ButtonCategory from '@/components/sp/atoms/ButtonCategory';
-import Spacer from '@/components/sp/atoms/Spacer';
-import LabelTitle from '@/components/sp/molecules/LabelTitle';
+import ButtonCategory from '@/components/sp/common/atoms/ButtonCategory';
+import Spacer from '@/components/sp/common/atoms/Spacer';
+import LabelTitle from '@/components/sp/common/molecules/LabelTitle';
 import { DomainArticleDetailCategory } from '@/domain/articleDetail/category';
 
 const Wrapper = styled.div``;

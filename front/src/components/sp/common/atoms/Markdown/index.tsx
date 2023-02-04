@@ -1,7 +1,7 @@
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import MarkdownH1 from '@/components/sp/atoms/Markdown/H1';
-import Spacer from '@/components/sp/atoms/Spacer';
+import MarkdownH1 from '@/components/sp/common/atoms/Markdown/H1';
+import Spacer from '@/components/sp/common/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
 import { TagNode } from '@/modules/common/markdown';
 import size from '@/modules/const/size';
@@ -144,20 +144,38 @@ const Markdown: React.FC<Props> = (p: Props): JSX.Element => {
 
           if (n.size === 4)
             return (
-              <H4 key={key} id={n.id}>
+              <H4
+                key={key}
+                id={n.id}
+                style={{
+                  color: color.text.mainBold,
+                }}
+              >
                 {n.text}
               </H4>
             );
 
           if (n.size === 5)
             return (
-              <H5 key={key} id={n.id}>
+              <H5
+                key={key}
+                id={n.id}
+                style={{
+                  color: color.text.mainBold,
+                }}
+              >
                 {n.text}
               </H5>
             );
 
           return (
-            <H6 key={key} id={n.id}>
+            <H6
+              key={key}
+              id={n.id}
+              style={{
+                color: color.text.mainBold,
+              }}
+            >
               {n.text}
             </H6>
           );

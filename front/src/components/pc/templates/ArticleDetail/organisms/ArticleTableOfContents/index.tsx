@@ -1,8 +1,8 @@
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
 import { styled } from 'linaria/react';
 import React from 'react';
-import Spacer from '@/components/pc/atoms/Spacer';
-import LabelTitle from '@/components/pc/molecules/LabelTitle';
+import Spacer from '@/components/pc/common/atoms/Spacer';
+import LabelTitle from '@/components/pc/common/molecules/LabelTitle';
 import { useHooks } from '@/components/pc/templates/ArticleDetail/organisms/ArticleTableOfContents/hooks';
 import { useColor } from '@/modules/common/colors';
 import { TagNode } from '@/modules/common/markdown';

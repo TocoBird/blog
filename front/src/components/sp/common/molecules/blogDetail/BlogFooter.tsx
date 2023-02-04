@@ -2,7 +2,7 @@ import { faPenNib } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
 import React from 'react';
-import Spacer from '@/components/sp/atoms/Spacer';
+import Spacer from '@/components/sp/common/atoms/Spacer';
 import { useColor } from '@/modules/common/colors';
 
 const Wrapper = styled.div`

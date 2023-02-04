@@ -1,6 +1,6 @@
 import { styled } from 'linaria/react';
 import React from 'react';
-import Markdown from '@/components/sp/atoms/Markdown';
+import Markdown from '@/components/sp/common/atoms/Markdown';
 import { TagNode } from '@/modules/common/markdown';
 
 const Wrapper = styled.div``;

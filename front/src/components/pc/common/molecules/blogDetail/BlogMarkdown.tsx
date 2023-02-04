@@ -1,5 +1,5 @@
 import React from 'react';
-import Markdown from '@/components/pc/atoms/Markdown';
+import Markdown from '@/components/pc/common/atoms/Markdown';
 import { TagNode } from '@/modules/common/markdown';
 
 interface Props {

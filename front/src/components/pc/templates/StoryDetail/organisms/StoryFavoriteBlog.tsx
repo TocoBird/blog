@@ -2,11 +2,11 @@ import { faFire } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React, { Fragment } from 'react';
-import Bar from '@/components/pc/atoms/Bar';
-import Spacer from '@/components/pc/atoms/Spacer';
-import Thumbnail from '@/components/pc/atoms/Thumbnail';
-import Title from '@/components/pc/atoms/Title';
-import LabelTitle from '@/components/pc/molecules/LabelTitle';
+import Bar from '@/components/pc/common/atoms/Bar';
+import Spacer from '@/components/pc/common/atoms/Spacer';
+import Thumbnail from '@/components/pc/common/atoms/Thumbnail';
+import Title from '@/components/pc/common/atoms/Title';
+import LabelTitle from '@/components/pc/common/molecules/LabelTitle';
 import { DomainStoryDetailRecommendBlog } from '@/domain/storyDetail/recommendBlog';
 
 const Wrapper = styled.div``;

@@ -1,8 +1,8 @@
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
-import Thumbnail from '@/components/pc/atoms/Thumbnail';
-import Title from '@/components/pc/atoms/Title';
+import Thumbnail from '@/components/pc/common/atoms/Thumbnail';
+import Title from '@/components/pc/common/atoms/Title';
 import { DomainTopCategoryBlog } from '@/domain/top/blog';
 import size from '@/modules/const/size';
 

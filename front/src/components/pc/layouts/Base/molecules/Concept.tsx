@@ -2,9 +2,9 @@ import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
 import { styled } from 'linaria/react';
 import React from 'react';
-import Spacer from '@/components/pc/atoms/Spacer';
-import Title from '@/components/pc/atoms/Title';
-import LabelTitle from '@/components/pc/molecules/LabelTitle';
+import Spacer from '@/components/pc/common/atoms/Spacer';
+import Title from '@/components/pc/common/atoms/Title';
+import LabelTitle from '@/components/pc/common/molecules/LabelTitle';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 

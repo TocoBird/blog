@@ -1,8 +1,8 @@
 import { styled } from 'linaria/react';
 import React from 'react';
-import Spacer from '@/components/pc/atoms/Spacer';
-import Title from '@/components/pc/atoms/Title';
-import ContentCenter from '@/components/pc/frames/ContentCenter';
+import Spacer from '@/components/pc/common/atoms/Spacer';
+import Title from '@/components/pc/common/atoms/Title';
+import ContentCenter from '@/components/pc/common/frames/ContentCenter';
 import { useColor } from '@/modules/common/colors';
 
 const Wrapper = styled.div``;

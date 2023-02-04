@@ -1,8 +1,8 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { styled } from 'linaria/react';
-import React, { CSSProperties, ReactNode } from 'react';
-import Title from '@/components/pc/atoms/Title';
+import React, { ReactNode, CSSProperties } from 'react';
+import Title from '@/components/sp/common/atoms/Title';
 import size from '@/modules/const/size';
 
 const Wrapper = styled.div``;
