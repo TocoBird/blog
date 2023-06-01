@@ -60,7 +60,7 @@ const ArticleStory: React.FC<Props> = (p: Props): JSX.Element => {
               <Box size="S">
                 <Thumbnail
                   width="100%"
-                  height="120px"
+                  height="160px"
                   url={b.thumbnail}
                   isLazy={true}
                 />

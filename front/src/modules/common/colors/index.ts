@@ -81,6 +81,7 @@ export const useColor = (): UseColor => {
     },
     hTag: {
       background: isDark ? d.white.thinOpacity : l.white.blueMoreThin,
+      backgroundH1: isDark ? '#353544' : '#fbfbfb',
     },
     /** 画像読み込み前の色 */
     image: {

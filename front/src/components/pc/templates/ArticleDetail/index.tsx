@@ -81,17 +81,6 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
 
               <BlogFooter date={p.blog.createdAt} />
             </Box>
-
-            <Spacer.XXL />
-
-            <ArticleRelated
-              blogs={p.relatedBlogs}
-              categoryId={p.blog.categoryId}
-            />
-
-            <Spacer.XXL />
-
-            <ArticleStory blogs={p.stroyBlogs} />
           </Left>
           <Right>
             <Box size="M">
@@ -121,6 +110,14 @@ const TemplatePCArticleDetail: React.FC<Props> = (p: Props): JSX.Element => {
             <Banner />
           </Right>
         </Content>
+
+        <Spacer.XXL />
+
+        <ArticleRelated blogs={p.relatedBlogs} categoryId={p.blog.categoryId} />
+
+        <Spacer.XXL />
+
+        <ArticleStory blogs={p.stroyBlogs} />
       </ContentWrapper>
 
       <Spacer.XXL />

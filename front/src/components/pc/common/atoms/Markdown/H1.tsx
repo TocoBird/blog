@@ -7,8 +7,21 @@ const H1 = styled.h1`
   position: relative;
   font-size: ${size.font.pc.l5}px;
   font-weight: bold;
-  padding-bottom: 20px;
-  margin-bottom: 24px;
+  margin-left: -56px;
+  padding-left: 56px;
+  padding-top: ${size.ui.l4}px;
+  padding-bottom: ${size.ui.l4}px;
+  margin-bottom: ${size.ui.l6}px;
+
+  &:before {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 0;
+    border: none;
+    border-bottom: solid ${size.ui.l4}px transparent;
+    border-right: solid ${size.ui.l4}px #4e89d8;
+  }
 `;
 const LinkBefore = styled.div`
   position: absolute;
@@ -20,7 +33,7 @@ const H1Border = styled.div`
   border-radius: 5px;
   height: 4px;
   bottom: -2px;
-  width: 50%;
+  width: 53.5%;
   left: 0;
 `;
 
@@ -40,6 +53,7 @@ const MarkdownH1: React.FC<Props> = (p: Props): JSX.Element => {
       style={{
         color: color.text.mainBoldThin,
         borderBottom: `solid 2px ${color.border.h1}`,
+        background: color.hTag.backgroundH1,
       }}
     >
       <LinkBefore id={p.id} />
