@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { styled } from 'linaria/react';
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import { useColor } from '@/modules/common/colors';
 import size from '@/modules/const/size';
 
@@ -20,15 +20,10 @@ const LinkInner = styled.div`
   }
 `;
 
-interface Props {
-  /** style */
-  readonly style?: CSSProperties;
-}
-
 /**
  * 公式バナー
  */
-const Banner: React.FC<Props> = (p: Props): JSX.Element => {
+const Banner: React.FC = (): JSX.Element => {
   const { color } = useColor();
 
   return (
@@ -41,11 +36,10 @@ const Banner: React.FC<Props> = (p: Props): JSX.Element => {
         <LinkInner
           style={{
             border: `${size.ui.l1}px solid ${color.box.background}`,
-            ...p.style,
           }}
         >
           <StaticImage
-            src="../../../images/TocoBirdGamesBanner.jpg"
+            src="../../../../images/TocoBirdGamesBanner.jpg"
             alt="TocoBirdGames"
           />
         </LinkInner>
