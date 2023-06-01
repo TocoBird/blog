@@ -25,14 +25,16 @@ const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${size.ui.l6}px 2%;
+
   a {
     display: block;
-    width: 23%;
+    width: 31.33%;
   }
 `;
 const Card = styled.div`
   box-shadow: 0 2px 12px #0f1c2c17;
   border-radius: 2px;
+
   &:hover {
     opacity: 0.85;
     box-shadow: 0 8px 24px #0f1c2c20;
@@ -52,7 +54,7 @@ interface Props {
 }
 /**
  * テンプレート：カテゴリ一覧
- * このページのみデザイン途中なのでリファクタはしない
+ * NOTE: このページは、デザイン途中なのでリファクタはしない
  */
 const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
   const { color } = useColor();
@@ -110,7 +112,7 @@ const TemplatePCCategoryDetail: React.FC<Props> = (p: Props): JSX.Element => {
                     background: color.box.background,
                   }}
                 >
-                  <Thumbnail width="100%" height="110px" url={b.thumbnail} />
+                  <Thumbnail width="100%" height="140px" url={b.thumbnail} />
                   <Title
                     size="S"
                     style={{
