@@ -40,6 +40,7 @@ const Img = styled.img`
   margin-bottom: ${size.ui.l3}px;
 `;
 const A = styled.a`
+  line-height: ${size.font.pc.l8}px;
   &:hover {
     text-decoration: underline;
   }

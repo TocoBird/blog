@@ -17,8 +17,7 @@ export const getDomainCategoryDetailBlog = (
       const title = String(r.attributes.mainTitle) || '';
       const rAttributes = r.attributes.thumbnail.data.attributes;
       const rFormat = rAttributes?.formats;
-      const rUrl =
-        rFormat?.thumbnail?.url || rFormat?.small?.url || rAttributes.url;
+      const rUrl = rFormat?.small?.url || rAttributes.url;
       const thumbnail = String(rUrl) || '';
 
       return new DomainCategoryDetailBlog(id, urlid, title, thumbnail);
